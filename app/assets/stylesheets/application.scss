@@ -1,5 +1,14 @@
 @import "bootstrap";
-@import "sintime/style.scss";
-@import "sintime/circle-menu";
 @import "animate";
 @import "font-awesome";
+@import "datatables";
+
+.vh-100{
+  height: 100vh;
+}
+
+.btn-enter{
+  -ms-transform: rotate(20deg); /* IE 9 */
+  -webkit-transform: rotate(20deg); /* Safari */
+  transform: rotate(20deg);
+}

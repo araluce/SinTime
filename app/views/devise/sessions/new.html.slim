@@ -10,7 +10,7 @@
         | "La vida no se mide por las veces que respiras, sino por los momentos que te dejan sin aliento"
       .col-12.index-autor
         | (Hitch)
-  .col-lg-6.col-md-6.col-12
+  .col-6
     .row.login-form.form-group
       .col-md-10.col-xs-8
         h4
@@ -19,7 +19,7 @@
           = f.input :email, autofocus: true, input_html: {minlength: 15, size: 40, class: 'form-control index-input', placeholder: 'email'}, label: false
           = f.input :password, input_html: {minlength: 6, size: 40, class: 'form-control index-input', style: 'margin-top: 1%;', placeholder: 'password'}, label: false
           = f.input :remember_me, as: :boolean, label: 'Recuerdame' if devise_mapping.rememberable?
-          = f.button :submit, "Entrar", class: 'btn btn-default btn-index'
+          button.btn.btn-default.btn-index type='Submit' = fa_icon 'sign-in', text: 'Entrar'
     .row
       .col-md-6
         = render "devise/shared/links"

@@ -15,9 +15,6 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
-//= require datatables
-//= require_tree .
-
-$(document).ready(function() {
-    $(".datatable").dataTable();
-});
+//= require manager/sb-admin
+//= require manager/sb-admin-charts
+//= require manager/sb-admin-datatables

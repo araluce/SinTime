@@ -1,21 +1,4 @@
-=set_clock '13:28:47'
-
-ul.circle-container.home-menu
-  li
-    = image_tag('home/Jugador.png', class: '', style: '')
-  li
-    = image_tag('home/Trabajo.png', class: '', style: '')
-  li
-    = image_tag('home/Ocio.png', class: '', style: '')
-  li
-    = image_tag('home/Alimentacion.png', class: '', style: '')
-  li
-    = image_tag('home/Prestamos.png', class: '', style: '')
-  li
-    = image_tag('home/Ambulatorio.png', class: '', style: '')
-  li
-    = image_tag('home/Felicidad.png', class: '', style: '')
-
-- if user_signed_in?
-  li
-    = link_to('Logout', destroy_user_session_path, method: :delete)
+.row.vh-100 style="background-image: url(#{asset_path 'background.png'}); background-position: center; background-repeat: no-repeat; background-size: cover;"
+  .col-lg-2.offset-lg-5.col-md-2.offset-md-5.col-12.align-self-center
+    = link_to citizen_home_path, class: 'btn btn-block btn-outline-primary' do
+      | Entrar

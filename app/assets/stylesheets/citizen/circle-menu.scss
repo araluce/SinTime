@@ -57,8 +57,9 @@
 }
 
 .home-menu {
-  @include distribute-on-circle(7, 35em, 6em, false);
+  @include distribute-on-circle(7, 35em, 9em, false);
   margin: 5em auto 0;
+  z-index: 10;
   //border: solid 5px tomato;
 }
 
@@ -71,6 +72,5 @@
   &:hover {
     cursor: pointer;
     //filter: grayscale(0);
-    width: 140%;
   }
 }

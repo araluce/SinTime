@@ -1,0 +1,83 @@
+ul.navbar-nav.navbar-sidenav#exampleAccordion
+  li.nav-item data-toggle="tooltip" data-placement="right" title="Dashboard"
+    a.nav-link href="index.html"
+      = fa_icon 'fw dashboard'
+      span.nav-link-text Dashboard
+    
+  
+  li.nav-item data-toggle="tooltip" data-placement="right" title="Charts"
+    a.nav-link href="charts.html"
+      = fa_icon 'fw area-chart'
+      span.nav-link-text Charts
+    
+  
+  li.nav-item data-toggle="tooltip" data-placement="right" title="Tables"
+    a.nav-link href="tables.html"
+      = fa_icon 'fw table'
+      span.nav-link-text Tables
+    
+  
+  li.nav-item data-toggle="tooltip" data-placement="right" title="Components"
+    a.nav-link.nav-link-collapse.collapsed data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion"
+      = fa_icon 'fw wrench'
+      span.nav-link-text Components
+    
+    ul.sidenav-second-level.collapse#collapseComponents
+      li
+        a href="navbar.html" Navbar
+      
+      li
+        a href="cards.html" Cards
+      
+    
+  
+  li.nav-item data-toggle="tooltip" data-placement="right" title="Example Pages"
+    a.nav-link.nav-link-collapse.collapsed data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion"
+      = fa_icon 'fw file'
+      span.nav-link-text Example Pages
+    
+    ul.sidenav-second-level.collapse#collapseExamplePages
+      li
+        a href="login.html" Login Page
+      
+      li
+        a href="register.html" Registration Page
+      
+      li
+        a href="forgot-password.html" Forgot Password Page
+      
+      li
+        a href="blank.html" Blank Page
+      
+    
+  
+  li.nav-item data-toggle="tooltip" data-placement="right" title="Menu Levels"
+    a.nav-link.nav-link-collapse.collapsed data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion"
+      = fa_icon 'fw sitemap'
+      span.nav-link-text Menu Levels
+    
+    ul.sidenav-second-level.collapse#collapseMulti
+      li
+        a href="#" Second Level Item
+      
+      li
+        a href="#" Second Level Item
+      
+      li
+        a href="#" Second Level Item
+      
+      li
+        a.nav-link-collapse.collapsed data-toggle="collapse" href="#collapseMulti2" Third Level
+        ul.sidenav-third-level.collapse#collapseMulti2
+          li
+            a href="#" Third Level Item
+          
+          li
+            a href="#" Third Level Item
+          
+          li
+            a href="#" Third Level Item
+  li.nav-item data-toggle="tooltip" data-placement="right" title="Link"
+    a.nav-link href="#"
+      = fa_icon 'fw link'
+      span.nav-link-text Link

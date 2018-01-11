@@ -1,0 +1,31 @@
+doctype html
+html lang="en"
+  head
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"
+
+    title= "#{yield(:title)} | SinTime"
+
+    = csrf_meta_tags
+    = stylesheet_link_tag 'manager', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'manager', 'data-turbolinks-track': 'reload'
+
+  body.fixed-nav.sticky-footer.bg-dark
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top#mainNav
+      = link_to manager_home_path, class: 'navbar-brand' do
+        | SinTime
+      button.navbar-toggler.navbar-toggler-right type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"
+        span.navbar-toggler-icon
+      .collapse.navbar-collapse#navbarResponsive
+        = render 'manager/header'
+        = render 'manager/sidebar'
+
+    .content-wrapper
+      .container-fluid
+        - if notice
+          = render 'application/alert', alert_class: 'success', text: notice
+        - if alert
+          = render 'application/alert', alert_class: 'danger', text: alert
+        = yield
+
+    = render 'manager/footer'

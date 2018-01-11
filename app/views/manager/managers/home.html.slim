@@ -1,0 +1,60 @@
+
+ol.breadcrumb
+  li.breadcrumb-item
+    a href="#" Dashboard
+  
+  li.breadcrumb-item.active Cards
+
+h1 Cards
+hr
+/-- Icon Cards --
+.row
+  .col-xl-3.col-sm-6.mb-3
+    .card.text-white.bg-primary.o-hidden.h-100
+      .card-body
+        .card-body-icon = fa_icon 'fw comments'
+        .mr-5 26 New Messages!
+      
+      a.card-footer.text-white.clearfix.small.z-1 href="#"
+        span.float-left Ver Detalles
+        span.float-right = fa_icon 'angle-right'
+
+  .col-xl-3.col-sm-6.mb-3
+    .card.text-white.bg-warning.o-hidden.h-100
+      .card-body
+        .card-body-icon = fa_icon 'fw list'
+        .mr-5 11 New Tasks!
+      
+      a.card-footer.text-white.clearfix.small.z-1 href="#"
+        span.float-left Ver Detalles
+        span.float-right = fa_icon 'angle-right'
+
+  .col-xl-3.col-sm-6.mb-3
+    .card.text-white.bg-success.o-hidden.h-100
+      .card-body
+        .card-body-icon = fa_icon 'fw shopping-cart'
+        .mr-5 123 New Orders!
+      
+      a.card-footer.text-white.clearfix.small.z-1 href="#"
+        span.float-left Ver Detalles
+        span.float-right = fa_icon 'angle-right'
+
+  .col-xl-3.col-sm-6.mb-3
+    .card.text-white.bg-danger.o-hidden.h-100
+      .card-body
+        .card-body-icon = fa_icon 'fw support'
+        .mr-5 13 New Tickets!
+      
+      a.card-footer.text-white.clearfix.small.z-1 href="#"
+        span.float-left Ver Detalles
+        span.float-right = fa_icon 'angle-right'
+
+  .col-xl-3.col-sm-6.mb-3
+    .card.text-white.bg-danger.o-hidden.h-100
+      .card-body
+        .card-body-icon = fa_icon 'fw users'
+        .mr-5 = "#{District.all.count} distritos"
+
+      a.card-footer.text-white.clearfix.small.z-1 href="#"
+        span.float-left Ver Detalles
+        span.float-right = fa_icon 'angle-right'
