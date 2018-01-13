@@ -1,0 +1,68 @@
+.alert-danger, .alert-error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.alert-warning {
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
+
+.alert-info, .alert-notice, .alert-success {
+  color: #0c5460;
+  background-color: #d1ecf1;
+}
+
+.alert-dismissible {
+  .close {
+    padding: 0.75rem 0.75rem;
+  }
+}
+
+.alert-content {
+  width: 100%;
+  padding: 0.75rem 0;
+
+  .alert {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    width: 25%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    -webkit-animation: appear .3s ease-in-out;
+    animation: appear .3s ease-in-out;
+    border-radius: 0;
+    border-width: 0;
+    line-height: 1.5;
+
+    .message {
+      margin-left: 60px;
+      margin-rigth: 90px;
+    }
+
+    .icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 0.75rem 1.25rem;
+      color: inherit;
+      height: 100%;
+      width: 50px;
+      border-right: 1px inherit solid;
+    }
+
+    .icon-danger, .icon-error{
+      background-color: #721C24;
+      color: #F8D7DA;
+    }
+
+    .icon-success, .icon-info, .icon-notice{
+      background-color: #0c5460;
+      color: #d1ecf1;
+    }
+  }
+}

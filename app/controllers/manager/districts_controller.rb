@@ -23,7 +23,7 @@ module Manager
     end
 
     def index
-      @objects = model.order(created_at: :desc).page(params[:page])
+      # @objects = model.order(created_at: :desc).page(params[:page])
     end
 
     def show
@@ -74,7 +74,7 @@ module Manager
     end
 
     def set_object
-      @object = model.find_by_id(params[:id])
+      # @object = model.find_by_id(params[:id])
     end
 
   end

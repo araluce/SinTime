@@ -10,9 +10,9 @@ html
 
   .page
     .container-fluid
-      - if notice
-        = render 'application/alert', alert_class: 'success', text: notice
-      - if alert
-        = render 'application/alert', alert_class: 'danger', text: alert
-
+      .alert-content
+        - if notice
+          = render 'application/alert', alert_class: 'success', text: notice
+        - if alert
+          = render 'application/alert', alert_class: 'danger', text: alert
       = yield
