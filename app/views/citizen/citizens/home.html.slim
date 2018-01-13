@@ -13,10 +13,3 @@ ul.circle-container.home-menu
     = image_tag('citizen/home/Ambulatorio.png', class: '', style: '')
   li
     = image_tag('citizen/home/Felicidad.png', class: '', style: '')
-
-- if user_signed_in?
-  .row
-    .col-12
-      .pull-right style="margin-right: 15px"
-        = link_to destroy_user_session_path, method: :delete do
-          = fa_stacked_icon 'sign-out 4x', base: 'square-o 4x', style: 'color: #000'

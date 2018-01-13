@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title $intime
+    title Ciudadano | SinTime
     = csrf_meta_tags
 
     = stylesheet_link_tag    'citizen', media: 'all', 'data-turbolinks-track': 'reload'
@@ -19,3 +19,5 @@ html
           = render 'application/alert', alert_class: 'danger', text: alert
 
       = yield
+
+      = render 'citizen/footer'
