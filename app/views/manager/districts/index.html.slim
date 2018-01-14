@@ -1,39 +1,18 @@
 ol.breadcrumb
-  li.breadcrumb-item
-    = link_to manager_home_path do
-      | Dashboard
+  li.breadcrumb-item = link_to 'Dashboard', manager_home_path
   li.breadcrumb-item.active = "#{@resource_name.pluralize}"
 
 .card.mb-3
   .card-header = fa_icon 'table', text: "#{@resource_name.pluralize}"
   .card-body
-    .table-responsive
-      #dataTable_wrapper.dataTables_wrapper.container-fluid.dt-bootstrap4
-        .row
-          .col-sm-12.col-md-6
-            .dataTables_length#dataTable_length
-              label Show
-                select name="" aria-controls="dataTable" class="form-control form-control-sm"
-                  option value="10" 10
-                  option value="25" 25
-                  option value="50" 50
-                  option value="100" 100
-                | entries
-            .col-sm-12.col-md-6
-              #dataTable_filter.dataTables_filter
-                label Search:
-                  input.form-control.form-control-sm type="search" placeholder="" aria-controls="dataTable"
-        .row
-          .col-sm-12
-            table#dataTable.table.table-bordered.dataTable width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;"
-              thead
-                tr role="row"
-                  th.sorting_asc   tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 258px;" Name
-                  th.sorting tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 395px;" Position
-              tbody
-                tr role="row"
-                  td.sorting_asc tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 258px;" Name
-                  td.sorting tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 395px;" Position
-                tr role="row"
-                  td.sorting_asc tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 258px;" Name
-                  td.sorting tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 395px;" Position
+    .row
+      .col-sm-12
+        fieldset
+          legend = fa_icon 'plus', text: 'Tabla de distritos'
+          = render 'table'
+    .row
+      .col-sm-12
+        fieldset
+          legend = fa_icon 'plus', text: 'Crea tu distrito'
+          = simple_form_for(@object, url: manager_districts_path, html: {class: 'form-vertical'}) do |f|
+            = render 'form', f: f

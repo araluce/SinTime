@@ -23,7 +23,8 @@ module Manager
     end
 
     def index
-      # @objects = model.order(created_at: :desc).page(params[:page])
+      @object = model.new
+      @objects = model.order(created_at: :desc)
     end
 
     def show
@@ -40,7 +41,7 @@ module Manager
         redirect_to manager_district_path(@object), notice: 'Distrito creado correctamente'
       else
         object_initialization
-        render :new
+        render :index
       end
     end
 
@@ -49,7 +50,7 @@ module Manager
 
     def update
       if @object.update(object_params)
-        redirect_to manager_district_path, notice: 'Distrito actualizado correctamente'
+        redirect_to manager_districts_path, notice: 'Distrito actualizado correctamente'
       else
         object_initialization
         render :edit
@@ -66,15 +67,15 @@ module Manager
 
     private
 
-    def clinic_params
-      params.require(:clinic).permit(
+    def object_params
+      params.require(:district).permit(
           :name,
           user_ids: []
       )
     end
 
     def set_object
-      # @object = model.find_by_id(params[:id])
+      @object = model.find_by_id(params[:id])
     end
 
   end
