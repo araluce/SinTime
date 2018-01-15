@@ -1,0 +1,3 @@
+= f.input :name, label: 'Nombre del distrito'
+= f.association :users, collection: User.all, label: 'Ciudadanos', input_html: {style: 'width: 100%'}
+= f.button :submit, class: 'btn btn-block btn-primary'

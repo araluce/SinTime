@@ -1,0 +1,7 @@
+= f.input :name, label: 'Nombre'
+= f.input :lastname, label: 'Apellidos'
+= f.input :dni, label: 'DNI'
+= f.input :alias, label: 'Alias'
+= f.input :email, label: 'Correo'
+= f.association :district, label: 'Distritos', input_html: {style: 'width: 100%'}
+= f.button :submit, class: 'btn btn-block btn-primary'

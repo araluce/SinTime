@@ -42,5 +42,16 @@ class User < ApplicationRecord
     current_sign_in_at > last_sign_in_at
   end
 
+  def full_name
+    "#{name} #{lastname}"
+  end
+
+  def to_s
+    if full_name.present?
+      full_name
+    else
+      email
+    end
+  end
 
 end

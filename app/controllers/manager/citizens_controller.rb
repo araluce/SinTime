@@ -1,18 +1,19 @@
 module Manager
-  class DistrictsController < ApplicationController
+  class CitizensController < ApplicationController
     layout 'manager'
 
-    before_action :set_object, only: [:show, :update, :destroy, :edit]
+    before_action :set_object, except: [:new, :create]
+    before_action :set_objects, only: [:index]
     before_action :authenticate_admin!
     before_action :load_resource_name
     before_action :set_open_section
 
     def model
-      District
+      User
     end
 
     def load_resource_name
-      @resource_name = 'District'
+      @resource_name = 'Ciudadano'
     end
 
     def set_open_section
@@ -24,7 +25,6 @@ module Manager
 
     def index
       @object = model.new
-      @objects = model.order(created_at: :desc)
     end
 
     def show
@@ -36,12 +36,14 @@ module Manager
 
     def create
       @object = model.new(object_params)
+      @object.password = @object.password || @object.dni
 
       if @object.save
-        redirect_to manager_district_path(@object), notice: 'Distrito creado correctamente'
+        redirect_to manager_citizens_path, notice: 'Ciudadano creado correctamente'
       else
         object_initialization
-        render :index
+        set_objects
+        render :index, error: @object.errors
       end
     end
 
@@ -50,17 +52,18 @@ module Manager
 
     def update
       if @object.update(object_params)
-        redirect_to manager_districts_path, notice: 'Distrito actualizado correctamente'
+        redirect_to manager_citizens_path, notice: 'Ciudadano actualizado correctamente'
       else
         object_initialization
-        render :edit
+        set_objects
+        render :edit, error: @object.errors
       end
     end
 
     def destroy
       @object.destroy
       respond_to do |format|
-        format.html {redirect_to manager_districts_path, notice: 'Distrito eliminado correctamente'}
+        format.html {redirect_to manager_districts_path, notice: 'Ciudadano eliminado correctamente'}
         format.json {head :no_content}
       end
     end
@@ -68,14 +71,23 @@ module Manager
     private
 
     def object_params
-      params.require(:district).permit(
+      params.require(:user).permit(
           :name,
-          user_ids: []
+          :lastname,
+          :dni,
+          :email,
+          :alias,
+          :password,
+          :district_id
       )
     end
 
     def set_object
       @object = model.find_by_id(params[:id])
+    end
+
+    def set_objects
+      @objects = model.order(email: :desc)
     end
 
   end
