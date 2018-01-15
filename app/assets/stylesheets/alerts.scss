@@ -38,6 +38,7 @@
     border-radius: 0;
     border-width: 0;
     line-height: 1.5;
+    font-size: 1.2rem;
 
     .message {
       margin-left: 60px;
@@ -63,6 +64,14 @@
     .icon-success, .icon-info, .icon-notice{
       background-color: #0c5460;
       color: #d1ecf1;
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  .alert-content {
+    .alert {
+      width: 90%%;
     }
   }
 }
