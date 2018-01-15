@@ -42,13 +42,13 @@ class User < ApplicationRecord
     current_sign_in_at > last_sign_in_at
   end
 
-  def name_complete
+  def full_name
     "#{name} #{lastname}"
   end
 
   def to_s
-    if name_complete.present?
-      name_complete
+    if full_name.present?
+      full_name
     else
       email
     end

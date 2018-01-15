@@ -1,0 +1,24 @@
+table.table
+  thead
+    tr
+      th Nombre
+      th Apellidos
+      th DNI
+      th email
+      th Alias
+      th Distrito
+      th Acciones
+  tbody
+    - @objects.each do |citizen|
+      tr
+        td = citizen.name
+        td = citizen.lastname
+        td = citizen.dni
+        td = citizen.email
+        td = citizen.alias
+        td = citizen.district
+        td
+          .action-buttons
+            = link_to fa_icon('eye'), manager_citizen_path(citizen)
+            = link_to fa_icon('cog'), edit_manager_citizen_path(citizen)
+            = link_to fa_icon('times'), manager_citizen_path(citizen), data: {confirm: '¿Estás seguro?'}, method: :delete

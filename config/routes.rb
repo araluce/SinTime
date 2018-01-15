@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   namespace :manager do
     get '/home', to: 'managers#home'
     resources :districts
+    resources :citizens
   end
 
 end
