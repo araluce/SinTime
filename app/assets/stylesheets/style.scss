@@ -24,6 +24,13 @@ body {
   background-color: #F7F7F7;
 }
 
+.home-background{
+  background-image: url('background.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .titulo-app img,
 .logo-app img{
   width: 100%;
