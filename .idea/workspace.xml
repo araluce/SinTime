@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5db47f15-0366-4f0f-bd38-1a518b060301" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.yml" afterPath="$PROJECT_DIR$/config/database.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/production.rb" afterPath="$PROJECT_DIR$/config/environments/production.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -18,28 +21,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Gemfile" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gemfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="825">
-              <caret line="55" column="28" lean-forward="false" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
-              <folding>
-                <marker date="1516043368524" expanded="true" signature="538:611" ph="##..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Capfile" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Capfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="1" lean-forward="false" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="deploy.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/deploy.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -63,8 +44,18 @@
       <file leaf-file-name="production.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/deploy/production.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+            <state relative-caret-position="75">
+              <caret line="5" column="54" lean-forward="false" selection-start-line="5" selection-start-column="54" selection-end-line="5" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="production.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="398">
+              <caret line="88" column="27" lean-forward="false" selection-start-line="88" selection-start-column="27" selection-end-line="88" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -73,8 +64,8 @@
       <file leaf-file-name="database.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/database.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="18" lean-forward="false" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+            <state relative-caret-position="405">
+              <caret line="27" column="37" lean-forward="true" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -83,8 +74,18 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="69" column="20" lean-forward="true" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="20" />
+            <state relative-caret-position="424">
+              <caret line="71" column="33" lean-forward="false" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="secrets.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/secrets.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="31" column="19" lean-forward="false" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -126,7 +127,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>255</find>
       <find>SinTime</find>
       <find>&gt;&lt;/li&gt;</find>
       <find>page_title</find>
@@ -156,6 +156,7 @@
       <find>* {</find>
       <find>clinic_params</find>
       <find>district</find>
+      <find>secre</find>
     </findStrings>
     <replaceStrings>
       <replace>citizen/home/</replace>
@@ -174,7 +175,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/citizen_devise/sessions_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/citizen/citizens_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/devise/citizen/sessions_controller.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20171229123152_create_districts.rb" />
@@ -223,8 +223,9 @@
         <option value="$PROJECT_DIR$/config/initializers/assets.rb" />
         <option value="$PROJECT_DIR$/app/views/static/home.html.slim" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/style.scss" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/config/database.yml" />
+        <option value="$PROJECT_DIR$/config/environments/production.rb" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -265,42 +266,6 @@
               <item name="sintime" type="b2602c69:ProjectViewProjectNode" />
               <item name="sintime" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="sintime" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sintime" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sintime" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sintime" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sintime" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sintime" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sintime" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sintime" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sintime" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sintime" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="capistrano" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sintime" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sintime" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="capistrano" type="462c0819:PsiDirectoryNode" />
-              <item name="tasks" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -310,7 +275,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../generation" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/araluce/projects/sintime/.gitignore&#10;appl&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/application.html.slim&#10;home&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/static/home.html.slim&#10;ass&#9;FILE&#9;file:///home/araluce/projects/sintime/config/initializers/assets.rb&#10;databa&#9;FILE&#9;file:///home/araluce/projects/sintime/config/database.yml&#10;.gitigno&#9;FILE&#9;file:///home/araluce/projects/sintime/.gitignore&#10;production&#9;FILE&#9;file:///home/araluce/projects/sintime/config/deploy/production.rb&#10;deploy&#9;FILE&#9;file:///home/araluce/projects/sintime/config/deploy.rb&#10;capfile&#9;FILE&#9;file:///home/araluce/projects/sintime/Capfile&#10;gemfile&#9;FILE&#9;file:///home/araluce/projects/sintime/Gemfile&#10;user&#9;FILE&#9;file:///home/araluce/projects/sintime/app/models/user.rb&#10;citi&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/citizen.html.slim&#10;mana&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/manager.html.slim&#10;routes&#9;FILE&#9;file:///home/araluce/projects/sintime/config/routes.rb&#10;sideba&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/manager/_sidebar.html.slim&#10;distric&#9;FILE&#9;file:///home/araluce/projects/sintime/app/controllers/manager/districts_controller.rb&#10;app&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/application.html.slim&#10;appli&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/application.html.slim&#10;alert&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/application/_alert.html.slim&#10;.gitig&#9;FILE&#9;file:///home/araluce/projects/sintime/.gitignore&#10;gem&#9;FILE&#9;file:///home/araluce/projects/sintime/Gemfile&#10;data&#9;FILE&#9;file:///home/araluce/projects/sintime/config/database.yml&#10;gemfi&#9;FILE&#9;file:///home/araluce/projects/sintime/Gemfile" />
+    <property name="SearchEverywhereHistoryKey" value="production&#9;FILE&#9;file:///home/araluce/projects/sintime/config/environments/production.rb&#10;secre&#9;FILE&#9;file:///home/araluce/projects/sintime/config/secrets.yml&#10;appl&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/application.html.slim&#10;home&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/static/home.html.slim&#10;ass&#9;FILE&#9;file:///home/araluce/projects/sintime/config/initializers/assets.rb&#10;databa&#9;FILE&#9;file:///home/araluce/projects/sintime/config/database.yml&#10;.gitigno&#9;FILE&#9;file:///home/araluce/projects/sintime/.gitignore&#10;deploy&#9;FILE&#9;file:///home/araluce/projects/sintime/config/deploy.rb&#10;capfile&#9;FILE&#9;file:///home/araluce/projects/sintime/Capfile&#10;gemfile&#9;FILE&#9;file:///home/araluce/projects/sintime/Gemfile&#10;user&#9;FILE&#9;file:///home/araluce/projects/sintime/app/models/user.rb&#10;citi&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/citizen.html.slim&#10;mana&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/manager.html.slim&#10;routes&#9;FILE&#9;file:///home/araluce/projects/sintime/config/routes.rb&#10;sideba&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/manager/_sidebar.html.slim&#10;distric&#9;FILE&#9;file:///home/araluce/projects/sintime/app/controllers/manager/districts_controller.rb&#10;app&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/application.html.slim&#10;appli&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/application.html.slim&#10;alert&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/application/_alert.html.slim&#10;.gitig&#9;FILE&#9;file:///home/araluce/projects/sintime/.gitignore&#10;gem&#9;FILE&#9;file:///home/araluce/projects/sintime/Gemfile&#10;data&#9;FILE&#9;file:///home/araluce/projects/sintime/config/database.yml&#10;gemfi&#9;FILE&#9;file:///home/araluce/projects/sintime/Gemfile" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="Ruby.ViewRefParam.DefaultExtension" value="html.slim" />
   </component>
@@ -463,15 +428,16 @@
       <workItem from="1514543523151" duration="20435000" />
       <workItem from="1515704236258" duration="2196000" />
       <workItem from="1515713100175" duration="4639000" />
-      <workItem from="1515849455725" duration="18374000" />
+      <workItem from="1515849455725" duration="19790000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84421000" />
+    <option name="totallyTimeSpent" value="85837000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="520" y="50" width="1922" height="1053" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27427962" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -481,7 +447,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281768" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3558011" sideWeight="0.48932764" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3558011" sideWeight="0.48932764" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -506,14 +472,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/manager/sb-admin.css" />
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/manager/sb-admin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/manager/navbar/_navbar_fixed.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -827,14 +785,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/deploy/production.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/initializers/assets.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -877,6 +827,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/secrets.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="19" lean-forward="false" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="37" lean-forward="true" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/capistrano/tasks/production.rake">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -885,18 +851,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/database.yml">
+    <entry file="file://$PROJECT_DIR$/config/deploy/production.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="18" lean-forward="false" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+        <state relative-caret-position="75">
+          <caret line="5" column="54" lean-forward="false" selection-start-line="5" selection-start-column="54" selection-end-line="5" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="88" column="27" lean-forward="false" selection-start-line="88" selection-start-column="27" selection-end-line="88" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="69" column="20" lean-forward="true" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="20" />
+        <state relative-caret-position="424">
+          <caret line="71" column="33" lean-forward="false" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
           <folding />
         </state>
       </provider>
