@@ -87,6 +87,8 @@ Rails.application.configure do
   end
 
   ENV['DATABASE_NAME'] = ''
+  ENV['DATABASE_USER'] = ''
+  ENV['DATABASE_PASSWORD'] = ''
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
