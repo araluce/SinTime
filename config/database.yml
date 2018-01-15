@@ -26,4 +26,4 @@ production:
   <<: *default
   database: prod
   username: root
-  password: ''
+  password: 'kjbkjnbkj'
