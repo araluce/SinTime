@@ -68,10 +68,11 @@
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 990px) {
   .alert-content {
     .alert {
       width: 90%;
+      font-size: 2rem;
     }
   }
 }

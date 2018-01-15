@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Oregano');
 @font-face {
   font-family: "Kimberley";
   src: url("digital-7.ttf");
@@ -11,17 +12,13 @@
   src: url("ISOCTEUR.ttf");
 }
 
-@font-face {
-  font-family: 'Oregano';
-  src: url('https://fonts.googleapis.com/css?family=Oregano');
-}
-
 * {
   font-family: "Isocpeur";
 }
 
 body{
   background-color: #F7F7F7;
+  font-size: 2.8em;
 }
 
 .titulo-app img,
@@ -36,7 +33,7 @@ body{
 .form-control {
   color: black;
   font-weight: bold;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
   border-radius: 15px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
