@@ -24,6 +24,6 @@ test:
 
 production:
   <<: *default
-  database: generation_production
-  username: root
-  password:
+  database: sintimee_production
+  username: sintimee_product
+  password: '_b][4+2Y$Y78S_H8B7:8'
