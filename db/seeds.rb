@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts "Creando ciudadano..."
+puts "Creando admin..."
 
-ciudadano = User.find_by(email: 'araluce11@gmail.com')
+admin = Admin.find_by(email: 'araluce11@gmail.com')
 
-unless ciudadano.nil?
-  ciudadano = User.create_by(email: 'araluce11@gmail.com', password: 'sintime')
+unless admin.nil?
+  admin = Admin.create_by(email: 'araluce11@gmail.com', password: 'sintime')
 end
