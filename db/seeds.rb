@@ -11,5 +11,6 @@ puts "Creando admin..."
 admin = Admin.find_by(email: 'araluce11@gmail.com')
 
 unless admin.nil?
-  admin = Admin.create_by(email: 'araluce11@gmail.com', password: 'sintime')
+  admin = Admin.new(email: 'araluce11@gmail.com', password: 'sintime')
+  admin.save!
 end
