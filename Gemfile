@@ -72,7 +72,10 @@ gem 'jquery-rails'
 # source 'https://rails-assets.org' do
 #  gem 'rails-assets-tether', '>= 1.3.3'
 # end
- gem 'simple_form'
+gem 'simple_form'
+
+gem 'rollbar'
+
 #
 # # Loggin
 # gem 'colorize'
