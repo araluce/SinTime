@@ -5,6 +5,10 @@ set :application, 'SinTime'
 set :repo_url, 'git@github.com:araluce/SinTime.git'
 set :deploy_to, 'home/sintimee/ruby/SinTime'
 
+set :rollbar_token, 'e1fb9500f127437e950e0a751742ee44'
+set :rollbar_env, Proc.new { fetch :stage }
+set :rollbar_role, Proc.new { :app }
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
