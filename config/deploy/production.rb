@@ -1,4 +1,4 @@
-server 'sintime.es', user: 'sintimee', roles: %w{app db}, port: 333
+server 'sintime.es', user: 'sintimee', roles: %w{app db web}, port: 333
 
 set :deploy_to, '/home/sintimee/ruby/SinTime'
 set :rails_env, 'production'
