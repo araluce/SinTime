@@ -2,7 +2,7 @@
 lock "~> 3.10.0"
 
 set :application, 'SinTime'
-set :repo_url, 'https://github.com/araluce/SinTime.git'
+set :repo_url, 'git@github.com:araluce/SinTime.git'
 set :deploy_to, 'home/sintimee/ruby/SinTime'
 
 # Default branch is :master
