@@ -16,6 +16,7 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require datatables
+//= require cocoon
 //= require_tree .
 
 $(document).ready(function() {

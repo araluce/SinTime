@@ -1,2 +1,8 @@
 = f.input :statement, label: 'Enunciado'
+
+.cocoon-items.tab-pane.active role='tabpanel'
+  = f.simple_fields_for :options, label: 'Opciones' do |option|
+    = render 'manager/partials/option_fields', f: option
+  .links
+    = link_to_add_association 'añadir opción', f, :options, partial: 'manager/partials/option_fields'
 = f.button :submit, class: 'btn btn-block btn-primary'

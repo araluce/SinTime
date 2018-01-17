@@ -69,7 +69,8 @@ module Manager
 
     def object_params
       params.require(:exercise_questionnaire).permit(
-          :statement
+          :statement,
+          options_attributes: {}
       )
     end
 

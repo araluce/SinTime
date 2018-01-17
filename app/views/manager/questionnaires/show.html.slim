@@ -11,10 +11,14 @@ ol.breadcrumb
         p = link_to 'Editar', edit_manager_questionnaire_path(@object), class: 'btn btn-primary btn-block'
       .col-5
         .card
-          .card-block.card-text
-            fieldset
-              legend = "Datos del cuestionario"
-              hr
-              dl.row
-                dt.col-sm-6 Enunciado
-                dd.col-sm-6 = @object.statement
+          .card-header Datos del cuestionario
+          .card-body
+            dl.row
+              dt.col-sm-6 Enunciado
+              dd.col-sm-6 = @object.statement
+
+              dt.col-sm-12 Opciones
+
+              - @object.options.each do |option|
+                dd.col-sm-9 = option.option
+                dd.col-sm-3 = option.right

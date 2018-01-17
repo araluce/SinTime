@@ -1,6 +1,7 @@
 class CreateExerciseOptions < ActiveRecord::Migration[5.1]
   def change
     create_table :exercise_options do |t|
+      t.references :questionnaire
       t.text :option
       t.boolean :right, default: false
 

@@ -36,10 +36,12 @@ ActiveRecord::Schema.define(version: 20180117203230) do
   end
 
   create_table "exercise_options", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "questionnaire_id"
     t.text "option"
     t.boolean "right", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["questionnaire_id"], name: "index_exercise_options_on_questionnaire_id"
   end
 
   create_table "exercises", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
