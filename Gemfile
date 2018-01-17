@@ -54,6 +54,7 @@ group :development do
   gem 'capistrano', '~> 3.6'
   gem 'capistrano-rails', '~> 1.2'
   gem 'capistrano-passenger'
+  gem 'capistrano-bundler', '~> 1.3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
