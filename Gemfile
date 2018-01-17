@@ -76,6 +76,7 @@ gem 'jquery-rails'
 gem 'simple_form'
 
 gem 'rollbar'
+gem 'capistrano-rvm'
 
 #
 # # Loggin
