@@ -53,7 +53,6 @@ group :development do
   gem 'rubocop', require: false
   gem 'capistrano', '~> 3.6'
   gem 'capistrano-rails', '~> 1.2'
-  gem 'capistrano-passenger'
   gem 'capistrano-bundler', '~> 1.3'
 end
 
