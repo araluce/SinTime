@@ -1,5 +1,14 @@
 ul.navbar-nav.navbar-sidenav#exampleAccordion
-  li.nav-item data-toggle="tooltip" data-placement="right" title="Dashboard"
-    = link_to fa_icon('fw dashboard', text: 'Dashboard'), manager_home_path, class: 'nav-link'
-    = link_to fa_icon('fw shield', text: 'Distritos'), manager_districts_path, class: 'nav-link'
-    = link_to fa_icon('fw users', text: 'Ciudadanos'), manager_citizens_path, class: 'nav-link'
+  li.nav-item data-toggle="tooltip" data-placement="right"
+    = link_to manager_home_path, class: 'nav-link', title: 'Dashboard' do
+      = fa_icon('fw dashboard')
+      span.nav-link-text Dashboard
+    = link_to manager_districts_path, class: 'nav-link', title: 'Distritos' do
+      = fa_icon('fw shield')
+      span.nav-link-text Distritos
+    = link_to manager_citizens_path, class: 'nav-link', title: 'Ciudadanos' do
+      = fa_icon('fw users')
+      span.nav-link-text Ciudadanos
+    = link_to manager_questionnaires_path, class: 'nav-link', title: 'Cuestionarios' do
+      = fa_icon('fw help')
+      span.nav-link-text Cuestionarios

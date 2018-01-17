@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     get '/home', to: 'managers#home'
     resources :districts
     resources :citizens
+    resources :questionnaires
   end
 
 end

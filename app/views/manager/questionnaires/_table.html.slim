@@ -1,0 +1,14 @@
+table.table
+  thead
+    tr
+      th Enunciado
+      th Acciones
+  tbody
+    - @objects.all.each do |questionnaire|
+      tr
+        td = questionnaire.statement
+        td
+          .action-buttons
+            = link_to fa_icon('eye'), manager_questionnaire_path(questionnaire)
+            = link_to fa_icon('cog'), edit_manager_questionnaire_path(questionnaire)
+            = link_to fa_icon('times'), manager_questionnaire_path(questionnaire), data: {confirm: '¿Estás seguro?'}, method: :delete

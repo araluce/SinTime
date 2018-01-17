@@ -85,3 +85,6 @@ gem 'font-awesome-rails'
 
 gem 'animate-rails'
 gem 'jquery-datatables'
+
+
+gem 'cocoon'

@@ -16,5 +16,3 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require manager/sb-admin
-//= require manager/sb-admin-charts
-//= require manager/sb-admin-datatables

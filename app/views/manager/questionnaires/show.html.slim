@@ -1,0 +1,20 @@
+ol.breadcrumb
+  li.breadcrumb-item = link_to 'Dashboard', manager_home_path
+  li.breadcrumb-item = link_to "#{@resource_name.pluralize}", manager_questionnaires_path
+  li.breadcrumb-item.active = "Datos del cuestionario"
+
+.row
+  .col-12
+    .row
+      .col-2
+        p = link_to 'Volver', manager_questionnaires_path, class: 'btn btn-primary btn-block'
+        p = link_to 'Editar', edit_manager_questionnaire_path(@object), class: 'btn btn-primary btn-block'
+      .col-5
+        .card
+          .card-block.card-text
+            fieldset
+              legend = "Datos del cuestionario"
+              hr
+              dl.row
+                dt.col-sm-6 Enunciado
+                dd.col-sm-6 = @object.statement

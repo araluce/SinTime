@@ -1,0 +1,12 @@
+ol.breadcrumb
+  li.breadcrumb-item = link_to 'Dashboard', manager_home_path
+  li.breadcrumb-item = link_to "#{@resource_name.pluralize}", manager_districts_path
+  li.breadcrumb-item = link_to 'Cuestionario', manager_questionnaire_path(@object)
+  li.breadcrumb-item.active Editar
+
+.row
+  .col-sm-12
+    fieldset
+      legend = fa_icon 'plus', text: 'Editar el cuestionario'
+      = simple_form_for(@object, url: manager_questionnaire_path(@object), html: {class: 'form-vertical'}) do |f|
+        = render 'form', f: f

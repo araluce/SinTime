@@ -1,60 +1,48 @@
 
 ol.breadcrumb
-  li.breadcrumb-item
+  li.breadcrumb-item.active
     a href="#" Dashboard
-  
-  li.breadcrumb-item.active Cards
 
-h1 Cards
+h1 Tarjetas
 hr
-/-- Icon Cards --
+
 .row
   .col-xl-3.col-sm-6.mb-3
-    .card.text-white.bg-primary.o-hidden.h-100
+    .card.text-white.bg-warning.o-hidden.h-100
       .card-body
-        .card-body-icon = fa_icon 'fw comments'
-        .mr-5 26 New Messages!
+        .card-body-icon = fa_icon 'fw support'
+        .mr-5 13 Nuevas Citas!
       
       a.card-footer.text-white.clearfix.small.z-1 href="#"
         span.float-left Ver Detalles
         span.float-right = fa_icon 'angle-right'
 
   .col-xl-3.col-sm-6.mb-3
-    .card.text-white.bg-warning.o-hidden.h-100
+    .card.text-white.bg-danger.o-hidden.h-100
       .card-body
-        .card-body-icon = fa_icon 'fw list'
-        .mr-5 11 New Tasks!
-      
-      a.card-footer.text-white.clearfix.small.z-1 href="#"
+        .card-body-icon = fa_icon 'fw shield'
+        .mr-5 = "#{District.all.count} distritos"
+
+      = link_to manager_districts_path, class: 'card-footer text-white clearfix small z-1' do
         span.float-left Ver Detalles
         span.float-right = fa_icon 'angle-right'
 
   .col-xl-3.col-sm-6.mb-3
     .card.text-white.bg-success.o-hidden.h-100
       .card-body
-        .card-body-icon = fa_icon 'fw shopping-cart'
-        .mr-5 123 New Orders!
-      
-      a.card-footer.text-white.clearfix.small.z-1 href="#"
-        span.float-left Ver Detalles
-        span.float-right = fa_icon 'angle-right'
-
-  .col-xl-3.col-sm-6.mb-3
-    .card.text-white.bg-danger.o-hidden.h-100
-      .card-body
-        .card-body-icon = fa_icon 'fw support'
-        .mr-5 13 New Tickets!
-      
-      a.card-footer.text-white.clearfix.small.z-1 href="#"
-        span.float-left Ver Detalles
-        span.float-right = fa_icon 'angle-right'
-
-  .col-xl-3.col-sm-6.mb-3
-    .card.text-white.bg-danger.o-hidden.h-100
-      .card-body
         .card-body-icon = fa_icon 'fw users'
-        .mr-5 = "#{District.all.count} distritos"
+        .mr-5 = "#{User.all.count} ciudadanos"
 
-      a.card-footer.text-white.clearfix.small.z-1 href="#"
+      = link_to manager_citizens_path, class: 'card-footer text-white clearfix small z-1' do
+        span.float-left Ver Detalles
+        span.float-right = fa_icon 'angle-right'
+
+  .col-xl-3.col-sm-6.mb-3
+    .card.text-white.bg-success.o-hidden.h-100
+      .card-body
+        .card-body-icon = fa_icon 'fw help'
+        .mr-5 = "#{Exercise::Questionnaire.all.count} cuestionarios"
+
+      = link_to manager_questionnaires_path, class: 'card-footer text-white clearfix small z-1' do
         span.float-left Ver Detalles
         span.float-right = fa_icon 'angle-right'
