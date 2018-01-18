@@ -3,7 +3,7 @@ lock "~> 3.10.0"
 
 set :application, 'sintimeapp'
 set :repo_url, 'git@github.com:araluce/SinTime.git'
-set :deploy_to, 'home/sintimee/ruby'
+set :deploy_to, 'home/sintimee/ruby/sintimeapp'
 
 set :rollbar_token, 'e1fb9500f127437e950e0a751742ee44'
 set :rollbar_env, Proc.new { fetch :stage }
