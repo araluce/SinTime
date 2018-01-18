@@ -29,7 +29,8 @@ set :rollbar_role, Proc.new { :app }
 append :linked_files, "config/database.yml", "config/secrets.yml"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
 
-after 'deploy:publishing', 'deploy:restart'
+after 'deploy:publishing', 'cd ..
+'
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
