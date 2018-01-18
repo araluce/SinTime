@@ -42,6 +42,3 @@ after 'deploy:publishing', 'deploy:restart'
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
 
-set :bundle_flags, '--quiet'
-set :bundle_bins, %w(rake rails)
-set :bundle_path, nil
