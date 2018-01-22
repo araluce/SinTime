@@ -2,8 +2,8 @@
 
 @font-face {
   font-family: 'digital-7regular';
-  src: url('digital-7-webfont.woff2') format('woff2'),
-  url('digital-7-webfont.woff') format('woff');
+  src: asset-data-url('digital-7-webfont.woff2') format('woff2'),
+  asset-data-url('digital-7-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 
@@ -11,8 +11,8 @@
 
 @font-face {
   font-family: 'isocpeurregular';
-  src: url('isocpeur-webfont.woff2') format('woff2'),
-  url('isocpeur-webfont.woff') format('woff');
+  src: asset-data-url('isocpeur-webfont.woff2') format('woff2'),
+  asset-data-url('isocpeur-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 
@@ -20,8 +20,8 @@
 
 @font-face {
   font-family: 'isocteurregular';
-  src: url('isocteur-webfont.woff2') format('woff2'),
-  url('isocteur-webfont.woff') format('woff');
+  src: asset-data-url('isocteur-webfont.woff2') format('woff2'),
+  asset-data-url('isocteur-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 
