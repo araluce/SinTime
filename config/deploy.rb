@@ -1,9 +1,9 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.10.0"
 
-set :application, 'sintimeapp'
+set :application, 'sintime'
 set :repo_url, 'git@github.com:araluce/SinTime.git'
-set :deploy_to, 'home/sintimee/ruby/sintimeapp'
+set :deploy_to, 'home/sintimee/ruby/'
 
 set :rollbar_token, 'e1fb9500f127437e950e0a751742ee44'
 set :rollbar_env, Proc.new { fetch :stage }

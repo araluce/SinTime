@@ -2,6 +2,8 @@ en:
   simple_form:
     "yes": 'Yes'
     "no": 'No'
+    buttons:
+      cancel: "Cancel"
     required:
       text: 'required'
       mark: '*'
@@ -29,3 +31,14 @@ en:
     # prompts:
     #   defaults:
     #     age: 'Select your age'
+es:
+  simple_form:
+    "yes": 'Si'
+    "no": 'No'
+    buttons:
+      cancel: "Cancelar"
+    required:
+      text: 'obligatorio'
+      mark: '*'
+    error_notification:
+      default_message: "Revise los siguientes campos:"

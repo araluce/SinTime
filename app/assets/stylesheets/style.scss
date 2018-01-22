@@ -1,23 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Oregano');
+
 @font-face {
-  font-family: "Kimberley";
-  src: url("digital-7.ttf");
-}
-@font-face {
-  font-family: "Isocpeur";
-  src: url("ISOCPEUR.ttf");
-}
-@font-face {
-  font-family: "Isocteur";
-  src: url("ISOCTEUR.ttf");
+  font-family: 'digital-7regular';
+  src: url('digital-7-webfont.woff2') format('woff2'),
+  url('digital-7-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
 }
 
 @font-face {
-  font-family: 'Oregano';
-  src: url('https://fonts.googleapis.com/css?family=Oregano');
+  font-family: 'isocpeurregular';
+  src: url('isocpeur-webfont.woff2') format('woff2'),
+  url('isocpeur-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
 }
 
-* {
-  font-family: "Isocpeur";
+@font-face {
+  font-family: 'isocteurregular';
+  src: url('isocteur-webfont.woff2') format('woff2'),
+  url('isocteur-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+body {
+  font-family: "isocpeurregular";
 }
 
 body {
@@ -53,7 +64,7 @@ body {
 }
 
 .index-autor, .index-frase{
-  font-family: 'Oregano';
+  font-family: 'Oregano', cursive;
   font-size: 2.8em;
 }
 

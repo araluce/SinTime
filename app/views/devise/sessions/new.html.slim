@@ -18,7 +18,9 @@
           = f.input :email, autofocus: true, input_html: {minlength: 15, size: 40, class: 'form-control index-input', placeholder: 'email'}, label: false
           = f.input :password, input_html: {minlength: 6, size: 40, class: 'form-control index-input', style: 'margin-top: 1%;', placeholder: 'password'}, label: false
           = f.input :remember_me, as: :boolean, label: 'Recuerdame' if devise_mapping.rememberable?
-          button.btn.btn-default.btn-index type='Submit' = fa_icon 'sign-in', text: 'Entrar'
+          = f.button :submit_cancel, 'Entrar', cancel: root_path
+          = button_tag(type: 'submit', class: 'btn btn-primary') do
+            = fa_icon('sign-in', text: 'Entrar')
     .row
       .col-md-6
         = render "devise/shared/links"
