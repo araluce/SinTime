@@ -101,7 +101,7 @@
         line-height: 65px;
         text-align: center;
       }
-      a.active {
+      a.active, a:hover, a:active {
         color: #053E6B;
         background-color: #f8f9fa;
       }
