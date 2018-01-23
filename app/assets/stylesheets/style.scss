@@ -35,11 +35,36 @@ body {
   background-color: #F7F7F7;
 }
 
+.btn-outline-secondary{
+  color: #f8f9fa;
+  border-color: #f8f9fa;
+
+  &:not([disabled]):not(.disabled):active,
+  &:hover{
+    color: #000;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+
+    transition: color 2s linear;
+    -webkit-transition: color 2s linear;
+    transition: background-color 2s linear;
+    -webkit-transition: background-color 2s linear;
+    transition: border-color 2s;
+    -webkit-transition: border-color 2s;
+  }
+}
+
 .home-background{
-  background-image: asset-data-url('background.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  //background-image: asset-data-url('background.png');
+  //background-position: center;
+  //background-repeat: no-repeat;
+  //background-size: cover;
+  background-color: #053E6B;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
 .titulo-app img,

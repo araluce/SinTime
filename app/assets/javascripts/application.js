@@ -22,3 +22,14 @@
 $(document).ready(function() {
     $(".datatable").dataTable();
 });
+
+$(window).scroll(function() {
+    if($(this).scrollTop() > 50)
+    {
+        $('.navbar-trans').addClass('afterscroll');
+    } else
+    {
+        $('.navbar-trans').removeClass('afterscroll');
+    }
+
+});

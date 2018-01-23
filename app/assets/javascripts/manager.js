@@ -16,3 +16,8 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require manager/sb-admin
+
+
+$(document).ready(function() {
+    $(".datatable").dataTable();
+});
