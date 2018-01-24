@@ -72,7 +72,11 @@ module Manager
     def object_params
       params.require(:exercise_feeding).permit(
           :statement,
-          :feeding_type
+          :feeding_type,
+          :days_benefit,
+          :hours_benefit,
+          :minutes_benefit,
+          :seconds_benefit
       )
     end
 

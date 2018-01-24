@@ -5,4 +5,10 @@
     = render 'manager/partials/option_fields', f: option
   .links
     = link_to_add_association 'añadir opción', f, :options, partial: 'manager/partials/option_fields'
+
+= f.input :days_benefit
+= f.input :hours_benefit
+= f.input :minutes_benefit
+= f.input :seconds_benefit
+
 = f.button :submit, class: 'btn btn-block btn-primary'

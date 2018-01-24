@@ -70,6 +70,10 @@ module Manager
     def object_params
       params.require(:exercise_questionnaire).permit(
           :statement,
+          :days_benefit,
+          :hours_benefit,
+          :minutes_benefit,
+          :seconds_benefit,
           options_attributes: {}
       )
     end
