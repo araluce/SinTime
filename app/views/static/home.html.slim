@@ -1,5 +1,8 @@
 = render 'static/navbar'
 .row.vh-100.home-background
-  .col-lg-2.offset-lg-5.col-md-2.offset-md-5.col-12.align-self-center
+  .col-lg-2.offset-lg-4.col-md-2.offset-md-5.col-12.align-self-center
     = link_to citizen_home_path, class: 'btn btn-block btn-outline-secondary' do
       | Entrar
+  .col-lg-2.col-md-2.col-12.align-self-center
+    = link_to manager_home_path, class: 'btn btn-block btn-outline-warning' do
+      = fa_icon 'fw cog', text: 'Administración'
