@@ -1,0 +1,14 @@
+table.table
+  thead
+    tr
+      th Enunciado
+      th Acciones
+  tbody
+    - @objects.each do |water|
+      tr
+        td = water.statement
+        td
+          .action-buttons
+            = link_to fa_icon('eye'), manager_water_path(water)
+            = link_to fa_icon('cog'), edit_manager_water_path(water)
+            = link_to fa_icon('times'), manager_water_path(water), data: {confirm: '¿Estás seguro?'}, method: :delete

@@ -1,18 +1,19 @@
 module Manager
-  class QuestionnairesController < ApplicationController
+  class WaterController < ApplicationController
     layout 'manager'
 
     before_action :set_object, only: [:show, :update, :destroy, :edit]
+    before_action :set_objects, except: [:new, :show, :edit, :update]
     before_action :authenticate_admin!
     before_action :load_resource_name
     before_action :set_open_section
 
     def model
-      Exercise::Questionnaire
+      Exercise::Feeding
     end
 
     def load_resource_name
-      @resource_name = 'Cuestionario'
+      @resource_name = 'Agua'
     end
 
     def set_open_section
@@ -20,11 +21,11 @@ module Manager
     end
 
     def object_initialization
+      @object.feeding_type = 'Agua'
     end
 
     def index
       @object = model.new
-      @objects = model.order(created_at: :desc)
     end
 
     def show
@@ -36,9 +37,10 @@ module Manager
 
     def create
       @object = model.new(object_params)
+      object_initialization
 
       if @object.save
-        redirect_to manager_questionnaire_path(@object), notice: 'Cuestionario creado correctamente'
+        redirect_to manager_water_path(@object), notice: 'Reto de agua creado correctamente'
       else
         object_initialization
         render :index
@@ -49,8 +51,9 @@ module Manager
     end
 
     def update
+      object_initialization
       if @object.update(object_params)
-        redirect_to manager_questionnaire_path, notice: 'Cuestionario actualizado correctamente'
+        redirect_to manager_water_path, notice: 'Reto de agua actualizado correctamente'
       else
         object_initialization
         render :edit
@@ -60,7 +63,7 @@ module Manager
     def destroy
       @object.destroy
       respond_to do |format|
-        format.html {redirect_to manager_questionnaires_path, notice: 'Cuestionario eliminado correctamente'}
+        format.html {redirect_to manager_water_index_path, notice: 'Reto de agua eliminado correctamente'}
         format.json {head :no_content}
       end
     end
@@ -68,14 +71,18 @@ module Manager
     private
 
     def object_params
-      params.require(:exercise_questionnaire).permit(
+      params.require(:exercise_feeding).permit(
           :statement,
-          options_attributes: {}
+          :feeding_type
       )
     end
 
     def set_object
-      @object = model.find_by_id(params[:id])
+      @object = model.water.find_by_id(params[:id])
+    end
+
+    def set_objects
+      @objects = model.water.order(created_at: :desc)
     end
 
   end

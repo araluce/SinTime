@@ -1,0 +1,8 @@
+.card.text-white.o-hidden.h-100 class="#{class_name}"
+  .card-body
+    .card-body-icon = fa_icon "fw #{icon}"
+    .mr-5 = counter
+
+  = link_to path, class: 'card-footer text-white clearfix small z-1' do
+    span.float-left Ver Detalles
+    span.float-right = fa_icon 'angle-right'

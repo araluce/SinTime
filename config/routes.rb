@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     resources :districts
     resources :citizens
     resources :questionnaires
+    resources :food
+    resources :water
   end
 
 end

@@ -1,0 +1,14 @@
+table.table
+  thead
+    tr
+      th Enunciado
+      th Acciones
+  tbody
+    - @objects.each do |food|
+      tr
+        td = food.statement
+        td
+          .action-buttons
+            = link_to fa_icon('eye'), manager_food_path(food)
+            = link_to fa_icon('cog'), edit_manager_food_path(food)
+            = link_to fa_icon('times'), manager_food_path(food), data: {confirm: '¿Estás seguro?'}, method: :delete

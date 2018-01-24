@@ -3,12 +3,29 @@ ul.navbar-nav.navbar-sidenav#exampleAccordion
     = link_to manager_home_path, class: 'nav-link', title: 'Dashboard' do
       = fa_icon('fw dashboard')
       span.nav-link-text Dashboard
+  li.nav-item data-toggle="tooltip" data-placement="right"
     = link_to manager_districts_path, class: 'nav-link', title: 'Distritos' do
       = fa_icon('fw shield')
       span.nav-link-text Distritos
+  li.nav-item data-toggle="tooltip" data-placement="right"
     = link_to manager_citizens_path, class: 'nav-link', title: 'Ciudadanos' do
       = fa_icon('fw users')
       span.nav-link-text Ciudadanos
-    = link_to manager_questionnaires_path, class: 'nav-link', title: 'Cuestionarios' do
-      = fa_icon('fw question')
-      span.nav-link-text Cuestionarios
+
+  li.nav-item data-toggle="tooltip" data-placement="right"
+    a.nav-link.nav-link-collapse data-toggle="collapse" href="#ejercicios" data-parent="EjerciciosAcordeon" aria-expanded="#{ariaexpanded('Ejercicios')}" class="#{collapsed('Ejercicios')}"
+      = fa_icon('fw pencil')
+      span.nav-link-text Ejercicios
+    ul.sidenav-second-level.collapse#ejercicios class="#{show_secction('Ejercicios')}"
+      li
+        = link_to manager_questionnaires_path, class: 'nav-link', title: 'Cuestionarios' do
+          = fa_icon('fw question')
+          span.nav-link-text Cuestionarios
+      li
+        = link_to manager_food_index_path, class: 'nav-link', title: 'Retos de comida' do
+          = fa_icon('fw apple')
+          span.nav-link-text Retos de comida
+      li
+        = link_to manager_water_index_path, class: 'nav-link', title: 'Retos de agua' do
+          = fa_icon('fw tint')
+          span.nav-link-text Retos de agua
