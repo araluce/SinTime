@@ -24,7 +24,14 @@
   asset-data-url('isocteur-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+}
 
+@font-face {
+  font-family: 'burbank';
+  src: asset-data-url('BurbankBigCondensed-Bold.woff2') format('woff2'),
+  asset-data-url('BurbankBigCondensed-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
@@ -55,10 +62,10 @@ body {
 }
 
 .home-background{
-  //background-image: asset-data-url('reloj_flow.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 400px;
+  //background-image: asset-data-url('static/background.jpg');
+  //background-position: center;
+  //background-repeat: no-repeat;
+  //background-size: cover;
   //background-size: cover;
   background-color: #053E6B;
   position: absolute;

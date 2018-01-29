@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'burbank';
+  src: asset-data-url('BurbankBigCondensed-Bold.woff2') format('woff2'),
+  asset-data-url('BurbankBigCondensed-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.home {
+
+  margin-top: 5%;
+  h2 {
+    font-family: 'burbank';
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 4em;
+    margin-bottom: 0;
+    text-align: inherit;
+    line-height: 1.25;
+    color: #fff;
+    text-shadow: 0 2px 20px #000;
+    margin-top: .1em;
+  }
+
+  .home-button {
+    margin: 0 auto;
+    margin-top: 5%;
+    a.burbank {
+      font-family: 'burbank';
+      font-size: 1.75em;
+      color: #fff;
+      border: none;
+      padding: 1em;
+      text-decoration: none;
+      -webkit-transition: background-color .3s ease;
+      -o-transition: background-color .3s ease;
+      transition: background-color .3s ease;
+
+    }
+
+    a.padawan{
+      background-color: #33E6AC;
+      &:hover{
+        background-color: #00C0A9;
+      }
+    }
+
+    a.admin{
+      background-color: #E7250A;
+      &:hover{
+        background-color: #B70000;
+      }
+    }
+  }
+}
