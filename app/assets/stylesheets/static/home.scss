@@ -8,7 +8,6 @@
 
 .home {
 
-  margin-top: 5%;
   h2 {
     font-family: 'burbank';
     text-transform: uppercase;
@@ -19,7 +18,7 @@
     line-height: 1.25;
     color: #fff;
     text-shadow: 0 2px 20px #000;
-    margin-top: .1em;
+    color: #D7C077;
   }
 
   .home-button {
@@ -28,6 +27,7 @@
     a.burbank {
       font-family: 'burbank';
       font-size: 1.75em;
+      text-transform: uppercase;
       color: #fff;
       border: none;
       padding: 1em;
