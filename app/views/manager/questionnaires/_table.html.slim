@@ -3,12 +3,14 @@ table.table
     tr
       th Enunciado
       th #Opciones
+      th Beneficio
       th Acciones
   tbody
     - @objects.all.each do |questionnaire|
       tr
         td = questionnaire.statement
         td = questionnaire.options.count
+        ts = questionnaire.benefict
         td
           .action-buttons
             = link_to fa_icon('eye'), manager_questionnaire_path(questionnaire)
