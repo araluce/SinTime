@@ -1,12 +1,14 @@
 table.table
   thead
     tr
+      th Logo
       th Nombre
       th Ciudadanos
       th Acciones
   tbody
     - @objects.all.each do |district|
       tr
+        td = image_tag district.logo.url(:thumb), class: 'img-thumbnail'
         td = district.name
         td = district.users.join(', ')
         td

@@ -7,27 +7,27 @@ ol.breadcrumb
   .col-12
     .row
       .col-2
-        p = link_to 'Volver', manager_districts_path, class: 'btn btn-primary btn-block'
-        p = link_to 'Editar', edit_manager_district_path(@object), class: 'btn btn-primary btn-block'
+        td = image_tag @object.avatar.url(:medium), class: 'img-circle'
+        hr
+        p = link_to 'Volver', manager_citizens_path, class: 'btn btn-primary btn-block'
+        p = link_to 'Editar', edit_manager_citizen_path(@object), class: 'btn btn-primary btn-block'
       .col-5
         .card
-          .card-block.card-text
-            fieldset
-              legend = "Datos del usuario #{@object}"
-              hr
-              dl.row
-                dt.col-sm-6 Nombre
-                dd.col-sm-6 = @object.full_name
+          .card-header = "Datos del usuario #{@object}"
+          .card-body
+            dl.row
+              dt.col-sm-6 Nombre
+              dd.col-sm-6 = @object.full_name
 
-                dt.col-sm-6 Email
-                dd.col-sm-6 = @object.email
+              dt.col-sm-6 Email
+              dd.col-sm-6 = @object.email
 
-                dt.col-sm-6 DNI
-                dd.col-sm-6 = @object.dni
+              dt.col-sm-6 DNI
+              dd.col-sm-6 = @object.dni
 
-                dt.col-sm-6 Distrito
-                dd.col-sm-6
-                  - if @object.district
-                    = link_to @object.district, manager_district_path(@object.district)
-                  - else
-                    | Este usuario no está asignado a ningún distrito
+              dt.col-sm-6 Distrito
+              dd.col-sm-6
+                - if @object.district
+                  = link_to @object.district, manager_district_path(@object.district)
+                - else
+                  | Este usuario no está asignado a ningún distrito

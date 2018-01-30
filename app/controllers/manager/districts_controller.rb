@@ -50,7 +50,7 @@ module Manager
 
     def update
       if @object.update(object_params)
-        redirect_to manager_districts_path, notice: 'Distrito actualizado correctamente'
+        redirect_to manager_district_path(@object), notice: 'Distrito actualizado correctamente'
       else
         object_initialization
         render :edit
@@ -70,6 +70,7 @@ module Manager
     def object_params
       params.require(:district).permit(
           :name,
+          :logo,
           user_ids: []
       )
     end

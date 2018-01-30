@@ -93,3 +93,5 @@ gem 'cocoon'
 
 #Pagination
 gem 'kaminari'
+
+gem 'paperclip', '~> 5.2.1'

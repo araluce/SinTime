@@ -74,6 +74,7 @@ module Manager
           :hours_benefit,
           :minutes_benefit,
           :seconds_benefit,
+          :icon,
           options_attributes: {}
       )
     end

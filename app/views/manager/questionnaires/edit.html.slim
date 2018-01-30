@@ -9,5 +9,5 @@ ol.breadcrumb
   .card-body
     .row
       .col-sm-12
-        = simple_form_for(@object, url: manager_questionnaire_path(@object), html: {class: 'form-vertical'}) do |f|
+        = simple_form_for(@object, url: manager_questionnaire_path(@object), html: {class: 'form-vertical', multipart: true}) do |f|
           = render 'form', f: f

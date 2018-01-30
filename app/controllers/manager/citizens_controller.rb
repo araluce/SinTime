@@ -39,7 +39,7 @@ module Manager
       @object.password = @object.password || @object.dni
 
       if @object.save
-        redirect_to manager_citizens_path, notice: 'Ciudadano creado correctamente'
+        redirect_to manager_citizen_path(@object), notice: 'Ciudadano creado correctamente'
       else
         object_initialization
         set_objects
@@ -52,7 +52,7 @@ module Manager
 
     def update
       if @object.update(object_params)
-        redirect_to manager_citizens_path, notice: 'Ciudadano actualizado correctamente'
+        redirect_to manager_citizen_path(@object), notice: 'Ciudadano actualizado correctamente'
       else
         object_initialization
         set_objects
@@ -72,6 +72,7 @@ module Manager
 
     def object_params
       params.require(:user).permit(
+          :avatar,
           :name,
           :lastname,
           :dni,

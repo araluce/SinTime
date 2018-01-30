@@ -10,9 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180124190843) do
+ActiveRecord::Schema.define(version: 20180130194754) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "avatar_updated_at"
+    t.integer "avatar_file_size"
+    t.string "avatar_content_type"
+    t.string "avatar_file_name"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -31,6 +35,10 @@ ActiveRecord::Schema.define(version: 20180124190843) do
 
   create_table "districts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
+    t.datetime "logo_updated_at"
+    t.integer "logo_file_size"
+    t.string "logo_content_type"
+    t.string "logo_file_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -52,12 +60,20 @@ ActiveRecord::Schema.define(version: 20180124190843) do
     t.integer "time_running", default: 1
     t.decimal "running_rate", precision: 12, scale: 6, default: "0.0"
     t.decimal "cycling_rate", precision: 12, scale: 6, default: "0.0"
+    t.datetime "icon_updated_at"
+    t.integer "icon_file_size"
+    t.string "icon_content_type"
+    t.string "icon_file_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "feeding_type", default: 0
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "avatar_updated_at"
+    t.integer "avatar_file_size"
+    t.string "avatar_content_type"
+    t.string "avatar_file_name"
     t.string "name"
     t.string "lastname"
     t.string "dni"
