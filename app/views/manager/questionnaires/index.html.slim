@@ -10,9 +10,11 @@ ol.breadcrumb
         fieldset
           legend = fa_icon 'plus', text: 'Tabla de cuestionarios'
           = render 'table'
+
+    hr
     .row
       .col-sm-12
         fieldset
-          legend = fa_icon 'plus', text: 'Crea tu cuestionario'
+          legend Nuevo cuestioario
           = simple_form_for(@object, url: manager_questionnaires_path, html: {class: 'form-vertical'}) do |f|
             = render 'form', f: f

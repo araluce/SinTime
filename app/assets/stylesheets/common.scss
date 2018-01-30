@@ -5,6 +5,21 @@
   font-weight: 600;
 }
 
+fieldset{
+  legend{
+    font-size: 1rem;
+    padding: 0.55rem 0;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px $gray-400 solid;
+
+    &:before{
+      font-family: 'FontAwesome';
+      content: '\f1ce';
+      margin-right: 1%;
+    }
+  }
+}
+
 .bubble{
   position: relative;
   padding: 15px;
@@ -51,4 +66,10 @@
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
+}
+
+abbr[title="required"]{
+  text-decoration: none;
+  font-family: FontAwesome;
+  content: '\f069';
 }

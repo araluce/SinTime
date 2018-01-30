@@ -4,9 +4,10 @@ ol.breadcrumb
   li.breadcrumb-item = link_to 'Cuestionario', manager_questionnaire_path(@object)
   li.breadcrumb-item.active Editar
 
-.row
-  .col-sm-12
-    fieldset
-      legend = fa_icon 'plus', text: 'Editar el cuestionario'
-      = simple_form_for(@object, url: manager_questionnaire_path(@object), html: {class: 'form-vertical'}) do |f|
-        = render 'form', f: f
+.card.mb-3
+  .card-header = fa_icon 'question', text: "Editar #{@resource_name.downcase}"
+  .card-body
+    .row
+      .col-sm-12
+        = simple_form_for(@object, url: manager_questionnaire_path(@object), html: {class: 'form-vertical'}) do |f|
+          = render 'form', f: f
