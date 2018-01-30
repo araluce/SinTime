@@ -80,5 +80,16 @@ table {
   /* Cells in odd rows (1,3,5...) are another (excludes header cells)  */
   tr:nth-child(odd) td { background: #FEFEFE; }
 
-  tr td:hover { background: #666; color: #FFF; }
+  tr:hover { background-color: rgba(102, 102, 102, 0.9); color: #000; }
+}
+
+.action-buttons{
+  a{
+    margin-right: 12px;
+    color: inherit;
+
+    &:last-child{ margin-right: 0; }
+
+    &:hover{color: rgba(0, 0, 0, 0.5)}
+  }
 }

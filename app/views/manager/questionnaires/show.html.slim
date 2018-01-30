@@ -24,7 +24,8 @@ ol.breadcrumb
         .card
           .card-header Opciones
           .card-body
-            dl.row
+            dl
               - @object.options.each do |option|
-                dd.col-sm-9 = option.option
-                dd.col-sm-3 = option.right
+                .bubble.font-95.bold.has-bubble.row
+                  dd.col-sm-9 = option.option
+                  dd = render 'partials/boolean', object: option.right
