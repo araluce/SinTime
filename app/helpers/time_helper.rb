@@ -11,15 +11,19 @@ module TimeHelper
     minutes * 60 rescue 0
   end
 
-  def days_per_seconds(seconds)
-    (seconds / 60 / 60 / 24) % 10
+  def seconds_to_days(seconds)
+    Time.at(seconds).utc.strftime("%d")
   end
 
-  def days_per_minutes(minutes)
-    (minutes / 60 / 24) % 10
+  def seconds_to_hours(seconds)
+    Time.at(seconds).utc.strftime("%M")
   end
 
-  def days_per_hours(hours)
-    (hours / 24) % 10
+  def seconds_to_minutes(seconds)
+    Time.at(seconds).utc.strftime("%H")
+  end
+
+  def seconds_to_seconds(seconds)
+    Time.at(seconds).utc.strftime("%S")
   end
 end

@@ -10,9 +10,12 @@ table.table
       tr
         td = questionnaire.statement
         td = questionnaire.options.count
-        ts = questionnaire.benefict
+        td = "#{seconds_to_days(questionnaire.time_benefit)}D #{seconds_to_hours(questionnaire.time_benefit)}H #{seconds_to_minutes(questionnaire.time_benefit)}M #{seconds_to_seconds(questionnaire.time_benefit)}S"
         td
           .action-buttons
             = link_to fa_icon('eye'), manager_questionnaire_path(questionnaire)
             = link_to fa_icon('cog'), edit_manager_questionnaire_path(questionnaire)
             = link_to fa_icon('times'), manager_questionnaire_path(questionnaire), data: {confirm: '¿Estás seguro?'}, method: :delete
+.row
+  .col-md-12.pull-right
+    = paginate @objects

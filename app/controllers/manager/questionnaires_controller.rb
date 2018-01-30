@@ -24,7 +24,7 @@ module Manager
 
     def index
       @object = model.new
-      @objects = model.order(created_at: :desc)
+      @objects = model.order(created_at: :desc).page(params[:page])
     end
 
     def show

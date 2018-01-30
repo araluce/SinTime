@@ -90,3 +90,6 @@ gem 'jquery-datatables'
 
 
 gem 'cocoon'
+
+#Pagination
+gem 'kaminari'

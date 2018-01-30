@@ -1,6 +1,6 @@
 ol.breadcrumb
   li.breadcrumb-item = link_to 'Dashboard', manager_home_path
-  li.breadcrumb-item = link_to "#{@resource_name.pluralize}", manager_districts_path
+  li.breadcrumb-item = link_to "#{@resource_name.pluralize}", manager_questionnaires_path
   li.breadcrumb-item = link_to 'Cuestionario', manager_questionnaire_path(@object)
   li.breadcrumb-item.active Editar
 
