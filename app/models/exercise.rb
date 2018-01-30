@@ -16,6 +16,7 @@ class Exercise < ApplicationRecord
             :seconds_benefit,
             numericality: {allow_nil: false, allow_blank: false}
 
+  validates :time_benefit, numericality: {greater_than_or_equal_to: 0, only_integer: true}
   validate :check_time
 
   def to_s
@@ -30,10 +31,10 @@ class Exercise < ApplicationRecord
 
   def check_time
     unless set_time_benefit > 0
-     errors.add(:days_benefit, 'El tiempo de beneficio no puede ser 0')
-     errors.add(:hours_benefit, 'El tiempo de beneficio no puede ser 0')
-     errors.add(:minutes_benefit, 'El tiempo de beneficio no puede ser 0')
-     errors.add(:seconds_benefit, 'El tiempo de beneficio no puede ser 0')
+     errors.add(:days_benefit, 'El tiempo de beneficio debe ser mayor que 0')
+     errors.add(:hours_benefit, 'El tiempo de beneficio debe ser mayor que 0')
+     errors.add(:minutes_benefit, 'El tiempo de beneficio debe ser mayor que 0')
+     errors.add(:seconds_benefit, 'El tiempo de beneficio debe ser mayor que 0')
     end
   end
 end

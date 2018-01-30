@@ -10,7 +10,7 @@ table.table
       tr
         td = questionnaire.statement
         td = questionnaire.options.count
-        td = "#{seconds_to_days(questionnaire.time_benefit)}D #{seconds_to_hours(questionnaire.time_benefit)}H #{seconds_to_minutes(questionnaire.time_benefit)}M #{seconds_to_seconds(questionnaire.time_benefit)}S"
+        td = seconds_to_s(questionnaire.time_benefit)
         td
           .action-buttons
             = link_to fa_icon('eye'), manager_questionnaire_path(questionnaire)

@@ -1,0 +1,9 @@
+.row
+  .col-3
+    = f.input :days_benefit, input_html: {type: 'number', value: seconds_to_days(f.object.time_benefit), min: 0}
+  .col-3
+    = f.input :hours_benefit, input_html: {type: 'number', value: seconds_to_hours(f.object.time_benefit), min: 0}
+  .col-3
+    = f.input :minutes_benefit, input_html: {type: 'number', value: seconds_to_minutes(f.object.time_benefit), min: 0}
+  .col-3
+    = f.input :seconds_benefit, input_html: {type: 'number', value: seconds_to_seconds(f.object.time_benefit), min: 0}

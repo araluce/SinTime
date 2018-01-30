@@ -12,18 +12,22 @@ module TimeHelper
   end
 
   def seconds_to_days(seconds)
-    Time.at(seconds).utc.strftime("%d")
+    (seconds / 86400).to_s.rjust(2,'0')
   end
 
   def seconds_to_hours(seconds)
-    Time.at(seconds).utc.strftime("%M")
+    (seconds / 3600 % 24).to_s.rjust(2,'0')
   end
 
   def seconds_to_minutes(seconds)
-    Time.at(seconds).utc.strftime("%H")
+   (seconds / 60 % 60).to_s.rjust(2,'0')
   end
 
   def seconds_to_seconds(seconds)
-    Time.at(seconds).utc.strftime("%S")
+    (seconds % 60).to_s.rjust(2,'0')
+  end
+
+  def seconds_to_s(seconds)
+    ["#{seconds_to_days(seconds)}D", "#{seconds_to_hours(seconds)}H", "#{seconds_to_minutes(seconds)}M", "#{seconds_to_seconds(seconds)}S"].join(' ')
   end
 end
