@@ -95,3 +95,6 @@ gem 'cocoon'
 gem 'kaminari'
 
 gem 'paperclip', '~> 5.2.1'
+
+
+gem 'twitter'
