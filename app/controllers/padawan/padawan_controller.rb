@@ -1,6 +1,6 @@
-module Citizen
-  class CitizensController < ApplicationController
-    layout 'citizen'
+module Padawan
+  class PadawanController < ApplicationController
+    layout 'padawan'
 
     before_action :authenticate_user!
     before_action :get_tdv
