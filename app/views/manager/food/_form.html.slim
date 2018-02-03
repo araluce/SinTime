@@ -1,4 +1,6 @@
+= f.input :icon, label: 'Icono'
 = f.input :statement, label: 'Enunciado'
 = f.input :time_benefit, label: 'Beneficio'
+= render 'manager/partials/time_beneficts', f: f
 
 = f.button :submit, class: 'btn btn-block btn-primary'

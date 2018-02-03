@@ -20,18 +20,6 @@ class TwitterService
       result
     end
 
-    # def get_al_tweets_by_username(username)
-    #   CLIENT.get_all_
-    # end
-
   end
-
-  # def CLIENT.get_all_tweets(user)
-  #   collect_with_max_id do |max_id|
-  #     options = {count: 10, include_rts: false}
-  #     options[:max_id] = max_id unless max_id.nil?
-  #     user_timeline(user, options)
-  #   end
-  # end
 
 end

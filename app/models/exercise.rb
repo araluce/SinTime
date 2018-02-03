@@ -1,7 +1,7 @@
 class Exercise < ApplicationRecord
   include TimeHelper
 
-  has_attached_file :icon, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: '/images/:style/missing.png'
+  has_attached_file :icon, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: ActionController::Base.helpers.image_path('thumb/missing.png')
   validates_attachment_content_type :icon, content_type: /\Aimage\/.*\z/
 
   before_save :set_time_benefit
