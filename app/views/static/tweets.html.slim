@@ -1,5 +1,6 @@
 = render 'static/navbar'
 .row.home-background
-  .col-lg-4.offset-lg-4.col-md-4.offset-md-4.col-sm-12 style="margin-top: 100px;"
-    - @nazaries_tweets.each do |tweet|
-      = tweet.html_safe
+  .col-md-6.offset-md-3.col-12 style="margin-top: 100px;"
+    .tweetEntry-tweetHolder
+      - @nazaries_tweets_tweets.each do |tweet|
+        = render 'partials/tweet', tweet: tweet

@@ -4,7 +4,7 @@ class StaticController < ApplicationController
   end
 
   def tweets
-    @nazaries_tweets = TwitterService.get_latest_tweet('nazaries')
+    @nazaries_tweets_tweets = TwitterService.get_latest_tweet_tweet('araluce1')
   end
 
 end

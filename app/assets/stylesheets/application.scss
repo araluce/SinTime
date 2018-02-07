@@ -5,6 +5,7 @@
 @import "alerts";
 @import "static/navbar";
 @import "static/home";
+@import "twitter";
 
 .vh-100{
   height: 100vh;
@@ -14,6 +15,10 @@
   -ms-transform: rotate(20deg); /* IE 9 */
   -webkit-transform: rotate(20deg); /* Safari */
   transform: rotate(20deg);
+}
+
+.blur-background{
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 

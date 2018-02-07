@@ -62,17 +62,16 @@ body {
 }
 
 .home-background{
-  //background-image: asset-data-url('static/background.jpg');
-  //background-position: center;
-  //background-repeat: no-repeat;
-  //background-size: cover;
-  //background-size: cover;
-  background-color: #053E6B;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  background-image: asset-data-url('static/background.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  //background-color: #053E6B;
+  //position: absolute;
+  //top: 0;
+  //left: 0;
+  //width: 100vw;
+  //height: 100vh;
 }
 
 .titulo-app img,
@@ -97,6 +96,7 @@ body {
 }
 
 .index-autor, .index-frase{
+  color: gold;
   font-family: 'Oregano', cursive;
   font-size: 2.8em;
 }

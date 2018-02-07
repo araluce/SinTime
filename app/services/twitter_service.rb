@@ -12,12 +12,24 @@ class TwitterService
       CLIENT.search(id)
     end
 
-    def get_latest_tweet(user)
+    def get_latest_tweet_tweet(user)
       result = []
-      CLIENT.user_timeline(user, {count: 20, exclude_replies: true, include_rts: false}).pluck(:id).each do |tweet_id|
-        result << CLIENT.oembed(tweet_id).html
+      CLIENT.user_timeline(user, count: 20, exclude_replies: true, include_rts: false).each do |tweet|
+        result << tweet
       end
       result
+    end
+
+    def get_latest_tweet(user)
+      result = []
+      CLIENT.user_timeline(user, count: 20, exclude_replies: true, include_rts: false).each do |tweet|
+        result << CLIENT.oembed(tweet, width: '100%').html
+      end
+      result
+    end
+
+    def uri_normalize(uri)
+      "#{uri.scheme}://#{uri.host}#{uri.path}" rescue ''
     end
 
   end

@@ -5,7 +5,7 @@
   .col-lg-6.col-md-12.col-sm-12.col-12
     .row
       .col-lg-2.offset-lg-5.col-md-6.col-6.logo-app.animated.infinite.pulse
-        =image_tag('fondo-principal.png')
+        =image_tag('static/fondo-principal.png')
       .col-12.index-frase
         | "La vida no se mide por las veces que respiras, sino por los momentos que te dejan sin aliento"
       .col-12.index-autor
@@ -13,11 +13,11 @@
   .col-lg-6.col-md-12.col-sm-12.col-12
     .row.login-form.form-group
       .col-md-10.col-xs-8
-        h4 = fa_icon "lock lg", class: "pull-left", text:'INICIAR SESION'
+        h4 style="color: gold;" = fa_icon "lock lg", class: "pull-left", text:'INICIAR SESION'
         = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           = f.input :email, autofocus: true, input_html: {minlength: 15, size: 40, class: 'form-control index-input', placeholder: 'email'}, label: false
           = f.input :password, input_html: {minlength: 6, size: 40, class: 'form-control index-input', style: 'margin-top: 1%;', placeholder: 'password'}, label: false
-          = f.input :remember_me, as: :boolean, label: 'Recuerdame' if devise_mapping.rememberable?
+          = f.input :remember_me, as: :boolean, label: 'Recuerdame', label_html: {style: 'color: gold;'} if devise_mapping.rememberable?
           = button_tag(type: 'submit', class: 'btn btn-primary') do
             = fa_icon('sign-in', text: 'Entrar')
     .row
