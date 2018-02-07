@@ -5,7 +5,6 @@ html
     = csrf_meta_tags
 
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = stylesheet_link_tag    'style', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = render 'application/favicon'
 
@@ -17,4 +16,5 @@ html
         - if alert
           = render 'application/alert', alert_class: 'danger', text: alert
       = render 'static/navbar'
-      = yield
+      .home
+        = yield

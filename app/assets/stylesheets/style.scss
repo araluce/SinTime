@@ -72,25 +72,18 @@ body {
   padding-top: 75px;
 }
 
-.titulo-app img,
-.logo-app img{
-  width: 100%;
+.titulo-app,
+.logo-app {
+  margin: 0 auto;
+  width: 20%;
+
+  img{
+    max-width: 100%;
+  }
 }
 
 .login-form {
   font-family: 'Kimberley';
-}
-
-.form-control {
-  color: black;
-  font-weight: bold;
-  border: 2px solid #000000;
-  border-radius: 15px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 
 .index-autor, .index-frase{
@@ -119,35 +112,6 @@ body {
     font-weight: 500;
     font-size: 50px;
   }
-  .login-form {
-    h4{
-      font-size: 18px;
-    }
-    input[type="email"], input[type="password"], .btn{
-      border: 5px solid #000000;
-      border-radius: 10px;
-    }
-    input[type="email"], input[type="password"]{
-      padding: 0 10px;
-      height: 50px;
-    }
-  }
-  .form-control {
-    font-size: 20px;
-    display: block;
-    width: 100%;
-    height: auto;
-    padding: 6px 12px;
-  }
-  .form-control {
-    display: block;
-    width: 100%;
-    height: 85px;
-    padding: 9px 15px;
-  }
-  .form-control, .file-input .input-group-btn button, .file-input .input-group-btn a, .file-drop-zone-title, select, .btn, .login-form h4 {
-    font-size: 45px;
-  }
 }
 
 @media (min-width: 992px) {
@@ -155,37 +119,9 @@ body {
     h4{
       font-size: 18px;
     }
-    input[type="email"], input[type="password"], .btn{
-      border: 5px solid #000000;
-      border-radius: 10px;
-    }
-    input[type="email"], input[type="password"]{
-      padding: 0 10px;
-      height: 50px;
-    }
-  }
-  .form-control {
-    font-size: 20px;
-    display: block;
-    width: 100%;
-    height: auto;
-    padding: 6px 12px;
   }
   .index-frase {
     font-weight: 500;
-  }
-  .help-block{
-    font-weight: 500;
-    font-size: 50px;
-  }
-  .form-control {
-    display: block;
-    width: 100%;
-    height: 85px;
-    padding: 9px 15px;
-  }
-  .form-control, .file-input .input-group-btn button, .file-input .input-group-btn a, .file-drop-zone-title, select, .btn, .login-form h4 {
-    font-size: 20px;
   }
 }
 
@@ -198,21 +134,5 @@ body {
     h4{
       font-size: 18px;
     }
-    input[type="email"], input[type="password"], .btn{
-      font-size: 20px;
-      border: 2px solid #000000;
-      border-radius: 7px;
-    }
-    input[type="email"], input[type="password"]{
-      padding: 0 10px;
-      height: 50px;
-    }
-  }
-  .form-control {
-    font-size: 20px;
-    display: block;
-    width: 100%;
-    height: auto;
-    padding: 6px 12px;
   }
 }

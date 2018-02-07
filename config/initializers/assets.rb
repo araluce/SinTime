@@ -15,7 +15,6 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 Rails.application.config.assets.precompile += %w( padawan.css )
 Rails.application.config.assets.precompile += %w( padawan.js )
-Rails.application.config.assets.precompile += %w( style.css )
 Rails.application.config.assets.precompile += %w( manager.css )
 Rails.application.config.assets.precompile += %w( manager.js )
 Rails.application.config.assets.precompile += %w( application.css )
