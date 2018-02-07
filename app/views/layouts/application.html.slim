@@ -9,12 +9,12 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = render 'application/favicon'
 
-  .page.home-background.vh-100
+  .page.home-background
     .container-fluid
       .alert-content
         - if notice
           = render 'application/alert', alert_class: 'success', text: notice
         - if alert
           = render 'application/alert', alert_class: 'danger', text: alert
-
+      = render 'static/navbar'
       = yield

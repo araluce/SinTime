@@ -12,7 +12,7 @@ class TwitterService
       CLIENT.search(id)
     end
 
-    def get_latest_tweet_tweet(user)
+    def get_latest_tweet_by_user(user)
       result = []
       CLIENT.user_timeline(user, count: 20, exclude_replies: true, include_rts: false).each do |tweet|
         result << tweet
@@ -20,10 +20,12 @@ class TwitterService
       result
     end
 
-    def get_latest_tweet(user)
+    def get_latest_tweet_by_hashtags(hashtags)
       result = []
-      CLIENT.user_timeline(user, count: 20, exclude_replies: true, include_rts: false).each do |tweet|
-        result << CLIENT.oembed(tweet, width: '100%').html
+      hashtags.each do |hashtag|
+        CLIENT.search(hashtag).each do |tweet|
+          result << tweet
+        end
       end
       result
     end

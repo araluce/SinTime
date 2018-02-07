@@ -1,0 +1,28 @@
+.url_preview{
+  a, a:hover, a:focus{
+    color: #000;
+    text-decoration: none;
+  }
+
+  .url_preview-content{
+    border-radius: 4px;
+    border: 1px #d6d7d8 solid;
+    margin: 15px;
+    background-color: #F5F8FA;
+
+    .url_preview-title{
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 15px;
+    }
+    .url_preview-body{
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    img{
+      width: 100%;
+      padding: -15px;
+    }
+  }
+}

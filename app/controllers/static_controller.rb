@@ -1,10 +1,9 @@
 class StaticController < ApplicationController
-
   def home
   end
 
   def tweets
-    @nazaries_tweets_tweets = TwitterService.get_latest_tweet_tweet('araluce1')
+    @sintime_tweets = TwitterService.get_latest_tweet_by_hashtags(['#ProyectoSinTime', '#proyectosintime'])
   end
 
 end
