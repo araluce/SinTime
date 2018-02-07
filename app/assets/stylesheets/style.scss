@@ -6,7 +6,6 @@
   asset-data-url('digital-7-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-
 }
 
 @font-face {
@@ -15,7 +14,6 @@
   asset-data-url('isocpeur-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-
 }
 
 @font-face {
@@ -35,10 +33,7 @@
 }
 
 body {
-  font-family: "isocpeurregular";
-}
-
-body {
+  font-size: 140%;
   background-color: #F7F7F7;
 }
 
@@ -89,7 +84,7 @@ body {
 .index-autor, .index-frase{
   color: gold;
   font-family: 'Oregano', cursive;
-  font-size: 2.8em;
+  font-size: 200%;
 }
 
 .index-frase {
@@ -105,34 +100,23 @@ body {
 }
 
 @media (min-width: 760px) {
-  .index-frase {
-    font-weight: 500;
-  }
-  .help-block {
-    font-weight: 500;
-    font-size: 50px;
+  .titulo-app,
+  .logo-app {
+    width: 50%;
   }
 }
 
 @media (min-width: 992px) {
-  .login-form {
-    h4{
-      font-size: 18px;
-    }
-  }
-  .index-frase {
-    font-weight: 500;
+  .titulo-app,
+  .logo-app {
+    width: 50%;
   }
 }
 
 
 @media (min-width: 1200px) {
-  .help-block {
-    font-size: 30px;
-  }
-  .login-form {
-    h4{
-      font-size: 18px;
-    }
+  .titulo-app,
+  .logo-app {
+    width: 20%;
   }
 }

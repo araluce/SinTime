@@ -17,7 +17,7 @@
         = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           .row
             .col-12
-              = f.input :email, autofocus: true, input_html: {minlength: 15, size: 40, placeholder: 'email'}, label: false
+              = f.input :email, input_html: {minlength: 15, size: 40, placeholder: 'email'}, label: false
               = f.input :password, input_html: {minlength: 6, size: 40, style: 'margin-top: 1%;', placeholder: 'password'}, label: false
               = f.input :remember_me, as: :boolean, label: 'Recuerdame', label_html: {style: 'color: gold;'} if devise_mapping.rememberable?
           .row
