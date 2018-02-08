@@ -1,12 +1,12 @@
 - unless defined?(custom_method).nil?
-  = link_to custom_path, method: custom_method.to_sym, class: 'btn btn-sintime', data: {confirm: 'Si aceptas saldrás de la aplicación'} do
+  = link_to custom_path, method: custom_method.to_sym, class: 'btn btn-sintime future-card', data: {confirm: 'Si aceptas saldrás de la aplicación'} do
     .row
       .col-12
         = image_tag custom_image, alt: custom_label
     .row
       .col-12.btn-sintime-label = custom_label
 - else
-  = link_to custom_path, class: 'btn btn-sintime' do
+  = link_to custom_path, class: 'btn btn-sintime future-card' do
     .row
       .col-12
         = image_tag custom_image, alt: custom_label
