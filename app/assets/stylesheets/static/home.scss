@@ -7,7 +7,6 @@
 }
 
 .home {
-
   min-height: 100vh;
 
   .title-600, .title-400 {
@@ -22,8 +21,8 @@
     color: #D7C077;
   }
 
-  .title-600{ font-size: 680%; }
-  .title-400{ font-size: 400%; }
+  .title-600{ font-size: 650%; }
+  .title-400{ font-size: 370%; }
 
   .home-button {
     margin: 0 auto;
@@ -54,5 +53,92 @@
         background-color: #B70000;
       }
     }
+  }
+}
+
+.btn-outline-secondary{
+  color: #f8f9fa;
+  border-color: #f8f9fa;
+
+  &:not([disabled]):not(.disabled):active,
+  &:hover{
+    color: #000;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+
+    transition: color 2s linear;
+    -webkit-transition: color 2s linear;
+    transition: background-color 2s linear;
+    -webkit-transition: background-color 2s linear;
+    transition: border-color 2s;
+    -webkit-transition: border-color 2s;
+  }
+}
+
+.padding-home{
+  padding-top: 75px;
+}
+
+.titulo-app,
+.logo-app,
+.home-title-edition{
+  margin: 0 auto;
+
+  img{
+    max-width: 100%;
+  }
+}
+
+.login-form {
+  font-family: 'Kimberley';
+}
+
+.index-autor, .index-frase{
+  color: gold;
+  font-family: 'Oregano', cursive;
+  font-size: 280%;
+}
+
+.index-frase {
+  text-align: center;
+}
+
+.index-autor {
+  text-align: right;
+}
+
+.login-form .btn{
+  padding: 5px 15px;
+}
+
+@media (min-width: 760px) {
+  .titulo-app,
+  .logo-app {
+    width: 50%;
+  }
+  .home-title-edition{
+    width: 90%;
+  }
+}
+
+@media (min-width: 992px) {
+  .titulo-app,
+  .logo-app {
+    width: 50%;
+  }
+  .home-title-edition{
+    width: 90%;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .titulo-app,
+  .logo-app {
+    width: 20%;
+  }
+
+  .home-title-edition{
+    width: 50%;
   }
 }
