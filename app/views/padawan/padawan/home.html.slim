@@ -1,15 +1,21 @@
-ul.circle-container.home-menu
-  li
-    = image_tag('padawan/home/Jugador.png', class: '', style: '')
-  li
-    = image_tag('padawan/home/Trabajo.png', class: '', style: '')
-  li
-    = image_tag('padawan/home/Ocio.png', class: '', style: '')
-  li
-    = image_tag('padawan/home/Alimentacion.png', class: '', style: '')
-  li
-    = image_tag('padawan/home/Prestamos.png', class: '', style: '')
-  li
-    = image_tag('padawan/home/Ambulatorio.png', class: '', style: '')
-  li
-    = image_tag('padawan/home/Felicidad.png', class: '', style: '')
+.row
+  .col-lg-3.col-md-4
+    = render 'partials/button', custom_path: '#', custom_image: 'padawan/padawan.png', custom_label: 'padawan'
+
+  .col-lg-3.col-md-4
+    = render 'partials/button', custom_path: '#', custom_image: 'padawan/formacion.png', custom_label: 'formación'
+
+  .col-lg-3.col-md-4
+    = render 'partials/button', custom_path: '#', custom_image: 'padawan/viveres.png', custom_label: 'víveres'
+
+  .col-lg-3.col-md-4
+    = render 'partials/button', custom_path: '#', custom_image: 'padawan/comunidad_de_aprendizaje.png', custom_label: 'comunidad de aprendizaje'
+
+  .col-lg-3.col-md-4
+    = render 'partials/button', custom_path: '#', custom_image: 'padawan/desconexion.png', custom_label: 'desconexión'
+
+  .col-lg-3.col-md-4
+    = render 'partials/button', custom_path: '#', custom_image: 'padawan/dagobah.png', custom_label: 'dagobah'
+
+  .col-lg-3.col-md-4
+    = render 'partials/button', custom_path: '#', custom_image: 'padawan/felicidad.png', custom_label: 'felicidad'
