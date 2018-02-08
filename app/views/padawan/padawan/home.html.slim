@@ -1,21 +1,24 @@
 .row
-  .col-lg-3.col-md-4
+  .col-lg-3.col-md-6
     = render 'partials/button', custom_path: '#', custom_image: 'padawan/padawan.png', custom_label: 'padawan'
 
-  .col-lg-3.col-md-4
+  .col-lg-3.col-md-6
     = render 'partials/button', custom_path: '#', custom_image: 'padawan/formacion.png', custom_label: 'formación'
 
-  .col-lg-3.col-md-4
+  .col-lg-3.col-md-6
     = render 'partials/button', custom_path: '#', custom_image: 'padawan/viveres.png', custom_label: 'víveres'
 
-  .col-lg-3.col-md-4
-    = render 'partials/button', custom_path: '#', custom_image: 'padawan/comunidad_de_aprendizaje.png', custom_label: 'comunidad de aprendizaje'
+  .col-lg-3.col-md-6
+    = render 'partials/button', custom_path: '#', custom_image: 'padawan/comunidad_de_aprendizaje.png', custom_label: 'comunidad'
 
-  .col-lg-3.col-md-4
+  .col-lg-3.col-md-6
     = render 'partials/button', custom_path: '#', custom_image: 'padawan/desconexion.png', custom_label: 'desconexión'
 
-  .col-lg-3.col-md-4
+  .col-lg-3.col-md-6
     = render 'partials/button', custom_path: '#', custom_image: 'padawan/dagobah.png', custom_label: 'dagobah'
 
-  .col-lg-3.col-md-4
+  .col-lg-3.col-md-6
     = render 'partials/button', custom_path: '#', custom_image: 'padawan/felicidad.png', custom_label: 'felicidad'
+
+  .col-lg-3.col-md-6
+    = render 'partials/button', custom_path: destroy_user_session_path, custom_image: 'padawan/logout.png', custom_label: 'salir', custom_method: 'delete'

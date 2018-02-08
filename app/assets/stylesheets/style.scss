@@ -44,25 +44,30 @@ body {
 //     SINTIME BUTTON
 //************************
 .btn-sintime{
+  margin-top: 1%;
   display: inline-block;
   padding: 8px 12px;
   border: 2px #ced4da solid;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 215, 0, 0.4);
   border-radius: 4px;
   width: 100%;
 
   img{
-    width: 100%;
+    width: 80%;
   }
 
   .btn-sintime-label{
     font-size: 320%;
     font-family: burbank;
     font-weight: 500;
-    text-shadow: 0 2px 20px gold;
+    text-shadow: 0 4px 20px #000;
     text-align: center;
     text-transform: uppercase;
     color: gold;
+  }
+
+  &:hover{
+    background-color: rgba(255, 215, 0, 0.7);
   }
 
 }
