@@ -12,6 +12,8 @@ html
     .container-fluid
 
       h1 = yield(:clock)
+      .row
+        .col-12.countdown
 
       .alert-content
         - if notice
@@ -22,3 +24,6 @@ html
       = yield
 
       = render 'padawan/footer'
+
+      script
+        = render 'padawan/countdown.js.erb', datetime: (DateTime.now + 2.day).to_f * 1000

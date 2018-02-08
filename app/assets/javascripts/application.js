@@ -18,7 +18,6 @@
 //= require datatables
 //= require cocoon
 //= require static/home_buttons
-//= require_tree .
 
 $(document).ready(function() {
     $(".datatable").dataTable();

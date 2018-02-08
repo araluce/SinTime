@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root 'static#home'
   get '/tweets', to: 'static#tweets'
 
-  namespace :padawan do
+  namespace :'padawan' do
     get '/home', to: 'padawan#home'
   end
 

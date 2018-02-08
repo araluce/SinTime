@@ -100,3 +100,5 @@ gem 'paperclip', '~> 5.2.1'
 gem 'twitter'
 
 gem 'link_thumbnailer'
+
+gem 'jquery-countdown-rails'
