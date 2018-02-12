@@ -1,33 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Oregano');
 
-@font-face {
-  font-family: 'digital-7regular';
-  src: asset-data-url('digital-7-webfont.woff2') format('woff2'),
-  asset-data-url('digital-7-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'isocpeurregular';
-  src: asset-data-url('isocpeur-webfont.woff2') format('woff2'),
-  asset-data-url('isocpeur-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'isocteurregular';
-  src: asset-data-url('isocteur-webfont.woff2') format('woff2'),
-  asset-data-url('isocteur-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
 
 @font-face {
   font-family: 'burbank';
   src: asset-data-url('BurbankBigCondensed-Bold.woff2') format('woff2'),
   asset-data-url('BurbankBigCondensed-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'starjedi';
+  src: asset-data-url('Starjedi.woff') format('woff'), asset-data-url('Starjedi.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
