@@ -5,6 +5,11 @@ class User < ApplicationRecord
 
   belongs_to :district, inverse_of: :users, optional: true
 
+  has_and_belongs_to_many :tweeters, class_name: 'Tweeter'
+
+  has_many :backpacks, class_name: '::Twitter::Backpack', dependent: :destroy, inverse_of: :user
+  has_many :tweets, class_name: '::Tweet', through: :backpacks, inverse_of: :users
+
   has_attached_file :avatar, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: ActionController::Base.helpers.asset_path('avatar.png')
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 

@@ -17,3 +17,4 @@
 //= require bootstrap-sprockets
 //= require jquery.countdown
 //= require jquery.countdown-es
+//= require padawan/twitter

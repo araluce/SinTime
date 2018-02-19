@@ -30,6 +30,10 @@ class TwitterService
       result
     end
 
+    def get_tweet_by_id(id)
+      CLIENT.status(id)
+    end
+
     def uri_normalize(uri)
       "#{uri.scheme}://#{uri.host}#{uri.path}" rescue ''
     end

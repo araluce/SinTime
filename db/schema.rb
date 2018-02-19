@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180130194754) do
+ActiveRecord::Schema.define(version: 20180213193838) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "avatar_updated_at"
@@ -67,6 +67,35 @@ ActiveRecord::Schema.define(version: 20180130194754) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "feeding_type", default: 0
+  end
+
+  create_table "tweeters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "tweeter"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tweeters_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.bigint "tweeter_id"
+    t.index ["tweeter_id"], name: "index_tweeters_users_on_tweeter_id"
+    t.index ["user_id"], name: "index_tweeters_users_on_user_id"
+  end
+
+  create_table "tweets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "tweet_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "twitter_backpacks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.bigint "tweet_id"
+    t.integer "backpack_type", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tweet_id"], name: "index_twitter_backpacks_on_tweet_id"
+    t.index ["user_id"], name: "index_twitter_backpacks_on_user_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

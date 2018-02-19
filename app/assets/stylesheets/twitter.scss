@@ -2,7 +2,7 @@
   border-left: 1px solid #e1e8ed;
   border-right: 1px solid #e1e8ed;
   border-top: 1px solid #e1e8ed;
-  width: 588px;
+  width: 100%;
   margin: auto;
   border-radius: 5px;
   background-color: #fff;
@@ -78,8 +78,10 @@
 }
 .optionalMedia {
   width: 100%;
+  padding: 15px;
 }
 .optionalMedia-img {
   border-radius: 5px;
   width: 100%;
+  max-height: 500px;
 }

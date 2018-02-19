@@ -9,7 +9,7 @@ module Padawan
     end
 
     def get_tdv
-      @tdv = Date.today
+      @tdv = current_user.tdv
     end
 
   end

@@ -20,10 +20,12 @@ html
           = render 'application/alert', alert_class: 'success', text: notice
         - if alert
           = render 'application/alert', alert_class: 'danger', text: alert
+        - if defined? @errors
+          = render 'application/alert', alert_class: 'danger', text: @errors.full_messages
 
       = yield
 
       = render 'padawan/footer'
 
       script
-        = render 'padawan/countdown.js.erb', datetime: (DateTime.now + 2.day).to_f * 1000
+        = render 'padawan/countdown.js.erb', datetime: @tdv.to_f * 1000
