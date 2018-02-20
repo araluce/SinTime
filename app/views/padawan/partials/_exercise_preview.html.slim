@@ -1,0 +1,35 @@
+.exercise-preview
+  .card
+    .container-fliud
+      .wrapper.row
+        .preview.col-md-6
+          .preview-pic.tab-content
+            .pic.tab-pane.active
+              = image_tag object.icon.url(:medium), class: 'img-thumbnail'
+        .details.col-md-6
+          h3.product-title sports men's shoes
+          .rating
+            .stars
+              span.fa.fa-star.checked
+              span.fa.fa-star.checked
+              span.fa.fa-star.checked
+              span.fa.fa-star
+              span.fa.fa-star
+            span.review-no 41 reviews
+          p.product-description = object.statement
+          h4.price
+            | current price:
+            span = seconds_to_s(object.time_benefit)
+          p.vote
+            strong 91%
+            | of buyers enjoyed this product!
+            strong (87 votes)
+          h5.colors
+            | colors:
+            span.color.orange.not-available data-toggle="tooltip" title=('Not In store')
+            span.color.green
+            span.color.blue
+          .action
+            button.add-to-cart.btn.btn-default type="button"  buy
+            button.like.btn.btn-default type="button"
+              span.fa.fa-heart

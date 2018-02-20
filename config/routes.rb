@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get '/home', to: 'padawan#home'
     get 'padawan_info', to: 'padawan_info#padawan_info'
     get 'formacion', to: 'formacion#formacion'
+    get 'viveres', to: 'viveres#viveres'
 
     namespace :padawan_info do
       resources :information, only: [:edit, :update]
