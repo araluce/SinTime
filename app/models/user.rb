@@ -7,8 +7,10 @@ class User < ApplicationRecord
 
   has_and_belongs_to_many :tweeters, class_name: 'Tweeter'
 
-  has_many :backpacks, class_name: '::Twitter::Backpack', dependent: :destroy, inverse_of: :user
-  has_many :tweets, class_name: '::Tweet', through: :backpacks, inverse_of: :users
+  has_many :backpacks, class_name: 'Twitter::Backpack', inverse_of: :user, dependent: :destroy
+  has_many :tweets, class_name: 'Tweet', through: :backpacks, inverse_of: :users
+
+  has_many :shared_backpacks, class_name: 'Twitter::Backpack', inverse_of: :user_share, dependent: :destroy
 
   has_attached_file :avatar, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: ActionController::Base.helpers.asset_path('avatar.png')
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
@@ -52,6 +54,10 @@ class User < ApplicationRecord
 
   def full_name
     "#{name} #{lastname}"
+  end
+
+  def tweets_count
+    backpacks.where('created_at BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).count
   end
 
   def to_s

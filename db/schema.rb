@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180213193838) do
+ActiveRecord::Schema.define(version: 20180220175725) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "avatar_updated_at"
@@ -90,12 +90,14 @@ ActiveRecord::Schema.define(version: 20180213193838) do
 
   create_table "twitter_backpacks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id"
+    t.bigint "user_share_id"
     t.bigint "tweet_id"
     t.integer "backpack_type", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["tweet_id"], name: "index_twitter_backpacks_on_tweet_id"
     t.index ["user_id"], name: "index_twitter_backpacks_on_user_id"
+    t.index ["user_share_id"], name: "index_twitter_backpacks_on_user_share_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

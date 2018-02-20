@@ -1,5 +1,5 @@
 .url_preview
-  -if object.url
+  -if object && object.url
     = link_to object.url.to_s
       .row.url_preview-content style="border-radius: 4px; border: 1px #d6d7d8 solid; margin: 15px; background-color: #F5F8FA;"
         .col-12

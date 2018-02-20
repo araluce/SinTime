@@ -6,12 +6,15 @@ module Twitter
     end
 
     belongs_to :user, class_name: '::User', inverse_of: :backpacks
+    belongs_to :user_share, class_name: '::User', optional: true, inverse_of: :shared_backpacks
     belongs_to :tweet, class_name: '::Tweet', inverse_of: :backpacks
 
     scope :text, -> { where(backpack_type: 'texto') }
     scope :audiovisual, -> { where(backpack_type: 'audiovisual') }
     scope :tool, -> { where(backpack_type: 'herramienta') }
     scope :shared, -> { where(backpack_type: 'compartido') }
+
+    attr_reader :users_shared
 
     def is_text?
       backpack_type == 'texto'

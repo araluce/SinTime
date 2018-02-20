@@ -1,11 +1,14 @@
 module Padawan
   module Formacion
     class SeguimientoController < Padawan::FormacionController
+      include TwitterHelper
+
       before_action :load_tweeters, only: [:follow_user, :twitter, :seguimiento, :load_tweeter_tweets, :mochila]
 
       def seguimiento
         object_initialization
-        @tweets = TwitterService.get_latest_tweet_by_user(current_user.tweeters.first&.to_s)
+        @tweets = []
+        @tweets = TwitterService.get_latest_tweet_by_user(current_user.tweeters.first&.to_s) if current_user.tweeters.any?
       end
 
       def load_tweeter_tweets
@@ -32,16 +35,12 @@ module Padawan
         define_method "guardar_#{type.downcase.gsub(' ', '_')}" do
           @tweet = Tweet.find_or_create_by(tweet_id: params[:tweet_id])
 
-          if current_user.tweets.include? @tweet
-            backpack = current_user.backpacks.find_by(tweet: @tweet)
-            flash[:notice] = "Tweet cambiado de la mochila #{backpack.backpack_type} a la mochila #{type}"
+          if type == 'compartido'
+            redirect_to action: :seguimiento
           else
-            backpack = current_user.backpacks.create(tweet: @tweet)
-            flash[:notice] = "Tweet agregado correctamente a la mochila #{type}"
+            save_tweet(type, @tweet)
+            redirect_to action: :seguimiento
           end
-          backpack.update_columns(backpack_type: type)
-
-          redirect_to action: :seguimiento
         end
       end
 
@@ -68,6 +67,7 @@ module Padawan
 
       def object_initialization
         @tweeter = Tweeter.new()
+        @tweets_count = current_user.backpacks.where('updated_at BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).count
       end
 
       def follow_user_params
@@ -77,7 +77,7 @@ module Padawan
       end
 
       def load_tweeters
-        @tweeters = current_user.tweeters
+        @tweeters = current_user.tweets_count
       end
 
     end
