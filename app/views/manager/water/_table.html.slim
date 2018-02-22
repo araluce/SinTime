@@ -2,6 +2,7 @@ table.table
   thead
     tr
       th Icono
+      th Title
       th Distrito
       th Enunciado
       th Tiempo de beneficio
@@ -10,6 +11,7 @@ table.table
     - @objects.each do |water|
       tr
         td = image_tag water.icon.url(:thumb), class: 'img-thumbnail'
+        td = water.title
         td = water.district
         td = water.statement
         td = seconds_to_s(water.time_benefit)

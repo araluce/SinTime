@@ -15,8 +15,9 @@ ol.breadcrumb
           .card-header Datos del reto de agua
           .card-body
             dl.row
-              - if @object.district
-                dt.col-12.text-center Ejercicio de distrito
+              dt.col-sm-6 Title
+              dd.col-sm-6 = @object.title
+
               dt.col-sm-6 Enunciado
               dd.col-sm-6 = @object.statement
 
