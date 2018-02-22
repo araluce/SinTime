@@ -1,0 +1,15 @@
+.row
+  .col-12.future-card
+    .row style="margin-bottom: 1%;"
+      .col-12
+        .btn-pref.btn-group.btn-group-justified.btn-group-lg role="group" style="width: 100%"
+          = link_to fa_icon('fw chevron-circle-left', text: 'Volver'), padawan_viveres_path, class: 'btn btn-primary', style: 'width: 100%'
+
+    .row
+      - @objects.each do |object|
+        .col
+          = link_to image_tag(object.icon.url(:thumb), class: 'img-responsive img-circle'), padawan_viveres_print_exercise_path(object), remote: true, class: 'btn btn-block btn-lg btn-primary'
+
+    .row
+      .col-12
+        .exercise-slot-js

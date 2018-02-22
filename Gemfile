@@ -101,4 +101,12 @@ gem 'twitter'
 
 gem 'link_thumbnailer'
 
+#countdown
 gem 'jquery-countdown-rails'
+
+#jroutes
+gem 'js-routes'
+
+gem 'chart-js-rails'
+
+gem 'rubycritic'

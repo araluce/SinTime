@@ -72,6 +72,7 @@ module Manager
     def object_params
       params.require(:exercise_feeding).permit(
           :icon,
+          :title,
           :statement,
           :feeding_type,
           :days_benefit,

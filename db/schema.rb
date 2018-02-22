@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180220175725) do
+ActiveRecord::Schema.define(version: 20180222190944) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "avatar_updated_at"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20180220175725) do
 
   create_table "exercises", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "type"
+    t.text "title"
     t.text "statement"
     t.integer "time_benefit", default: 1
     t.integer "time_cycling", default: 1

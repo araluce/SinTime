@@ -16,6 +16,9 @@ ol.breadcrumb
           .card-header Datos del reto de comida
           .card-body
             dl.row
+              dt.col-sm-6 Título
+              dd.col-sm-6 = @object.title.titleize
+
               dt.col-sm-6 Enunciado
               dd.col-sm-6 = @object.statement
 

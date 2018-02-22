@@ -2,6 +2,7 @@ table.table
   thead
     tr
       th Icon
+      th Título
       th Enunciado
       th Tiempo de beneficio
       th Acciones
@@ -9,6 +10,7 @@ table.table
     - @objects.each do |food|
       tr
         td = image_tag food.icon.url(:thumb), class: 'img-thumbnail'
+        td = food.title.titleize
         td = food.statement
         td = seconds_to_s(food.time_benefit)
         td

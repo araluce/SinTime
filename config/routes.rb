@@ -12,6 +12,11 @@ Rails.application.routes.draw do
     get 'formacion', to: 'formacion#formacion'
     get 'viveres', to: 'viveres#viveres'
 
+    namespace :viveres do
+      resources :print_exercise, only: :show, format: :js
+      resources :food, only: :index
+    end
+
     namespace :padawan_info do
       resources :information, only: [:edit, :update]
     end
