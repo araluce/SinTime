@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     namespace :viveres do
       resources :print_exercise, only: :show, format: :js
       resources :food, only: :index
+      resources :water, only: :index
     end
 
     namespace :padawan_info do

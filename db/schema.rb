@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180222190944) do
+ActiveRecord::Schema.define(version: 20180222201113) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "avatar_updated_at"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20180222190944) do
     t.text "title"
     t.text "statement"
     t.integer "time_benefit", default: 1
+    t.boolean "district", default: false
     t.integer "time_cycling", default: 1
     t.integer "time_running", default: 1
     t.decimal "running_rate", precision: 12, scale: 6, default: "0.0"

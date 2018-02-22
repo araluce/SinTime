@@ -5,7 +5,9 @@ class Exercise::Feeding < Exercise
 
   enum feeding_type: %w[Comida Agua], _prefix: true
 
-  validates :title, presence: true
+  validates :title,
+            :icon,
+            presence: true
 
   def to_s
     title

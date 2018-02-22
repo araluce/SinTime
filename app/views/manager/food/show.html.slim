@@ -16,6 +16,8 @@ ol.breadcrumb
           .card-header Datos del reto de comida
           .card-body
             dl.row
+              - if @object.district
+                dt.col-12.text-center Ejercicio de distrito
               dt.col-sm-6 Título
               dd.col-sm-6 = @object.title.titleize
 

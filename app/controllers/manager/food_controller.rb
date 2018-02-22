@@ -71,6 +71,7 @@ module Manager
 
     def object_params
       params.require(:exercise_feeding).permit(
+          :district,
           :icon,
           :title,
           :statement,
