@@ -12,6 +12,11 @@ class User < ApplicationRecord
 
   has_many :shared_backpacks, class_name: 'Twitter::Backpack', inverse_of: :user_share, dependent: :destroy
 
+  has_many :exercise_users, inverse_of: :user, dependent: :destroy
+  has_many :exercises, inverse_of: :users, through: :exercise_users
+
+  has_many :banking_movements, inverse_of: :user, dependent: :destroy
+
   has_attached_file :avatar, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: ActionController::Base.helpers.asset_path('avatar.png')
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 

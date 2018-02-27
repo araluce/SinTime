@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       resources :print_exercise, only: :show, format: :js
       resources :food, only: :index
       resources :water, only: :index
+      get 'purchase_exercise/:exercise_id', to: 'purchase_exercises#purchase', as: :purchase_exercise
     end
 
     namespace :padawan_info do

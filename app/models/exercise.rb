@@ -4,6 +4,11 @@ class Exercise < ApplicationRecord
   has_attached_file :icon, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: ActionController::Base.helpers.image_path('thumb/missing.png')
   validates_attachment_content_type :icon, content_type: /\Aimage\/.*\z/
 
+  has_many :exercise_users, inverse_of: :exercise, dependent: :destroy
+  has_many :users, inverse_of: :exercises, through: :exercise_users
+
+  has_many :banking_movements, inverse_of: :exercises
+
   before_save :set_time_benefit
 
   attr_accessor :days_benefit,

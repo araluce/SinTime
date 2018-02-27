@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180222201113) do
+ActiveRecord::Schema.define(version: 20180227102714) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "avatar_updated_at"
@@ -33,6 +33,24 @@ ActiveRecord::Schema.define(version: 20180222201113) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "banking_movements", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.bigint "exercise_id"
+    t.time "time_after"
+    t.time "time_before"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exercise_id"], name: "index_banking_movements_on_exercise_id"
+    t.index ["user_id"], name: "index_banking_movements_on_user_id"
+  end
+
+  create_table "constants", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "key"
+    t.string "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "districts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
     t.datetime "logo_updated_at"
@@ -50,6 +68,20 @@ ActiveRecord::Schema.define(version: 20180222201113) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["questionnaire_id"], name: "index_exercise_options_on_questionnaire_id"
+  end
+
+  create_table "exercise_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "exercise_id"
+    t.bigint "user_id"
+    t.string "file_file_name"
+    t.string "file_content_type"
+    t.integer "file_file_size"
+    t.datetime "file_updated_at"
+    t.integer "status", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exercise_id"], name: "index_exercise_users_on_exercise_id"
+    t.index ["user_id"], name: "index_exercise_users_on_user_id"
   end
 
   create_table "exercises", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

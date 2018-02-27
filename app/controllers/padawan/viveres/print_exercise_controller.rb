@@ -8,6 +8,7 @@ module Padawan
       end
 
       def show
+        @my_deliveries = current_user.exercise_users
         render 'padawan/js_templates/exercise_preview.js.erb'
       end
 

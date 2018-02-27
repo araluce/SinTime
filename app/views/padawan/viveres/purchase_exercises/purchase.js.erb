@@ -1,0 +1,10 @@
+<%- if @response %>
+  $('.add-to-cart').html('Comprado').hide();
+
+  var datetime = new Date('<%= @tdv %>');
+  countdown_date = new Date(datetime);
+  $('.countdown').removeClass('highlight').countdown('option', {until: countdown_date});
+
+<%- else %>
+  $('.alert-content').html('<%= render 'application/alert', alert_class: 'danger', text: 'Se produjo un error' %>');
+<%- end %>

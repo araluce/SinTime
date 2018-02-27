@@ -1,5 +1,9 @@
 .row
   .col-12.future-card
+    .row
+      .col-12
+        = progress_bar @percentage, label: true, striped: true, active: true, alternative: 'success', style: 'min-width: 20px'
+
     .row style="margin-bottom: 1%;"
       .col-12
         .btn-pref.btn-group.btn-group-justified.btn-group-lg role="group" style="width: 100%"
