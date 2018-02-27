@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       resources :food, only: :index
       resources :water, only: :index
       get 'purchase_exercise/:exercise_id', to: 'purchase_exercises#purchase', as: :purchase_exercise
+      get 'rewind_exercise/:exercise_id', to: 'purchase_exercises#rewind', as: :rewind_exercise
     end
 
     namespace :padawan_info do
