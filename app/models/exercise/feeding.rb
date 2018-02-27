@@ -20,4 +20,8 @@ class Exercise::Feeding < Exercise
   def is_water?
     feeding_type == 'Agua'
   end
+
+  def type_to_s
+    feeding_type
+  end
 end

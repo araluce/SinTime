@@ -2,7 +2,6 @@ module Padawan
   module Viveres
     class PurchaseExercisesController < ApplicationController
       before_action :set_object, only: [:purchase, :rewind]
-      before_action :set_exercise_user, only: :destroy
 
       def purchase
         @response = true
@@ -45,10 +44,6 @@ module Padawan
 
       def model_exercise_user
         ExerciseUser
-      end
-
-      def set_exercise_user
-        @object = model_exercise_user.find(params[:id])
       end
 
       def set_object

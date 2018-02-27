@@ -13,4 +13,8 @@ class Exercise::Sport < Exercise
   def phase
     statement
   end
+
+  def type_to_s
+    'Sport'
+  end
 end

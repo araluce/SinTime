@@ -18,6 +18,8 @@ class ExerciseUser < ApplicationRecord
     end
   end
 
+  scope :deliveries, -> {where.not(file_file_name: nil)}
+
   def save_file!
     self.save if valid?(:send_file)
   end

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       resources :print_exercise, only: :show, format: :js
       resources :food, only: :index
       resources :water, only: :index
+      resources :send_exercises, only: :update
       get 'purchase_exercise/:exercise_id', to: 'purchase_exercises#purchase', as: :purchase_exercise
       get 'rewind_exercise/:exercise_id', to: 'purchase_exercises#rewind', as: :rewind_exercise
     end
