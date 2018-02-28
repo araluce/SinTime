@@ -29,6 +29,7 @@ module Manager
 
     def update
       if @object.update(object_params)
+        PayService.pay_score(@object)
         redirect_to manager_deliveries_path, notice: 'Ejercicio calificado correctamente'
       else
         render :edit

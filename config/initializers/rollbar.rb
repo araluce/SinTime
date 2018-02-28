@@ -31,6 +31,10 @@ Rollbar.configure do |config|
   #
   # You can also specify a callable, which will be called with the exception instance.
   # config.exception_level_filters.merge!('MyCriticalException' => lambda { |e| 'critical' })
+  config.exception_level_filters.merge!({
+                                            'ActionController::RoutingError' => 'ignore',
+                                            'ActionController::InvalidAuthenticityToken' => 'ignore'
+                                        })
 
   # Enable asynchronous reporting (uses girl_friday or Threading if girl_friday
   # is not installed)
@@ -66,4 +70,14 @@ Rollbar.configure do |config|
   # setup for Heroku. See:
   # https://devcenter.heroku.com/articles/deploying-to-a-custom-rails-environment
   config.environment = ENV['ROLLBAR_ENV'].presence || Rails.env
+
+  config.js_enabled = true
+  config.js_options = {
+      accessToken: ENV['ROLLBAR_CLIENT_ACCESS_TOKEN'],
+      captureUncaught: true,
+      hostWhiteList: ['sintime.es'],
+      payload: {
+          environment: ENV['ROLLBAR_ENV'] || Rails.env
+      }
+  }
 end

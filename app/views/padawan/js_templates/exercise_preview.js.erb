@@ -30,9 +30,9 @@
   <%- if @my_deliveries.where(exercise: @object).any? %>
     $('.product-title').append('<span class="badge badge-success pull-right"><%= @my_deliveries.where(exercise: @object).last.status %></span>');
 
+    $('.deliveries').append('<h5>Entregas:</h5>');
     <%- @my_deliveries.where(exercise: @object).deliveries.each do |delivery|%>
-      $('.deliveries').append('<h5>Entregas:</h5>');
-      $('.deliveries').append('<div class="box"><%= link_to "#{delivery.file_file_name} <small class=\"pull-right\">#{delivery.file_updated_at.to_formatted_s(:long)}</small>".html_safe, delivery.file.url(:original, false) %>');
+      $('.deliveries').append('<div class="box"><%= link_to "#{delivery.file_file_name} #{delivery.score.nil? ? '' : "<div class=\"pull-right\">#{image_tag delivery.score.icon.url(:thumb), style: 'max-height: 30px'}</div>" } <small class=\"pull-right\">#{delivery.file_updated_at.to_formatted_s(:long)}</small>".html_safe, delivery.file.url(:original, false) %>');
     <% end %>
   <% end %>
 

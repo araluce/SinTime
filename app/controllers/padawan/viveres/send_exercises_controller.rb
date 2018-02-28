@@ -7,6 +7,7 @@ module Padawan
         if @object.is_comprado?
           flash[:notice] = 'Entrega realizada correctamente'
           @object.update_attributes(object_params)
+          current_user.update_columns(tsc: DateTime.now)
         else
           flash[:error] = 'Ya se ha entregado este ejercicio'
         end
