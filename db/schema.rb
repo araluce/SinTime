@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180227222134) do
+ActiveRecord::Schema.define(version: 20180228011410) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "avatar_updated_at"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20180227222134) do
     t.integer "file_file_size"
     t.datetime "file_updated_at"
     t.integer "status", default: 0
+    t.bigint "score_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["exercise_id"], name: "index_exercise_users_on_exercise_id"

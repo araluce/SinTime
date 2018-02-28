@@ -1,0 +1,11 @@
+ol.breadcrumb
+  li.breadcrumb-item = link_to 'Dashboard', manager_home_path
+  li.breadcrumb-item = link_to "#{@resource_name.pluralize}", manager_deliveries_path
+  li.breadcrumb-item.active Calificar
+
+.row
+  .col-sm-12
+    fieldset
+      legend = fa_icon 'plus', text: 'Calificar entrega'
+      = simple_form_for(@object, url: {id: @object.id, action: :update}, html: {class: 'form-vertical', multipart: true}) do |f|
+        = render 'form', f: f

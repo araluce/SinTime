@@ -1,0 +1,9 @@
+.card
+  .card-header Detalles del ejercicio
+  .card-footer
+    = @object.exercise
+    = link_to @object.file_file_name,  @object.file.url(:original, false)
+
+= f.association :score
+
+= f.button :submit, class: 'btn btn-block btn-primary'
