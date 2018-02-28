@@ -15,9 +15,21 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require datatables
+//= require cocoon
 //= require manager/sb-admin
-
 
 $(document).ready(function() {
     $(".datatable").dataTable();
+});
+
+$(window).scroll(function() {
+    if($(this).scrollTop() > 50)
+    {
+        $('.navbar-trans').addClass('afterscroll');
+    } else
+    {
+        $('.navbar-trans').removeClass('afterscroll');
+    }
+
 });
