@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180228014902) do
+ActiveRecord::Schema.define(version: 20180228164331) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "avatar_updated_at"
@@ -145,6 +145,17 @@ ActiveRecord::Schema.define(version: 20180228014902) do
     t.index ["tweet_id"], name: "index_twitter_backpacks_on_tweet_id"
     t.index ["user_id"], name: "index_twitter_backpacks_on_user_id"
     t.index ["user_share_id"], name: "index_twitter_backpacks_on_user_share_id"
+  end
+
+  create_table "user_ranges", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "icon_file_name"
+    t.string "icon_content_type"
+    t.integer "icon_file_size"
+    t.datetime "icon_updated_at"
+    t.string "range_text"
+    t.integer "min_score", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

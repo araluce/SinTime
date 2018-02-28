@@ -5,6 +5,8 @@ class User < ApplicationRecord
 
   belongs_to :district, inverse_of: :users, optional: true
 
+  belongs_to :range, class_name: 'UserRange', inverse_of: :users
+
   has_and_belongs_to_many :tweeters, class_name: 'Tweeter'
 
   has_many :backpacks, class_name: 'Twitter::Backpack', inverse_of: :user, dependent: :destroy
