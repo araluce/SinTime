@@ -53,6 +53,7 @@ Rails.application.routes.draw do
     resources :water
     resources :scores
     resources :deliveries
+    resources :constants
   end
 
 end
