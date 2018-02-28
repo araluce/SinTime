@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180228011410) do
+ActiveRecord::Schema.define(version: 20180228014902) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "avatar_updated_at"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20180228011410) do
   create_table "banking_movements", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id"
     t.bigint "exercise_id"
+    t.string "reason"
     t.time "time_after"
     t.time "time_before"
     t.datetime "created_at", null: false

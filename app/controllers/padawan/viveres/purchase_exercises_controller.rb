@@ -8,7 +8,7 @@ module Padawan
         begin
           unless model_exercise_user.where(exercise_id: params[:exercise_id], user: [current_user], status: 'Comprado').any?
             model_exercise_user.create(exercise_id: params[:exercise_id], user: current_user)
-            PayService.pay_exercise(current_user, @object)
+            PayService.pay_exercise(current_user, @object, 'Compra')
             set_request_params
           else
             @response = false
@@ -24,7 +24,7 @@ module Padawan
         matches = model_exercise_user.where(exercise_id: params[:exercise_id], user: [current_user], status: 'Comprado')
         if matches.any?
           matches.first.destroy
-          PayService.rewind_exercise(current_user, @object)
+          PayService.rewind_exercise(current_user, @object, 'Cancelación de compra')
           set_request_params
         else
           @response = false

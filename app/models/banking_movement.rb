@@ -4,6 +4,7 @@ class BankingMovement < ApplicationRecord
 
   validates :time_before,
             :time_after,
+            :reason,
             presence: true
 
   def seconds_difference
