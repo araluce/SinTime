@@ -1,8 +1,5 @@
 ul.navbar-nav.navbar-sidenav#exampleAccordion
-  li.nav-item data-toggle="tooltip" data-placement="right"
-    = link_to manager_home_path, class: 'nav-link', title: 'Dashboard' do
-      = fa_icon('fw dashboard')
-      span.nav-link-text Dashboard
+  li.nav-title = link_to fa_icon('fw dashboard', text: 'Dashboard'), manager_home_path, class: 'nav-link', title: 'Dashboard'
   li.nav-item data-toggle="tooltip" data-placement="right"
     = link_to manager_districts_path, class: 'nav-link', title: 'Distritos' do
       = fa_icon('fw shield')
@@ -29,3 +26,6 @@ ul.navbar-nav.navbar-sidenav#exampleAccordion
         = link_to manager_water_index_path, class: 'nav-link', title: 'Retos de agua' do
           = fa_icon('fw tint')
           span.nav-link-text Retos de agua
+
+  li.nav-title General
+  li.nav-item = link_to fa_icon('fw star', text: 'Calificaciones'), manager_scores_path, class: "nav-link #{section_active_class('Calificaciones')}"

@@ -4,6 +4,7 @@ class ExerciseUser < ApplicationRecord
   validates_attachment_content_type :file, :content_type => ['application/pdf', 'application/zip', 'application/x-zip', 'application/x-zip-compressed','application/octet-stream','image/jpg','image/png']
   belongs_to :user, inverse_of: :exercise_users
   belongs_to :exercise, inverse_of: :exercise_users
+  belongs_to :score, optional: true
 
   enum status: %w[Comprado Entregado Corregido], _prefix: true
 

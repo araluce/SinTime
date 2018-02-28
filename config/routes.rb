@@ -51,6 +51,7 @@ Rails.application.routes.draw do
     resources :questionnaires
     resources :food
     resources :water
+    resources :scores
   end
 
 end

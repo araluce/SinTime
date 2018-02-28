@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180227102714) do
+ActiveRecord::Schema.define(version: 20180227222134) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "avatar_updated_at"
@@ -101,6 +101,17 @@ ActiveRecord::Schema.define(version: 20180227102714) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "feeding_type", default: 0
+  end
+
+  create_table "scores", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "title"
+    t.integer "time_benefit", default: 0
+    t.string "icon_file_name"
+    t.string "icon_content_type"
+    t.integer "icon_file_size"
+    t.datetime "icon_updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tweeters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

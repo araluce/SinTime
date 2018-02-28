@@ -24,6 +24,10 @@
           }
         }
       }
+      > .nav-title {
+        color: white !important;
+        background-color: $gray-900;
+      }
     }
     .navbar-nav > .nav-item.dropdown > .nav-link:after {
       color: $gray-500;
@@ -112,4 +116,13 @@
       }
     }
   }
+}
+
+.nav-title {
+  padding: 1rem 1.25rem;
+  font-size: 11px;
+  font-weight: 600;
+  color: #e3e8ec;
+  text-transform: uppercase;
+  text-align: center;
 }
