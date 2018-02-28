@@ -26,6 +26,7 @@ class User < ApplicationRecord
   scope :holidays, -> {where(status: 3)}
   scope :arrested, -> {where(status: 4)}
   scope :end, -> {where(status: 5)}
+  scope :in_clan, -> {where.not(district: nil)}
 
   enum status: %w(Inactivo Vivo Fallecido Vacaciones Detenido Finalizado), _prefix: true
 
