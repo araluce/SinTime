@@ -4,11 +4,15 @@ aside.profile-card style="width: 100%"
     h1 = "@#{@object.alias}"
     h2 = @object.full_name
   .profile-bio
+    p = @object.dni.upcase
     = simple_form_for(@object, url: padawan_padawan_info_information_path(@object), html: {class: 'form-vertical', multipart: true}) do |f|
       = f.input :alias
       = f.input :avatar, as: :file
       = f.input :name, label: 'Nombre'
       = f.input :lastname, label: 'Apellidos'
+      = f.input :email, required: true, autofocus: true
+      = f.input :password, required: true
+      = f.input :password_confirmation, required: true
       .form-group
         = f.label :dob, label: 'Fecha de nacimiento', class: 'control-label'
         .row

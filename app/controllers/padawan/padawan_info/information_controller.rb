@@ -28,7 +28,10 @@ module Padawan
             :avatar,
             :name,
             :lastname,
-            :dob
+            :dob,
+            :password,
+            :password_confirmation,
+            :email
         )
       end
 
