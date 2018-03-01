@@ -6,14 +6,17 @@
         .col-12
           = f.input :dni, input_html: {placeholder: 'DNI', type: 'hidden'}, label: false
           p = @user.dni
-          = f.input :alias, required: true
+          = f.input :alias, required: true, autofocus: true
           = f.input :avatar, as: :file
           = f.input :name, label: 'Nombre', required: true
           = f.input :lastname, label: 'Apellidos', required: true
-          = f.input :email, required: true, autofocus: true
+          = f.input :email, required: true
           = f.input :password, required: true
           = f.input :password_confirmation, required: true
           .form-group
-            = f.label :dob, label: 'Fecha de nacimiento', class: 'control-label', requited: true
+            = f.label 'Fecha de nacimiento'
+            .row
+              .col-lg-12
+                = f.date_select :dob, order: [:day, :month, :year], start_year: Date.current.year - 40, end_year: Date.current.year - 18, required: true
         .col-12
           = f.button :submit, 'Ir a registro', class: 'btn btn-primary'

@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable, :registerable
+
   devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
 
   belongs_to :district, inverse_of: :users, optional: true
@@ -29,6 +30,9 @@ class User < ApplicationRecord
   scope :in_clan, -> {where.not(district: nil)}
 
   enum status: %w(Inactivo Vivo Fallecido Vacaciones Detenido Finalizado), _prefix: true
+
+  validates :alias, uniqueness: true
+  validates :alias, format: {with: /\A[a-z]+\z/i}
 
   def inactive?
     self.status == 'Inactivo'
