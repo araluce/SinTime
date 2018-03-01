@@ -34,6 +34,8 @@ class User < ApplicationRecord
   validates :alias, uniqueness: true
   validates :alias, format: {with: /\A[a-z]+\z/i}
 
+  attr_accessor :dni_list
+
   def inactive?
     self.status == 'Inactivo'
   end

@@ -51,6 +51,7 @@ Rails.application.routes.draw do
     get '/home', to: 'managers#home'
     resources :districts
     resources :citizens
+    resources :padawan_registers, only: [:new, :create]
     resources :questionnaires
     resources :food
     resources :water
