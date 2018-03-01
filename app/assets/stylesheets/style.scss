@@ -31,6 +31,8 @@ body {
 .btn-sintime{
   margin-top: 15px;
   margin-bottom: 15px;
+  padding-left: 0!important;
+  padding-right: 0!important;
   width: 100%;
 
   img{
@@ -96,6 +98,15 @@ body {
 }
 
 @include media-breakpoint-up(lg) {
+  html {
+    font-size: 20px;
+  }
+  .btn-sintime-label {
+    font-size: 1rem;
+  }
+}
+
+@include media-breakpoint-up(xl) {
   html {
     font-size: 30px;
   }

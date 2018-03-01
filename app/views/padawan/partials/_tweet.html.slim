@@ -11,7 +11,7 @@
     span.tweetEntry-timestamp = tweet.created_at.to_formatted_s(:twitter)
     .tweetEntry-text-container = tweet.full_text
 
-.btn-pref.btn-group.btn-group-justified.btn-group-lg role="group" style="width: 100%"
+.btn-pref.btn-group.btn-group-justified.btn-group-sm role="group" style="width: 100%"
   = link_to fa_icon('font', text: 'Texto'),        padawan_formacion_guardar_texto_path(tweet_id: tweet.id),       class: 'btn btn-secondary', style: 'width: 33.33%'
   = link_to fa_icon('play', text: 'Audiovisual'),  padawan_formacion_guardar_audiovisual_path(tweet_id: tweet.id), class: 'btn btn-secondary', style: 'width: 33.33%'
   = link_to fa_icon('cog', text: 'Herramientas'),  padawan_formacion_guardar_herramienta_path(tweet_id: tweet.id), class: 'btn btn-secondary', style: 'width: 33.33%'
