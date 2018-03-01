@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   root 'static#home'
   get '/tweets', to: 'static#tweets'
+  get '/register', to: 'static#register'
+  post '/check_register', to: 'static#check_register', as: :check_register
+  patch '/register_user', to: 'static#register_user', as: :register_user
 
   namespace :padawan do
     get '/home', to: 'padawan#home'
