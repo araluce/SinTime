@@ -1,8 +1,8 @@
 aside.profile-card style="width: 100%"
   header
     = image_tag @object.avatar.url(:medium), class: 'hoverZoomLink'
-    h1 = "@#{@object.alias}"
-    h2 = @object.full_name
+    h4 = "@#{@object.alias}"
+    h6 = @object.full_name
   .profile-bio
     p = @object.dni.upcase
     = simple_form_for(@object, url: padawan_padawan_info_information_path(@object), html: {class: 'form-vertical', multipart: true}) do |f|

@@ -22,7 +22,6 @@ $font_1: sans-serif;
 
 html {
   height: 100%;
-  font-size: .7rem;
 }
 body {
   overflow-y: auto;
@@ -495,5 +494,29 @@ p {
       background: #FFFFFF;
       border-radius: 4px;
     }
+  }
+}
+
+@include media-breakpoint-up(xs) {
+  html {
+    font-size: 1.1rem;
+  }
+}
+
+@include media-breakpoint-up(ms) {
+  html {
+    font-size: 1.1rem;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 1.1rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 0.8rem;
   }
 }
