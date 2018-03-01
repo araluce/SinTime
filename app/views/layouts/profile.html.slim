@@ -9,13 +9,12 @@ html
     = render 'application/favicon'
 
   .page
-    .container-fluid
-      .alert-content
-        - if notice
-          = render 'application/alert', alert_class: 'success', text: notice
-        - if alert
-          = render 'application/alert', alert_class: 'danger', text: alert
-        - if defined? @errors
-          = render 'application/alert', alert_class: 'danger', text: @errors.full_messages
+    .alert-content
+      - if notice
+        = render 'application/alert', alert_class: 'success', text: notice
+      - if alert
+        = render 'application/alert', alert_class: 'danger', text: alert
+      - if defined? @errors
+        = render 'application/alert', alert_class: 'danger', text: @errors.full_messages
 
-      = yield
+    = yield

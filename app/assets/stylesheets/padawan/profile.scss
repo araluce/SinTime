@@ -24,8 +24,8 @@ html {
   height: 100%;
 }
 body {
-  overflow: hidden;
-  background: $color_ziggurat_approx no-repeat center center fixed;
+  overflow-y: auto;
+  background: $color_tuna_approx no-repeat center center fixed;
   background-size: cover;
   position: fixed;
   padding: 0;

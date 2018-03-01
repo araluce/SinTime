@@ -27,7 +27,8 @@ module Padawan
             :alias,
             :avatar,
             :name,
-            :lastname
+            :lastname,
+            :dob
         )
       end
 
