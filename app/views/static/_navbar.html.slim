@@ -1,13 +1,22 @@
-#header.blur-background
-  .wrap.group
-    .head-wrap
-      .logo
-      nav
-        #back_active style=("left: 0px;") 
-        ul
-          li
-            = link_to 'Home', root_path
-          li
-            = link_to 'Tweets', tweets_path
-          li
-            a href="#" rel=""  Prensa
+/#header.blur-background
+/  .wrap.group
+/    .head-wrap
+/      .logo
+/      nav
+/        #back_active style=("left: 0px;")
+/        ul
+/          li
+/            = link_to 'Home', root_path
+/          li
+/            = link_to 'Tweets', tweets_path
+/          li
+/            a href="#" rel=""  Prensa
+
+nav#header.navbar.navbar-expand-md.sticky-top.navbar-inverse.blur-background style="color: white"
+  button.navbar-toggler.navbar-toggler-right aria-controls="navbarNav" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarNav" data-toggle="collapse" type="button"
+    span.navbar-toggler-icon
+  .logo
+  #navbarNav.collapse.navbar-collapse
+    ul.navbar-nav
+      li.nav-item = link_to 'Home', root_path, class: 'nav-link'
+      li.nav-item = link_to 'Tweets', tweets_path, class: 'nav-link'
