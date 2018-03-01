@@ -1,4 +1,7 @@
-- if user_signed_in?
-  .row
-    .col-12
-      = link_to (fa_icon 'fw sign-out 3x', style: 'color: #000; margin-right: 15px;'), destroy_user_session_path, method: :delete, class: 'pull-right'
+footer.sticky-footer
+  .container
+    .text-center.text-white
+      small = "Copyright © www.sintime.es #{Date.today.year}"
+
+  a.scroll-to-top.rounded href="#page-top"
+    = fa_icon 'angle-up'
