@@ -98,7 +98,7 @@ p {
     h1 {
       color: $color_flamingo_approx;
     }
-    a {
+    img {
       display: inline-block;
       text-align: center;
       position: relative;
@@ -120,17 +120,15 @@ p {
         box-shadow: 0 1px 3px $black_10;
         animation: scaleIn 0.3s 3.5s ease forwards;
       }
-      > img {
-        width: 120px;
-        max-width: 100%;
-        //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-        border-radius: 50%;
-        //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
-        transition: box-shadow 0.3s ease;
-        //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-        box-shadow: 0 0 0 8px $black_6;
-      }
-      &:hover > img {
+      width: 120px;
+      max-width: 100%;
+      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+      border-radius: 50%;
+      //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+      transition: box-shadow 0.3s ease;
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 0 0 8px $black_6;
+      &:hover {
         //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
         box-shadow: 0 0 0 12px $black_10;
       }
@@ -145,7 +143,6 @@ p {
     background: $white;
     color: $color_mine_shaft_approx;
     margin-top: 50px;
-    text-align: center;
     opacity: 0;
     animation: moveIn 1s 3.1s ease forwards;
     width: auto;
@@ -313,7 +310,7 @@ p {
     top: 40%;
   }
   100% {
-    top: 30%;
+    top: 50%;
     background: $color_bon_jour_approx;
   }
 }
@@ -479,7 +476,7 @@ p {
     }
     100% {
       width: 90%;
-      height: 440px;
+      height: auto;
       background: #FFFFFF;
       -webkit-border-radius: 4px;
     }
@@ -493,7 +490,7 @@ p {
     }
     100% {
       width: 90%;
-      height: 440px;
+      height: auto;
       background: #FFFFFF;
       border-radius: 4px;
     }

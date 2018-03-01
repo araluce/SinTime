@@ -1,6 +1,4 @@
 class UserRange < ApplicationRecord
-  has_many :users,inverse_of: :range
-
   has_attached_file :icon, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: ActionController::Base.helpers.image_path('thumb/missing.png')
   validates_attachment_content_type :icon, content_type: /\Aimage\/.*\z/
 

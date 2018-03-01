@@ -4,17 +4,12 @@ html
     title Padawan | SinTime
     = csrf_meta_tags
 
-    = stylesheet_link_tag    'padawan', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'profile', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'padawan', 'data-turbolinks-track': 'reload'
     = render 'application/favicon'
 
   .page
     .container-fluid
-
-      h1 = yield(:clock)
-      .row
-        .col-12.countdown
-
       .alert-content
         - if notice
           = render 'application/alert', alert_class: 'success', text: notice
@@ -24,8 +19,3 @@ html
           = render 'application/alert', alert_class: 'danger', text: @errors.full_messages
 
       = yield
-
-      = render 'padawan/footer'
-
-      script
-        = render 'padawan/countdown.js.erb', datetime: @tdv.to_f * 1000

@@ -18,3 +18,5 @@
 //= require jquery.countdown
 //= require jquery.countdown-es
 //= require padawan/twitter
+//= require static/bootstrap-datetimepicker.min
+//= require static/date_time_picker_input

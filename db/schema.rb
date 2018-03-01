@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180228164331) do
+ActiveRecord::Schema.define(version: 20180228191534) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "avatar_updated_at"
@@ -168,6 +168,7 @@ ActiveRecord::Schema.define(version: 20180228164331) do
     t.string "dni"
     t.string "alias"
     t.bigint "district_id"
+    t.date "dob"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

@@ -18,6 +18,8 @@
 //= require datatables
 //= require cocoon
 //= require manager/sb-admin
+//= require static/bootstrap-datetimepicker.min
+//= require static/date_time_picker_input
 
 $(document).ready(function() {
     $(".datatable").dataTable();

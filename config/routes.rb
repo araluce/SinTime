@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     end
 
     namespace :padawan_info do
-      resources :information, only: [:edit, :update]
+      resources :information, only: [:index, :edit, :update]
     end
 
     namespace :formacion do
