@@ -17,8 +17,6 @@
 }
 
 body {
-  font-size: 100%;
-
   background: asset-data-url('static/background.png') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -32,11 +30,6 @@ body {
 .btn-sintime{
   margin-top: 15px;
   margin-bottom: 15px;
-  //display: inline-block;
-  //padding: 8px 12px;
-  //border: 2px #ced4da solid;
-  //background-color: rgba(255, 215, 0, 0.4);
-  //border-radius: 4px;
   width: 100%;
 
   img{
@@ -44,13 +37,12 @@ body {
   }
 
   .btn-sintime-label{
-    font-size: 320%;
+    font-size: 1.4em;
     font-family: deathstar;
     font-weight: 500;
     text-align: center;
     text-transform: uppercase;
     color: #AA9D15;
-    //text-shadow: 0 4px 20px #ffbc00;
   }
 
   &:hover{
@@ -72,13 +64,36 @@ body {
   label{
     text-transform: uppercase;
     color: #AA9D15;
-    font-size: 200%;
-    font-family: deathstar;
-    font-weight: 300;
-    text-align: center;
   }
 }
 
 .img-circle {
   border-radius: 50%;
+}
+
+@include media-breakpoint-up(xs) {
+  html {
+    font-size: 50px;
+  }
+}
+
+@include media-breakpoint-up(ms) {
+  html {
+    font-size: 40px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 40px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 30px;
+  }
+  .btn-sintime-label {
+    font-size: 1rem;
+  }
 }

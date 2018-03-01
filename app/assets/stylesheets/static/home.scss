@@ -21,14 +21,13 @@
     color: #D7C077;
   }
 
-  .title-600{ font-size: 650%; }
-  .title-400{ font-size: 370%; }
+  .title-600{ font-size: 1.6em; }
+  .title-400{ font-size: 1.5em; }
 
   .home-button {
     margin: 0 auto;
     a.burbank {
       font-family: 'burbank';
-      font-size: 175%;
       text-transform: uppercase;
       color: #fff;
       background-color: transparent;
@@ -85,7 +84,7 @@
 .index-autor, .index-frase{
   color: gold;
   font-family: 'Oregano', cursive;
-  font-size: 280%;
+  font-size: 1.2em;
 }
 
 .index-frase {
