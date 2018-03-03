@@ -9,6 +9,10 @@ class Exercise < ApplicationRecord
 
   has_many :banking_movements, inverse_of: :exercises
 
+  has_many :benefit_scores, inverse_of: :exercise, dependent: :destroy
+  has_many :scores, inverse_of: :exercises, through: :benefit_scores
+  accepts_nested_attributes_for :benefit_scores, reject_if: :all_blank, allow_destroy: true
+
   before_save :set_time_benefit
 
   attr_accessor :days_benefit,

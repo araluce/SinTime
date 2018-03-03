@@ -22,6 +22,7 @@ module Manager
 
     def object_initialization
       @object.feeding_type = 'Comida'
+      @object.benefit_scores.build
     end
 
     def index
@@ -33,6 +34,7 @@ module Manager
 
     def new
       @object = model.new
+      object_initialization
     end
 
     def create
@@ -48,11 +50,12 @@ module Manager
     end
 
     def edit
+      object_initialization
     end
 
     def update
       if @object.update(object_params)
-        redirect_to manager_food_path, notice: 'Reto de agua comida correctamente'
+        redirect_to manager_food_path, notice: 'Reto de comida actualizado correctamente'
       else
         object_initialization
         render :edit
@@ -79,8 +82,9 @@ module Manager
           :days_benefit,
           :hours_benefit,
           :minutes_benefit,
-          :seconds_benefit
-      )
+          :seconds_benefit,
+          benefit_scores_attributes: {}
+      ).merge(feeding_type: 'Comida')
     end
 
     def set_object

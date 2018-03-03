@@ -13,6 +13,6 @@ fieldset
         .links
           = link_to_add_association 'añadir opción', f, :options, partial: 'manager/partials/option_fields'
 
-= render 'manager/partials/time_beneficts', f: f
+= render 'manager/partials/time_beneficts', f: f, custom_labe: 'Tiempo de beneficio'
 
 = f.button :submit, class: 'btn btn-block btn-primary'

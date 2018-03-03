@@ -1,0 +1,5 @@
+.nested-fields
+  = f.association :score, label: 'Para la calificación'
+  = render 'manager/partials/time_beneficts', f: f
+  = link_to_remove_association f, data: {:confirm => '¿realmente quieres haer esto?'}, class: 'btn btn-primary btn-xs' do
+    = fa_icon 'times'

@@ -22,6 +22,7 @@ module Manager
 
     def object_initialization
       @object.feeding_type = 'Agua'
+      @object.benefit_scores.build
     end
 
     def index
@@ -33,6 +34,7 @@ module Manager
 
     def new
       @object = model.new
+      object_initialization
     end
 
     def create
@@ -48,6 +50,7 @@ module Manager
     end
 
     def edit
+      object_initialization
     end
 
     def update
@@ -80,7 +83,7 @@ module Manager
           :hours_benefit,
           :minutes_benefit,
           :seconds_benefit
-      )
+      ).merge(feeding_type: 'Agua')
     end
 
     def set_object

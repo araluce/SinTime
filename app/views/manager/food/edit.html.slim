@@ -7,6 +7,6 @@ ol.breadcrumb
 .row
   .col-sm-12
     fieldset
-      legend = fa_icon 'plus', text: 'Editar el comida de agua'
+      legend = fa_icon 'plus', text: 'Editar el comida de comida'
       = simple_form_for(@object, url: manager_food_path(@object), html: {class: 'form-vertical', multipart: true}) do |f|
         = render 'form', f: f
