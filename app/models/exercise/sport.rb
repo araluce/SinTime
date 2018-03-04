@@ -29,6 +29,7 @@ class Exercise::Sport < Exercise
 
   validate :check_running_time
   validate :check_cycling_time
+  validate :check_active_uniqueness
 
   def phase
     statement
@@ -44,7 +45,7 @@ class Exercise::Sport < Exercise
     set_duration('running')
   end
 
-  def set_clycling_duration
+  def set_cycling_duration
     set_duration('cycling')
   end
 
@@ -67,6 +68,10 @@ class Exercise::Sport < Exercise
       errors.add("minutes_#{suffix}".to_sym, 'El tiempo debe ser mayor que 0')
       errors.add("seconds_#{suffix}".to_sym, 'El tiempo debe ser mayor que 0')
     end
+  end
+
+  def check_active_uniqueness
+
   end
 
 end

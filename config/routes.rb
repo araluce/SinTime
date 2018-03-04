@@ -61,6 +61,7 @@ Rails.application.routes.draw do
     resources :questionnaires
     resources :food
     resources :water
+    resources :sports
     resources :scores
     resources :deliveries
     resources :constants, except: :show

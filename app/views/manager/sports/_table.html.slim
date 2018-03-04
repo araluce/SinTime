@@ -2,22 +2,24 @@
   table.table
     thead
       tr
-        th Icon
-        th Distrito
-        th Título
-        th Enunciado
-        th Tiempo de beneficio
+        th Fase
+        th Velocidad
+        th Duración bici
+        th Ritmo
+        th Duración running
+        th Beneficio
         th Acciones
     tbody
-      - @objects.each do |food|
+      - @objects.each do |object|
         tr
-          td = image_tag food.icon.url(:thumb), class: 'img-thumbnail'
-          td = food.district
-          td = food.title.titleize
-          td = food.statement
-          td = seconds_to_s(food.time_benefit)
+          td = object.statement
+          td = object.speed
+          td = seconds_to_s(object.time_cycling)
+          td = object.pace
+          td = seconds_to_s(object.time_running)
+          td = seconds_to_s(object.time_benefit)
           td
             .action-buttons
-              = link_to fa_icon('eye 2x'), manager_food_path(food)
-              = link_to fa_icon('cog 2x'), edit_manager_food_path(food)
-              = link_to fa_icon('times 2x'), manager_food_path(food), data: {confirm: '¿Estás seguro?'}, method: :delete
+              = link_to fa_icon('eye 2x'), manager_sport_path(object)
+              = link_to fa_icon('cog 2x'), edit_manager_sport_path(object)
+              = link_to fa_icon('times 2x'), manager_sport_path(object), data: {confirm: '¿Estás seguro?'}, method: :delete

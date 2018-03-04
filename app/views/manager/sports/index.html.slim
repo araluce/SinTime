@@ -8,11 +8,11 @@ ol.breadcrumb
     .row
       .col-sm-12
         fieldset
-          legend = fa_icon 'plus', text: 'Tabla de retos de comida'
+          legend = fa_icon 'plus', text: 'Tabla de retos deportivos'
           = render 'table'
     .row
       .col-sm-12
         fieldset
-          legend = fa_icon 'plus', text: 'Crea tu reto de comida'
-          = simple_form_for(@object, url: manager_food_index_path, html: {class: 'form-vertical', multipart: true}) do |f|
+          legend = fa_icon 'plus', text: 'Crea tu reto deportivo'
+          = simple_form_for(@object, url: manager_sports_path, html: {class: 'form-vertical', multipart: true}) do |f|
             = render 'form', f: f

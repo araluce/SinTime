@@ -1,4 +1,16 @@
 = f.input :statement, label: 'Fase'
-= render 'manager/partials/time_beneficts', f: f, custom_label: 'Coste', suffix: 'cycling'
+
+fieldset
+  legend Ciclismo
+= f.input :speed, label: 'Velocidad km/h', input_html: {type:'number', value: f.object.speed || 0}
+= render 'manager/partials/time_beneficts', f: f, custom_label: 'Duración', suffix: 'cycling'
+
+fieldset
+  legend Running
+= f.input :pace, label: 'Ritmo min/km', input_html: {type:'number', value: f.object.pace || 0}
+= render 'manager/partials/time_beneficts', f: f, custom_label: 'Duración', suffix: 'running'
+
+
+= render 'manager/partials/time_beneficts', f: f, custom_label: 'Tiempo de beneficio', suffix: 'benefit'
 
 = f.button :submit, class: 'btn btn-block btn-primary'

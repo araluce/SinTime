@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180304150155) do
+ActiveRecord::Schema.define(version: 20180304180417) do
 
   create_table "activity_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_runtastic_id"
@@ -102,15 +102,6 @@ ActiveRecord::Schema.define(version: 20180304150155) do
     t.index ["questionnaire_id"], name: "index_exercise_options_on_questionnaire_id"
   end
 
-  create_table "exercise_sports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "time_running", default: 0
-    t.integer "time_cycling", default: 0
-    t.decimal "speed", precision: 5, scale: 2
-    t.decimal "pace", precision: 5, scale: 2
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "exercise_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "exercise_id"
     t.bigint "user_id"
@@ -134,8 +125,8 @@ ActiveRecord::Schema.define(version: 20180304150155) do
     t.boolean "district", default: false
     t.integer "time_cycling", default: 1
     t.integer "time_running", default: 1
-    t.decimal "running_rate", precision: 12, scale: 6, default: "0.0"
-    t.decimal "cycling_rate", precision: 12, scale: 6, default: "0.0"
+    t.decimal "speed", precision: 12, scale: 6, default: "0.0"
+    t.decimal "pace", precision: 12, scale: 6, default: "0.0"
     t.datetime "icon_updated_at"
     t.integer "icon_file_size"
     t.string "icon_content_type"
