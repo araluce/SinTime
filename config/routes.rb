@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     get 'padawan_info', to: 'padawan_info#padawan_info'
     get 'formacion', to: 'formacion#formacion'
     get 'viveres', to: 'viveres#viveres'
+    get 'comunidad', to: 'viveres#comunidad'
 
     namespace :viveres do
       resources :print_exercise, only: :show, format: :js
@@ -40,6 +41,11 @@ Rails.application.routes.draw do
       get 'follow_user', to: 'seguimiento#seguimiento'
       post 'follow_user', to: 'seguimiento#follow_user'
       patch 'load_tweeter_tweets', to: 'seguimiento#load_tweeter_tweets'
+    end
+
+    namespace :comunidad do
+      resources :travels, only: :index
+      resources :runtastics, only: [:new, :create, :edit, :update]
     end
   end
 
