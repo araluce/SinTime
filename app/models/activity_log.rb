@@ -23,4 +23,16 @@ class ActivityLog < ApplicationRecord
     self.date >=  (Date.today.beginning_of_week-1.week) && self.date <= (Date.today.end_of_week-1.week)
   end
 
+  def pace
+    avg_duration_to_minutes/avg_distance_to_kms
+  end
+
+  def avg_duration_to_minutes
+    duration/1000/60
+  end
+
+  def avg_distance_to_kms
+    distance/1000
+  end
+
 end
