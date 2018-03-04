@@ -453,6 +453,7 @@ DEPENDENCIES
   puma!
   rails (~> 5.1.4)
   rails_real_favicon
+  rest-client
   rollbar
   rubocop
   rubycritic
