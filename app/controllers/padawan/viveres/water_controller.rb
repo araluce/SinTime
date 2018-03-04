@@ -1,6 +1,7 @@
 module Padawan
   module Viveres
     class WaterController < Padawan::ViveresController
+      layout 'padawan'
       before_action :set_objects
 
       def model

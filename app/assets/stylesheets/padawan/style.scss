@@ -1,5 +1,16 @@
+@font-face {
+  font-family: 'Isocpeur';
+  src: asset-data-url('isocpeur-webfont.woff') format('woff'), asset-data-url('isocpeur-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .box{
   padding: 15px;
   border: 1px #000000 solid;
   border-radius: 4px;
+}
+
+.exercise-slot-js{
+  font-family: Isocpeur;
 }

@@ -1,6 +1,8 @@
 module Padawan
   module Viveres
     class FoodController < Padawan::ViveresController
+      layout 'padawan'
+
       before_action :set_objects
       before_action :percentage
 

@@ -1,6 +1,7 @@
 module Padawan
   module Formacion
     class SeguimientoController < Padawan::FormacionController
+      layout 'padawan'
       include TwitterHelper
 
       before_action :load_tweeters, only: [:follow_user, :twitter, :seguimiento, :load_tweeter_tweets, :mochila]

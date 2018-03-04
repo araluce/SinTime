@@ -1,6 +1,7 @@
 module Padawan
   module Comunidad
     class LoginController < Padawan::ComunidadController
+      layout 'padawan'
       before_action :set_objects
 
       def model

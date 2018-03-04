@@ -1,6 +1,6 @@
 module Padawan
   class PadawanController < ApplicationController
-    layout 'padawan'
+    layout 'galactic_padawan'
 
     before_action :authenticate_user!
     before_action :get_tdv
