@@ -5,10 +5,10 @@
         legend = custom_label
 .row
   .col-3
-    = f.input :days_benefit, input_html: {type: 'number', value: seconds_to_days(f.object.time_benefit), min: 0}, label: 'Días'
+    = f.input "days_#{suffix}".to_sym, input_html: {type: 'number', value: seconds_to_days(f.object.send("time_#{suffix}")), min: 0}, label: 'Días'
   .col-3
-    = f.input :hours_benefit, input_html: {type: 'number', value: seconds_to_hours(f.object.time_benefit), min: 0}, label: 'Horas'
+    = f.input "hours_#{suffix}".to_sym, input_html: {type: 'number', value: seconds_to_hours(f.object.send("time_#{suffix}")), min: 0}, label: 'Horas'
   .col-3
-    = f.input :minutes_benefit, input_html: {type: 'number', value: seconds_to_minutes(f.object.time_benefit), min: 0}, label: 'Minutos'
+    = f.input "minutes_#{suffix}".to_sym, input_html: {type: 'number', value: seconds_to_minutes(f.object.send("time_#{suffix}")), min: 0}, label: 'Minutos'
   .col-3
-    = f.input :seconds_benefit, input_html: {type: 'number', value: seconds_to_seconds(f.object.time_benefit), min: 0}, label: 'Segundos'
+    = f.input "seconds_#{suffix}".to_sym, input_html: {type: 'number', value: seconds_to_seconds(f.object.send("time_#{suffix}")), min: 0}, label: 'Segundos'
