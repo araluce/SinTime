@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180303195145) do
+ActiveRecord::Schema.define(version: 20180304150155) do
 
   create_table "activity_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_runtastic_id"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20180303195145) do
     t.text "data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "exercise_sport_id"
+    t.index ["exercise_sport_id"], name: "index_activity_logs_on_exercise_sport_id"
     t.index ["user_runtastic_id"], name: "index_activity_logs_on_user_runtastic_id"
   end
 
@@ -98,6 +100,15 @@ ActiveRecord::Schema.define(version: 20180303195145) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["questionnaire_id"], name: "index_exercise_options_on_questionnaire_id"
+  end
+
+  create_table "exercise_sports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "time_running", default: 0
+    t.integer "time_cycling", default: 0
+    t.decimal "speed", precision: 5, scale: 2
+    t.decimal "pace", precision: 5, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "exercise_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

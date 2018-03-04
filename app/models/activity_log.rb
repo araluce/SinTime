@@ -1,5 +1,6 @@
 class ActivityLog < ApplicationRecord
   belongs_to :user_runtastic, inverse_of: :activity_logs
+  belongs_to :exercise_sport, class_name: 'Exercise::Sport', inverse_of: :activity_logs, optional: true
 
   enum activity_type: %w(running racecycling cycling mountainbiking), _prefix: true
 
