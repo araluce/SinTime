@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     get 'padawan_info', to: 'padawan_info#padawan_info'
     get 'formacion', to: 'formacion#formacion'
     get 'viveres', to: 'viveres#viveres'
-    get 'comunidad', to: 'viveres#comunidad'
+    get 'comunidad', to: 'comunidad#comunidad'
 
     namespace :viveres do
       resources :print_exercise, only: :show, format: :js
