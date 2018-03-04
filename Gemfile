@@ -112,3 +112,5 @@ gem 'chart-js-rails'
 gem 'rubycritic'
 
 gem 'bootstrap_progressbar'
+
+gem 'jwt'

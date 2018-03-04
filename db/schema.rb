@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180303122930) do
+ActiveRecord::Schema.define(version: 20180303195145) do
+
+  create_table "activity_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_runtastic_id"
+    t.integer "activity_id"
+    t.date "date"
+    t.integer "activity_type"
+    t.integer "duration"
+    t.integer "distance"
+    t.decimal "average_speed", precision: 5, scale: 2
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "activity_created_at"
+    t.datetime "activity_updated_at"
+    t.boolean "completed"
+    t.text "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_runtastic_id"], name: "index_activity_logs_on_user_runtastic_id"
+  end
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "avatar_updated_at"
@@ -166,6 +185,19 @@ ActiveRecord::Schema.define(version: 20180303122930) do
     t.integer "min_score", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "user_runtastics", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.string "name"
+    t.integer "runtastic_id"
+    t.string "email"
+    t.string "password"
+    t.integer "age"
+    t.boolean "alexa_integration"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_runtastics_on_user_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

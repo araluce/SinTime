@@ -18,6 +18,9 @@ class User < ApplicationRecord
 
   has_many :banking_movements, inverse_of: :user, dependent: :destroy
 
+  has_one :user_runtastic, inverse_of: :user, dependent: :destroy
+  accepts_nested_attributes_for :user_runtastic, reject_if: :all_blank, allow_destroy: true
+
   has_attached_file :avatar, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: ActionController::Base.helpers.asset_path('avatar.png')
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 

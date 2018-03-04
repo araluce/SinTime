@@ -22,7 +22,6 @@ module Manager
 
     def object_initialization
       @object.feeding_type = 'Comida'
-      @object.benefit_scores.build
     end
 
     def index

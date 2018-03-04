@@ -1,8 +1,8 @@
 - if defined?(custom_label)
-fieldset
-  .row
-    .col-12
-      legend custom_label
+  fieldset
+    .row
+      .col-12
+        legend = custom_label
 .row
   .col-3
     = f.input :days_benefit, input_html: {type: 'number', value: seconds_to_days(f.object.time_benefit), min: 0}, label: 'Días'
