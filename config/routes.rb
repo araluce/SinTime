@@ -44,8 +44,8 @@ Rails.application.routes.draw do
     end
 
     namespace :comunidad do
-      resources :travels, only: :index
-      resources :runtastics, only: [:new, :create, :edit, :update]
+      resources :sports, only: :index
+      resources :login, except: [:index, :destroy]
     end
   end
 

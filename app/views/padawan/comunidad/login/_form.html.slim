@@ -1,0 +1,8 @@
+.row
+  .col-12
+    = f.input :email, input_html: {size: 40, placeholder: 'email'}, label: false
+    = f.input :password, input_html: {type: 'password', size: 40, style: 'margin-top: 1%;', placeholder: 'password'}, label: false
+.row
+  .col-lg-3.col-md-12
+    = button_tag(type: 'submit', class: 'btn btn-block btn-primary') do
+      = fa_icon('sign-in', text: 'Login')
