@@ -1,18 +1,19 @@
-table.table
-  thead
-    tr
-      th Logo
-      th Nombre
-      th Ciudadanos
-      th Acciones
-  tbody
-    - @objects.all.each do |district|
+.table-responsive
+  table.table
+    thead
       tr
-        td = image_tag district.logo.url(:thumb), class: 'img-thumbnail'
-        td = district.name
-        td = district.users.join(', ')
-        td
-          .action-buttons
-            = link_to fa_icon('eye 2x'), manager_district_path(district)
-            = link_to fa_icon('cog 2x'), edit_manager_district_path(district)
-            = link_to fa_icon('times 2x'), manager_district_path(district), data: {confirm: '¿Estás seguro?'}, method: :delete
+        th Logo
+        th Nombre
+        th Ciudadanos
+        th Acciones
+    tbody
+      - @objects.all.each do |district|
+        tr
+          td = image_tag district.logo.url(:thumb), class: 'img-thumbnail'
+          td = district.name
+          td = district.users.join(', ')
+          td
+            .action-buttons
+              = link_to fa_icon('eye 2x'), manager_district_path(district)
+              = link_to fa_icon('cog 2x'), edit_manager_district_path(district)
+              = link_to fa_icon('times 2x'), manager_district_path(district), data: {confirm: '¿Estás seguro?'}, method: :delete

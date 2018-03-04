@@ -1,17 +1,18 @@
-table.table
-  thead
-    tr
-      th Usuario
-      th Ejercicio
-      th Tipo
-      th Acciones
-  tbody
-    - @objects.each do |object|
+.table-responsive
+  table.table
+    thead
       tr
-        td = object.user.alias
-        td = object.exercise
-        td = object.exercise.type_to_s
-        td
-          .action-buttons
-            = link_to fa_icon('cog 2x'), edit_manager_delivery_path(object)
-            = link_to fa_icon('times 2x'), manager_delivery_path(object), data: {confirm: '¿Estás seguro?'}, method: :delete
+        th Usuario
+        th Ejercicio
+        th Tipo
+        th Acciones
+    tbody
+      - @objects.each do |object|
+        tr
+          td = object.user.alias
+          td = object.exercise
+          td = object.exercise.type_to_s
+          td
+            .action-buttons
+              = link_to fa_icon('cog 2x'), edit_manager_delivery_path(object)
+              = link_to fa_icon('times 2x'), manager_delivery_path(object), data: {confirm: '¿Estás seguro?'}, method: :delete
