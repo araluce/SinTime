@@ -14,6 +14,7 @@ class Exercise < ApplicationRecord
   accepts_nested_attributes_for :benefit_scores, reject_if: :all_blank, allow_destroy: true
 
   before_save :set_time_benefit
+  before_save :set_scores
 
   attr_accessor :days_benefit,
                 :hours_benefit,
@@ -39,6 +40,10 @@ class Exercise < ApplicationRecord
 
   def set_time_benefit
     self.time_benefit = days_to_seconds(days_benefit.to_f) + hours_to_seconds(hours_benefit.to_f) + minutes_to_seconds(minutes_benefit.to_f) + seconds_benefit.to_f
+  end
+
+  def set_scores
+    benefit_scores.map {|benefit_score| benefit_score.set_time_benefit}
   end
 
   def check_time

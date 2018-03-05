@@ -4,7 +4,7 @@ class Exercise::BenefitScore < ApplicationRecord
   belongs_to :exercise, inverse_of: :benefit_scores
   belongs_to :score, inverse_of: :benefit_scores
 
-  before_save :set_time_benefit
+  before_create :set_time_benefit
 
   attr_accessor :days_benefit,
                 :hours_benefit,
@@ -20,11 +20,11 @@ class Exercise::BenefitScore < ApplicationRecord
   validates :time_benefit, numericality: {greater_than_or_equal_to: 0, only_integer: true}
   validate :check_time
 
-  private
-
   def set_time_benefit
     self.time_benefit = days_to_seconds(days_benefit.to_f) + hours_to_seconds(hours_benefit.to_f) + minutes_to_seconds(minutes_benefit.to_f) + seconds_benefit.to_f
   end
+
+  private
 
   def check_time
     unless set_time_benefit > 0
