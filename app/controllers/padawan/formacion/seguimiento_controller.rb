@@ -34,12 +34,19 @@ module Padawan
 
       Twitter::Backpack.backpack_types.each do |type, index|
         define_method "guardar_#{type.downcase.gsub(' ', '_')}" do
-          @tweet = Tweet.find_or_create_by(tweet_id: params[:tweet_id])
+          object_initialization
 
-          if type == 'compartido'
-            redirect_to action: :seguimiento
+          if @tweets_count < @max_tweets_per_day
+            @tweet = Tweet.find_or_create_by(tweet_id: params[:tweet_id])
+
+            if type == 'compartido'
+              redirect_to action: :seguimiento
+            else
+              save_tweet(type, @tweet)
+              redirect_to action: :seguimiento
+            end
           else
-            save_tweet(type, @tweet)
+            flash[:notice] = "Sólo se permiten un máximo de #{@max_tweets_per_day} tweets diarios"
             redirect_to action: :seguimiento
           end
         end
@@ -68,6 +75,7 @@ module Padawan
 
       def object_initialization
         @tweeter = Tweeter.new()
+        @max_tweets_per_day = Constant.find_by_key('maximos tuits diarios').value.to_i
         @tweets_count = current_user.backpacks.where('updated_at BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).count
       end
 

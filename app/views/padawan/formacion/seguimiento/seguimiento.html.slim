@@ -1,14 +1,14 @@
 .row
   .col-12.future-card
     .row style="margin-bottom: 1%;"
-      .col-1
-        .round.round-lg.hollow.orange = @tweets_count
-      .col-sm-11
+      .col-sm-12
         .btn-pref.btn-group.btn-group-justified.btn-group-sm role="group" style="width: 100%"
-          = link_to 'Texto', padawan_formacion_mochila_path(backpack_type: 'texto'),              class: 'btn btn-primary', style: 'width: 25%'
-          = link_to 'Audiovisual', padawan_formacion_mochila_path(backpack_type: 'audiovisual'),  class: 'btn btn-primary', style: 'width: 25%'
-          = link_to 'Herramientas', padawan_formacion_mochila_path(backpack_type: 'herramienta'), class: 'btn btn-primary', style: 'width: 25%'
-          = link_to fa_icon('fw chevron-circle-left', text: 'Volver'), padawan_formacion_path, class: 'btn btn-primary', style: 'width: 25%'
+          = link_to '#', class: 'btn btn-border-white', style: 'width: 20%' do
+            .round.round-lg.hollow.orange = "#{@tweets_count}/#{@max_tweets_per_day}"
+          = link_to 'Texto', padawan_formacion_mochila_path(backpack_type: 'texto'),              class: 'btn btn-border-white', style: 'width: 20%'
+          = link_to 'Audiovisual', padawan_formacion_mochila_path(backpack_type: 'audiovisual'),  class: 'btn btn-border-white', style: 'width: 20%'
+          = link_to 'Herramientas', padawan_formacion_mochila_path(backpack_type: 'herramienta'), class: 'btn btn-border-white', style: 'width: 20%'
+          = link_to fa_icon('fw chevron-circle-left', text: 'Volver'), padawan_formacion_path,    class: 'btn btn-border-white', style: 'width: 20%'
 
     = simple_form_for(@tweeter, url: padawan_formacion_follow_user_path, html: {class: 'row form-vertical'}) do |f|
       .col-md-6.col-sm-12
@@ -24,6 +24,6 @@
 
     .row
       - @tweets.each do |tweet|
-        .col-md-6.col-sm-6
+        .col-lg-6.col-sm-12
           .tweetEntry-tweetHolder
             = render 'padawan/partials/tweet', tweet: tweet

@@ -14,7 +14,7 @@ class TwitterService
 
     def get_latest_tweet_by_user(user)
       result = []
-      CLIENT.user_timeline(user, count: 20, exclude_replies: true, include_rts: false).each do |tweet|
+      CLIENT.user_timeline(user, count: 50, exclude_replies: true, include_rts: false).each do |tweet|
         result << tweet
       end
       result

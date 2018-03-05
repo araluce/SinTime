@@ -85,3 +85,18 @@
   width: 100%;
   max-height: 500px;
 }
+
+.tweet_buttons{
+  a {
+    color: black;
+    text-decoration: none;
+    border-top: 1px #000 solid;
+    border-left: 1px #000 solid;
+    border-radius: 0!important;
+    font-size: .6em!important;
+
+    &:first-child{
+      border-left-width: 0;
+    }
+  }
+}
