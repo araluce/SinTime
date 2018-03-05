@@ -13,8 +13,15 @@ class PayService
     end
 
     def pay_score(exerciseuser)
-      result_time = exerciseuser.user.tdv + seconds_to_duration(exerciseuser.score.time_benefit)
-      generate_movement(exerciseuser.user, exerciseuser.exercise, 'Reto calificado', result_time)
+      if exerciseuser.exercise.is_clan?
+        exerciseuser.user.district.users.each do |user|
+          result_time = user.tdv + seconds_to_duration( exerciseuser.exercise.benefit_scores.find_by(score: exerciseuser.score).time_benefit )
+          generate_movement(user, exerciseuser.exercise, 'Reto calificado', result_time)
+        end
+      else
+        result_time = exerciseuser.user.tdv + seconds_to_duration( exerciseuser.exercise.benefit_scores.find_by(score: exerciseuser.score).time_benefit )
+        generate_movement(exerciseuser.user, exerciseuser.exercise, 'Reto calificado', result_time)
+      end
     end
 
     def generate_movement(user, exercise, reason, time_after)

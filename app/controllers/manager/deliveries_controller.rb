@@ -29,6 +29,13 @@ module Manager
 
     def update
       if @object.update(object_params)
+        if @object.exercise.is_clan?
+          @object.user.district.users.each do |user|
+            user.exercise_users.comprado.where(exercise: @object.exercise).each do |exercise_user|
+              exercise_user.update(object_params)
+            end
+          end
+        end
         PayService.pay_score(@object)
         redirect_to manager_deliveries_path, notice: 'Ejercicio calificado correctamente'
       else
