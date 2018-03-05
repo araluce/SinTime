@@ -20,6 +20,10 @@ class ExerciseUser < ApplicationRecord
   end
 
   scope :deliveries, -> {where.not(file_file_name: nil)}
+  scope :water, -> {joins(:exercise).where('exercises.feeding_type = 1')}
+  scope :food, -> {joins(:exercise).where('exercises.feeding_type = 0')}
+  scope :individual, -> {joins(:exercise).where('exercises.district = 0')}
+  scope :clan, -> {joins(:exercise).where('exercises.district = 1')}
 
   def save_file!
     self.save if valid?(:send_file)

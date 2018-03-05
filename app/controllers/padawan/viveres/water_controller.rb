@@ -19,7 +19,13 @@ module Padawan
 
       def set_objects
         @objects_clan = model.clan.water.order(created_at: :desc)
-        @objects_individual = model.individual.water.order(created_at: :desc)
+        @objects_individual = []
+        current_user.water_deliveries.each do |delivery|
+          @objects_individual << delivery.exercise
+        end
+        if @objects_individual.empty?
+          @random_exercise = model.individual.offset(rand(model.individual.count)).first
+        end
       end
 
       def percentage

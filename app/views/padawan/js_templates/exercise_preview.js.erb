@@ -43,7 +43,9 @@
 
   <%- if (@object.district && @my_deliveries.comprado.joins(:exercise).where('exercises.district = 1').empty?) || (!@object.district && @my_deliveries.comprado.joins(:exercise).where('exercises.district = 0').empty?)%>
     <%- if (@my_deliveries.where(exercise: @object).any? && @my_deliveries.where(exercise: @object).last.is_corregido?) ||  @my_deliveries.where(exercise: @object).empty?%>
-      $('.action').html('<%= link_to 'Buy', padawan_viveres_purchase_exercise_path(exercise_id: @object), class: 'add-to-cart btn btn-default', remote: true %>');
+      <%- unless @object.is_water? && @object.is_individual?%>
+        $('.action').html('<%= link_to 'Buy', padawan_viveres_purchase_exercise_path(exercise_id: @object), class: 'add-to-cart btn btn-default', remote: true %>');
+      <% end %>
     <% end %>
   <% elsif @my_deliveries.where(exercise: @object).comprado.any? %>
     $('.exercises-alerts').html('<div class="alert alert-info"><strong>Ejercicio comprado</strong></div>');

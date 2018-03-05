@@ -6,7 +6,22 @@ module Padawan
       def purchase
         @response = true
         begin
-          unless model_exercise_user.where(exercise_id: params[:exercise_id], user: [current_user], status: 'Comprado').any?
+          deliveries = current_user.exercise_users.comprado.where(exercise_id: params[:exercise_id])
+          if @object.is_water?
+            if @object.is_individual?
+              deliveries = deliveries.water.individual
+            else
+              deliveries = deliveries.water.clan
+            end
+          else
+            if @object.is_individual?
+              deliveries = deliveries.food.individual
+            else
+              deliveries = deliveries.food.clan
+            end
+          end
+
+          unless deliveries.any?
             model_exercise_user.create(exercise_id: params[:exercise_id], user: current_user)
             PayService.pay_exercise(current_user, @object, 'Compra')
             set_request_params
