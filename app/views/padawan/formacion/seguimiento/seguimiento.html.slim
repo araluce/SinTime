@@ -16,13 +16,13 @@
       .col-md-6.col-sm-12
         = f.input :tweeter, input_html: {placeholder: '@usuario'}, label: false
       .col-md-6.col-sm-12
-        = f.button :submit, 'Follow', class: 'btn btn-block btn-primary'
+        = f.button :submit, 'Follow', class: 'btn btn-block btn-border-white'
 
     =simple_form_for(current_user, url: padawan_formacion_load_tweeter_tweets_path, html: {class: 'row form-vertical'}) do |f|
       .col-md-6.col-sm-12
         = f.association :tweeters, input_html: {multiple: false, class: 'custom-select'}, label: false, label_method: lambda {|tweeter| "@#{tweeter}"}
       .col-md-6.col-sm-12
-        = f.button :submit, 'Cargar tweets', class: 'btn btn-block btn-primary'
+        = f.button :submit, 'Cargar tweets', class: 'btn btn-block btn-border-white'
 
     .row
       - @tweets.each do |tweet|
