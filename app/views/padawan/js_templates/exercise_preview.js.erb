@@ -23,7 +23,12 @@
 
   $('.exercise_time_cost').html('<%= seconds_to_s(@object.time_benefit) %>');
   $('.review-no').html('<%= "#{@object.users.count} veces comprado" %>');
-  $('.product-description').html('<%= simple_format(@object.statement).gsub("\n", "").html_safe %>');
+  <%- if @object.is_clan? %>
+    $('.product-description').html("<%= '<b>Reto de distrito</b><br>'.html_safe %>");
+  <% else %>
+    $('.product-description').html("<%= '<b>Reto individual</b><br>'.html_safe %>");
+  <% end %>
+  $('.product-description').append('<%= simple_format(@object.statement).gsub("\n", "").html_safe %>');
   $('.pic').html('<%= image_tag @object.icon.url(:medium), class: 'img-thumbnail' %>');
   $('.product-title').html('<%= @object.title.titleize %>');
 

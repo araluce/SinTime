@@ -11,7 +11,7 @@
 
     .row
       - @objects_clan.each do |object|
-        .col.box.box-danger = link_to image_tag(object.icon.url(:thumb), class: 'img-responsive'), padawan_viveres_print_exercise_path(object), remote: true, class: 'btn', style: 'width: 100%'
+        .col= link_to image_tag(object.icon.url(:thumb), class: 'img-responsive'), padawan_viveres_print_exercise_path(object), remote: true, class: 'btn', style: 'width: 100%'
     .row
       - @objects_individual.each do |object|
         .col = link_to image_tag(object.icon.url(:thumb), class: 'img-responsive'), padawan_viveres_print_exercise_path(object), remote: true, class: 'btn', style: 'width: 100%'
