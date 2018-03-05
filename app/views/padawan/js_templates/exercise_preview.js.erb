@@ -36,18 +36,16 @@
     <% end %>
   <% end %>
 
-  <%- unless @my_deliveries.comprado.any? %>
+  <%- if (@object.district && @my_deliveries.comprado.joins(:exercise).where('exercises.district = 1').empty?) || (!@object.district && @my_deliveries.comprado.joins(:exercise).where('exercises.district = 0').empty?)%>
     <%- if (@my_deliveries.where(exercise: @object).any? && @my_deliveries.where(exercise: @object).last.is_corregido?) ||  @my_deliveries.where(exercise: @object).empty?%>
       $('.action').html('<%= link_to 'Buy', padawan_viveres_purchase_exercise_path(exercise_id: @object), class: 'add-to-cart btn btn-default', remote: true %>');
     <% end %>
+  <% elsif @my_deliveries.where(exercise: @object).comprado.any? %>
+    $('.exercises-alerts').html('<div class="alert alert-info"><strong>Ejercicio comprado</strong></div>');
+    $('.action').html('<%= render 'padawan/viveres/delivery_form', object: @my_deliveries.where(exercise: @object, status: 'Comprado').first %>');
+    $('.action').append('<%= link_to 'Cancelar Compra', padawan_viveres_rewind_exercise_path(exercise_id: @object), class: 'add-to-cart btn btn-default pull-right', remote: true %>');
   <% else %>
-    <%- if @my_deliveries.where(exercise: @object).comprado.any? %>
-      $('.exercises-alerts').html('<div class="alert alert-info"><strong>Ejercicio comprado</strong></div>');
-      $('.action').html('<%= render 'padawan/viveres/delivery_form', object: @my_deliveries.where(exercise: @object, status: 'Comprado').first %>');
-      $('.action').append('<%= link_to 'Cancelar Compra', padawan_viveres_rewind_exercise_path(exercise_id: @object), class: 'add-to-cart btn btn-default pull-right', remote: true %>');
-    <% else %>
-      $('.exercises-alerts').html('<div class="alert alert-warning"><strong>Ya has comprado un ejercicio</strong></div>');
-    <% end %>
+    $('.exercises-alerts').html('<div class="alert alert-warning"><strong>Ya has comprado un ejercicio</strong></div>');
   <% end %>
 
   var datetime = new Date('<%= @tdv %>');

@@ -2,6 +2,8 @@ class Exercise::Feeding < Exercise
 
   scope :food, -> { where(feeding_type: 'Comida') }
   scope :water, -> { where(feeding_type: 'Agua') }
+  scope :clan, -> { where(district: true) }
+  scope :individual, -> { where(district: false) }
 
   enum feeding_type: %w[Comida Agua], _prefix: true
 

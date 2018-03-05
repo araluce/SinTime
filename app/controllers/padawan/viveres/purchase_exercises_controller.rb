@@ -51,7 +51,11 @@ module Padawan
       end
 
       def set_request_params
-        @my_deliveries = current_user.exercise_users
+        if @object.is_food?
+          @my_deliveries = current_user.food_deliveries
+        else
+          @my_deliveries = current_user.water_deliveries
+        end
         @tdv = current_user.tdv
       end
 

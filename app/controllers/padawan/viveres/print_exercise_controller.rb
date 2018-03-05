@@ -8,7 +8,11 @@ module Padawan
       end
 
       def show
-        @my_deliveries = current_user.exercise_users
+        if @object.is_food?
+          @my_deliveries = current_user.food_deliveries
+        else
+          @my_deliveries = current_user.water_deliveries
+        end
         @response = true
         @tdv = current_user.tdv
         render 'padawan/js_templates/exercise_preview.js.erb'

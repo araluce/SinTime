@@ -9,6 +9,12 @@
   padding: 15px;
   border: 1px #000000 solid;
   border-radius: 4px;
+
+  &.box-danger{
+    color: #721c24;
+    background-color: rgba(248, 215, 218, 1);
+    border-color: #f5c6cb;
+  }
 }
 
 .exercise-slot-js{

@@ -19,7 +19,8 @@ module Padawan
       private
 
       def set_objects
-        @objects = model.food.order(created_at: :desc)
+        @objects_clan = model.clan.food.order(created_at: :desc)
+        @objects_individual = model.individual.food.order(created_at: :desc)
       end
 
       def percentage
@@ -27,6 +28,7 @@ module Padawan
         tsc_default_time = seconds_to_duration(tsc_default.value)
 
         @percentage = 1 - ((datetime_to_seconds(DateTime.now) - datetime_to_seconds(current_user.tsc)) / tsc_default_time.value.to_f)
+        @percentage = 0 if @percentage < 1
       end
 
     end

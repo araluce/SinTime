@@ -3,6 +3,9 @@ module Padawan
     class WaterController < Padawan::ViveresController
       layout 'padawan'
       before_action :set_objects
+      before_action :percentage
+
+      include TimeHelper
 
       def model
         Exercise::Feeding
@@ -15,7 +18,16 @@ module Padawan
       private
 
       def set_objects
-        @objects = model.water.order(created_at: :desc)
+        @objects_clan = model.clan.water.order(created_at: :desc)
+        @objects_individual = model.individual.water.order(created_at: :desc)
+      end
+
+      def percentage
+        tsb_default = Constant.find_by_key('tiempo sin beber');
+        tsb_default_time = seconds_to_duration(tsb_default.value)
+
+        @percentage = 1 - ((datetime_to_seconds(DateTime.now) - datetime_to_seconds(current_user.tsb)) / tsb_default_time.value.to_f)
+        @percentage = 0 if @percentage < 1
       end
 
     end

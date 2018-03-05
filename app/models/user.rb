@@ -83,4 +83,12 @@ class User < ApplicationRecord
     end
   end
 
+  def food_deliveries
+    exercise_users.joins(:exercise).where('exercises.feeding_type = 0')
+  end
+
+  def water_deliveries
+    exercise_users.joins(:exercise).where('exercises.feeding_type = 1')
+  end
+
 end
