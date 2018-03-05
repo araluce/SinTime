@@ -67,6 +67,8 @@ module Padawan
           @errors = @tweeter.errors
         end
 
+        object_initialization
+
         render :seguimiento
 
       end

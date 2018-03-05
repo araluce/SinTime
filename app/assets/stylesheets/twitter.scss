@@ -6,6 +6,7 @@
   margin: auto;
   border-radius: 5px;
   background-color: #fff;
+  font-family: Isocpeur;
 }
 .tweetEntry-action-list {
   display: block;
@@ -35,16 +36,15 @@
 }
 .tweetEntry-content {
   display: block;
-  font-size: 14px;
+  font-size: 1em;
   margin-left: 58px;
-  font-size: 14px;
   padding: 9px 12px;
 }
 .tweetEntry-account-group {
   color: #8899a6;
   padding: 0px;
   text-decoration: none;
-  line-height: 20px;
+  line-height: 1.2em;
 }
 .tweetEntry-avatar {
   float: left;
@@ -55,26 +55,26 @@
 }
 .tweetEntry-fullname {
   font-weight: bold;
-  font-size: 130%;
+  font-size: 0.8em;
   color: #292f33;
   padding: 0px;
 }
 .tweetEntry-username {
-  font-size: 110%;
+  font-size: 0.8em;
   color: rgb(105, 120, 130);
   padding: 0px;
   margin-left: 4px;
 }
 .tweetEntry-timestamp {
-  font-size: 14px;
+  font-size: 0.7em;
   color: rgb(105, 120, 130);
   padding: 0px;
   margin-left: 4px;
 }
 .tweetEntry-text-container {
-  font-size: 130%;
+  font-size: 0.8em;
   color: #292f33;
-  line-height: 18px;
+  line-height: 1.2em;
 }
 .optionalMedia {
   width: 100%;
