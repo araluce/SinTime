@@ -4,14 +4,42 @@ module Padawan
       before_action :set_object, only: [:update]
 
       def update
+        if @object.is_individual?
+          send_exercise
+        else
+          if current_user.district
+            users = current_user.district.users
+            can_sent = true
+            users.each do |user|
+              can_sent = false if user.exercise_users.comprado.where(exercise: @object.exercise).empty?
+            end
+
+            if can_sent
+              send_exercise
+            else
+              flash[:notice] = 'Para poder entregar todos los miembros de tu clan deben comprar el reto'
+              redirect_to_index
+            end
+          else
+            flash[:notice] = 'No puedes entregar, no perteneces a ningún distrito'
+            redirect_to_index
+          end
+        end
+      end
+
+      def send_exercise
         if @object.is_comprado?
           flash[:notice] = 'Entrega realizada correctamente'
           @object.update_attributes(object_params)
           current_user.update_columns(tsc: DateTime.now)
         else
-          flash[:error] = 'Ya se ha entregado este ejercicio'
+          flash[:error] = 'Ya se ha entregado este reto'
         end
 
+        redirect_to_index
+      end
+
+      def redirect_to_index
         case @object.exercise.type_to_s
           when 'Agua'
             redirect_to padawan_viveres_water_index_path

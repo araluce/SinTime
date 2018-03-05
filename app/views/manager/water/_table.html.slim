@@ -3,6 +3,7 @@
     thead
       tr
         th Icono
+        th Clan
         th Title
         th Enunciado
         th Tiempo de beneficio
@@ -11,7 +12,8 @@
       - @objects.each do |water|
         tr
           td = image_tag water.icon.url(:thumb), class: 'img-thumbnail'
-          td = water.title
+          td = water.district
+          td = water.title.titleize
           td = water.statement
           td = seconds_to_s(water.time_benefit)
           td

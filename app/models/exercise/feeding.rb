@@ -26,4 +26,12 @@ class Exercise::Feeding < Exercise
   def type_to_s
     feeding_type
   end
+
+  def is_individual?
+    !district
+  end
+
+  def is_clan?
+    district
+  end
 end
