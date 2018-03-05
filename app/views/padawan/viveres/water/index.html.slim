@@ -16,7 +16,7 @@
       - if @objects_individual.any?
         .col = link_to image_tag(@objects_individual.first.icon.url(:thumb), class: 'img-responsive'), padawan_viveres_print_exercise_path(@objects_individual.first), remote: true, class: 'btn', style: 'width: 100%'
       -else
-        .col = link_to image_tag('padawan/viveres/gota.png', class: 'img-responsive'), padawan_viveres_purchase_exercise_path(exercise_id: @random_exercise.id), remote: true, class: 'btn', style: 'width: 100%'
+        .col = link_to image_tag('padawan/viveres/gota.png', class: 'img-responsive'), padawan_viveres_purchase_exercise_path(exercise_id: @random_exercise.id), remote: true, class: 'btn', id: 'btn-random-js', style: 'width: 100%'
 
     .row
       .col-12
