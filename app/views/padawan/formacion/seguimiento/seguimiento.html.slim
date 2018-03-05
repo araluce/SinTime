@@ -4,7 +4,7 @@
       .col-12
         .btn-pref.btn-group.btn-group-justified.btn-group-sm role="group" style="width: 100%"
           = link_to '#', class: 'btn btn-border-white', style: 'width: 50%' do
-            .round.round-lg.hollow.orange = "#{@tweets_count}/#{@max_tweets_per_day}"
+            = "#{@tweets_count}/#{@max_tweets_per_day}"
           = link_to fa_icon('fw chevron-circle-left', text: 'Volver'), padawan_formacion_path, class: 'btn btn-border-white', style: 'width: 50%'
       .col-12
         .btn-pref.btn-group.btn-group-justified.btn-group-sm role="group" style="width: 100%"
