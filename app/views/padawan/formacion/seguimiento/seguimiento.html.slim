@@ -3,26 +3,26 @@
     .row style="margin-bottom: 1%;"
       .col-12
         .btn-pref.btn-group.btn-group-justified.btn-group-sm role="group" style="width: 100%"
-          = link_to '#', class: 'btn btn-border-white', style: 'width: 50%' do
+          = link_to '#', class: 'btn btn-border-black', style: 'width: 50%' do
             = "#{@tweets_count}/#{@max_tweets_per_day}"
-          = link_to fa_icon('fw chevron-circle-left', text: 'Volver'), padawan_formacion_path, class: 'btn btn-border-white', style: 'width: 50%'
+          = link_to fa_icon('fw chevron-circle-left', text: 'Volver'), padawan_formacion_path, class: 'btn btn-border-black', style: 'width: 50%'
       .col-12
         .btn-pref.btn-group.btn-group-justified.btn-group-sm role="group" style="width: 100%"
-          = link_to 'Texto', padawan_formacion_mochila_path(backpack_type: 'texto'),              class: 'btn btn-border-white', style: 'width: 33.33%'
-          = link_to 'Audiovisual', padawan_formacion_mochila_path(backpack_type: 'audiovisual'),  class: 'btn btn-border-white', style: 'width: 33.33%'
-          = link_to 'Herramientas', padawan_formacion_mochila_path(backpack_type: 'herramienta'), class: 'btn btn-border-white', style: 'width: 33.33%'
+          = link_to 'Texto', padawan_formacion_mochila_path(backpack_type: 'texto'),              class: 'btn btn-border-black', style: 'width: 33.33%'
+          = link_to 'Audiovisual', padawan_formacion_mochila_path(backpack_type: 'audiovisual'),  class: 'btn btn-border-black', style: 'width: 33.33%'
+          = link_to 'Herramientas', padawan_formacion_mochila_path(backpack_type: 'herramienta'), class: 'btn btn-border-black', style: 'width: 33.33%'
 
     = simple_form_for(@tweeter, url: padawan_formacion_follow_user_path, html: {class: 'row form-vertical'}) do |f|
       .col-md-6.col-sm-12
         = f.input :tweeter, input_html: {placeholder: '@usuario'}, label: false
       .col-md-6.col-sm-12
-        = f.button :submit, 'Follow', class: 'btn btn-block btn-border-white'
+        = f.button :submit, 'Follow', class: 'btn btn-block btn-border-black'
 
     =simple_form_for(current_user, url: padawan_formacion_load_tweeter_tweets_path, html: {class: 'row form-vertical'}) do |f|
       .col-md-6.col-sm-12
         = f.association :tweeters, collection: f.object.tweeters, input_html: {multiple: false, class: 'custom-select'}, label: false, label_method: lambda {|tweeter| "@#{tweeter}"}, include_blank: false
       .col-md-6.col-sm-12
-        = f.button :submit, 'Cargar tweets', class: 'btn btn-block btn-border-white'
+        = f.button :submit, 'Cargar tweets', class: 'btn btn-block btn-border-black'
 
     .row
       - @tweets.each do |tweet|

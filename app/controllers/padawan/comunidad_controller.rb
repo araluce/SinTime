@@ -1,6 +1,6 @@
 module Padawan
   class ComunidadController < Padawan::PadawanController
-    layout 'galactic_padawan'
+    layout 'padawan'
     def comunidad
     end
 

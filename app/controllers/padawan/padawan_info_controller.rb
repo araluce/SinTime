@@ -1,6 +1,6 @@
 module Padawan
   class PadawanInfoController < Padawan::PadawanController
-    layout 'galactic_padawan'
+    layout 'padawan'
 
     def padawan_info
 
