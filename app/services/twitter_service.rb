@@ -13,12 +13,18 @@ class TwitterService
     end
 
     def get_latest_tweet_by_user(user)
-      result = []
-      num_tweets = Constant.find_by_key('número de tweets a cargar en seguimiento').value.to_i rescue 25
-      CLIENT.user_timeline(user, count: num_tweets, exclude_replies: true, include_rts: false).each do |tweet|
-        result << tweet
+      begin
+        result = []
+        num_tweets = Constant.find_by_key('número de tweets a cargar en seguimiento').value.to_i rescue 25
+        CLIENT.user_timeline(user, count: num_tweets, exclude_replies: true, include_rts: false).each do |tweet|
+          result << tweet
+        end
+        result
+      rescue Twitter::Error::Unauthorized => e
+        1
+      rescue Twitter::Error::NotFound=> e
+        2
       end
-      result
     end
 
     def get_latest_tweet_by_hashtags(hashtags)

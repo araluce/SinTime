@@ -9,7 +9,10 @@ module Padawan
       def seguimiento
         object_initialization
         @tweets = []
-        @tweets = TwitterService.get_latest_tweet_by_user(current_user.tweeters.first&.to_s) if current_user.tweeters.any?
+        if current_user.tweeters.any?
+          @tweets = TwitterService.get_latest_tweet_by_user(current_user.tweeters.first&.to_s)
+          check_private_profile
+        end
       end
 
       def load_tweeter_tweets
@@ -18,8 +21,10 @@ module Padawan
 
         if _tweeter
           @tweets = TwitterService.get_latest_tweet_by_user(_tweeter.to_s)
+          check_private_profile
         else
           @tweets = TwitterService.get_latest_tweet_by_user(current_user.tweeters.first&.to_s)
+          check_private_profile
         end
 
         render 'seguimiento'
@@ -63,6 +68,7 @@ module Padawan
           current_user.update_attributes(tweeters: tweeters)
           flash[:notice] = "Ahora estás siguiendo a #{@tweeter}"
           @tweets = TwitterService.get_latest_tweet_by_user(@tweeter.to_s)
+          check_private_profile
         else
           @errors = @tweeter.errors
         end
@@ -74,6 +80,17 @@ module Padawan
       end
 
       private
+
+      def check_private_profile
+        case @tweets
+          when 1
+            flash[:notice] = 'Este perfil es privado'
+            @tweets = []
+          when 2
+            flash[:notice] = 'Perfil no encontrado'
+            @tweets = []
+        end
+      end
 
       def object_initialization
         @tweeter = Tweeter.new()
