@@ -2,10 +2,19 @@ class PayService
   class << self
     include TimeHelper
 
-    def pay_reason(user, quantity, reason)
+    def user_pay_reason(user, quantity, reason)
       result_time = user.tdv - seconds_to_duration(quantity)
-      user.banking_movements.create(reason: reason, time_before: (user.tdv.to_time - DateTime.now), time_after: (result_time.to_time-DateTime.now))
-      user.update_columns(tdv: result_time)
+      pay_reason(user, result_time, reason)
+    end
+
+    def system_pay_reason(user, quantity, reason)
+      result_time = user.tdv + seconds_to_duration(quantity)
+      pay_reason(user, result_time, reason)
+    end
+
+    def pay_reason(user, time_after, reason)
+      user.banking_movements.create(reason: reason, time_before: (user.tdv.to_time - DateTime.now), time_after: (time_after.to_time-DateTime.now))
+      user.update_columns(tdv: time_after)
     end
 
     def pay_exercise(user, exercise, reason)

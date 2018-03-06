@@ -8,7 +8,7 @@ class BankingMovement < ApplicationRecord
             presence: true
 
   def seconds_difference
-    time_after - time_before
+    (time_after - time_before).abs
   end
 
   def is_positive?
