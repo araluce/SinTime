@@ -4,7 +4,7 @@ module Padawan
       before_action :set_object, only: [:update]
 
       def update
-        if @object.is_individual?
+        if @object.exercise.is_individual?
           send_exercise
         else
           if current_user.district
