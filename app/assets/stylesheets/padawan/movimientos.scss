@@ -1,0 +1,26 @@
+.table-bank{
+  font-size: 0.7em;
+  font-family: Isocpeur;
+
+  $red-bank-color: #F4137B;
+  $green-bank-color: #0083A1;
+  $gray-bank-color: #BBBCC4;
+
+  .green{
+    color: $green-bank-color;
+  }
+
+  .red{
+    color: $red-bank-color;
+  }
+
+  .gray{
+    color: $gray-bank-color;
+    font-weight: bold;
+  }
+
+  .green, .red {
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+}
