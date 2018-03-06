@@ -37,7 +37,7 @@ class UserRuntastic < ApplicationRecord
           activity_updated_at: attributes['updated_at'].to_datetime,
           completed: attributes['completed'],
           data: activity[:data]
-      )
+      ) rescue nil
     end
   end
 end
