@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   post '/check_register', to: 'static#check_register', as: :check_register
   patch '/register_user', to: 'static#register_user', as: :register_user
 
+  namespace :cron do
+    get 'twitter_count', to: 'twitter#twitter_count', as: :twitter_count
+  end
+
   namespace :padawan do
     get '/home', to: 'padawan#home'
     get 'padawan_info', to: 'padawan_info#padawan_info'
