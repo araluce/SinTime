@@ -82,7 +82,8 @@ module Manager
           :days_benefit,
           :hours_benefit,
           :minutes_benefit,
-          :seconds_benefit
+          :seconds_benefit,
+          benefit_scores_attributes: {}
       ).merge(feeding_type: 'Agua')
     end
 
