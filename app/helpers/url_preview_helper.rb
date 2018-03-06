@@ -6,7 +6,7 @@ module UrlPreviewHelper
       LinkThumbnailer.generate(url)
     rescue LinkThumbnailer::Exceptions => e
       nil
-    rescue Net::ReadTimeout
+    rescue
       nil
     end
   end
