@@ -17,17 +17,22 @@ module Padawan
 
       def load_tweeter_tweets
         object_initialization
-        _tweeter = Tweeter.find( params[:user][:tweeter_ids])
+        _tweeter = Tweeter.find( params[:user][:tweeter_ids]) rescue nil
 
-        if _tweeter
-          @tweets = TwitterService.get_latest_tweet_by_user(_tweeter.to_s)
-          check_private_profile
+        unless _tweeter.nil?
+          if _tweeter
+            @tweets = TwitterService.get_latest_tweet_by_user(_tweeter.to_s)
+            check_private_profile
+          else
+            @tweets = TwitterService.get_latest_tweet_by_user(current_user.tweeters.first&.to_s)
+            check_private_profile
+          end
+
+          render 'seguimiento'
         else
-          @tweets = TwitterService.get_latest_tweet_by_user(current_user.tweeters.first&.to_s)
-          check_private_profile
+          redirect_to action: :seguimiento
         end
 
-        render 'seguimiento'
       end
 
       def mochila
