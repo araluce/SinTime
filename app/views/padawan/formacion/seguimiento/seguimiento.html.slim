@@ -25,7 +25,8 @@
         = f.button :submit, 'Cargar tweets', class: 'btn btn-block btn-border-black'
 
     .row
-      - @tweets.each do |tweet|
-        .col-lg-6.col-sm-12
-          .tweetEntry-tweetHolder
-            = render 'padawan/partials/tweet', tweet: tweet
+      - if @tweets
+        - @tweets.each do |tweet|
+          .col-lg-6.col-sm-12
+            .tweetEntry-tweetHolder
+              = render 'padawan/partials/tweet', tweet: tweet
