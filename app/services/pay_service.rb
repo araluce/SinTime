@@ -25,7 +25,7 @@ class PayService
     end
 
     def generate_movement(user, exercise, reason, time_after)
-      user.banking_movements.create(reason: reason, exercise: exercise, time_before: user.tdv.to_time, time_after: time_after.to_time)
+      user.banking_movements.create(reason: reason, exercise: exercise, time_before: (user.tdv.to_time - DateTime.now), time_after: (time_after.to_time-DateTime.now))
       user.update_columns(tdv: time_after)
     end
 

@@ -1,0 +1,23 @@
+.row
+  .col-12.future-card
+    .row style="margin-bottom: 1%;"
+      .col-12
+        = link_to fa_icon('fw chevron-circle-left', text: 'Volver'), padawan_padawan_info_path, class: 'btn btn-border-white pull-right'
+    .row
+      .col-12
+        .table-responsive
+          table.table.text-white#movimientosC
+            thead
+              tr
+                th Concepto
+                th Fecha
+                th Operación
+            tbody
+              - @objects.each do |object|
+                tr
+                  td = object.reason
+                  td = object.created_at.to_formatted_s(:short)
+                  td
+                    = seconds_to_s(object.time_before)
+                    br
+                    = seconds_to_s(object.time_after)

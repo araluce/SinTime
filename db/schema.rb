@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180304180417) do
+ActiveRecord::Schema.define(version: 20180305235146) do
 
   create_table "activity_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_runtastic_id"
@@ -58,8 +58,8 @@ ActiveRecord::Schema.define(version: 20180304180417) do
     t.bigint "user_id"
     t.bigint "exercise_id"
     t.string "reason"
-    t.time "time_after"
-    t.time "time_before"
+    t.integer "time_after"
+    t.integer "time_before"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["exercise_id"], name: "index_banking_movements_on_exercise_id"
