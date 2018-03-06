@@ -29,6 +29,7 @@ module Padawan
 
         @percentage = 1 - ((datetime_to_seconds(DateTime.now) - datetime_to_seconds(current_user.tsc)) / tsc_default_time.value.to_f)
         @percentage = 0 if @percentage < 1
+        @percentage = 1 if @percentage > 1
       end
 
     end
