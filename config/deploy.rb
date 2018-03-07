@@ -29,7 +29,7 @@ set :rollbar_role, Proc.new { :app }
 append :linked_files, "config/database.yml", "config/secrets.yml"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
 
-set :whenever_roles, [:app]
+set :whenever_roles, ->{ [:web, :app]}
 
 after 'deploy:publishing', 'deploy:restart'
 # Default value for default_env is {}
