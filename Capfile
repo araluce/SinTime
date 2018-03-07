@@ -30,6 +30,7 @@ require 'capistrano/bundler'
 require 'capistrano/rails'
 require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
+require 'whenever/capistrano'
 require 'rollbar/capistrano3'
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined

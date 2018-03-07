@@ -116,3 +116,5 @@ gem 'bootstrap_progressbar'
 gem 'jwt'
 
 gem 'rest-client'
+
+gem 'whenever', require: false
