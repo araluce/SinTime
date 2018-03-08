@@ -18,8 +18,8 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-# set :environment, ENV['RAILS_ENV']
-#
-# every :weekday, at: '12:01' do
-#   rake 'cron:twitter', :output => {:error => 'log/twitter_cron_error.log', :standard => 'log/twitter_cron.log'}
-# end
+set :environment, ENV['RAILS_ENV']
+
+every :weekday, at: '01:00' do
+  rake 'cron:twitter', :output => {:error => 'log/twitter_cron_error.log', :standard => 'log/twitter_cron.log'}
+end
