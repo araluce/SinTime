@@ -4,6 +4,9 @@ ul.navbar-nav.sidenav-toggler
       = fa_icon 'fw angle-left'
 
 ul.navbar-nav.ml-auto
+  li.nav-item
+    .nav-link.mr-lg-2
+      = fa_icon 'fw users', text: "#{User.loggeds.count} usuarios conectados"
   li.nav-item.dropdown
     a.nav-link.dropdown-toggle.mr-lg-2#messagesDropdown href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
       = fa_icon 'fw envelope'

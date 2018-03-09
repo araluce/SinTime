@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180305235146) do
+ActiveRecord::Schema.define(version: 20180309170809) do
 
   create_table "activity_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_runtastic_id"
@@ -109,6 +109,10 @@ ActiveRecord::Schema.define(version: 20180305235146) do
     t.string "file_content_type"
     t.integer "file_file_size"
     t.datetime "file_updated_at"
+    t.datetime "second_file_updated_at"
+    t.integer "second_file_file_size"
+    t.string "second_file_content_type"
+    t.string "second_file_file_name"
     t.integer "status", default: 0
     t.bigint "score_id"
     t.datetime "created_at", null: false
