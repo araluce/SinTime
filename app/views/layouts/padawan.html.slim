@@ -13,7 +13,9 @@ html
 
       h1 = yield(:clock)
       .row
-        .col-12.countdown
+        .col-11.countdown
+        .col-1
+          = image_tag current_user.avatar.url(:thumb), class: 'img-circle'
 
       .alert-content
         - if notice
