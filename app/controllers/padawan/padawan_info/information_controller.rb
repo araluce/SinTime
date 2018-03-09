@@ -1,7 +1,7 @@
 module Padawan
   module PadawanInfo
     class InformationController < Padawan::PadawanInfoController
-      layout 'profile'
+      layout 'padawan'
       before_action :get_object
 
       def index

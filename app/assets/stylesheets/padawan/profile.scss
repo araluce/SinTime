@@ -1,522 +1,223 @@
-//colors
-$color_selective_yellow_approx: #ffb300;
-$color_bon_jour_approx: #e0e0e0;
-$white: #ffffff;
-$color_ziggurat_approx: #bcdee7;
-$color_tuna_approx: #313440;
-$black_16: rgba(0, 0, 0, 0.16);
-$black_23: rgba(0, 0, 0, 0.23);
-$color_gallery_approx: #eeeeee;
-$black: #000000;
-$color_flamingo_approx: #ff5722;
-$color_dodger_blue_approx: #2196f3;
-$color_amber_approx: #ffc107;
-$black_10: rgba(0, 0, 0, 0.1);
-$black_6: rgba(0, 0, 0, 0.06);
-$color_mine_shaft_approx: #333333;
-$red: red;
+.profile {
+  //colors
+  $color_selective_yellow_approx: #ffb300;
+  $color_bon_jour_approx: #e0e0e0;
+  $white: #ffffff;
+  $color_ziggurat_approx: #bcdee7;
+  $color_tuna_approx: #313440;
+  $black_16: rgba(0, 0, 0, 0.16);
+  $black_23: rgba(0, 0, 0, 0.23);
+  $color_gallery_approx: #eeeeee;
+  $black: #000000;
+  $color_flamingo_approx: #ff5722;
+  $color_dodger_blue_approx: #2196f3;
+  $color_amber_approx: #ffc107;
+  $black_10: rgba(0, 0, 0, 0.1);
+  $black_6: rgba(0, 0, 0, 0.06);
+  $color_mine_shaft_approx: #333333;
+  $red: red;
 
-//fonts
-$font_0: Roboto;
-$font_1: sans-serif;
+  //fonts
+  $font_0: Roboto;
+  $font_1: sans-serif;
 
-html {
-  height: 100%;
-}
-body {
-  overflow-y: auto;
-  background: $color_tuna_approx no-repeat center center fixed;
-  background-size: cover;
-  position: fixed;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  font: normal 14px/1.618em $font_0, $font_1;
-  &:before {
-    content: "";
-    height: 0;
-    padding: 0;
-    border: 130em solid $color_tuna_approx;
+  h1 {
+    font-weight: 500;
+    margin: 0 0 5px 0;
+  }
+  h2 {
+    font-weight: 500;
+    margin: 0 0 5px 0;
+  }
+  p {
+    margin: 0;
+  }
+  .profile-card {
+    background: $color_selective_yellow_approx;
+    width: 56px;
+    height: 56px;
     position: absolute;
     left: 50%;
-    top: 100%;
+    top: 50%;
     z-index: 2;
-    display: block;
-    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-    border-radius: 50%;
+    overflow: hidden;
+    opacity: 0;
+    margin-top: 70px;
     //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
     transform: translate(-50%, -50%);
-    animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
-    width: 0;
-  }
-}
-h1 {
-  font-weight: 500;
-  margin: 0 0 5px 0;
-  //font-size: 24px;
-}
-h2 {
-  font-weight: 500;
-  margin: 0 0 5px 0;
-  //font-size: 16px;
-}
-p {
-  margin: 0;
-}
-.profile-card {
-  background: $color_selective_yellow_approx;
-  width: 56px;
-  height: 56px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 2;
-  overflow: hidden;
-  opacity: 0;
-  margin-top: 70px;
-  //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-  transform: translate(-50%, -50%);
-  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-  border-radius: 50%;
-  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-  box-shadow: 0 3px 6px $black_16, 0 3px 6px $black_23;
-  animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
-  header {
-    width: 179px;
-    height: 280px;
-    padding: 40px 20px 30px;
-    display: inline-block;
-    float: left;
-    border-right: 2px dashed $color_gallery_approx;
-    background: $white;
-    color: $black;
-    margin-top: 50px;
-    opacity: 0;
-    text-align: center;
-    animation: moveIn 1s 3.1s ease forwards;
-    h1 {
-      color: $color_flamingo_approx;
-    }
-    img {
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 50%;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 3px 6px $black_16, 0 3px 6px $black_23;
+    header {
+      width: 179px;
+      height: 280px;
+      padding: 40px 20px 30px;
       display: inline-block;
+      float: left;
+      border-right: 2px dashed $color_gallery_approx;
+      background: $white;
+      color: $black;
+      margin-top: 50px;
+      opacity: 0;
       text-align: center;
-      position: relative;
-      margin: 25px 30px;
-      &:after {
-        position: absolute;
-        content: "";
-        bottom: 3px;
-        right: 3px;
-        width: 20px;
-        height: 20px;
-        border: 4px solid $white;
-        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-        transform: scale(0);
-        background: linear-gradient($color_dodger_blue_approx 0, $color_dodger_blue_approx 50%, $color_amber_approx 50%, $color_amber_approx 100%);
-        //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-        border-radius: 50%;
-        //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-        box-shadow: 0 1px 3px $black_10;
-        animation: scaleIn 0.3s 3.5s ease forwards;
-      }
-      width: 120px;
-      max-width: 100%;
-      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-      border-radius: 50%;
-      //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
-      transition: box-shadow 0.3s ease;
-      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-      box-shadow: 0 0 0 8px $black_6;
-      &:hover {
-        //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-        box-shadow: 0 0 0 12px $black_10;
-      }
-    }
-  }
-  .profile-bio {
-    width: 175px;
-    height: 180px;
-    display: inline-block;
-    float: right;
-    padding: 50px 20px 30px;
-    background: $white;
-    color: $color_mine_shaft_approx;
-    margin-top: 50px;
-    opacity: 0;
-    animation: moveIn 1s 3.1s ease forwards;
-    width: auto;
-    height: auto;
-    padding: 15px 20px 30px;
-    display: block;
-    float: none;
-  }
-}
-.profile-social-links {
-  width: 218px;
-  display: inline-block;
-  float: right;
-  margin: 0;
-  padding: 15px 20px;
-  background: $white;
-  margin-top: 50px;
-  text-align: center;
-  opacity: 0;
-  //Instead of the line below you could use @include box-sizing($bs)
-  box-sizing: border-box;
-  animation: moveIn 1s 3.1s ease forwards;
-  width: 100%;
-  display: block;
-  float: none;
-  li {
-    list-style: none;
-    margin: -5px 0 0;
-    padding: 0;
-    float: left;
-    width: 25%;
-    text-align: center;
-    a {
-      display: inline-block;
-      color: $red;
-      width: 24px;
-      height: 24px;
-      padding: 6px;
-      position: relative;
-      overflow: hidden!important;
-      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-      border-radius: 50%;
-      i {
-        position: relative;
-        z-index: 1;
+      animation: moveIn 1s 3.1s ease forwards;
+      h1 {
+        color: $color_flamingo_approx;
       }
       img {
-        width: 24px;
+        display: inline-block;
+        text-align: center;
+        position: relative;
+        margin: 25px 30px;
+        &:after {
+          position: absolute;
+          content: "";
+          bottom: 3px;
+          right: 3px;
+          width: 20px;
+          height: 20px;
+          border: 4px solid $white;
+          //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+          transform: scale(0);
+          background: linear-gradient($color_dodger_blue_approx 0, $color_dodger_blue_approx 50%, $color_amber_approx 50%, $color_amber_approx 100%);
+          //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+          border-radius: 50%;
+          //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+          box-shadow: 0 1px 3px $black_10;
+        }
+        width: 120px;
+        max-width: 100%;
+        //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+        border-radius: 50%;
+        //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+        transition: box-shadow 0.3s ease;
+        //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+        box-shadow: 0 0 0 8px $black_6;
+        &:hover {
+          //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+          box-shadow: 0 0 0 12px $black_10;
+        }
       }
-      svg {
-        width: 24px;
-      }
     }
-  }
-}
-@-webkit-keyframes init {
-  0% {
-    width: 0;
-    height: 0;
-  }
-  100% {
-    width: 56px;
-    height: 56px;
-    margin-top: 0;
-    opacity: 1;
-  }
-}
-@keyframes init {
-  0% {
-    width: 0;
-    height: 0;
-  }
-  100% {
-    width: 56px;
-    height: 56px;
-    margin-top: 0;
-    opacity: 1;
-  }
-}
-@-webkit-keyframes puff {
-  0% {
-    top: 100%;
-    height: 0;
-    padding: 0;
-  }
-  100% {
-    top: 50%;
-    height: 100%;
-    padding: 0 100%;
-  }
-}
-@keyframes puff {
-  0% {
-    top: 100%;
-    height: 0;
-    padding: 0;
-    top: 100%;
-    width: 0;
-    padding-bottom: 0;
-  }
-  100% {
-    top: 50%;
-    height: 100%;
-    padding: 0 100%;
-    top: 50%;
-    width: 100%;
-    padding-bottom: 100%;
-  }
-}
-@-webkit-keyframes borderRadius {
-  0% {
-  }
-  100% {
-  }
-}
-@keyframes borderRadius {
-  0% {
-  }
-  100% {
-    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-    border-radius: 0;
-  }
-}
-@-webkit-keyframes moveDown {
-  0% {
-    top: 50%;
-  }
-  50% {
-    top: 40%;
-  }
-  100% {
-    top: 100%;
-  }
-}
-@keyframes moveDown {
-  0% {
-    top: 50%;
-  }
-  50% {
-    top: 40%;
-  }
-  100% {
-    top: 100%;
-  }
-}
-@-webkit-keyframes moveUp {
-  0% {
-    background: $color_selective_yellow_approx;
-    top: 100%;
-  }
-  50% {
-    top: 40%;
-  }
-  100% {
-    top: 50%;
-    background: $color_bon_jour_approx;
-  }
-}
-@keyframes moveUp {
-  0% {
-    background: $color_selective_yellow_approx;
-    top: 100%;
-  }
-  50% {
-    top: 40%;
-  }
-  100% {
-    top: 50%;
-    background: $color_bon_jour_approx;
-  }
-}
-@-webkit-keyframes materia {
-  0% {
-    background: $color_bon_jour_approx;
-  }
-  50% {
-  }
-  100% {
-    width: 90%;
-    height: 280px;
-    background: $white;
-  }
-}
-@keyframes materia {
-  0% {
-    background: $color_bon_jour_approx;
-    background: $color_bon_jour_approx;
-  }
-  50% {
-    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-    border-radius: 4px;
-    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-    border-radius: 4px;
-  }
-  100% {
-    width: 90%;
-    height: 280px;
-    background: $white;
-    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-    border-radius: 4px;
-    width: 90%;
-    height: 440px;
-    background: $white;
-    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-    border-radius: 4px;
-  }
-}
-@-webkit-keyframes moveIn {
-  0% {
-    margin-top: 50px;
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    margin-top: -20px;
-  }
-}
-@keyframes moveIn {
-  0% {
-    margin-top: 50px;
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    margin-top: -20px;
-  }
-}
-@-webkit-keyframes scaleIn {
-  0% {
-  }
-  100% {
-  }
-}
-@keyframes scaleIn {
-  0% {
-    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-    transform: scale(0);
-  }
-  100% {
-    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-    transform: scale(1);
-  }
-}
-@-webkit-keyframes ripple {
-  0% {
-    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-    transform: scale3d(0, 0, 0);
-  }
-  50% {
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes ripple {
-  0% {
-    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-    transform: scale3d(0, 0, 0);
-  }
-  50% {
-    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-    transform: scale3d(1, 1, 1);
-  }
-  100% {
-    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-    transform: scale3d(1, 1, 1);
-    opacity: 0;
-  }
-}
-
-@media screen and (min-aspect-ratio: 4/3) {
-  body {
-    background-size: cover;
-  }
-  body:before {
-    width: 0px;
-  }
-  @-webkit-keyframes puff {
-    0% {
-      top: 100%;
-      width: 0px;
-      padding-bottom: 0px;
+    .profile-bio {
+      width: 175px;
+      height: 180px;
+      display: inline-block;
+      float: right;
+      padding: 50px 20px 30px;
+      background: $white;
+      color: $color_mine_shaft_approx;
+      margin-top: 50px;
+      opacity: 0;
+      animation: moveIn 1s 3.1s ease forwards;
+      width: auto;
+      height: auto;
+      padding: 15px 20px 30px;
+      display: block;
+      float: none;
     }
-    100% {
-      top: 50%;
-      width: 100%;
-      padding-bottom: 100%;
-    }
-  }
-  @keyframes puff {
-    0% {
-      top: 100%;
-      width: 0px;
-      padding-bottom: 0px;
-    }
-    100% {
-      top: 50%;
-      width: 100%;
-      padding-bottom: 100%;
-    }
-  }
-}
-
-@media screen and (min-height: 480px) {
-  .profile-card header {
-    width: auto;
-    height: auto;
-    padding: 30px 20px;
-    display: block;
-    float: none;
-    border-right: none;
-  }
-  .profile-card .profile-bio {
-    width: auto;
-    height: auto;
-    padding: 15px 20px 30px 20px;
-    display: block;
-    float: none;
   }
   .profile-social-links {
+    width: 218px;
+    display: inline-block;
+    float: right;
+    margin: 0;
+    padding: 15px 20px;
+    background: $white;
+    margin-top: 50px;
+    text-align: center;
+    opacity: 0;
+    //Instead of the line below you could use @include box-sizing($bs)
+    box-sizing: border-box;
+    animation: moveIn 1s 3.1s ease forwards;
     width: 100%;
     display: block;
     float: none;
+    li {
+      list-style: none;
+      margin: -5px 0 0;
+      padding: 0;
+      float: left;
+      width: 25%;
+      text-align: center;
+      a {
+        display: inline-block;
+        color: $red;
+        width: 24px;
+        height: 24px;
+        padding: 6px;
+        position: relative;
+        overflow: hidden !important;
+        //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+        border-radius: 50%;
+        i {
+          position: relative;
+          z-index: 1;
+        }
+        img {
+          width: 24px;
+        }
+        svg {
+          width: 24px;
+        }
+      }
+    }
   }
-  @-webkit-keyframes materia {
-    0% {
-      background: #E0E0E0;
+
+  @media screen and (min-aspect-ratio: 4/3) {
+    body {
+      background-size: cover;
     }
-    50% {
-      -webkit-border-radius: 4px;
+    body:before {
+      width: 0px;
     }
-    100% {
-      width: 90%;
+  }
+
+  @media screen and (min-height: 480px) {
+    .profile-card header {
+      width: auto;
       height: auto;
-      background: #FFFFFF;
-      -webkit-border-radius: 4px;
+      padding: 30px 20px;
+      display: block;
+      float: none;
+      border-right: none;
     }
-  }
-  @keyframes materia {
-    0% {
-      background: #E0E0E0;
-    }
-    50% {
-      border-radius: 4px;
-    }
-    100% {
-      width: 90%;
+    .profile-card .profile-bio {
+      width: auto;
       height: auto;
-      background: #FFFFFF;
-      border-radius: 4px;
+      padding: 15px 20px 30px 20px;
+      display: block;
+      float: none;
+    }
+    .profile-social-links {
+      width: 100%;
+      display: block;
+      float: none;
     }
   }
-}
 
-@include media-breakpoint-up(xs) {
-  html {
-    font-size: 1.3rem;
+  @include media-breakpoint-up(xs) {
+    html {
+      font-size: 1.3rem;
+    }
   }
-}
 
-@include media-breakpoint-up(ms) {
-  html {
-    font-size: 1.3rem;
+  @include media-breakpoint-up(ms) {
+    html {
+      font-size: 1.3rem;
+    }
   }
-}
 
-@include media-breakpoint-up(md) {
-  html {
-    font-size: 1.2rem;
+  @include media-breakpoint-up(md) {
+    html {
+      font-size: 1.2rem;
+    }
   }
-}
 
-@include media-breakpoint-up(lg) {
-  html {
-    font-size: 0.8rem;
+  @include media-breakpoint-up(lg) {
+    html {
+      font-size: 0.8rem;
+    }
   }
 }
