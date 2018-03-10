@@ -48,6 +48,10 @@ Rails.application.routes.draw do
       resources :sports, only: :index
       resources :login, except: [:index, :destroy]
     end
+
+    namespace :felicidad do
+      resources :audiencia, only: [:index, :create, :update]
+    end
   end
 
   namespace :guardian do

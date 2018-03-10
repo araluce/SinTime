@@ -73,7 +73,6 @@ module Manager
     def object_params
       params.require(:object).permit(
           :title,
-          :feeding_type,
           benefit_scores_attributes: {}
       ).merge(days_benefit: 0, hours_benefit: 0, minutes_benefit: 0, seconds_benefit: 1, statement: 'Reto de felicidad')
     end

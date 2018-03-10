@@ -5,6 +5,6 @@ class Exercise::Happiness < Exercise
   end
 
   def type_to_s
-    'Felicidad'
+    'Happiness'
   end
 end
