@@ -36,6 +36,10 @@ class Exercise < ApplicationRecord
     statement
   end
 
+  def is_clan?
+    false
+  end
+
   private
 
   def set_time_benefit
