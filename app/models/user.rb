@@ -66,7 +66,7 @@ class User < ApplicationRecord
   end
 
   def logged?
-    current_sign_in_at > last_sign_in_at
+    logged
   end
 
   def full_name

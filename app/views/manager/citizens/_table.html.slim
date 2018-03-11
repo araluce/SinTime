@@ -2,6 +2,7 @@
   table.table
     thead
       tr
+        th Status
         th Avatar
         th Nombre
         th Apellidos
@@ -13,6 +14,11 @@
     tbody
       - @objects.each do |citizen|
         tr
+          td
+            - if citizen.logged?
+              | Conectado
+            - else
+              | Desconectado
           td = image_tag citizen.avatar.url(:thumb), class: 'img-circle'
           td = citizen.name
           td = citizen.lastname
