@@ -1,6 +1,7 @@
+- object = @objects.last
 .row.future-card
   .col-12
-    - @objects.each do |object|
+    - if object
       .box
         h4 = object.statement
         fieldset
@@ -12,16 +13,18 @@
           p = "Ritmo: #{object.pace} min/km"
           p = "Duración: #{seconds_to_s(object.time_running)} kms/h"
 
-  - if @sessions.any?
+  - if object && @sessions.any?
     .col-12 style="margin-top: 1%"
       h5 Mis sesiones de la semana
     - @sessions.each do |session|
       .col-12
-        .box
-          p = "Tipo de sesión #{session.activity_type}"
-          - if session.is_running?
-            p = "Ritmo medio: #{session.pace} min/km"
+        - if session.is_running?
+          .box class="#{object.pace > session.pace ? 'box-success' : 'box-danger'}"
+            p = "Tipo de sesión #{session.activity_type}"
+            p = "Ritmo medio: #{number_with_precision(session.pace, precision: 2)} min/km"
             p = "Duración: #{seconds_to_s(session.duration/1000)}"
-          - else
+        - else
+          .box class="#{object.speed > session.average_speed ? 'box-danger' : 'box-success'}"
+            p = "Tipo de sesión #{session.activity_type}"
             p = "Velocidad media: #{session.average_speed} kms/h"
             p = "Duración: #{seconds_to_s(session.duration/1000)}"
