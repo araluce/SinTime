@@ -25,11 +25,11 @@ class ActivityLog < ApplicationRecord
   end
 
   def pace
-    avg_duration_to_minutes/avg_distance_to_kms rescue 0
+    avg_duration_to_minutes.to_f/avg_distance.to_f_to_kms rescue 0
   end
 
   def avg_duration_to_minutes
-    duration/1000/60
+    duration.to_f/1000/60
   end
 
   def avg_distance_to_kms
