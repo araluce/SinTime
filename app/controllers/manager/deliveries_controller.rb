@@ -47,7 +47,8 @@ module Manager
 
     def object_params
       params.require(:exercise_user).permit(
-          :score_id
+          :score_id,
+          :file
       ).merge(status: 'Corregido')
     end
 
