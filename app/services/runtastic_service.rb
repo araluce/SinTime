@@ -41,7 +41,7 @@ class RuntasticService
       duration_accumulated = 0
 
       candidates.each do |candidate|
-        duration_accumulated += candidate.avg_duration
+        duration_accumulated += candidate.first
       end
 
       duration_accumulated >= exercise_duration
@@ -54,7 +54,7 @@ class RuntasticService
       duration_accumulated = 0
 
       candidates.each do |candidate|
-        duration_accumulated += candidate.avg_duration
+        duration_accumulated += candidate.first
       end
 
       duration_accumulated >= exercise_duration
@@ -69,14 +69,18 @@ class RuntasticService
         p "Fallo al descargar los datos del usuario #{user.alias} con id #{user.id}"
       end
 
-      running_candidates = []
+      running_sessions = user.user_runtastic.activity_logs.last_week.running.map{|activity| [activity.duration.to_f/1000, activity.pace]}
+      cycling_sessions = user.user_runtastic.activity_logs.last_week.not_running.map{|activity| [activity.duration.to_f/1000, activity.average_speed]}
+
+      running_candidates =
       cycling_candidates = []
-      user.user_runtastic.activity_logs.last_week.each do |session|
-        if session.is_running?
-          running_candidates << session if pace_pass?(session)
-        else
-          cycling_candidates << session if speed_pass?(session)
-        end
+
+      running_sessions.each do |session|
+        running_candidates << session if session.second <= current_pace
+      end
+
+      cycling_sessions.each do |session|
+        cycling_candidates << session if session.second >= current_speed
       end
 
       if (running_candidates_pass?(running_candidates) && running_candidates.count > 3) ||
