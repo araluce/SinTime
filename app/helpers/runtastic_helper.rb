@@ -70,7 +70,7 @@ module RuntasticHelper
 
     running_candidates = []
     cycling_candidates = []
-    user.user_runtastic.last_week.each do |session|
+    user.user_runtastic.activity_logs.last_week.each do |session|
       if session.is_running?
         running_candidates << session if pace_pass?(session)
       else
