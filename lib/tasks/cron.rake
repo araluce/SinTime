@@ -19,7 +19,7 @@ namespace :cron do
   end
 
   task runtastic: :environment do
-    p "=================TWITTER (#{DateTime.now})===================="
+    p "=================Runtastic (#{DateTime.now})===================="
 
     User.find_each do |user|
       RuntasticService.evalue_user_sport(user)
