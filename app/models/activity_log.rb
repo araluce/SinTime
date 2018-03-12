@@ -33,7 +33,7 @@ class ActivityLog < ApplicationRecord
   end
 
   def avg_distance_to_kms
-    distance/1000
+    distance.to_f/1000
   end
 
 end
