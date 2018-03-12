@@ -46,7 +46,7 @@ ul.navbar-nav.ml-auto
         = link_to edit_manager_delivery_path(exercise_user), class: 'dropdown-item', title: "#{exercise_user.user.alias} ha realizado una entrega de tipo #{exercise_user.exercise.type_to_s}" do
           span.text-success
             strong = fa_icon 'long-arrow-up fw', text: 'Nueva entrega pendiente de corrección'
-          span.small.float-right.text-muted = exercise_user.file_updated_at.to_formatted_s(:short)
+          span.small.float-right.text-muted = exercise_user.file_updated_at.to_formatted_s(:short) rescue nil
           .dropdown-message.small = "#{exercise_user.user.alias} ha realizado una entrega de tipo #{exercise_user.exercise.type_to_s}"
         .dropdown-divider
 
