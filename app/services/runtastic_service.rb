@@ -1,5 +1,6 @@
 class RuntasticService
   class << self
+
     def current_sport
       Exercise::Sport.all.last
     end
@@ -70,13 +71,13 @@ class RuntasticService
       end
 
       running_candidates = []
+      user.user_runtastic.activity_logs.last_week.running.each do |session|
+        running_candidates << session if pace_pass?(session)
+      end
+
       cycling_candidates = []
-      user.user_runtastic.activity_logs.last_week.each do |session|
-        if session.is_running?
-          running_candidates << session if pace_pass?(session)
-        else
-          cycling_candidates << session if speed_pass?(session)
-        end
+      user.user_runtastic.activity_logs.last_week.not_running.each do |session|
+        cycling_candidates << session if speed_pass?(session)
       end
 
       if (running_candidates_pass?(running_candidates) && running_candidates.count > 3) ||
