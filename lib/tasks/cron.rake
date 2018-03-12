@@ -18,4 +18,16 @@ namespace :cron do
     puts "#{Time.now} - Success!"
   end
 
+  task runtastic: :environment do
+    import RuntasticHelper
+    p "=================TWITTER (#{DateTime.now})===================="
+
+    User.find_each do |user|
+      evalue_user_sport(user)
+    end
+
+
+    puts "#{Time.now} - Success!"
+  end
+
 end

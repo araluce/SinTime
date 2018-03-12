@@ -39,6 +39,11 @@ class PayService
       end
     end
 
+    def pay_sport(user, exercise)
+      result_time = user.tdv + seconds_to_duration(exercise.time_benefit)
+      p "Pagado a #{user.alias} con id: #{user.id} una cantidad de #{exercise.user.time_benefit} segundos"
+    end
+
     def generate_movement(user, exercise, reason, time_after)
       user.banking_movements.create(reason: reason, exercise: exercise, time_before: (user.tdv.to_time - DateTime.now), time_after: (time_after.to_time-DateTime.now))
       user.update_columns(tdv: time_after)

@@ -29,7 +29,11 @@ class ActivityLog < ApplicationRecord
   end
 
   def avg_duration_to_minutes
-    duration.to_f/1000/60
+    avg_duration/60
+  end
+
+  def avg_duration
+    duration.to_f/1000
   end
 
   def avg_distance_to_kms
