@@ -19,7 +19,7 @@ namespace :cron do
   end
 
   task runtastic: :environment do
-    import RuntasticHelper
+    include RuntasticHelper
     p "=================TWITTER (#{DateTime.now})===================="
 
     User.find_each do |user|
