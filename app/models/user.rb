@@ -21,6 +21,10 @@ class User < ApplicationRecord
   has_one :user_runtastic, inverse_of: :user, dependent: :destroy
   accepts_nested_attributes_for :user_runtastic, reject_if: :all_blank, allow_destroy: true
 
+  has_many :messages, inverse_of: :user, dependent: :destroy
+
+  has_many :chat_admins, class_name: 'Chat::Admin', inverse_of: :user_1, foreign_key: :user_1_id, dependent: :destroy
+
   has_attached_file :avatar, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: ActionController::Base.helpers.asset_path('avatar.png')
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
@@ -95,6 +99,18 @@ class User < ApplicationRecord
 
   def water_deliveries
     exercise_users.comprado.joins(:exercise).where('exercises.feeding_type = 1 AND exercises.district = 0')
+  end
+
+  def individual_chats
+    Chat::Individual.where(user_1: self).or(where.(user_2: self))
+  end
+
+  def chat_clan
+    Chat::Clan.find_by(district: district) rescue nil
+  end
+
+  def chat_admins
+    Chat.Admin.where(user_1: self)
   end
 
 end

@@ -1,9 +1,8 @@
 module Manager
-  class PadawanRegistersController < ApplicationController
+  class PadawanRegistersController < Manager::ManagersController
     layout 'manager'
 
     before_action :set_objects, only: [:index]
-    before_action :authenticate_admin!
     before_action :load_resource_name
     before_action :set_open_section
 

@@ -1,10 +1,9 @@
 module Manager
-  class HappinessController < ApplicationController
+  class HappinessController < Manager::ManagersController
     layout 'manager'
 
     before_action :set_object, only: [:show, :update, :destroy, :edit]
     before_action :set_objects, except: [:new, :show, :edit, :update]
-    before_action :authenticate_admin!
     before_action :load_resource_name
     before_action :set_open_section
 

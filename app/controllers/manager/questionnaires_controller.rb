@@ -1,9 +1,8 @@
 module Manager
-  class QuestionnairesController < ApplicationController
+  class QuestionnairesController < Manager::ManagersController
     layout 'manager'
 
     before_action :set_object, only: [:show, :update, :destroy, :edit]
-    before_action :authenticate_admin!
     before_action :load_resource_name
     before_action :set_open_section
 

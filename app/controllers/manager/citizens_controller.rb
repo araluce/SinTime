@@ -1,10 +1,9 @@
 module Manager
-  class CitizensController < ApplicationController
+  class CitizensController < Manager::ManagersController
     layout 'manager'
 
     before_action :set_object, except: [:new, :create]
     before_action :set_objects, only: [:index]
-    before_action :authenticate_admin!
     before_action :load_resource_name
     before_action :set_open_section
 
