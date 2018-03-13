@@ -21,3 +21,5 @@
 //= require padawan/water
 //= require static/bootstrap-datetimepicker.min
 //= require static/date_time_picker_input
+//= require select2
+//= require static/select2

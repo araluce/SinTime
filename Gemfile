@@ -118,3 +118,9 @@ gem 'jwt'
 gem 'rest-client'
 
 gem 'whenever', require: false
+
+# Chat
+gem 'pusher'
+
+# Select
+gem 'select2-rails'
