@@ -29,9 +29,12 @@ module Padawan
 
       def send_exercise
         if @object.is_comprado?
-          flash[:notice] = 'Entrega realizada correctamente'
-          @object.update_attributes(object_params)
-          current_user.update_columns(tsc: DateTime.now)
+          if @object.update_attributes(object_params)
+            flash[:notice] = 'Entrega realizada correctamente'
+            current_user.update_columns(tsc: DateTime.now)
+          else
+            flash[:alert] = 'Se ha producido un error'
+          end
         else
           flash[:error] = 'Ya se ha entregado este reto'
         end

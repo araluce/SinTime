@@ -124,3 +124,5 @@ gem 'pusher'
 
 # Select
 gem 'select2-rails'
+
+gem 'remotipart', '~> 1.0'
