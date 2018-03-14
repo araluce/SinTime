@@ -1,4 +1,4 @@
-= simple_form_for(object, url: padawan_viveres_send_exercise_path(object), action: :update, html: {class: 'form-vertical box', multipart: true}) do |f|
+= simple_form_for(object, url: padawan_viveres_send_exercise_path(object), action: :update, html: {class: 'form-vertical box', multipart: true}, remote: true) do |f|
   .row
     .col
       = f.input :file, as: :file, label: 'Entrega'
