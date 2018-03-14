@@ -1,5 +1,5 @@
 <%- if @response %>
-  content  = '<div class="exercise-preview">';
+  content  = '<div class="exercise-preview" data-exercise-id="<%= @object.id %>">';
   content += '  <div class="card">';
   content += '    <div class="container-fluid">';
   content += '      <div class="wrapper row">';
