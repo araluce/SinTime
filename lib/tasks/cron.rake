@@ -32,7 +32,9 @@ namespace :cron do
   task level: :environment do
     p "=================Levels (#{DateTime.now})===================="
     User.find_each do |user|
+      if ScoresServices.has_max_score_last_week?(user)
 
+      end
     end
   end
 
