@@ -1,10 +1,9 @@
 module Manager
-  class DeliveriesController < ApplicationController
+  class DeliveriesController < Manager::ManagersController
     layout 'manager'
 
     before_action :set_object, only: [:update, :destroy, :edit]
     before_action :set_objects, except: [:edit, :update]
-    before_action :authenticate_admin!
     before_action :load_resource_name
     before_action :set_open_section
 

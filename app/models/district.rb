@@ -4,6 +4,8 @@ class District < ApplicationRecord
 
   has_many :users, inverse_of: :district
 
+  has_one :chatroom, inverse_of: :district, dependent: :destroy
+
   validates :name, presence: true
 
   def to_s

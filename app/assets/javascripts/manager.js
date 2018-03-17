@@ -22,6 +22,7 @@
 //= require static/date_time_picker_input
 //= require select2
 //= require static/select2
+//= require_tree ./channels
 
 $(document).ready(function() {
     $(".datatable").dataTable();

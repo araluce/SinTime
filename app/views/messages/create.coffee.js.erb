@@ -1,0 +1,4 @@
+$('#comment').val('')
+$('.bottom-tag').removeAttr('id')
+$('#conversation').append('<%= j(render 'new_message') %>')
+$("#conversation").animate({ scrollTop: ($('#conversation').prop('scrollHeight')) }, 2000)
