@@ -1,62 +1,6 @@
+$('.exercise-slot-js').html('<%= j(render 'padawan/js_templates/render_exercise') %>');
+
 <%- if @response %>
-  content  = '<div class="exercise-preview" data-exercise-id="<%= @object.id %>">';
-  content += '  <div class="card">';
-  content += '    <div class="container-fluid">';
-  content += '      <div class="wrapper row">';
-  content += '        <div class="preview col-lg-6 col-md-12"> <div class="preview-pic tab-content"> <div class="pic tab-pane active"></div> </div> </div>';
-  content += '        <div class="details col-lg-6 col-md-12">';
-  content += '          <h3 class="product-title"></h3>';
-  content += '          <div class="rating">';
-  content += '            <span class="review-no"></span>';
-  content += '            <p class="product-description"></p>';
-  content += '            <div class="deliveries"></div>';
-  content += '            <h4 class="price"> Precio: <p class="exercise_time_cost"></p> </h4>';
-  content += '            <div class="exercises-alerts"></div>';
-  content += '            <div class="action"></div>';
-  content += '        </div>';
-  content += '      </div>';
-  content += '    </div>';
-  content += '  </div>';
-  content += '</div>';
-
-  $('.exercise-slot-js').html(content);
-
-  $('.exercise_time_cost').html('<%= seconds_to_s(@object.time_benefit) %>');
-  $('.review-no').html('<%= "#{@object.users.count} veces comprado" %>');
-  <%- if @object.is_clan? %>
-    $('.product-description').html("<%= '<b>Reto de distrito</b><br>'.html_safe %>");
-  <% else %>
-    $('.product-description').html("<%= '<b>Reto individual</b><br>'.html_safe %>");
-  <% end %>
-  $('.product-description').append('<%= simple_format(@object.statement).gsub("\n", "").html_safe %>');
-  $('.pic').html('<%= image_tag @object.icon.url(:medium), class: 'img-thumbnail' %>');
-  $('.product-title').html('<%= @object.title.titleize %>');
-
-  <%- if @my_deliveries.where(exercise: @object).any? %>
-    $('.product-title').append('<span class="badge badge-success pull-right"><%= @my_deliveries.where(exercise: @object).last.status %></span>');
-
-    $('.deliveries').append('<h5>Entregas:</h5>');
-    <%- @my_deliveries.where(exercise: @object).deliveries.each do |delivery|%>
-      $('.deliveries').append('<div class="box"><%= link_to "#{delivery.file_file_name} #{delivery.score.nil? ? '' : "<div class=\"pull-right\">#{image_tag delivery.score.icon.url(:thumb), style: 'max-height: 30px'}</div>" } <small class=\"pull-right\">#{delivery.file_updated_at.to_formatted_s(:long)}</small>".html_safe, delivery.file.url(:original, false) %>');
-    <% end %>
-  <% end %>
-
-  <%- if (@object.district && @my_deliveries.comprado.joins(:exercise).where('exercises.district = 1').empty?) || (!@object.district && @my_deliveries.comprado.joins(:exercise).where('exercises.district = 0').empty?)%>
-    <%- if (@my_deliveries.where(exercise: @object).any? && @my_deliveries.where(exercise: @object).last.is_corregido?) ||  @my_deliveries.where(exercise: @object).empty?%>
-      <%- unless @object.is_water? && @object.is_individual?%>
-        $('.action').html('<%= link_to 'Buy', padawan_viveres_purchase_exercise_path(exercise_id: @object), class: 'add-to-cart btn btn-default', remote: true %>');
-      <% end %>
-    <% end %>
-  <% elsif @my_deliveries.where(exercise: @object).comprado.any? %>
-    $('.exercises-alerts').html('<div class="alert alert-info"><strong>Ejercicio comprado</strong></div>');
-    $('.action').html('<%= render 'padawan/viveres/delivery_form', object: @my_deliveries.where(exercise: @object, status: 'Comprado').first %>');
-    <% if @object.is_clan? %>
-      $('.action').append('<%= link_to 'Cancelar Compra', padawan_viveres_rewind_exercise_path(exercise_id: @object), class: 'add-to-cart btn btn-default pull-right', remote: true %>');
-    <% end %>
-  <% else %>
-    $('.exercises-alerts').html('<div class="alert alert-warning"><strong>Ya has comprado un ejercicio</strong></div>');
-  <% end %>
-
   var datetime = new Date('<%= @tdv %>');
   countdown_date = new Date(datetime);
   $('.countdown').removeClass('highlight').countdown('option', {until: countdown_date});

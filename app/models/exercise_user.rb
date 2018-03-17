@@ -3,7 +3,7 @@ class ExerciseUser < ApplicationRecord
 
   has_attached_file :file
   has_attached_file :second_file
-  validates_attachment_content_type :file, :second_file, :content_type => ['application/pdf', 'application/zip', 'application/x-zip', 'application/x-zip-compressed','application/octet-stream','image/jpg','image/png']
+  do_not_validate_attachment_file_type :file, :second_file
 
   belongs_to :user, inverse_of: :exercise_users
   belongs_to :exercise, inverse_of: :exercise_users
