@@ -25,7 +25,7 @@ class User < ApplicationRecord
 
   has_many :chat_admins, class_name: 'Chat::Admin', inverse_of: :user_1, foreign_key: :user_1_id, dependent: :destroy
 
-  has_attached_file :avatar, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: '/images/avatar.png'
+  has_attached_file :avatar, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: ActionController::Base.helpers.image_path('avatar.png')
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
   scope :inactive, -> {where(status: 0)}
