@@ -155,14 +155,14 @@ ActiveRecord::Schema.define(version: 20180313203817) do
   end
 
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "chat_room_id"
+    t.bigint "chatroom_id"
     t.bigint "user_id"
     t.bigint "admin_id"
     t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["admin_id"], name: "index_messages_on_admin_id"
-    t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 

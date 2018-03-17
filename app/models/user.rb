@@ -41,7 +41,7 @@ class User < ApplicationRecord
   enum status: %w(Inactivo Vivo Fallecido Vacaciones Detenido Finalizado), _prefix: true
 
   validates :alias, uniqueness: true
-  validates :alias, format: {with: /\A[a-z]+\z/i}
+  validates :alias, format: {with: /\A[a-zA-Z0-9]+\z/i}
 
   attr_accessor :dni_list
 

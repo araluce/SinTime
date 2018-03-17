@@ -1,9 +1,9 @@
 class Chat::Admin < Chatroom
-  belongs_to :user_1, inverse_of: :chat_admins
-  belongs_to :admin, inverse_of: :chat_admins
+  belongs_to :user_1, class_name: '::User', inverse_of: :chat_admins
+  belongs_to :admin, class_name: '::Admin' , inverse_of: :chat_admins
 
   def to_s
-    "Conversación entre #{user_1.alias} y #{user_2.alias}"
+    "Conversación entre #{user_1.alias} y #{admin.email}"
   end
 
   def type_to_s

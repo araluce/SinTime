@@ -11,30 +11,8 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
-//= require datatables
-//= require cocoon
-//= require manager/sb-admin
-//= require static/bootstrap-datetimepicker.min
-//= require static/date_time_picker_input
-//= require select2
-//= require static/select2
-//= require_tree ./channels
-
-$(document).ready(function() {
-    $(".datatable").dataTable();
-});
-
-$(window).scroll(function() {
-    if($(this).scrollTop() > 50)
-    {
-        $('.navbar-trans').addClass('afterscroll');
-    } else
-    {
-        $('.navbar-trans').removeClass('afterscroll');
-    }
-
-});
+//= require js-routes
+//= require_tree ./chat

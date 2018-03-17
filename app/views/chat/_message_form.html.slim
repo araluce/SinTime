@@ -1,0 +1,4 @@
+= form_for message, url: messages_path, remote: true, authenticity_token: true do |f|
+  = f.text_area :message, data: {textarea: 'message'}, label: 'Tu mensaje:'
+  = f.hidden_field :chatroom_id, value: @chat.id
+  = f.submit 'Enviar', class: 'btn btn-primary', data: {send: 'message'}

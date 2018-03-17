@@ -124,3 +124,5 @@ gem 'pusher'
 
 # Select
 gem 'select2-rails'
+
+gem 'jquery_mobile_rails'

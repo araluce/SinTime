@@ -1,0 +1,12 @@
+.row.message-body data-id="#{@message.id}"
+  - if current_admin
+    - message_class = @message.admin == current_admin ? 'sender' : 'receiver'
+  - if current_user
+    - message_class = @message.user == current_user ? 'sender' : 'receiver'
+  .col-sm-12 class="message-main-#{message_class}"
+    .row class="#{message_class}"
+      .col-12
+        .message-text = @message.message
+      .col-12
+        span.message-time.pull-right = @message.created_at.to_formatted_s(:short)
+.bottom-tag#bottom

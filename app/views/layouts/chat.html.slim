@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title Chat | SinTime
+    = csrf_meta_tags
+
+    = stylesheet_link_tag    'chat', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'chat', 'data-turbolinks': 'true'
+    = render 'application/favicon'
+
+  body
+    .container-fluid.app
+
+      = yield

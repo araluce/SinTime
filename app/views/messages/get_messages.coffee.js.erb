@@ -1,0 +1,6 @@
+$('.bottom-tag').removeAttr('id')
+$('#conversation').append('<%= j(render 'messages') %>')
+$('.badge-new-message').html('');
+<%- if @messages.any? %>
+  $('.badge-new-message').html('<%= j(render 'new_message_pop') %>');
+<%- end %>

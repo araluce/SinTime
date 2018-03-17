@@ -1,10 +1,14 @@
 class Message < ApplicationRecord
-  belongs_to :chat_room, inverse_of: :messages
+  belongs_to :chatroom, inverse_of: :messages
   belongs_to :user, inverse_of: :messages, optional: true
   belongs_to :admin, inverse_of: :messages, optional: true
 
   validate :check_user
   validates :message, presence: true
+
+  def to_s
+    message
+  end
 
   private
 

@@ -6,6 +6,7 @@ html
 
     = stylesheet_link_tag    'padawan', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'padawan', 'data-turbolinks-track': 'reload'
+    = action_cable_meta_tag
     = render 'application/favicon'
 
   .page
@@ -15,7 +16,7 @@ html
       .row
         .col-11.countdown
         .col-1
-          = image_tag current_user.avatar.url(:thumb), class: 'img-circle'
+          = image_tag current_user.avatar.url(:thumb), class: 'img-circle', style: 'max-width: 90px;'
 
       .alert-content
         - if notice

@@ -3,11 +3,16 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {sessions: 'devise/citizen/sessions'}
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  # Serve websocket cable requests in-process
+  mount ActionCable.server => '/cable'
+
   root 'static#home'
   get '/tweets', to: 'static#tweets'
   get '/register', to: 'static#register'
   post '/check_register', to: 'static#check_register', as: :check_register
   patch '/register_user', to: 'static#register_user', as: :register_user
+  post 'get_messages', to: 'messages#get_messages'
+  resources :messages
 
   namespace :padawan do
     get '/home', to: 'padawan#home'
@@ -45,8 +50,14 @@ Rails.application.routes.draw do
     end
 
     namespace :comunidad do
+      get 'rci', to: 'rci#rci'
       resources :sports, only: :index
       resources :login, except: [:index, :destroy]
+      namespace :rci do
+        resources :sala, only: :index
+        resources :chat_user, only: :show
+        resources :chat_admin, only: :show
+      end
     end
 
     namespace :felicidad do
@@ -72,6 +83,8 @@ Rails.application.routes.draw do
     resources :deliveries
     resources :constants, except: :show
     resources :ranges, except: :show
+    resources :sala, only: :index
+    resources :chat_admin, only: :show
   end
 
 end
