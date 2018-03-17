@@ -29,4 +29,11 @@ namespace :cron do
     puts "#{Time.now} - Success!"
   end
 
+  task level: :environment do
+    p "=================Levels (#{DateTime.now})===================="
+    User.find_each do |user|
+
+    end
+  end
+
 end
