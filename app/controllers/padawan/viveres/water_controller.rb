@@ -24,7 +24,7 @@ module Padawan
           @objects_individual << delivery.exercise
         end
         if @objects_individual.empty?
-          @random_exercise = model.individual.offset(rand(model.individual.count)).first
+          @random_exercise = model.water.individual.offset(rand(model.water.individual.count)).first
         end
       end
 
