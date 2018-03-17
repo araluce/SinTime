@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # Serve websocket cable requests in-process
   mount ActionCable.server => '/cable'
 
+  get '/robots.:format' => 'static#robots'
   root 'static#home'
   get '/tweets', to: 'static#tweets'
   get '/register', to: 'static#register'
