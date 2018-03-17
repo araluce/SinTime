@@ -1,5 +1,5 @@
 module Manager
-  class ScoresController < MAnager::ManagersController
+  class ScoresController < Manager::ManagersController
     layout 'manager'
 
     before_action :set_object, only: [:show, :update, :destroy, :edit]
