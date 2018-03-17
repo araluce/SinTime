@@ -33,9 +33,13 @@ namespace :cron do
     p "=================Levels (#{DateTime.now})===================="
     User.find_each do |user|
       if ScoresServices.has_max_score_last_week?(user)
-
+        if RuntasticService.user_pass_sport(user)
+          LevelService.level_up(user)
+          p "El usuario #{user} (##{user.id}) ha subido de nivel (#{user.xp}XP)"
+        end
       end
     end
+    puts "#{Time.now} - Success!"
   end
 
 end
