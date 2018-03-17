@@ -2,7 +2,7 @@ module Manager
   class DistrictsController < Manager::ManagersController
     layout 'manager'
 
-    before_action :set_object, only: [:show, :update, :destroy, :edit
+    before_action :set_object, only: [:show, :update, :destroy, :edit}
     before_action :load_resource_name
     before_action :set_open_section
 
