@@ -9,6 +9,10 @@ html
     = action_cable_meta_tag
     = render 'application/favicon'
 
+    - if Rails.env.production?
+      script type="text/javascript"
+        = render 'partials/analytics/google_analytics.coffee'
+
   .page
     .container-fluid
 

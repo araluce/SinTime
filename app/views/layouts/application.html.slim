@@ -8,6 +8,10 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = render 'application/favicon'
 
+    - if Rails.env.production?
+      script type="text/javascript"
+        = render 'partials/analytics/script.js'
+
   .page.home-background
     .container-fluid
       = render 'static/navbar'
