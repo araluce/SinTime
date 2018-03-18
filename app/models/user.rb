@@ -98,7 +98,7 @@ class User < ApplicationRecord
   end
 
   def water_deliveries
-    exercise_users.comprado.joins(:exercise).where('exercises.feeding_type = 1 AND exercises.district = 0')
+    exercise_users.comprado.joins(:exercise).where('exercises.feeding_type = 1')
   end
 
   def individual_chats
