@@ -80,8 +80,8 @@ class RuntasticService
         cycling_candidates << session if speed_pass?(session)
       end
 
-      if (running_candidates_pass?(running_candidates) && running_candidates.count > 3) ||
-          (cycling_candidates_pass?(cycling_candidates) && cycling_candidates.count > 3)
+      if (running_candidates_pass?(running_candidates) && running_candidates.count > 2) ||
+          (cycling_candidates_pass?(cycling_candidates) && cycling_candidates.count > 2)
           PayService.pay_sport(user, current_sport)
       end
 
@@ -106,8 +106,8 @@ class RuntasticService
         cycling_candidates << session if speed_pass?(session)
       end
 
-      if (running_candidates_pass?(running_candidates) && running_candidates.count > 3) ||
-          (cycling_candidates_pass?(cycling_candidates) && cycling_candidates.count > 3)
+      if (running_candidates_pass?(running_candidates) && running_candidates.count > 2) ||
+          (cycling_candidates_pass?(cycling_candidates) && cycling_candidates.count > 2)
         return true
       end
 
