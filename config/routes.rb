@@ -35,6 +35,7 @@ Rails.application.routes.draw do
     namespace :padawan_info do
       resources :information, only: [:index, :edit, :update]
       resources :movimientos, only: :index
+      resource :rango_jedi, only: :show
     end
 
     namespace :formacion do

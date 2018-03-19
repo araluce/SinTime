@@ -37,6 +37,7 @@ class User < ApplicationRecord
   scope :in_clan, -> {where.not(district: nil)}
   scope :loggeds, -> {where(logged: true)}
   scope :disconnected, -> {where(logged: false)}
+  scope :order_by_score, lambda {|user| joins(:banking_movements).group(:user_id).order("sum(time_before) #{user}")
 
   enum status: %w(Inactivo Vivo Fallecido Vacaciones Detenido Finalizado), _prefix: true
 
