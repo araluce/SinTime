@@ -31,7 +31,10 @@ module Padawan
         if @object.is_comprado?
           if @object.update_attributes(object_params)
             flash[:notice] = 'Entrega realizada correctamente'
-            current_user.update_columns(tsc: DateTime.now)
+            if @object.exercise.type == 'Exercise::Feeding'
+              current_user.update_columns(tsc: DateTime.now) if @object.exercise.is_food?
+              current_user.update_columns(tsb: DateTime.now) if @object.exercise.is_water?
+            end
           else
             flash[:alert] = 'Se ha producido un error'
           end
