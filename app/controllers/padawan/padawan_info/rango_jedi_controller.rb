@@ -5,6 +5,7 @@ module Padawan
       before_action :get_objects
 
       def index
+
       end
 
       private
