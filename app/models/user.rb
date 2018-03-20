@@ -109,7 +109,7 @@ class User < ApplicationRecord
   end
 
   def messages_not_reads
-    individual_chats.joins(:messages).where('user_id != ? AND viewed=?', self.id, false).count
+    individual_chats.joins(:messages).where('user_id != ? AND viewed=?', self.id, false)
   end
 
   def chat_clan

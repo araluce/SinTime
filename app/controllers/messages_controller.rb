@@ -27,7 +27,11 @@ class MessagesController < ApplicationController
     @admin = Admin.find_by(id: params['admin_id'].to_i)
     messages_to_ignore = params['ids'].flatten
     chat = Chatroom.find_by(id: params['chat_id'])
-    chat.messages.where(viewed: false).where.not(user_id: params['user_id'].to_i, admin_id: params['admin_id'].to_i).update_all(viewed: true)
+    if @admin
+      chat.messages.where(viewed: false).where.not(admin_id: @admin.id).update_all(viewed: true)
+    else
+      chat.messages.where(viewed: false).where.not(user_id: @user.id).update_all(viewed: true)
+    end
     last_100_messages = chat.messages.order(created_at: :asc).last(100)
     @messages = []
     last_100_messages.map {|message| @messages << message unless messages_to_ignore.include?(message.id.to_s)}
