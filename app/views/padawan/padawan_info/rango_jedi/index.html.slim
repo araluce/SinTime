@@ -1,0 +1,15 @@
+.row
+  .col-12.future-card
+    .row style="margin-bottom: 1%;"
+      .col-12
+        = link_to fa_icon('fw chevron-circle-left', text: 'Volver'), padawan_padawan_info_path, class: 'btn btn-border-black pull-right'
+    .row
+      .col-12
+        - @objects.each_with_index do |user, index|
+          - if user == current_user
+            .profile-header-container
+              .profile-header-img
+                - range_icon = UserRange.where('min_score < 59').order(min_score: :desc).first
+                = image_tag range_icon.icon.url(:medium), class: 'img-circle'
+                .rank-label-container
+                  span.label.label-default.rank-label = "Posición #{index + 1}/#{User.normal_users.count}"

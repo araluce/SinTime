@@ -4,14 +4,12 @@ module Padawan
       layout 'padawan'
       before_action :get_objects
 
-      def index
-
-      end
+      def index; end
 
       private
 
       def get_objects
-        @objects = current_user.banking_movements.order(created_at: :desc)
+        @objects = User.normal_users.joins(:banking_movements).where('banking_movements.created_at >= ?', 1.week.ago).group(:user_id).order('sum(banking_movements.time_before) DESC')
       end
 
     end
