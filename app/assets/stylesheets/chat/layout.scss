@@ -176,10 +176,15 @@ body {
   position: relative;
   padding: 10px !important;
   border-bottom: 1px solid #f7f7f7;
-  height: 72px;
+  //height: 72px;
   margin: 0 !important;
   cursor: pointer;
   font-size: 0.9em;
+
+  &.sideBar-body-success{
+    background-color: #28A745;
+    color: white;
+  }
 }
 
 .sideBar-body:hover {

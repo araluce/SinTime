@@ -39,6 +39,8 @@ class User < ApplicationRecord
   scope :disconnected, -> {where(logged: false)}
   scope :normal_users, -> {where(untouchable: false)}
 
+  scope :messages_for_me, -> {joins(:banking_movements).where('banking_movements.created_at >= ?', 1.week.ago).group(:user_id).order('sum(banking_movements.time_before) DESC')}
+
   enum status: %w(Inactivo Vivo Fallecido Vacaciones Detenido Finalizado), _prefix: true
 
   validates :alias, uniqueness: true
@@ -103,7 +105,11 @@ class User < ApplicationRecord
   end
 
   def individual_chats
-    Chat::Individual.where(user_1: self).or(where.(user_2: self))
+    Chat::Individual.where(user_1_id: self.id).or(Chat::Individual.where(user_2_id: self.id))
+  end
+
+  def messages_not_reads
+    individual_chats.joins(:messages).where('user_id != ? AND viewed=?', self.id, false).count
   end
 
   def chat_clan
