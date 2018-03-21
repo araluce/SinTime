@@ -24,6 +24,7 @@ body {
 //     SINTIME BUTTON
 //************************
 .btn-sintime{
+  position: relative;
   margin-top: 15px;
   margin-bottom: 15px;
   padding-left: 0!important;
@@ -47,6 +48,16 @@ body {
   &:hover{
     //background-color: rgba(255, 188, 0, .4);
     background-color: rgba(255, 255, 255, .9)!important;
+  }
+
+  .badge{
+    position: absolute;
+    top: 1em!important;
+    right: 1em;
+    font-family: Isocpeur;
+    font-size: 1.5em;
+    height: 100px;
+    width: 100px;
   }
 
 }

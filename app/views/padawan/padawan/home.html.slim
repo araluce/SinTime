@@ -9,7 +9,10 @@
     = render 'partials/button', custom_path: padawan_viveres_path, custom_image: 'padawan/viveres.png', custom_label: 'viveres'
 
   .col-lg-3.col-md-6
-    = render 'partials/button', custom_path: padawan_comunidad_path, custom_image: 'padawan/comunidad_de_aprendizaje.png', custom_label: 'comunidad'
+    = render 'partials/button', custom_path: padawan_comunidad_path,
+            custom_image: 'padawan/comunidad_de_aprendizaje.png',
+            custom_label: 'comunidad',
+            badge: current_user.messages_not_reads.count
 
   .col-lg-3.col-md-6
     = render 'partials/button', custom_path: '#', custom_image: 'padawan/desconexion.png', custom_label: 'desconexion'
