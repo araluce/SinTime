@@ -26,7 +26,7 @@ class MessagesController < ApplicationController
     @user = User.find_by(id: params['user_id'].to_i)
     @admin = Admin.find_by(id: params['admin_id'].to_i)
     messages_to_ignore = params['ids'].flatten
-    chat = Chatroom.find_by(id: params['chat_id'])
+    chat = Chatroom.find_by(id: params['chat_id'].to_i)
     if @admin.nil?
       chat.messages.where(viewed: false).where.not(user_id: @user.id).update_all(viewed: true)
     else
