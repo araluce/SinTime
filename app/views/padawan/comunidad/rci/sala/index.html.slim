@@ -19,11 +19,11 @@
         = link_to padawan_comunidad_rci_chat_general_path(1), style: 'width: 100%;' do
           .row.sideBar-body
             .col-sm-3.col-xs-3.sideBar-avatar
-              .avatar-icon
+              .avatar-icon = image_tag 'alianza_rebelde.png'
             .col-sm-9.col-xs-9.sideBar-main
               .row
                 .col-sm-8.col-xs-8.sideBar-name
-                  span.name-meta General
+                  span.name-meta Alianza Rebelde
                 .col-sm-8.col-xs-8.sideBar-name
                   span.name-meta.small
                     - messages = Chat::General.first_or_create.messages

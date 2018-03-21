@@ -1,9 +1,9 @@
 .col-sm-12.conversation
   .row.heading
     .col-md-1.col-1.heading-avatar
-      .heading-avatar-icon
+      .heading-avatar-icon = image_tag 'alianza_rebelde.png'
     .col-sm-8.col-xs-7.heading-name
-      a.heading-name-meta = "Chat #{@chat.to_s}"
+      a.heading-name-meta Alianza Rebelde
     .col-sm-1.col-xs-1.heading-dot.pull-right
       = link_to fa_icon('chevron-left 2x', class:'pull-right'), padawan_comunidad_rci_sala_index_path
 
