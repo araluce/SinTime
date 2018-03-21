@@ -32,5 +32,5 @@
     .col-10.reply-main
       = f.text_area :message, id: 'comment', class:'form-control', rows: '1'
       = f.hidden_field :chatroom_id, value: @chat.id
-    .col-1.reply-send
-      = f.submit 'Enviar'
+    .col-1.send-message
+      button type="submit" class="btn" = fa_icon('fw paper-plane-o')

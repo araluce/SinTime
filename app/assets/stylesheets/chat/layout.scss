@@ -324,7 +324,7 @@ body {
   padding: 0 !important;
   margin: 0 !important;
   overflow-y: auto;
-  border: 1px solid #f7f7f7;
+  //border: 1px solid #f7f7f7;
   height: calc(100% - 180px);
 }
 .message-previous {
@@ -412,7 +412,7 @@ body {
 .reply {
   height: 120px;
   width: 100%;
-  background-color: #f5f1ee;
+  background-color: transparent;
   padding: 10px 5px 10px 5px !important;
   margin: 0 !important;
   z-index: 1000;
@@ -453,29 +453,55 @@ body {
 
 .reply-main {
   padding: 2px 5px !important;
+  margin-right: 0;
+
+  textarea {
+    width: 100%;
+    resize: none;
+    overflow: hidden;
+    outline: none;
+    border: none;
+    text-indent: 5px;
+    box-shadow: none;
+    height: 100%;
+    font-size: 2em;
+
+    padding-left: 43px;
+    padding-right: 43px;
+    border-radius: 23px;
+    &:focus {
+      outline: none;
+      border: none;
+      text-indent: 5px;
+      box-shadow: none;
+    }
+  }
 }
 
-.reply-main textarea {
-  width: 100%;
-  resize: none;
-  overflow: hidden;
-  padding: 5px !important;
-  outline: none;
-  border: none;
-  text-indent: 5px;
-  box-shadow: none;
-  height: 100%;
-  font-size: 2em;
+.send-message{
+  button{
+    background-color: #088887!important;
+    color: white;
+    border-radius: 50%;
+    padding: 1em;
+    i {font-size: 1.4em!important;}
+    height: 5vh;
+    &:hover{
+      cursor: pointer
+    }
+
+    &:focus, &:active{
+      border: 0;
+    }
+  }
 }
 
-.reply-main textarea:focus {
-  outline: none;
-  border: none;
-  text-indent: 5px;
-  box-shadow: none;
-}
+@media screen and (max-width: 800px) {
+  .send-message{
+    button{
 
-@media screen and (max-width: 700px) {
+    }
+  }
   .app {
     top: 0;
     height: 100%;
