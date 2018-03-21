@@ -1,8 +1,7 @@
 module Padawan
   module Comunidad
     module Rci
-      class ChatUserController < Padawan::Comunidad::RciController
-        layout 'chat'
+      class ChatUserController < Padawan::Comunidad::Rci::ChatController
 
         def show
           @chat = model.find_by(user_1_id: current_user.id, user_2_id: params[:id])

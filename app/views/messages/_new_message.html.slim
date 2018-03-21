@@ -1,14 +1,2 @@
-.row.message-body data-id="#{@message.id}"
-  - if current_admin
-    - message_class = @message.admin == current_admin ? 'sender' : 'receiver'
-  - if current_user
-    - message_class = @message.user == current_user ? 'sender' : 'receiver'
-  .col-sm-12 class="message-main-#{message_class}"
-    .row class="#{message_class}"
-      .col-12
-        .message-text = @message.message
-      .col-12
-        span.message-time.pull-right = @message.created_at.to_formatted_s(:short)
-        - if (current_admin && @message.admin == current_admin) || (current_user && @message.user == current_user)
-          span.message-time.pull-right class="#{@message.viewed ? 'message-checked' : ''}" = "#{fa_icon('fw check')} #{fa_icon('fw check')}".html_safe
+= render 'padawan/partials/message', message: @message, user: current_user, admin: current_admin
 .bottom-tag#bottom

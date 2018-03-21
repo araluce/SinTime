@@ -1,18 +1,4 @@
 - if @messages.any?
   - @messages.each do |message|
-    .row.message-body data-id="#{message.id}"
-      - if @admin
-        - message_class = message.admin == @admin ? 'sender' : 'receiver'
-        - message_class
-      - if @user
-        - message_class = message.user == @user ? 'sender' : 'receiver'
-        - message_class
-      .col-sm-12 class="message-main-#{message_class}"
-        .row class="#{message_class}"
-          .col-12
-            .message-text = message.message
-          .col-12
-            span.message-time.pull-right = message.created_at.to_formatted_s(:short)
-            - if (@admin && message.admin == @admin) || (@user && message.user == @user)
-              span.message-time.pull-right class="#{message.viewed ? 'message-checked' : ''}" = "#{fa_icon('fw check')} #{fa_icon('fw check')}".html_safe
+    = render 'padawan/partials/message', message: message, user: @user, admin: @admin
   .bottom-tag#bottom

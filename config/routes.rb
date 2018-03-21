@@ -60,6 +60,7 @@ Rails.application.routes.draw do
         resources :sala, only: :index
         resources :chat_user, only: :show
         resources :chat_admin, only: :show
+        resources :chat_general, only: :show
       end
     end
 

@@ -1,8 +1,7 @@
 module Padawan
   module Comunidad
     module Rci
-      class SalaController < Padawan::Comunidad::RciController
-        layout 'chat'
+      class SalaController < Padawan::Comunidad::Rci::ChatController
 
         def index
           @districts = District.all

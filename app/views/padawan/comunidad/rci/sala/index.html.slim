@@ -16,6 +16,19 @@
             span.glyphicon.glyphicon-search.form-control-feedback
 
       .row.sideBar
+        = link_to padawan_comunidad_rci_chat_general_path(1), style: 'width: 100%;' do
+          .row.sideBar-body
+            .col-sm-3.col-xs-3.sideBar-avatar
+              .avatar-icon
+            .col-sm-9.col-xs-9.sideBar-main
+              .row
+                .col-sm-8.col-xs-8.sideBar-name
+                  span.name-meta General
+                .col-sm-8.col-xs-8.sideBar-name
+                  span.name-meta.small
+                    - messages = Chat::General.first_or_create.messages
+                    - if messages.any?
+                      = messages.last.message
         /- if current_admin || (!current_user.nil? && current_user.untouchable)
         /  - @districts.each do |district|
         /    = link_to padawan_comunidad_rci_chat_user_path(district), style: 'width: 100%;' do
