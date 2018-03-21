@@ -11,7 +11,7 @@
           .col-4
             = image_tag message.user.avatar.url(:thumb), style: 'max-width: 100%'
           .col-8
-            span.message-time = "@#{user.alias}"
+            span.message-time = "@#{message.user.alias}"
       .col-12
         .message-text = message.message
       .col-12
