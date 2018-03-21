@@ -13,4 +13,6 @@
             .message-text = message.message
           .col-12
             span.message-time.pull-right = message.created_at.to_formatted_s(:short)
+            - if (@admin && message.admin == @admin) || (@user && message.user == @user)
+              span.message-time.pull-right class="#{message.viewed ? 'message-checked' : ''}" = "#{fa_icon('fw check')} #{fa_icon('fw check')}".html_safe
   .bottom-tag#bottom

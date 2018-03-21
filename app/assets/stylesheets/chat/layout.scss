@@ -348,6 +348,10 @@ body {
 .message-body {
   margin: 0 !important;
   padding: 0 !important;
+
+  .message-checked{
+    color: #0646EC;
+  }
 }
 
 .message-main-receiver {
