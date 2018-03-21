@@ -114,6 +114,13 @@ class User < ApplicationRecord
     individual_chats.joins(:messages).where('user_id != ? AND viewed=?', self.id, false)
   end
 
+  def group_messages_not_read
+    chat_check_points.pluck(:chatroom_id).uniq.each.inject(0) do |total, chatroom_id|
+      check_point = Chat::CheckPoint.where(user_id: self.id, chatroom_id: chatroom_id).last
+      total += Chatroom.find(chatroom_id).messages.where('user_id != ? AND updated_at > ?', self.id, check_point.updated_at).count
+    end
+  end
+
   def chat_clan
     Chat::Clan.find_by(district: district) rescue nil
   end

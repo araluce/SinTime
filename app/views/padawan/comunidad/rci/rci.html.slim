@@ -3,7 +3,11 @@
     = render 'partials/button', custom_path: padawan_comunidad_path, custom_image: 'padawan/comunidad/rci.png', custom_label: 'volver'
 .row
   .col-lg-3.col-md-6
-    = render 'partials/button', custom_path: padawan_comunidad_rci_sala_index_path, custom_image: 'padawan/comunidad/rci/holograma.png', custom_label: 'hologramas', badge: current_user.messages_not_reads.count
+    = render 'partials/button',
+            custom_path: padawan_comunidad_rci_sala_index_path,
+            custom_image: 'padawan/comunidad/rci/holograma.png',
+            custom_label: 'hologramas',
+            badge: current_user.messages_not_reads.count + current_user.group_messages_not_read
 
   .col-lg-3.col-md-6
     = render 'partials/button', custom_path: '#', custom_image: 'padawan/comunidad/rci/historial.png', custom_label: 'historial'
