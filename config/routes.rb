@@ -54,6 +54,7 @@ Rails.application.routes.draw do
 
     namespace :comunidad do
       get 'rci', to: 'rci#rci'
+      get 'altruismo', to: 'altruismo#altruismo'
       resources :sports, only: :index
       resources :login, except: [:index, :destroy]
       namespace :rci do
@@ -61,6 +62,10 @@ Rails.application.routes.draw do
         resources :chat_user, only: :show
         resources :chat_admin, only: :show
         resources :chat_general, only: :show
+      end
+
+      namespace :altruismo do
+        resources :donations
       end
     end
 

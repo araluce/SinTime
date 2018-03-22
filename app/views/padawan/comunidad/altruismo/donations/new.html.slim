@@ -1,0 +1,35 @@
+.row
+  .col-12.future-card
+
+    .row style="margin-bottom: 1%; margin-top: 1%;"
+      .col-12
+        = link_to fa_icon('fw chevron-circle-left', text: 'Volver'), padawan_comunidad_altruismo_path, class: 'btn btn-border-black pull-right'
+
+    .row
+      .col-12
+        = simple_form_for(@object, url: padawan_comunidad_altruismo_donations_path, as: :object, html: {class: 'form-vertical'}) do |f|
+          = f.association :receiver, input_html: {class: 'select2'}, selected: f.object.receiver_id
+          .row
+            .col-md-3.col-12
+              = f.input :days, input_html: {type: 'number', max: 7, min: -7, value: f.object.days || 0, required: true}
+            .col-md-3.col-12
+              = f.input :hours, input_html: {type: 'number', max: 24, min: -24, value: f.object.hours || 0, required: true}
+            .col-md-3.col-12
+              = f.input :minutes, input_html: {type: 'number', max: 60, min: -60, value: f.object.minutes || 0, required: true}
+            .col-md-3.col-12
+              = f.input :seconds, input_html: {type: 'number', max: 60, min: -60, value: f.object.seconds || 0, required: true}
+          button.btn.btn-primary = fa_icon('fw paper-plane-o')
+
+.row  style="margin-bottom: 1%; margin-top: 1%;"
+  .col-sm-6.col-12
+    h5.future-card.w-100 Donaciones recibidas
+    - current_user.donations_receiver.each do |donation_receiver|
+      .future-card.w-100
+        p = donation_receiver
+        small.pull-right = donation_receiver.created_at.to_formatted_s(:short)
+  .col-sm-6.col-12
+    h5.future-card.w-100 Donaciones realizadas
+    - current_user.donations_sent.each do |donation_sent|
+      .future-card.w-100
+        p = donation_sent
+        small.pull-right = donation_sent.created_at.to_formatted_s(:short)
