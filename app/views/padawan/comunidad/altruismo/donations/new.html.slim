@@ -11,13 +11,13 @@
           = f.association :receiver, input_html: {class: 'select2'}, selected: f.object.receiver_id, :label_method => lambda { |user| "@#{user.alias&.downcase}" }, label: 'Receptor'
           .row
             .col-md-3.col-12
-              = f.input :days, input_html: {type: 'number', max: 7, min: -7, value: f.object.days || 0, required: true}, label: 'Días'
+              = f.input :days, input_html: {type: 'number', max: 7, min: 0, value: f.object.days || 0, required: true}, label: 'Días'
             .col-md-3.col-12
-              = f.input :hours, input_html: {type: 'number', max: 24, min: -24, value: f.object.hours || 0, required: true}, label: 'Horas'
+              = f.input :hours, input_html: {type: 'number', max: 24, min: 0, value: f.object.hours || 0, required: true}, label: 'Horas'
             .col-md-3.col-12
-              = f.input :minutes, input_html: {type: 'number', max: 60, min: -60, value: f.object.minutes || 0, required: true}, label: 'Minutos'
+              = f.input :minutes, input_html: {type: 'number', max: 60, min: 0, value: f.object.minutes || 0, required: true}, label: 'Minutos'
             .col-md-3.col-12
-              = f.input :seconds, input_html: {type: 'number', max: 60, min: -60, value: f.object.seconds || 0, required: true}, label: 'Segundos'
+              = f.input :seconds, input_html: {type: 'number', max: 60, min: 0, value: f.object.seconds || 0, required: true}, label: 'Segundos'
           button.btn.btn-primary = fa_icon('fw paper-plane-o')
 
 .row  style="margin-bottom: 1%; margin-top: 1%;"
