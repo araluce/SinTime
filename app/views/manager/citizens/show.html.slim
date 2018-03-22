@@ -7,7 +7,7 @@ ol.breadcrumb
   .col-12
     .row
       .col-lg-2.col-md-2.col-xs-12
-        td = image_tag @object.avatar.url(:medium), class: 'img-circle'
+        td = image_tag @object.avatar.url(:medium), class: 'img-circle', style: 'max-width: 100%'
         hr
         p = link_to 'Volver', manager_citizens_path, class: 'btn btn-primary btn-block'
         p = link_to 'Editar', edit_manager_citizen_path(@object), class: 'btn btn-primary btn-block'
@@ -31,3 +31,19 @@ ol.breadcrumb
                   = link_to @object.district, manager_district_path(@object.district)
                 - else
                   | Este usuario no está asignado a ningún distrito
+      .col-lg-5.col-md-5.col-xs-12
+        .card
+          .card-header Realizar movimiento
+          .card-body
+            = simple_form_for(BankingMovement.new, url: manager_citizen_banking_movements_path(@object), as: :object, html: {class: 'form-vertical'}) do |f|
+              = f.input :reason, label: 'A razón', input_html: {required: true}
+              .row
+                .col-md-3.col-12
+                  = f.input :days, input_html: {type: 'number', max: 7, min: -7, value: 0, required: true}
+                .col-md-3.col-12
+                  = f.input :hours, input_html: {type: 'number', max: 24, min: -24, value: 0, required: true}
+                .col-md-3.col-12
+                  = f.input :minutes, input_html: {type: 'number', max: 60, min: -60, value: 0, required: true}
+                .col-md-3.col-12
+                  = f.input :seconds, input_html: {type: 'number', max: 60, min: -60, value: 0, required: true}
+              button.btn.btn-primary = fa_icon('fw paper-plane-o')

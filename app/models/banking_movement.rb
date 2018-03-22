@@ -7,6 +7,8 @@ class BankingMovement < ApplicationRecord
             :reason,
             presence: true
 
+  attr_accessor :days, :hours, :minutes, :seconds
+
   def seconds_difference
     (time_after - time_before).abs
   end

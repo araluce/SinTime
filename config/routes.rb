@@ -76,7 +76,9 @@ Rails.application.routes.draw do
   namespace :manager do
     get '/home', to: 'managers#home'
     resources :districts
-    resources :citizens
+    resources :citizens do
+      resources :banking_movements, only: :create
+    end
     resources :padawan_registers, only: [:new, :create]
     resources :questionnaires
     resources :food
