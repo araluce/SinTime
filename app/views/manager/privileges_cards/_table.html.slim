@@ -2,6 +2,7 @@
   table.table
     thead
       tr
+        th Activo
         th Card
         th Título
         th Descripción
@@ -11,6 +12,7 @@
     tbody
       - @objects.each do |object|
         tr
+          td = object.active
           td = image_tag object.card.url, class: 'img-thumbnail', style: 'max-width: 100px'
           td = object.title.titleize
           td = object.description

@@ -36,6 +36,7 @@ Rails.application.routes.draw do
       resources :information, only: [:index, :edit, :update]
       resources :movimientos, only: :index
       resources :rango_jedi, only: :index
+      resources :privileges_cards, only: [:index, :show]
     end
 
     namespace :formacion do

@@ -59,6 +59,7 @@ module Manager
 
     def object_params
       params.require(:object).permit(
+          :active,
           :card,
           :title,
           :description,

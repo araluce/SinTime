@@ -1,0 +1,2 @@
+class UserPrivilegesCard < ApplicationRecord
+end
