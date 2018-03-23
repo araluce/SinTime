@@ -7,7 +7,6 @@ class CreateUserPrivilegesCards < ActiveRecord::Migration[5.1]
       t.timestamps
     end
 
-    add_reference :banking_movements, :user_privileges_card, after: :exercise_id
     add_column :privileges_cards, :active, :boolean, after: :identifier, default: true
   end
 end

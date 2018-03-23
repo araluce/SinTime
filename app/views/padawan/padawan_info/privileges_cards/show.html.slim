@@ -1,0 +1,20 @@
+.row style="margin-bottom: 1%"
+  .col-12
+    = link_to 'Volver', padawan_padawan_info_privileges_cards_path, class: 'btn btn-primary pull-right'
+.container
+  .row.future-card style="margin-bottom: 1%"
+    .col-lg-6.col-md-12
+      = image_tag(@object.card.url, style: 'max-width: 100%;')
+    .col-lg-6.col-md-12
+      h3 = @object.title
+      h5 Descripción
+      p = @object.description
+
+      p Veces comprada por todos: #{UserPrivilegesCard.where(privileges_card: @object).count}
+      p Veces comprada por ti: #{UserPrivilegesCard.where(privileges_card: @object, user: current_user).count}
+
+      = simple_form_for(UserPrivilegesCard.new, url: padawan_padawan_info_privileges_card_user_privileges_cards_path(@object), as: :object, html: {class: 'form-vertical', multipart: true}) do |f|
+        = f.submit 'Comprar', class: 'btn btn-primary'
+
+      - UserPrivilegesCard.where(privileges_card: @object, user: current_user).each do |user_privilege_card|
+        p = "#{user_privilege_card.privileges_card}: #{card_is_valid?(user_privilege_card) ? 'Válida' : 'Usada'}"

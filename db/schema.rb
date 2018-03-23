@@ -57,7 +57,6 @@ ActiveRecord::Schema.define(version: 20180323211250) do
   create_table "banking_movements", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id"
     t.bigint "exercise_id"
-    t.bigint "user_privileges_card_id"
     t.string "reason"
     t.integer "time_after"
     t.integer "time_before"
@@ -65,7 +64,6 @@ ActiveRecord::Schema.define(version: 20180323211250) do
     t.datetime "updated_at", null: false
     t.index ["exercise_id"], name: "index_banking_movements_on_exercise_id"
     t.index ["user_id"], name: "index_banking_movements_on_user_id"
-    t.index ["user_privileges_card_id"], name: "index_banking_movements_on_user_privileges_card_id"
   end
 
   create_table "chat_check_points", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
