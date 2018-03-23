@@ -5402,7 +5402,7 @@ tbody.collapse.show {
 /* line 44, /home/araluce/.rvm/gems/ruby-2.3.4/gems/bootstrap-4.0.0.beta2.1/assets/stylesheets/bootstrap/_badge.scss */
 .badge-success {
   color: #fff;
-  background-color: #28a745;
+  background-color: #0069D9;
 }
 /* line 24, /home/araluce/.rvm/gems/ruby-2.3.4/gems/bootstrap-4.0.0.beta2.1/assets/stylesheets/bootstrap/mixins/_hover.scss */
 .badge-success[href]:focus, .badge-success[href]:hover {
