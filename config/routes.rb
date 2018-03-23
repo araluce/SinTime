@@ -90,6 +90,7 @@ Rails.application.routes.draw do
     resources :water
     resources :sports
     resources :happiness
+    resources :privileges_cards, except: :new
     resources :scores
     resources :deliveries
     resources :constants, except: :show
