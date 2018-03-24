@@ -91,13 +91,16 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: Rails.application.secrets.host }
   config.action_mailer.asset_host = "#{Rails.application.secrets.protocol}://#{Rails.application.secrets.host}"
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
       :address   => 'mail.sintime.es',
-      :port      => 993, # ports 587 and 2525 are also supported with STARTTLS
+      :port      => 465, # ports 587 and 2525 are also supported with STARTTLS
       :enable_starttls_auto => true, # detects and uses STARTTLS
       :user_name => Rails.application.secrets.mailer_user_name,
       :password  => Rails.application.secrets.mailer_password, # SMTP password is any valid API key
       :authentication => 'login', # Mandrill supports 'plain' or 'login'
       :domain => 'sintime.es', # your domain to identify your server when connecting
+      tls: true,
+      ssl: true
   }
 end
