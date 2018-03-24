@@ -1,5 +1,5 @@
 .container
-  .row style="margin-bottom: 1%"
+  .row.future-card style="margin-bottom: 1%; background-color: transparent"
     .col-4
       button.btn.btn-primary.pull-left Nivel #{current_user.level}
     .col-4
@@ -12,7 +12,7 @@
     .col-lg-6.col-md-12
       = image_tag(@object.card.url, style: 'max-width: 100%;')
       = simple_form_for(UserPrivilegesCard.new, url: padawan_padawan_info_privileges_card_user_privileges_cards_path(@object), as: :object, html: {class: 'form-vertical', multipart: true}) do |f|
-        = f.submit 'Comprar', class: 'btn btn-primary btn-block'
+        = f.submit 'Comprar', class: 'btn btn-primary btn-block', style: 'border-top-left-radius: 0px; border-top-right-radius: 0px;'
     .col-lg-6.col-md-12
       h3 = @object.title
       h5 Descripción
