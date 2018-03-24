@@ -101,5 +101,6 @@ Rails.application.configure do
       :authentication => 'login', # Mandrill supports 'plain' or 'login'
       :domain => 'sintime.es', # your domain to identify your server when connecting
       tls: true,
+      ssl: false
   }
 end
