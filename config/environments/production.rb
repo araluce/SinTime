@@ -91,7 +91,6 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: Rails.application.secrets.host }
   config.action_mailer.asset_host = "#{Rails.application.secrets.protocol}://#{Rails.application.secrets.host}"
-
   config.action_mailer.smtp_settings = {
       :address   => 'mail.sintime.es',
       :port      => 2525, # ports 587 and 2525 are also supported with STARTTLS
