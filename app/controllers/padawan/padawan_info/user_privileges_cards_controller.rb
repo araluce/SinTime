@@ -31,7 +31,11 @@ module Padawan
       end
 
       def object_params
-        params.permit().merge(privileges_card_id: @card.id, user_id: current_user.id)
+        begin
+          params.require(:object).permit(:user_to_id).merge(privileges_card_id: @card.id, user_id: current_user.id)
+        rescue
+          params.permit().merge(privileges_card_id: @card.id, user_id: current_user.id)
+        end
       end
 
     end

@@ -12,12 +12,16 @@
     .col-lg-6.col-md-12
       = image_tag(@object.card.url, style: 'max-width: 100%;')
       = simple_form_for(UserPrivilegesCard.new, url: padawan_padawan_info_privileges_card_user_privileges_cards_path(@object), as: :object, html: {class: 'form-vertical', multipart: true}) do |f|
+        - if @object.identifier == '1'
+          = f.input :user_to_id, collection: User.normal_users, :label_method => lambda { |user| "@#{user.alias&.downcase}" }, label: 'Receptor'
         = f.submit 'Comprar', class: 'btn btn-primary btn-block', style: 'border-top-left-radius: 0px; border-top-right-radius: 0px;'
     .col-lg-6.col-md-12
       h3 = @object.title
       h5 Descripción
       p = @object.description
 
+      small Coste: #{@object.xp_cost}XP
+      br
       small Veces comprada por todos: #{UserPrivilegesCard.where(privileges_card: @object).count}
       br
       small Veces comprada por ti: #{UserPrivilegesCard.where(privileges_card: @object, user: current_user).count}
