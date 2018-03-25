@@ -36,6 +36,9 @@ Rails.application.routes.draw do
       resources :information, only: [:index, :edit, :update]
       resources :movimientos, only: :index
       resources :rango_jedi, only: :index
+      resources :privileges_cards, only: [:index, :show] do
+        resources :user_privileges_cards, only: :create
+      end
     end
 
     namespace :formacion do
@@ -90,6 +93,7 @@ Rails.application.routes.draw do
     resources :water
     resources :sports
     resources :happiness
+    resources :privileges_cards, except: :new
     resources :scores
     resources :deliveries
     resources :constants, except: :show

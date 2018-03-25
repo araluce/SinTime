@@ -30,6 +30,9 @@ class User < ApplicationRecord
   has_many :donations_sent, class_name: 'Donation', inverse_of: :sender, foreign_key: :sender_id
   has_many :donations_receiver, class_name: 'Donation', inverse_of: :receiver, foreign_key: :receiver_id
 
+  has_many :user_privileges_cards, inverse_of: :user
+  has_many :privileges_cards, through: :user_privileges_cards, inverse_of: :users
+
   has_attached_file :avatar, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: ActionController::Base.helpers.asset_path('avatar.png')
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 

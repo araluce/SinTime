@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180322210958) do
+ActiveRecord::Schema.define(version: 20180323211250) do
 
   create_table "activity_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_runtastic_id"
@@ -188,6 +188,20 @@ ActiveRecord::Schema.define(version: 20180322210958) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "privileges_cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "card_file_name"
+    t.string "card_content_type"
+    t.integer "card_file_size"
+    t.datetime "card_updated_at"
+    t.string "title"
+    t.text "description"
+    t.integer "xp_cost"
+    t.string "identifier"
+    t.boolean "active", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "scores", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
     t.integer "time_benefit", default: 0
@@ -228,6 +242,16 @@ ActiveRecord::Schema.define(version: 20180322210958) do
     t.index ["tweet_id"], name: "index_twitter_backpacks_on_tweet_id"
     t.index ["user_id"], name: "index_twitter_backpacks_on_user_id"
     t.index ["user_share_id"], name: "index_twitter_backpacks_on_user_share_id"
+  end
+
+  create_table "user_privileges_cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "privileges_card_id"
+    t.bigint "user_id"
+    t.boolean "active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["privileges_card_id"], name: "index_user_privileges_cards_on_privileges_card_id"
+    t.index ["user_id"], name: "index_user_privileges_cards_on_user_id"
   end
 
   create_table "user_ranges", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

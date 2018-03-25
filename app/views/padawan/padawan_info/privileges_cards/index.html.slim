@@ -1,0 +1,17 @@
+.row
+  .col-12.future-card style="margin-bottom: 1%; background-color: transparent"
+    .row
+      .col-4
+        button.btn.btn-primary.pull-left Nivel #{current_user.level}
+      .col-4
+        .text-center
+          = link_to 'Volver', padawan_padawan_info_path, class: 'btn btn-primary text-center'
+      .col-4
+        button.btn.btn-primary.pull-right Xp #{current_user.xp}
+.row
+  - @objects.each do |object|
+    .col-lg-3.col-md-6
+      = link_to image_tag(object.card.url, style: 'max-width: 100%;'), padawan_padawan_info_privileges_card_path(object)
+.row
+  .col-md-12.pull-right
+    = paginate @objects
