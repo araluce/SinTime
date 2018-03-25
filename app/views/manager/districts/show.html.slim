@@ -21,3 +21,21 @@ ol.breadcrumb
 
               dt.col-sm-6 Ciudadanos
               dd.col-sm-6 = @object.users.join(', ')
+
+      .col-lg-5.col-md-5.col-xs-12
+        .card
+          .card-header Realizar movimiento
+          .card-body
+            - if @object.users.any?
+              = simple_form_for(BankingMovement.new, url: manager_district_banking_movements_path(@object), as: :object, html: {class: 'form-vertical'}) do |f|
+                = f.input :reason, label: 'A razón', input_html: {required: true}
+                .row
+                  .col-md-3.col-12
+                    = f.input :days, input_html: {type: 'number', max: 7, min: -7, value: 0, required: true}
+                  .col-md-3.col-12
+                    = f.input :hours, input_html: {type: 'number', max: 24, min: -24, value: 0, required: true}
+                  .col-md-3.col-12
+                    = f.input :minutes, input_html: {type: 'number', max: 60, min: -60, value: 0, required: true}
+                  .col-md-3.col-12
+                    = f.input :seconds, input_html: {type: 'number', max: 60, min: -60, value: 0, required: true}
+                button.btn.btn-primary = fa_icon('fw paper-plane-o')
