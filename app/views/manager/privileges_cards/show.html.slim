@@ -27,3 +27,17 @@ ol.breadcrumb
 
               dt.col-sm-6 Identificador
               dd.col-sm-6 = @object.identifier
+      .col-lg-5.col-md-5.col-xs-12
+        .card
+          .card-header Usuarios
+          .card-body
+            dl.row
+              dt.col-sm-6 Veces comprada por todos:
+              dd.col-sm-6 = UserPrivilegesCard.where(privileges_card: @object).count
+
+              - UserPrivilegesCard.where(privileges_card: @object, user: current_user).each do |user_privilege_card|
+                .bubble.font-95.bold.has-bubble.row
+                  dd.col-sm-9 = "@#{user_privilege_card.user}"
+                  dd
+                    .bubble.text-center class="#{card_is_valid?(user_privilege_card) ? 'bubble-success' : 'bubble-warning'}"
+                      = fa_icon "fw 2x #{card_is_valid?(user_privilege_card) ? 'check' : 'times'}"
