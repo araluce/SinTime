@@ -33,7 +33,8 @@ module Padawan
         object_initialization
         @tweets = []
         current_user.backpacks.where(backpack_type: params[:backpack_type]).map {|backpack| @tweets << TwitterService.get_tweet_by_id(backpack.tweet.tweet_id)}
-        render 'load_tweeter_tweets.coffee.js.erb'
+
+        render 'seguimiento'
       end
 
       Twitter::Backpack.backpack_types.each do |type, index|
