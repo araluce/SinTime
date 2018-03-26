@@ -2,3 +2,4 @@ $('#comment').val('')
 $('.bottom-tag').removeAttr('id')
 $('#conversation').append('<%= j(render 'new_message') %>')
 $("#conversation").animate({ scrollTop: ($('#conversation').prop('scrollHeight')) }, 2000)
+<%= render = render 'application/alert.js.erb', alert_class: 'success', text: 'Mensaje enviado' %>

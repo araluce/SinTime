@@ -9,12 +9,7 @@ class MessagesController < ApplicationController
     @message.viewed = true if @message.chatroom.is_admin? || @message.chatroom.is_general?
 
     if @message.save
-      # if current_user
-      #   ActionCable.server.broadcast 'messages', message: @message.message, user: @message.user.alias
-      # else
-      #   ActionCable.server.broadcast 'messages', message: @message.message, user: 'Admin'
-      # end
-      # head :ok
+
     else
     end
 
