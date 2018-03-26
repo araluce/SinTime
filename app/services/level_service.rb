@@ -10,7 +10,7 @@ class LevelService
     end
 
     def level_up(user)
-      User.update_columns(level: next_level(user.level), xp: profit_xp(next_level(user.level)))
+      user.update_columns(level: next_level(user.level), xp: profit_xp(next_level(user.level)))
     end
 
     def user_pay_xp(user, xp)
