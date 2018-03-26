@@ -12,6 +12,8 @@ module Padawan
             can_sent = true
             users.each do |user|
               can_sent = false if user.exercise_users.comprado.where(exercise: @object.exercise).empty?
+              user.update_columns(tsc: DateTime.now) if @object.exercise.is_food?
+              user.update_columns(tsb: DateTime.now) if @object.exercise.is_water?
             end
 
             if can_sent
