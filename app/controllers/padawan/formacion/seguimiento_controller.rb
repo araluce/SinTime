@@ -49,6 +49,7 @@ module Padawan
             flash[:notice] = "Sólo se permiten un máximo de #{@max_tweets_per_day} tweets diarios"
             @error = "Sólo se permiten un máximo de #{@max_tweets_per_day} tweets diarios"
           end
+          object_initialization
           render 'load_tweeter_tweets.coffee.js.erb'
         end
       end

@@ -16,7 +16,7 @@ class TwitterService
       begin
         result = []
         num_tweets = Constant.find_by_key('número de tweets a cargar en seguimiento').value.to_i rescue 25
-        CLIENT.user_timeline(user, count: num_tweets, exclude_replies: true, include_rts: false).each do |tweet|
+        CLIENT.user_timeline(user, count: num_tweets, exclude_replies: true).each do |tweet|
           result << tweet
         end
         result

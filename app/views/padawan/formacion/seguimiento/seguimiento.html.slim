@@ -3,7 +3,7 @@
     .row style="margin-bottom: 1%;"
       .col-12
         .btn-pref.btn-group.btn-group-justified.btn-group-sm role="group" style="width: 100%"
-          = link_to '#', class: 'btn btn-border-black .tweets_count', style: 'width: 50%' do
+          = link_to '#', class: 'btn btn-border-black tweets_count', style: 'width: 50%' do
             = "#{@tweets_count}/#{@max_tweets_per_day}"
           = link_to fa_icon('fw chevron-circle-left', text: 'Volver'), padawan_formacion_path, class: 'btn btn-border-black', style: 'width: 50%'
       .col-12

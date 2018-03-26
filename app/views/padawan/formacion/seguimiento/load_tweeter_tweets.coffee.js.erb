@@ -2,7 +2,7 @@
   $('.tweet-loader').html('<%= j(render 'padawan/partials/tweet') %>')
 <%- end %>
 <%- if @tweets_count %>
-  $('.tweets_count').val('<%= "#{@tweets_count}/#{@max_tweets_per_day}" %>')
+  $('.tweets_count').html('<%= "#{@tweets_count}/#{@max_tweets_per_day}" %>')
 <%- end %>
 <%- if @error %>
   $('.alert-content').html('<%= j(render 'application/alert', alert_class: 'notice', text: @error) %>')
