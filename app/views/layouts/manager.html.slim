@@ -26,12 +26,15 @@ html lang="en"
       .container-fluid
         .alert-content
           - if notice
-            = render 'application/alert', alert_class: 'success', text: notice
+            script
+              = render 'application/alert.js.erb', alert_class: 'success', text: notice
           - if alert
-            = render 'application/alert', alert_class: 'danger', text: alert
+            script
+              = render 'application/alert.js.erb', alert_class: 'danger', text: alert
           - unless @object.nil?
             - if @object.errors.any?
-              = render 'application/alert', alert_class: 'danger', text: 'Se han producido algunos errores'
+              script
+                = render 'application/alert.js.erb', alert_class: 'danger', text: 'Se han producido algunos errores'
         = yield
 
     = render 'manager/footer'

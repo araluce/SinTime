@@ -21,6 +21,8 @@
 //= require static/bootstrap-datetimepicker.min
 //= require static/date_time_picker_input
 //= require analytics/google_analytics
+//= require toastr
+//= require static/toastr
 
 $(document).ready(function() {
     $(".datatable").dataTable();

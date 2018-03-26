@@ -1,0 +1,10 @@
+<%- case alert_class %>
+  <%- when 'notice' %>
+    toastr.info('<%= text %>');
+  <%- when 'alert' %>
+    toastr.error('<%= text %>');
+  <%- when 'danger' %>
+    toastr.error('<%= text %>');
+  <%- when 'error' %>
+    toastr.error('<%= text %>');
+<%- end %>

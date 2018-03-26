@@ -16,3 +16,5 @@
 //= require bootstrap-sprockets
 //= require js-routes
 //= require_tree ./chat
+//= require toastr
+//= require static/toastr

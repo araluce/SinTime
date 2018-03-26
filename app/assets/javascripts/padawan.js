@@ -24,3 +24,6 @@
 //= require select2
 //= require static/select2
 //= require analytics/google_analytics
+//= require toastr
+//= require static/toastr
+

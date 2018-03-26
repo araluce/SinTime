@@ -23,6 +23,9 @@
 //= require select2
 //= require static/select2
 //= require_tree ./channels
+//= require toastr
+//= require static/toastr
+
 
 $(document).ready(function() {
     $(".datatable").dataTable();

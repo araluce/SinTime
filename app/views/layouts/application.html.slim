@@ -18,11 +18,14 @@ html
 
       .alert-content
         - if notice
-          = render 'application/alert', alert_class: 'success', text: notice
+          script
+            = render 'application/alert.js.erb', alert_class: 'success', text: notice
         - if alert
-          = render 'application/alert', alert_class: 'danger', text: alert
+          script
+            = render 'application/alert.js.erb', alert_class: 'danger', text: alert
         - if defined? @errors
-          = render 'application/alert', alert_class: 'danger', text: @errors.full_messages
+          script
+            = render 'application/alert.js.erb', alert_class: 'danger', text: @errors.full_messages
 
       .home
         = yield

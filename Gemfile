@@ -130,3 +130,5 @@ gem 'pusher'
 gem 'select2-rails'
 
 gem 'remotipart', '~> 1.0'
+
+gem 'toastr-rails'
