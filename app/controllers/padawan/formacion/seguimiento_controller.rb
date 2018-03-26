@@ -4,6 +4,7 @@ module Padawan
       layout 'padawan'
       include TwitterHelper
 
+      protect_from_forgery only: :seguimiento
       before_action :load_tweeters, only: [:follow_user, :twitter, :seguimiento, :load_tweeter_tweets, :mochila]
 
       def seguimiento
