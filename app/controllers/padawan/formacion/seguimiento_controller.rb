@@ -9,10 +9,6 @@ module Padawan
       def seguimiento
         object_initialization
         @tweets = []
-        if current_user.tweeters.any?
-          @tweets = TwitterService.get_latest_tweet_by_user(current_user.tweeters.first&.to_s)
-          check_private_profile
-        end
       end
 
       def load_tweeter_tweets
@@ -27,19 +23,16 @@ module Padawan
             @tweets = TwitterService.get_latest_tweet_by_user(current_user.tweeters.first&.to_s)
             check_private_profile
           end
-
-          render 'seguimiento'
-        else
-          redirect_to action: :seguimiento
         end
 
+        render 'load_tweeter_tweets.coffee.js.erb'
       end
 
       def mochila
         object_initialization
         @tweets = []
         current_user.backpacks.where(backpack_type: params[:backpack_type]).map {|backpack| @tweets << TwitterService.get_tweet_by_id(backpack.tweet.tweet_id)}
-        render :seguimiento
+        render 'load_tweeter_tweets.coffee.js.erb'
       end
 
       Twitter::Backpack.backpack_types.each do |type, index|
@@ -49,16 +42,14 @@ module Padawan
           if @tweets_count < @max_tweets_per_day
             @tweet = Tweet.find_or_create_by(tweet_id: params[:tweet_id])
 
-            if type == 'compartido'
-              redirect_to action: :seguimiento
-            else
+            if type != 'compartido'
               save_tweet(type, @tweet)
-              redirect_to action: :seguimiento
             end
           else
             flash[:notice] = "Sólo se permiten un máximo de #{@max_tweets_per_day} tweets diarios"
-            redirect_to action: :seguimiento
+            @error = "Sólo se permiten un máximo de #{@max_tweets_per_day} tweets diarios"
           end
+          render 'load_tweeter_tweets.coffee.js.erb'
         end
       end
 
@@ -72,15 +63,16 @@ module Padawan
 
           current_user.update_attributes(tweeters: tweeters)
           flash[:notice] = "Ahora estás siguiendo a #{@tweeter}"
+          @error = "Ahora estás siguiendo a #{@tweeter}"
           @tweets = TwitterService.get_latest_tweet_by_user(@tweeter.to_s)
           check_private_profile
         else
-          @errors = @tweeter.errors
+          @error = @tweeter.errors.full_messages
         end
 
         object_initialization
 
-        render :seguimiento
+        render 'load_tweeter_tweets.coffee.js.erb'
 
       end
 
@@ -90,9 +82,11 @@ module Padawan
         case @tweets
           when 1
             flash[:notice] = 'Este perfil es privado'
+            @error = 'Este perfil es privado'
             @tweets = []
           when 2
             flash[:notice] = 'Perfil no encontrado'
+            @error = 'Perfil no encontrado'
             @tweets = []
         end
       end

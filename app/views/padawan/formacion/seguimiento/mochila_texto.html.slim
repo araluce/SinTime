@@ -3,12 +3,9 @@
     .row style="margin-bottom: 1%;"
       .col-sm-12
         .btn-pref.btn-group.btn-group-justified.btn-group-lg role="group" style="width: 100%"
-          = link_to 'Texto', padawan_home_path, class: 'btn btn-primary', style: 'width: 25%'
-          = link_to 'Audiovisual', padawan_home_path, class: 'btn btn-primary', style: 'width: 25%'
-          = link_to 'Herramientas', padawan_home_path, class: 'btn btn-primary', style: 'width: 25%'
-          = link_to 'Compartidos', padawan_home_path, class: 'btn btn-primary', style: 'width: 25%'
+          = link_to 'Texto', padawan_home_path, class: 'btn btn-primary', style: 'width: 25%', remote: true
+          = link_to 'Audiovisual', padawan_home_path, class: 'btn btn-primary', style: 'width: 25%', remote: true
+          = link_to 'Herramientas', padawan_home_path, class: 'btn btn-primary', style: 'width: 25%', remote: true
+          = link_to 'Compartidos', padawan_home_path, class: 'btn btn-primary', style: 'width: 25%', remote: true
     .row
-      - @tweets.each do |tweet|
-        .col-md-6.col-sm-6
-          .tweetEntry-tweetHolder
-            = render 'padawan/partials/tweet', tweet: tweet
+      = render 'padawan/partials/tweet'
