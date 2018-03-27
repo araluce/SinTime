@@ -46,6 +46,8 @@ class User < ApplicationRecord
   scope :loggeds, -> {where(logged: true)}
   scope :disconnected, -> {where(logged: false)}
   scope :normal_users, -> {where(untouchable: false)}
+  scope :in_holidays, -> {where('tdv_holidays > ?', DateTime.now)}
+  scope :not_in_holidays, -> {where('tdv_holidays <= ?', DateTime.now)}
 
   scope :messages_for_me, -> {joins(:banking_movements).where('banking_movements.created_at >= ?', 1.week.ago).group(:user_id).order('sum(banking_movements.time_before) DESC')}
 
@@ -82,6 +84,10 @@ class User < ApplicationRecord
 
   def logged?
     logged
+  end
+
+  def is_in_holidays?
+    tdv_holidays > DateTime.now
   end
 
   def full_name

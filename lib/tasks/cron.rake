@@ -14,7 +14,6 @@ namespace :cron do
       end
     end
 
-
     puts "#{Time.now} - Success!"
   end
 
