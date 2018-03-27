@@ -102,6 +102,7 @@ Rails.application.routes.draw do
     resources :ranges, except: :show
     resources :sala, only: :index
     resources :chat_admin, only: :show
+    resources :holidays, only: [:index, :create]
   end
 
 end

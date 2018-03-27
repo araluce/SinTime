@@ -1,0 +1,10 @@
+.row
+  .col-md-3.col-12
+    = f.input :days, input_html: {type: 'number', min: 0, value: 0, required: true}
+  .col-md-3.col-12
+    = f.input :hours, input_html: {type: 'number', max: 24, min: 0, value: 0, required: true}
+  .col-md-3.col-12
+    = f.input :minutes, input_html: {type: 'number', max: 60, min: 0, value: 0, required: true}
+  .col-md-3.col-12
+    = f.input :seconds, input_html: {type: 'number', max: 60, min: 0, value: 0, required: true}
+button.btn.btn-primary = fa_icon('fw paper-plane-o', text: '¡Vacaciones para todos!')

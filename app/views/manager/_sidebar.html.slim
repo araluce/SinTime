@@ -5,9 +5,14 @@ ul.navbar-nav.navbar-sidenav#exampleAccordion
       = fa_icon('fw shield')
       span.nav-link-text Distritos
   li.nav-item data-toggle="tooltip" data-placement="right"
-    = link_to manager_citizens_path, class: 'nav-link', title: 'Ciudadanos' do
+    = link_to manager_citizens_path, class: 'nav-link', title: 'Padawans' do
       = fa_icon('fw users')
-      span.nav-link-text Ciudadanos
+      span.nav-link-text Padawans
+
+  li.nav-item data-toggle="tooltip" data-placement="right"
+    = link_to manager_holidays_path, class: 'nav-link', title: 'Vacaciones' do
+      = fa_icon('fw sun-o')
+      span.nav-link-text Vacaciones
 
   li.nav-title = fa_icon('fw pencil', text: 'Ejercicios')
   li.nav-item = link_to fa_icon('fw question', text: 'Entregas'), manager_deliveries_path, class: 'nav-link', title: 'Entregas'
