@@ -45,7 +45,7 @@ class User < ApplicationRecord
   scope :in_clan, -> {where.not(district: nil)}
   scope :loggeds, -> {where(logged: true)}
   scope :disconnected, -> {where(logged: false)}
-  scope :normal_users, -> {where(untouchable: false)}
+  scope :normal_users, -> {where(untouchable: false, status: 'Vivo')}
   scope :in_holidays, -> {where('tdv_holidays > ?', DateTime.now)}
   scope :not_in_holidays, -> {where('tdv_holidays <= ?', DateTime.now)}
 
