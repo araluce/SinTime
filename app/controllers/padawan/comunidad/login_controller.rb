@@ -41,7 +41,7 @@ module Padawan
           response = @object.perform
           case response
             when 0
-              flash[:notice] = 'Usuario o contraseña incorrectos'
+              flash[:alert] = 'Usuario o contraseña incorrectos'
               redirect_to action: :edit
             else
               flash[:notice] = 'Todos los datos han sido actualizados'
