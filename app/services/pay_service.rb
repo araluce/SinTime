@@ -4,11 +4,13 @@ class PayService
 
     def user_pay_reason(user, quantity, reason)
       result_time = user.tdv - seconds_to_duration(quantity)
+      user.update_columns(tdv_holidays_ref: user.tdv_holidays_ref - quantity) if user.is_in_holidays?
       pay_reason(user, result_time, reason)
     end
 
     def system_pay_reason(user, quantity, reason)
       result_time = user.tdv + seconds_to_duration(quantity)
+      user.update_columns(tdv_holidays_ref: user.tdv_holidays_ref + quantity) if user.is_in_holidays?
       pay_reason(user, result_time, reason)
     end
 

@@ -26,7 +26,7 @@ module Manager
           tsc = user.tsc + holidays_duration
           tsb = user.tsb + holidays_duration
           tdv_holidays = DateTime.now + holidays_duration
-          tdv_holidays_ref = user.tdv
+          tdv_holidays_ref = (user.tdv - DateTime.now).to_i
           user.update_columns(tdv: tdv, tsc: tsc, tsb: tsb, tdv_holidays: tdv_holidays, tdv_holidays_ref: tdv_holidays_ref)
         end
         flash[:notice] = 'Vacaciones en marcha'

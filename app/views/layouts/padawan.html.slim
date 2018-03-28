@@ -41,4 +41,4 @@ html
         - unless current_user.is_in_holidays?
           = render 'padawan/countdown.js.erb', datetime: @tdv.to_f * 1000
         - else
-          = render 'padawan/countdown_holidays.js.erb', datetime: current_user.tdv_holidays_ref.to_f * 1000
+          = render 'padawan/countdown_holidays.js.erb', datetime: (DateTime.now.to_f + current_user.tdv_holidays_ref.to_f) * 1000
