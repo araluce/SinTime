@@ -1,33 +1,36 @@
-.profile-header-container{
-  margin: 0 auto;
-  text-align: center;
-  font-size: 1.3em;
-}
+.rank{
+  h1{
+    font-family: burbank;
+    text-align: center;
+  }
 
-.profile-header-img {
-  padding: 54px;
-}
+  .final-score{
+    text-align: center;
+    font-size: 1.5em;
+  }
 
-.profile-header-img > img.img-circle {
-  width: 240px;
-  height: 240px;
-  border: 2px solid #51D2B7;
-}
+  .profile-header-container{
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.3em;
 
-.profile-header {
-  margin-top: 43px;
-}
+    .profile-header-img {
+      padding: 54px;
 
-/**
- * Ranking component
- */
-.rank-label-container {
-  margin-top: -19px;
-  text-align: center;
-}
+      img.img-circle {
+        width: 240px;
+        height: 240px;
+      }
+    }
 
-.label.label-default.rank-label {
-  background-color: rgb(81, 210, 183);
-  padding: 5px 10px 5px 10px;
-  border-radius: 27px;
+    .rank-label-container {
+      margin-top: -19px;
+      text-align: center;
+
+      .label.label-default.rank-label {
+        padding: 5px 10px 5px 10px;
+        border-radius: 27px;
+      }
+    }
+  }
 }
