@@ -15,6 +15,8 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require jquery.countdown
+//= require jquery.countdown-es
 //= require datatables
 //= require cocoon
 //= require manager/sb-admin

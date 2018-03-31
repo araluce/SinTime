@@ -16,6 +16,9 @@ ol.breadcrumb
           .card-header = "Datos del usuario #{@object}"
           .card-body
             dl.row
+              .col-12
+                .countdown style="color: black!important"
+              hr
               dt.col-sm-6 Nombre
               dd.col-sm-6 = @object.full_name
 
@@ -60,3 +63,10 @@ ol.breadcrumb
                   dd
                     .bubble.text-center class="#{card_is_valid?(user_privilege_card) ? 'bubble-success' : 'bubble-warning'}"
                       = fa_icon "fw 2x #{card_is_valid?(user_privilege_card) ? 'check' : 'times'}"
+
+
+script
+  - unless @object.is_in_holidays?
+    = render 'padawan/countdown.js.erb', datetime: @object.tdv.to_f * 1000
+  - else
+    = render 'padawan/countdown_holidays.js.erb', datetime: (DateTime.now.to_f + @object.tdv_holidays_ref.to_f) * 1000
