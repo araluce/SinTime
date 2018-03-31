@@ -6,6 +6,8 @@ class District < ApplicationRecord
 
   has_one :chatroom, inverse_of: :district, dependent: :destroy
 
+  has_many :ranking_districts, class_name: 'Ranking::District', inverse_of: :district
+
   validates :name, presence: true
 
   def to_s

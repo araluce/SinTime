@@ -33,6 +33,9 @@ class User < ApplicationRecord
   has_many :user_privileges_cards, inverse_of: :user
   has_many :privileges_cards, through: :user_privileges_cards, inverse_of: :users
 
+  has_many :ranking_users, class_name: 'Ranking::User', inverse_of: :user, dependent: :destroy
+  accepts_nested_attributes_for :ranking_users, reject_if: :all_blank, allow_destroy: true
+
   has_attached_file :avatar, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: ActionController::Base.helpers.asset_path('avatar.png')
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 

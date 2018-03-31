@@ -1,9 +1,9 @@
 .rank
   .row style="margin-bottom: 1%;"
     .col-lg-6.offset-lg-3.col-12.future-card    = link_to fa_icon('fw chevron-circle-left', text: 'Volver'), padawan_padawan_info_path, class: 'btn btn-border-black pull-right'
-  .row
+  .row style="margin-bottom: 1%;"
     .col-lg-6.offset-lg-3.col-12.future-card
-      h1 Rango:
+      h1 Rango
       - @objects.each_with_index do |user, index|
         - if user == current_user
           .profile-header-container
@@ -13,11 +13,14 @@
               .rank-label-container
                 p.label.label-default.rank-label = range_icon.range_text
                 p.label.label-default.rank-label = "(#{user.banking_movements.where('created_at >= ?', 1.week.ago).sum(:time_before) / 1000} midicronianos)"
-  .row
+  .row style="margin-bottom: 1%;"
     .col-lg-6.offset-lg-3.col-12.future-card
       h1 Clasificación Mensual Individual
-      .final-score
-
-  .row
+      - if current_user.ranking_users.any?
+        .final-score = current_user.ranking_users.last.to_s
+  .row style="margin-bottom: 1%;"
     .col-lg-6.offset-lg-3.col-12.future-card
       h1 Clasificación Mensual Clanes
+      - if !@districts.nil? && @districts.any?
+        - @districts.each_with_index do |district_ranking, index|
+          .final-score = "#{district_ranking.position}. #{district_ranking.district}"

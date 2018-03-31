@@ -41,4 +41,16 @@ namespace :cron do
     puts "#{Time.now} - Success!"
   end
 
+  task users_ranking: :environment do
+    p "=================User Ranking (#{DateTime.now})===================="
+    RankingService.users_ranking
+    puts "#{Time.now} - Success!"
+  end
+
+  task district_ranking: :environment do
+    p "=================District Ranking (#{DateTime.now})===================="
+    RankingService.districts_ranking
+    puts "#{Time.now} - Success!"
+  end
+
 end
