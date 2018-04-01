@@ -22,5 +22,5 @@
     .col-lg-6.offset-lg-3.col-12.future-card
       h1 Clasificación Mensual Clanes
       - if !@districts.nil? && @districts.any?
-        - @districts.each_with_index do |district_ranking, index|
+        - @districts.sort_by {|obj| obj.position}.each_with_index do |district_ranking, index|
           .final-score = "#{district_ranking.position}. #{district_ranking.district}"
