@@ -6,6 +6,8 @@
         th Avatar
         th Nombre
         th Apellidos
+        th Puesto
+        th Rango
         th DNI
         th email
         th Alias
@@ -22,6 +24,12 @@
           td = image_tag citizen.avatar.url(:thumb), class: 'img-circle'
           td = citizen.name
           td = citizen.lastname
+          td
+            - if citizen.ranking_users.any?
+              = citizen.ranking_users.last.to_s
+          td
+            - if citizen.ranking_users.where(classification: true).any?
+              = UserRange.where('min_score >= ?', citizen.ranking_users.where(classification: true).last.position ).order(min_score: :asc).first.range_text
           td = citizen.dni
           td = citizen.email
           td = citizen.alias
