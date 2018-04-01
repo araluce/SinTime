@@ -29,12 +29,12 @@
 
   .row style="margin-bottom: 1%;"
     .col-lg-6.offset-lg-3.col-12.future-card
-      h1 Clasificación Mensual Individual Final
+      h1 Clasificación Individual Final
       - if current_user.ranking_users.where(classification: true).any?
         .final-score = current_user.ranking_users.where(classification: true).last.to_s
   .row style="margin-bottom: 1%;"
     .col-lg-6.offset-lg-3.col-12.future-card
-      h1 Clasificación Mensual Clanes Final
+      h1 Clasificación Clanes Final
       - if !@districts.nil? && @districts.any?
         - @districts.sort_by {|obj| obj.position}.each_with_index do |district_ranking, index|
           .final-score = "#{district_ranking.position}. #{district_ranking.district}"
