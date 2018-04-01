@@ -45,6 +45,7 @@ class RankingService
         district.ranking_districts.create(position: index + 1, classification: month)
 
         if month
+          p "El distrito #{district} ##{district.id}ha quedado en posición #{index + 1}"
           district.users.find_each do |user|
             if index+1 == 1
               PayService.system_pay_reason(user, 172800, 'Primer puesto en la clasificación de distrito')
