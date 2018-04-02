@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
     @message = Message.new(object_params)
     @message.user = current_user
     @message.admin = current_admin
+    @message.message = @message.message.encode('UTF-8')
     @chat = @message.chatroom
     @message.viewed = true if @message.chatroom.is_admin? || @message.chatroom.is_general?
 
