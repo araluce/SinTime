@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180401201147) do
+ActiveRecord::Schema.define(version: 20180402231916) do
 
   create_table "activity_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_runtastic_id"
@@ -179,7 +179,7 @@ ActiveRecord::Schema.define(version: 20180401201147) do
     t.bigint "chatroom_id"
     t.bigint "user_id"
     t.bigint "admin_id"
-    t.text "message"
+    t.string "message", collation: "utf8_bin"
     t.boolean "viewed", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
