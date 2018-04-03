@@ -22,11 +22,11 @@ class BetOptionUser < ApplicationRecord
   validate :check_time
 
   def to_s
-    "@#{user.alias} ha apostado #{seconds_to_s(time_wagered)}"
+    "@#{user.alias} ha apostado #{seconds_to_s(time_bet)}"
   end
 
   def set_time_wagered
-    self.time_wagered = days_to_seconds(days_bet.to_f) + hours_to_seconds(hours_bet.to_f) + minutes_to_seconds(minutes_bet.to_f) + seconds_bet.to_f
+    self.time_bet = days_to_seconds(days_bet.to_f) + hours_to_seconds(hours_bet.to_f) + minutes_to_seconds(minutes_bet.to_f) + seconds_bet.to_f
   end
 
   def check_time

@@ -1,0 +1,33 @@
+.row
+  .col-12.future-card
+    .row style="margin-bottom: 1%;"
+      .col-12
+        = link_to fa_icon('fw chevron-circle-left', text: 'Volver'), padawan_comunidad_deteccion_index_path, class: 'btn btn-border-black pull-right'
+    .row
+      .col-12
+        .card-header Datos de la apuesta
+        .card-body
+          dl.row
+            .col-12.box
+              .row
+                dt.col-sm-6 Tiempo total apostado
+                dd.col-sm-6 = seconds_to_s(BetService.total_time(@object))
+
+                dt.col-sm-6 Apuesta
+                dd.col-sm-6 = @object.bet
+
+                dt.col-sm-6 Opciones
+                dd.col-sm-6 = @object.options.count
+                - @object.options.each do |option|
+                  dd.col-sm-12 = "#{option} (#{option.bet_users.count} apuestas realizadas)"
+                  - option.bet_users.each do |bet|
+                    dd.col-sm-12
+                      small = "#{bet} a esta opción"
+
+          .row
+            .col-12.box
+              - if @object.open
+                = simple_form_for(@bet_option_user, url: padawan_comunidad_deteccion_mis_apuestas_path(@object), html: {class: 'form-vertical'}) do |f|
+                  = f.association :bet_option, collection: @object.options, label: 'Selecciona una opción'
+                  = render 'manager/partials/time_beneficts', f: f, custom_label: 'Apuesta', suffix: 'bet'
+                  = f.button :button, '¡Apostar!', type: :submit, class: 'btn btn-primary'

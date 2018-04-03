@@ -17,7 +17,7 @@ class BetService
 
       bet.options.each do |option|
         time_wagered += option.bet_users.each.inject(0) do |total, bet_user|
-          total + bet_user.time_wagered
+          total + bet_user.time_bet
         end
       end
 
@@ -35,7 +35,7 @@ class BetService
 
     def my_time_wagered(bet, user)
       return 0 unless my_right_bets(bet, user).any?
-      BetOptionUser.where(bet_option: my_right_bets(bet, user), user: user).pluck(:time_wagered).inject(0){ |sum,x| sum + x }
+      BetOptionUser.where(bet_option: my_right_bets(bet, user), user: user).pluck(:time_bet).inject(0){ |sum,x| sum + x }
     end
 
     def winners(bet)

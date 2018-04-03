@@ -60,6 +60,9 @@ Rails.application.routes.draw do
       get 'altruismo', to: 'altruismo#altruismo'
       resources :sports, only: :index
       resources :login, except: [:index, :destroy]
+      resources :deteccion, only: [:index, :show] do
+        resources :mis_apuestas, only: :create
+      end
       namespace :rci do
         resources :sala, only: :index
         resources :chat_user, only: :show
