@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180402231916) do
+ActiveRecord::Schema.define(version: 20180403190739) do
 
   create_table "activity_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_runtastic_id"
@@ -64,6 +64,14 @@ ActiveRecord::Schema.define(version: 20180402231916) do
     t.datetime "updated_at", null: false
     t.index ["exercise_id"], name: "index_banking_movements_on_exercise_id"
     t.index ["user_id"], name: "index_banking_movements_on_user_id"
+  end
+
+  create_table "bets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text "bet"
+    t.boolean "active", default: false
+    t.boolean "open", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "chat_check_points", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
