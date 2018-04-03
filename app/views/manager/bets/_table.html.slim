@@ -1,0 +1,23 @@
+.table-responsive
+  table.table
+    thead
+      tr
+        th Apuesta
+        th ¿Apuestas permitidas?
+        th ¿Mostrado en padawans?
+        th #Opciones
+        th #Apuestas de usuarios
+        th Acciones
+    tbody
+      - @objects.each do |object|
+        tr
+          td = object.bet
+          td = render 'partials/boolean', object: object.open
+          td = render 'partials/boolean', object: object.active
+          td = object.options.count
+          td = object.options.includes(:bet_users).count
+          td
+            .action-buttons
+              = link_to fa_icon('fw eye 2x'), manager_bet_path(object)
+              = link_to fa_icon('fw cog 2x'), edit_manager_bet_path(object)
+              = link_to fa_icon('fw times 2x'), manager_bet_path(object), data: {confirm: '¿Estás seguro?'}, method: :delete
