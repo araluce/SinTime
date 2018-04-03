@@ -21,7 +21,7 @@
               | Conectado
             - else
               | Desconectado
-          td = image_tag citizen.avatar.url(:thumb), class: 'img-circle'
+          td = render 'partials/avatar', user: citizen, avatar_style: :thumb, custom_class: 'img-circle'
           td = citizen.name
           td = citizen.lastname
           td

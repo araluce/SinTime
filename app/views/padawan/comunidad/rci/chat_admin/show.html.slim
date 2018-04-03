@@ -3,7 +3,7 @@
     .col-md-1.col-1.heading-avatar
       .heading-avatar-icon
         - if current_admin
-          = image_tag @chat.user_1.avatar.url(:thumb)
+          = render 'partials/avatar', user: @chat.user_1, avatar_style: :thumb
     .col-sm-8.col-xs-7.heading-name
       a.heading-name-meta
         - if current_user

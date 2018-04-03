@@ -196,10 +196,18 @@ body {
   padding: 0 !important;
 }
 
-.avatar-icon img {
-  border-radius: 50%;
-  height: 49px;
-  width: 49px;
+.avatar-icon {
+  margin: 0 auto;
+  & img {
+    border-radius: 50%;
+    height: 49px;
+    width: 49px;
+  }
+
+  .no-avatar{
+    height: 49px!important;
+    width: 49px!important;
+  }
 }
 
 .sideBar-main {
@@ -639,4 +647,16 @@ a.new-message-pop-up{
   text-align: center;
   width: 100px;
   z-index: 99999999;
+}
+
+.no-avatar{
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  color: white;
+  font-size: 1.5em;
+  padding: 4px;
+  text-transform: uppercase;
+  background-color: #0069D9;
+  text-align: center;
 }

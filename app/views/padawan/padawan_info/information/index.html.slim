@@ -1,7 +1,7 @@
 .row
   .col-12.future-card.profile
     header
-      = image_tag @object.avatar.url(:medium), class: 'hoverZoomLink'
+      = render 'partials/avatar', user:  @object, avatar_style: :medium, custom_class: 'hoverZoomLink'
       h4 = "@#{@object.alias}"
       h6 = @object.full_name
     .profile-bio

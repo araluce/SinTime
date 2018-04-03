@@ -20,7 +20,7 @@ html
       .row
         .col-11.countdown
         .col-1
-          = image_tag current_user.avatar.url(:thumb), class: 'img-circle', style: 'max-width: 90px;'
+          = render 'partials/avatar', user: current_user, avatar_style: :thumb, custom_class: 'img-circle', custom_style: 'max-width: 90px;'
 
       .alert-content
         - if notice

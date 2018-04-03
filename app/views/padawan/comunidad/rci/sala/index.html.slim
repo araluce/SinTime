@@ -5,7 +5,7 @@
         .col-6.heading-avatar.pull-left
           .heading-avatar-icon
             - if current_user
-              = image_tag current_user.avatar.url(:thumb)
+              = render 'partials/avatar', user: current_user, avatar_style: :thumb
         .col-6.pull-right
           = link_to fa_icon('chevron-left 2x', class:'pull-right'), padawan_comunidad_rci_path
 
@@ -29,49 +29,12 @@
                     - messages = Chat::General.first_or_create.messages
                     - if messages.any?
                       = messages.last.message
-        /- if current_admin || (!current_user.nil? && current_user.untouchable)
-        /  - @districts.each do |district|
-        /    = link_to padawan_comunidad_rci_chat_user_path(district), style: 'width: 100%;' do
-        /      .row.sideBar-body
-        /        .col-sm-3.col-xs-3.sideBar-avatar
-        /          .avatar-icon = image_tag district.logo.url(:thumb)
-        /        .col-sm-9.col-xs-9.sideBar-main
-        /          .row
-        /            .col-sm-8.col-xs-8.sideBar-name
-        /              span.name-meta = district
-        /        .col-sm-4.col-xs-4.pull-right.sideBar-time
-        /          span.time-meta.pull-right
-        /            | 18:18
-        /- elsif current_user.district
-        /  = link_to padawan_comunidad_rci_chat_user_path(current_user.district), style: 'width: 100%;' do
-        /    .row.sideBar-body
-        /      .col-sm-3.col-xs-3.sideBar-avatar
-        /        .avatar-icon = image_tag current_user.district.logo.url(:thumb)
-        /      .col-sm-9.col-xs-9.sideBar-main
-        /        .row
-        /          .col-sm-8.col-xs-8.sideBar-name
-        /            span.name-meta = current_user.district
-        /      .col-sm-4.col-xs-4.pull-right.sideBar-time
-        /        span.time-meta.pull-right
-        /          | 18:18
-        /- @admins.each do |admin|
-        /  = link_to padawan_comunidad_rci_chat_admin_path(admin), style: 'width: 100%;' do
-        /    .row.sideBar-body
-        /      .col-sm-3.col-xs-3.sideBar-avatar
-        /        .avatar-icon
-        /      .col-sm-9.col-xs-9.sideBar-main
-        /        .row
-        /          .col-sm-8.col-xs-8.sideBar-name
-        /            span.name-meta = admin.email
-        /      .col-sm-4.col-xs-4.pull-right.sideBar-time
-                /span.time-meta.pull-right
-                /  | 18:18
 
         - @users.each do |user|
           = link_to padawan_comunidad_rci_chat_user_path(user), style: 'width: 100%;' do
             .row.sideBar-body class="#{Chat::Individual.messages_not_read(current_user.id, user.id).any? ? 'sideBar-body-success' : ''}"
               .col-sm-3.col-xs-3.sideBar-avatar
-                .avatar-icon = image_tag user.avatar.url(:thumb)
+                .avatar-icon = render 'partials/avatar', user: user, avatar_style: :thumb
               .col-sm-9.col-xs-9.sideBar-main
                 .row
                   .col-sm-8.col-xs-8.sideBar-name

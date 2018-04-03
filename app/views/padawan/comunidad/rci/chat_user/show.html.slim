@@ -4,7 +4,7 @@
   .row.heading
     .col-md-1.col-1.heading-avatar
       .heading-avatar-icon
-        = image_tag receiver_user.avatar.url(:thumb)
+        = render 'partials/avatar', user: receiver_user, avatar_style: :thumb
     .col-sm-8.col-xs-7.heading-name
       a.heading-name-meta = "@#{receiver_user.alias}"
       span.heading-online Online

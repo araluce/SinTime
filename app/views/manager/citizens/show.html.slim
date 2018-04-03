@@ -7,7 +7,7 @@ ol.breadcrumb
   .col-12
     .row
       .col-lg-2.col-md-2.col-xs-12
-        td = image_tag @object.avatar.url(:medium), class: 'img-circle', style: 'max-width: 100%'
+        td = render 'partials/avatar', user: @object, avatar_style: :medium, custom_class: 'img-circle', custom_style: 'max-width: 100%'
         hr
         p = link_to 'Volver', manager_citizens_path, class: 'btn btn-primary btn-block'
         p = link_to 'Editar', edit_manager_citizen_path(@object), class: 'btn btn-primary btn-block'
