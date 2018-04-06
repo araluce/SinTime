@@ -34,6 +34,14 @@ ol.breadcrumb
                   = link_to @object.district, manager_district_path(@object.district)
                 - else
                   | Este usuario no está asignado a ningún distrito
+
+              - if @object.loans.open.any?
+                dt.col-sm-6 Préstamos abierto
+                dd.col-sm-6 = @object.loans.open.first
+
+              dt.col-sm-6 Préstamos pagados
+              dd.col-sm-6 = @object.loans.closed.count
+
       .col-lg-5.col-md-5.col-xs-12
         .card
           .card-header Realizar movimiento
