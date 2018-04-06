@@ -11,6 +11,7 @@ module Padawan
         @bet_option_user = current_user.bet_option_user.build(object_params)
 
         if @bet_option_user.save
+          PayService.user_pay_reason(current_user, @bet_option_user.time_bet, 'Apuestas')
           flash[:notice] = 'Tu apuesta se ha realizado correctamente'
         else
           flash[:alert] = @bet_option_user.errors.full_messages
