@@ -31,10 +31,10 @@ class BetOptionUser < ApplicationRecord
 
   def check_time
     unless set_time_wagered > 0
-      errors.add(:days_bet, 'El apostado debe ser mayor que 0')
-      errors.add(:hours_bet, 'El apostado debe ser mayor que 0')
-      errors.add(:minutes_bet, 'El apostado debe ser mayor que 0')
-      errors.add(:seconds_bet, 'El apostado debe ser mayor que 0')
+      errors.add(:days_bet, 'El tiempo apostado debe ser mayor que 0')
+      errors.add(:hours_bet, 'El tiempo apostado debe ser mayor que 0')
+      errors.add(:minutes_bet, 'El tiempo apostado debe ser mayor que 0')
+      errors.add(:seconds_bet, 'El tiempo apostado debe ser mayor que 0')
     end
   end
 end

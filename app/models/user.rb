@@ -39,6 +39,9 @@ class User < ApplicationRecord
   has_many :bet_option_user, class_name: 'BetOptionUser', inverse_of: :user, dependent: :destroy
   accepts_nested_attributes_for :bet_option_user, reject_if: :all_blank, allow_destroy: true
 
+  has_many :loans, class_name: 'Loan', inverse_of: :user, dependent: :destroy
+  accepts_nested_attributes_for :loans, reject_if: :all_blank, allow_destroy: true
+
 
   has_attached_file :avatar, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: ActionController::Base.helpers.asset_path('avatar.png')
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
