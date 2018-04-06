@@ -19,10 +19,13 @@ class Loan < ApplicationRecord
 
   validates :share, presence: true, numericality: {greater_than: 0, less_than_or_equal_to: 4}
   validate :check_time
+  validate :check_open_loads
 
   def to_s
     "Préstamo de #{seconds_to_s(time_loan)}. Restante #{seconds_to_s(time_remaining)}"
   end
+
+  private
 
   def set_time_loan
     self.time_loan = days_to_seconds(days_loan.to_f) + hours_to_seconds(hours_loan.to_f) + minutes_to_seconds(minutes_loan.to_f) + seconds_loan.to_f
@@ -36,5 +39,9 @@ class Loan < ApplicationRecord
       errors.add(:minutes_loan, 'El tiempo solicitado debe ser mayor que 0')
       errors.add(:seconds_loan, 'El tiempo solicitado debe ser mayor que 0')
     end
+  end
+
+  def check_open_loads
+    errors.add(:base, 'No puedes solicitar más de un préstamo al mismo tiempo') if user.loads.open.count > 1
   end
 end

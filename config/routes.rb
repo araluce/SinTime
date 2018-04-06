@@ -78,6 +78,10 @@ Rails.application.routes.draw do
     namespace :felicidad do
       resources :audiencia, only: [:index, :create, :update]
     end
+
+    namespace :desconexion do
+      resources :capsula_del_tiempo, only: [:index, :create, :update]
+    end
   end
 
   namespace :guardian do
