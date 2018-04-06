@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     get 'formacion', to: 'formacion#formacion'
     get 'viveres', to: 'viveres#viveres'
     get 'comunidad', to: 'comunidad#comunidad'
+    get 'desconexion', to: 'desconexion#desconexion'
 
     namespace :viveres do
       resources :print_exercise, only: :show, format: :js
@@ -81,6 +82,8 @@ Rails.application.routes.draw do
 
     namespace :desconexion do
       resources :capsula_del_tiempo, only: [:index, :create, :update]
+      get '/pay_all', to: 'capsula_del_tiempo#pay_all'
+      get '/pay_share', to: 'capsula_del_tiempo@pay_share'
     end
   end
 

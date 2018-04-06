@@ -1,5 +1,6 @@
 class Loan < ApplicationRecord
   before_create :set_time_loan
+  before_create :set_share_remaining
 
   belongs_to :user, class_name: 'User', inverse_of: :loans
 
@@ -30,6 +31,10 @@ class Loan < ApplicationRecord
   def set_time_loan
     self.time_loan = days_to_seconds(days_loan.to_f) + hours_to_seconds(hours_loan.to_f) + minutes_to_seconds(minutes_loan.to_f) + seconds_loan.to_f
     self.time_remaining = time_loan
+  end
+
+  def set_share_remaining
+    self.share_remaining = share
   end
 
   def check_time
