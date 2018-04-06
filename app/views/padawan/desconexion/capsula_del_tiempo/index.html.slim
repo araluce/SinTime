@@ -1,0 +1,36 @@
+.row
+  .col-12.future-card
+    .row style="margin-bottom: 1%;"
+      .col-12
+        = link_to fa_icon('fw chevron-circle-left', text: 'Volver'), padawan_desconexion_path, class: 'btn btn-border-black pull-right'
+    .row
+      .col-12
+        h4 Atención
+        p Los préstamos serán cobrados todos los viernes. Puede solicitar pagarlos en cómodas cuotas mientras no exceda el máximo de 4
+    .row
+      .col-12
+        .table-responsive
+          table.table
+            thead
+              tr
+                th Estado
+                th Total préstamo
+                th Restante
+                th Total cuotas
+                th Restantes
+            tbody
+              - @objects.each do |object|
+                tr
+                  td = link_to "#{object.is_open? ? 'Abierto' : 'Pagado'}", padawan_desconexion_capsula_del_tiempo_path(object)
+                  td = link_to seconds_to_s(object.time_loan), padawan_desconexion_capsula_del_tiempo_path(object)
+                  td = link_to seconds_to_s(object.time_remaining), padawan_desconexion_capsula_del_tiempo_path(object)
+                  td = link_to object.share, padawan_desconexion_capsula_del_tiempo_path(object)
+                  td = link_to object.share_remaining, padawan_desconexion_capsula_del_tiempo_path(object)
+
+    .row
+      .col-12
+        - if @objects.open.count < 1
+          = simple_form_for(@object, url: padawan_desconexion_capsula_del_tiempo_index_path, as: :object, html: {class: 'form-vertical'}) do |f|
+            = f.input :share, label: '¿En cuantas cuotas quires pagarlo?', input_html: {value: f.object.share || 1, min: 1, max: 4}
+            = render 'manager/partials/time_beneficts', f: f, custom_label: 'Préstamo', suffix: 'loan'
+            = f.button :button, 'Solicitar', type: :submit, class: 'btn btn-primary'

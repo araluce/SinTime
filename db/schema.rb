@@ -204,8 +204,8 @@ ActiveRecord::Schema.define(version: 20180406094946) do
 
   create_table "loans", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id"
-    t.integer "time_loan"
-    t.integer "time_remaining"
+    t.integer "time_loan", default: 0
+    t.integer "time_remaining", default: 0
     t.integer "share", default: 4
     t.integer "share_remaining"
     t.datetime "created_at", null: false

@@ -81,9 +81,10 @@ Rails.application.routes.draw do
     end
 
     namespace :desconexion do
-      resources :capsula_del_tiempo, only: [:index, :create, :update]
-      get '/pay_all', to: 'capsula_del_tiempo#pay_all'
-      get '/pay_share', to: 'capsula_del_tiempo@pay_share'
+      resources :capsula_del_tiempo, only: [:index, :show, :create, :update] do
+        get 'pay_all', to: 'capsula_del_tiempo#pay_all'
+        get 'pay_share', to: 'capsula_del_tiempo@pay_share'
+      end
     end
   end
 

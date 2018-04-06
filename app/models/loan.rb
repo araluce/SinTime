@@ -1,11 +1,13 @@
 class Loan < ApplicationRecord
+  include TimeHelper
+
   before_create :set_time_loan
   before_create :set_share_remaining
 
   belongs_to :user, class_name: 'User', inverse_of: :loans
 
-  scope :closed, -> { where(remaining: 0) }
-  scope :open, -> { where.not(remaining: 0) }
+  scope :closed, -> { where(share_remaining: 0) }
+  scope :open, -> { where.not(id: nil, share_remaining: 0) }
 
   attr_accessor :days_loan,
                 :hours_loan,
@@ -16,14 +18,30 @@ class Loan < ApplicationRecord
             :hours_loan,
             :minutes_loan,
             :seconds_loan,
-            numericality: {allow_nil: false, allow_blank: false}
+            numericality: {allow_nil: false, allow_blank: false, only_integer: true}
 
-  validates :share, presence: true, numericality: {greater_than: 0, less_than_or_equal_to: 4}
+  validates :days_loan, numericality: {less_than_or_equal_to: 7}
+
+  validates :share, presence: true, numericality: {greater_than: 0, less_than_or_equal_to: 4, only_integer: true}
   validate :check_time
   validate :check_open_loads
 
   def to_s
     "Préstamo de #{seconds_to_s(time_loan)}. Restante #{seconds_to_s(time_remaining)}"
+  end
+
+  def time_per_share
+    time_loan / share
+  end
+
+  def is_open?
+    return false if new_record?
+    share_remaining > 0
+  end
+
+  def is_closed?
+    return true if new_record?
+    share_remaining == 0
   end
 
   private
@@ -47,6 +65,6 @@ class Loan < ApplicationRecord
   end
 
   def check_open_loads
-    errors.add(:base, 'No puedes solicitar más de un préstamo al mismo tiempo') if user.loads.open.count > 1
+    errors.add(:share, 'No puedes solicitar más de un préstamo al mismo tiempo') if user.loans.open.count > 0
   end
 end
