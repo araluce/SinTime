@@ -67,4 +67,8 @@ class Loan < ApplicationRecord
   def check_open_loads
     errors.add(:share, 'No puedes solicitar más de un préstamo al mismo tiempo') if user.loans.open.count > 0
   end
+
+  def applicable_interest
+
+  end
 end

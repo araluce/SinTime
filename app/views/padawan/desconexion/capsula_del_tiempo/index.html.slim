@@ -6,6 +6,7 @@
     .row
       .col-12
         h4 Atención
+        p Interés aplicable (#{Constant.find_by_key('intereses').value.to_f})
         p Los préstamos serán cobrados todos los viernes. Puede solicitar pagarlos en cómodas cuotas mientras no exceda el máximo de 4
     .row
       .col-12
@@ -14,6 +15,7 @@
             thead
               tr
                 th Estado
+                th Interés
                 th Total préstamo
                 th Restante
                 th Total cuotas
@@ -22,6 +24,7 @@
               - @objects.each do |object|
                 tr
                   td = link_to "#{object.is_open? ? 'Abierto' : 'Pagado'}", padawan_desconexion_capsula_del_tiempo_path(object)
+                  td = link_to object.interest, padawan_desconexion_capsula_del_tiempo_path(object)
                   td = link_to seconds_to_s(object.time_loan), padawan_desconexion_capsula_del_tiempo_path(object)
                   td = link_to seconds_to_s(object.time_remaining), padawan_desconexion_capsula_del_tiempo_path(object)
                   td = link_to object.share, padawan_desconexion_capsula_del_tiempo_path(object)

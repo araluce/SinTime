@@ -17,6 +17,10 @@
                   p Este préstamo está aún pendiente de ser cobrado en su totalidad. Se cobrará durante #{@object.share_remaining} viernes un total de #{seconds_to_s(@object.time_per_share)} hasta haber cobrado las #{@object.share} cuotas que solicitó
                 - else
                   p Este préstamo se da por finalizado.
+
+              dt.col-sm-6 Inteŕes
+              dd.col-sm-6 = @object.interest
+
               dt.col-sm-6 Préstamo total
               dd.col-sm-6 = seconds_to_s(@object.time_loan)
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180406094946) do
+ActiveRecord::Schema.define(version: 20180408203049) do
 
   create_table "activity_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_runtastic_id"
@@ -206,6 +206,7 @@ ActiveRecord::Schema.define(version: 20180406094946) do
     t.bigint "user_id"
     t.integer "time_loan", default: 0
     t.integer "time_remaining", default: 0
+    t.decimal "interest", precision: 12, scale: 6, default: "0.33"
     t.integer "share", default: 4
     t.integer "share_remaining"
     t.datetime "created_at", null: false
