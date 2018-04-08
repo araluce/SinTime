@@ -27,5 +27,5 @@
               dt.col-sm-6 Restante
               dd.col-sm-6 = seconds_to_s(@object.time_remaining)
 
-              dt.col-sm-6 Por pagar aún
+              dt.col-sm-6 Pagado por el momento
               dd.col-sm-6 = seconds_to_s(@object.time_loan - @object.time_remaining)

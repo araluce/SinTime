@@ -17,15 +17,24 @@ module Padawan
 
       def create
         @object = model.new(object_params)
+        @object.interest = Constant.find_by_key('intereses').value.to_f
 
-        if @object.save
-          PayService.system_pay_reason(@object.user, @object.time_loan, 'Préstamo solicitado')
-          flash[:notice] = 'Préstamo concedido'
-          redirect_to action: :index
-        else
-          flash[:alert] = 'Se ha producido un error'
+        if (@object.user.tdv - DateTime.now).to_i > 7
+          flash[:alert] = 'Tienes más de 7 días de vida'
           render 'index'
+        else
+          if @object.save
+            interest = 1 + @object.interest
+            @object.update_columns(time_loan: @object.time_loan * interest, time_remaining: @object.time_remaining * interest )
+            PayService.system_pay_reason(@object.user, @object.time_loan, 'Préstamo solicitado')
+            flash[:notice] = 'Préstamo concedido'
+            redirect_to action: :index
+          else
+            flash[:alert] = 'Se ha producido un error'
+            render 'index'
+          end
         end
+
       end
 
       def pay_all
