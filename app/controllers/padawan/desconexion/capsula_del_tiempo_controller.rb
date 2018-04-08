@@ -19,7 +19,7 @@ module Padawan
         @object = model.new(object_params)
         @object.interest = Constant.find_by_key('intereses').value.to_f
 
-        if (@object.user.tdv - DateTime.now).to_i > 7
+        if (@object.user.tdv - DateTime.now).to_i >= 7.days.to_i
           flash[:alert] = 'Tienes más de 7 días de vida'
           render 'index'
         else
