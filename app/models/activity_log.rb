@@ -15,6 +15,7 @@ class ActivityLog < ApplicationRecord
 
   scope :week, -> { where(date: Date.today.beginning_of_week..Date.today.end_of_week) }
   scope :last_week, -> { where(date: (Date.today.beginning_of_week-1.week)..(Date.today.end_of_week-1.week)) }
+  scope :last_last_week, -> { where(date: (Date.today.beginning_of_week-2.week)..(Date.today.end_of_week-2.week)) }
 
   def is_this_week?
     self.date >=  Date.today.beginning_of_week && self.date <= Date.today.end_of_week

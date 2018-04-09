@@ -89,6 +89,34 @@ class RuntasticService
 
     end
 
+    def evalue_user_sport_last(user)
+      return nil if user.user_runtastic.nil?
+
+      begin
+        user.user_runtastic.perform
+      rescue
+        put "Fallo al descargar los datos del usuario #{user.alias} con id #{user.id}"
+      end
+
+      running_candidates = []
+      user.user_runtastic.activity_logs.last_last_week.running.each do |session|
+        running_candidates << session if pace_pass?(session)
+      end
+
+      cycling_candidates = []
+      user.user_runtastic.activity_logs.last_last_week.not_running.each do |session|
+        cycling_candidates << session if speed_pass?(session)
+      end
+
+      if (running_candidates_pass?(running_candidates) && running_candidates.count > 2) ||
+          (cycling_candidates_pass?(cycling_candidates) && cycling_candidates.count > 2)
+        PayService.pay_sport(user, current_sport)
+      end
+
+      RuntasticMailer.resume(user).deliver_now
+
+    end
+
     def user_pass_sport(user)
       return nil if user.user_runtastic.nil?
 
