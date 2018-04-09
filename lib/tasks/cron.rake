@@ -37,6 +37,7 @@ namespace :cron do
           p "El usuario #{user} (##{user.id}) ha subido de nivel (#{user.xp}XP)"
         end
       end
+      LevelMailer.resume(user).deliver_now
     end
     puts "#{Time.now} - Success!"
   end

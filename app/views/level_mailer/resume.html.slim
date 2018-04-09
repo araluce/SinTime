@@ -1,0 +1,22 @@
+h3 ¡Hemos evaluado tu nivel!
+
+- reasons = []
+
+- unless ScoresServices.has_max_score_last_week?(@user)
+  - reasons << 'No tienes retos calificados con un mínimo de "Tú si que vales"'
+- unless RuntasticService.user_pass_sport(@user)
+  - reasons << 'No has superado el reto deportivo de esta semana'
+
+
+- if reasons.empty?
+  p "Has subido al nivel #{@user.level}"
+  p "Tienes #{@user.xp}XP para gastar"
+  p Estamos muy contentos de decirte que has conseguido subir de nivel!!
+- else
+  p Sentimos decirte que no has conseguido subir de nivel esta semana por los siguientes motivos:
+  ul
+    - reasons.each do |reason|
+      li = reason
+  p Esta vez no ha podido ser, pero seguro que te esfuerzas durante esta semana. ¡Ánimo!
+
+p Atte. Equipo SinTime
