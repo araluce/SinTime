@@ -85,6 +85,8 @@ class RuntasticService
           PayService.pay_sport(user, current_sport)
       end
 
+      RuntasticMailer.resume(user).deliver_now
+
     end
 
     def user_pass_sport(user)

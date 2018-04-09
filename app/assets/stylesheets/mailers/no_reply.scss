@@ -1,0 +1,54 @@
+@import "font-awesome";
+
+body{
+  width: 700px;
+  margin: 0 auto;
+}
+
+header{
+  text-align: center;
+  color: white;
+  background-color: black;
+  min-height: 80px;
+  padding: 30px;
+
+  #adidas_logo{
+    width: 250px;
+    float: left;
+    padding-top: 25px;
+  }
+
+  #clinic_logo{
+    width: 125px;
+    float: left;
+  }
+}
+
+#mail_content{
+  min-height: 570px;
+}
+
+footer{
+  padding: 20px;
+  background-color: black;
+  color: white;
+  min-height: 50px;
+  overflow: auto;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+
+  p{
+    line-height: 10px;
+  }
+}
+
+h1, h2, h3{
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+}
+
+
+p, ul, li {
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+}

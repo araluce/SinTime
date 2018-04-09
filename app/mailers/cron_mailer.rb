@@ -1,4 +1,4 @@
-class ApplicationMailer < ActionMailer::Base
+class CronMailer < ActionMailer::Base
   default from: 'noreply@sintime.es'
-  layout 'mailer'
+  layout 'no_reply_mail'
 end

@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    meta[http-equiv="Content-Type" content="text/html; charset=utf-8"]
+
+    = stylesheet_link_tag 'mailers/no_reply'
+    link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald:400,700" rel="stylesheet"
+  body
+    #mail_content
+      = yield
+
+      p
+        small Este mensaje se dirige exclusivamente a su destinatario y puede contener información privilegiada o confidencial. Si no es Ud. el destinatario indicado, queda notificado de que la utilización, divulgación o copia sin autorización está prohibida en virtud de la legislación  vigente. Si ha recibido este mensaje por error, se ruega lo comunique inmediatamente por esta misma vía y proceda a su destrucción.
+      p
+        small This message may contain confidential and/or privileged information. If you are neither the addressee nor authorized to receive this for the addressee, you must not use, copy, disclose or take any action based on this message or any information herein. If you have received this message in error, please contact the sender and delete this message. Thank you.

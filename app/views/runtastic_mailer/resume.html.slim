@@ -1,0 +1,30 @@
+h3 Tu resumen de la semana ya está aquí
+
+- if @running_sessions.empty? and @cycling_sessions.empty?
+  p Ups! No encontramos sesiones para la semana anterior =(
+  p Si crees que puede ser un error:
+  ul
+    li Asegúrate de haber iniciado la sesión de runtastic con la cuenta correcta en SinTime.
+    li Contacta con @bb8 a través del chat.
+
+- if @running_sessions.any?
+  p Tus sesiones de running:
+  ul
+    - @running_sessions.each do |session|
+      - duration = session.duration/1000
+      li = "Día: #{session.date.to_formatted_s(:short)} Ritmo medio: #{number_with_precision(session.pace, precision: 2)} min/km durante #{duration} segundos"
+
+- if @cycling_sessions.any?
+  p Tus sesiones de ciclismo:
+  ul
+    - @cycling_sessions.each do |session|
+      - duration = session.duration/1000
+      li = "Día: #{session.date.to_formatted_s(:short)} Velocidad media: #{session.average_speed} kms/h durante #{duration } segundos"
+
+
+- if @pass
+  p Estamos muy contentos de decirte que has superado el reto deportivo de esta semana!!
+- else
+  p Esta vez no ha podido ser, pero seguro que te esfuerzas durante esta semana. ¡Ánimo!
+
+p Atte. Equipo SinTime
