@@ -67,7 +67,7 @@ class RuntasticService
       begin
         user.user_runtastic.perform
       rescue
-        put "Fallo al descargar los datos del usuario #{user.alias} con id #{user.id}"
+        puts "Fallo al descargar los datos del usuario #{user.alias} con id #{user.id}"
       end
 
       running_candidates = []
@@ -95,7 +95,7 @@ class RuntasticService
       begin
         user.user_runtastic.perform
       rescue
-        put "Fallo al descargar los datos del usuario #{user.alias} con id #{user.id}"
+        puts "Fallo al descargar los datos del usuario #{user.alias} con id #{user.id}"
       end
 
       running_candidates = []
