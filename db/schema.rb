@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180408203049) do
+ActiveRecord::Schema.define(version: 20180409162818) do
 
   create_table "activity_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_runtastic_id"
-    t.integer "activity_id"
+    t.bigint "activity_id"
     t.date "date"
     t.integer "activity_type"
     t.integer "duration"
