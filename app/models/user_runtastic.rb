@@ -19,7 +19,6 @@ class UserRuntastic < ApplicationRecord
   def process_activities(loginInformation)
     activities = Runtastic::RuntasticActivitiesService.new().get_activities(loginInformation[:user]['slug'],  loginInformation[:user]['id'], self.id, loginInformation[:authenticationToken], loginInformation[:cookies]);
 
-
     activities.each do |activity|
       attributes = activity[:data]['data']['attributes']
       activity_type = activity[:data]['included'].select { |object| object['type'] == 'sport_type' }.first

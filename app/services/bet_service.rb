@@ -26,7 +26,7 @@ class BetService
 
     def my_benefit(bet, user)
       return 0 if  my_right_bets(bet, user).empty?
-      my_time_wagered(bet, user) + (total_time(bet) / winners(bet).count)
+      my_time_wagered(bet, user) * 2
     end
 
     def my_right_bets(bet, user)
