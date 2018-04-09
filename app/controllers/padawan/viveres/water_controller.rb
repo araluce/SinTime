@@ -24,7 +24,7 @@ module Padawan
           @objects_individual << delivery.exercise
         end
         if @objects_individual.empty?
-          @random_exercise = model.water.individual.offset(rand(model.water.individual.count)).first
+          set_random_exercise
         end
       end
 
@@ -36,6 +36,15 @@ module Padawan
         @percentage = 0 if @percentage < 0
         @percentage = 1 if @percentage > 1
         @percentage = 1 if current_user.is_in_holidays?
+      end
+
+      def set_random_exercise
+        tries = model.water.individual.count
+        tries.times do
+          my_exercises_done = current_user.exercise_users.pluck(:exercise_id)
+          @random_exercise = model.water.individual.offset(rand(model.water.individual.count)).first
+          break unless my_exercises_done.include? @random_exercise.id
+        end
       end
 
     end
