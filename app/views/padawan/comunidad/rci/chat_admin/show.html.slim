@@ -1,33 +1,34 @@
-.col-sm-12.conversation
-  .row.heading
-    .col-md-1.col-1.heading-avatar
-      .heading-avatar-icon
-        - if current_admin
-          = render 'partials/avatar', user: @chat.user_1, avatar_style: :thumb
-    .col-sm-8.col-xs-7.heading-name
-      a.heading-name-meta
+.chat
+  .col-sm-12.conversation
+    .row.heading
+      .col-md-1.col-1.heading-avatar
+        .heading-avatar-icon
+          - if current_admin
+            = render 'partials/avatar', user: @chat.user_1, avatar_style: :thumb
+      .col-sm-8.col-xs-7.heading-name
+        a.heading-name-meta
+          - if current_user
+            = @chat.admin.email
+          - if current_admin
+            = "@#{@chat.user_1.alias}"
+        span.heading-online Online
+      .col-sm-1.col-xs-1.heading-dot.pull-right
         - if current_user
-          = @chat.admin.email
+          = link_to fa_icon('chevron-left 2x', class:'pull-right'), padawan_comunidad_rci_sala_index_path
         - if current_admin
-          = "@#{@chat.user_1.alias}"
-      span.heading-online Online
-    .col-sm-1.col-xs-1.heading-dot.pull-right
-      - if current_user
-        = link_to fa_icon('chevron-left 2x', class:'pull-right'), padawan_comunidad_rci_sala_index_path
-      - if current_admin
-        = link_to fa_icon('chevron-left 2x', class:'pull-right'), manager_sala_index_path
+          = link_to fa_icon('chevron-left 2x', class:'pull-right'), manager_sala_index_path
 
-  #conversation.row.message data-id="#{@chat.id}"
-    - @messages.each do |message|
-      = render 'padawan/partials/message', message: message, user: current_user, admin: current_admin
-    #datauser data-userid="#{current_user ? current_user.id : 0}"
-    #dataadmin data-adminid="#{current_admin ? current_admin.id : 0}"
-    .bottom-tag#bottom
+    #conversation.row.message data-id="#{@chat.id}"
+      - @messages.each do |message|
+        = render 'padawan/partials/message', message: message, user: current_user, admin: current_admin
+      #datauser data-userid="#{current_user ? current_user.id : 0}"
+      #dataadmin data-adminid="#{current_admin ? current_admin.id : 0}"
+      .bottom-tag#bottom
 
-  = form_for @message, url: messages_path, remote: true, html: {class:'row reply'} do |f|
-    .col-1.badge-new-message
-    .col-10.reply-main
-      = f.text_area :message, id: 'comment', class:'form-control', rows: '1'
-      = f.hidden_field :chatroom_id, value: @chat.id
-    .col-1.reply-send
-      = f.submit 'Enviar'
+    = form_for @message, url: messages_path, remote: true, html: {class:'row reply'} do |f|
+      .col-1.badge-new-message
+      .col-10.reply-main
+        = f.text_area :message, id: 'comment', class:'form-control', rows: '1'
+        = f.hidden_field :chatroom_id, value: @chat.id
+      .col-1.reply-send
+        = f.submit 'Enviar'

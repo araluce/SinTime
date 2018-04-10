@@ -1,49 +1,37 @@
-.row.app-one
-  .col-sm-12.side
-    .side-one
-      .row.heading
-        .col-6.heading-avatar.pull-left
-          .heading-avatar-icon
-            - if current_user
-              = render 'partials/avatar', user: current_user, avatar_style: :thumb
-        .col-6.pull-right
-          = link_to fa_icon('chevron-left 2x', class:'pull-right'), padawan_comunidad_rci_path
+.clearfix
+#fancy-list-group
+  .row
+    .list-group.col-12
+      li.list-group-item
+        .list-group-item-addon
+          = link_to fa_icon('chevron-left 3x'), padawan_comunidad_rci_path
+        .list-group-item-content
+          h4.list-group-item-heading.text-center Chat
+          p.list-group-item-text = "@#{current_user.alias.downcase}"
 
-      .row.searchBox
-        .col-sm-12.searchBox-inner
-          .form-group.has-feedback
-            input#searchText.form-control name="searchText" placeholder="Search" type="text" /
-            span.glyphicon.glyphicon-search.form-control-feedback
+      li.list-group-item
+        .list-group-item-addon.with-img
+          .avatar-icon = image_tag 'alianza_rebelde.png'
+        .list-group-item-content
+          h4.list-group-item-heading Alianza Rebelde
+          p.list-group-item-text
+            - messages = Chat::General.first_or_create.messages
+            - if messages.any?
+              = messages.last.message
+        .list-group-item-addon
+          a data-placement="top" data-toggle="tooltip" href="#" title="Add"
+            = link_to fa_icon('comments-o 3x', class:'pull-right'), padawan_comunidad_rci_chat_general_path(1)
 
-      .row.sideBar
-        = link_to padawan_comunidad_rci_chat_general_path(1), style: 'width: 100%;' do
-          .row.sideBar-body
-            .col-sm-3.col-xs-3.sideBar-avatar
-              .avatar-icon = image_tag 'alianza_rebelde.png'
-            .col-sm-9.col-xs-9.sideBar-main
-              .row
-                .col-sm-8.col-xs-8.sideBar-name
-                  span.name-meta Alianza Rebelde
-                .col-sm-8.col-xs-8.sideBar-name
-                  span.name-meta.small
-                    - messages = Chat::General.first_or_create.messages
-                    - if messages.any?
-                      = messages.last.message
-
-        - @users.each do |user|
-          = link_to padawan_comunidad_rci_chat_user_path(user), style: 'width: 100%;' do
-            .row.sideBar-body class="#{Chat::Individual.messages_not_read(current_user.id, user.id).any? ? 'sideBar-body-success' : ''}"
-              .col-sm-3.col-xs-3.sideBar-avatar
-                .avatar-icon = render 'partials/avatar', user: user, avatar_style: :thumb
-              .col-sm-9.col-xs-9.sideBar-main
-                .row
-                  .col-sm-8.col-xs-8.sideBar-name
-                    span.name-meta = "@#{user.alias}".downcase
-                  .col-sm-8.col-xs-8.sideBar-name
-                    span.name-meta.small
-                      - messages = Chat::Individual.get_messages(current_user.id, user.id)
-                      - if messages && messages.any?
-                        = messages.last.message
-              .col-sm-4.col-xs-4.pull-right.sideBar-time
-                /span.time-meta.pull-right
-                /  | 18:18
+      - @users.each do |user|
+        li.list-group-item class="#{Chat::Individual.messages_not_read(current_user.id, user.id).any? ? 'list-group-item-info' : ''}"
+          .list-group-item-addon.with-img
+            .avatar-icon = render 'partials/avatar', user: user, avatar_style: :thumb
+          .list-group-item-content
+            h4.list-group-item-heading = "@#{user.alias}".downcase
+            p.list-group-item-text
+              - messages = Chat::Individual.get_messages(current_user.id, user.id)
+              - if messages && messages.any?
+                = messages.last.message
+          .list-group-item-addon
+            a data-placement="top" data-toggle="tooltip" href="#" title="Add"
+              = link_to fa_icon('comments-o 3x', class: 'pull-right'), padawan_comunidad_rci_chat_user_path(user)
