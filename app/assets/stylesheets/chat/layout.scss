@@ -1,6 +1,6 @@
 .chat{
-  html,
-  body,
+  height: 100vh;
+  background-color: #DCDBD2;
   div,
   span {
     width: 100%;
@@ -9,14 +9,6 @@
     margin: 0;
     box-sizing: border-box;
     font-size: 1em;
-  }
-
-  html{
-    height: 100%;
-  }
-
-  body {
-    background-color: #DCDBD2;
   }
 
   .fa-2x {
@@ -491,10 +483,9 @@
     button{
       background-color: #088887!important;
       color: white;
-      border-radius: 50%;
-      padding: 1em;
+      border-radius: 23px;
       i {font-size: 1.4em!important;}
-      height: 5vh;
+      height: 100%;
       &:hover{
         cursor: pointer
       }
@@ -777,5 +768,145 @@
       border-bottom: 0;
       padding: 10px;
     }
+  }
+}
+
+.chat-room{
+  $color_wild_sand_approx: whitesmoke;
+  $silver: silver;
+  $white: white;
+  $color_bon_jour_approx: #e0e0de;
+  $color_quill_gray_approx: #d4d4d4;
+
+  .mytext {
+    border: 0;
+    padding: 10px;
+    background: $color_wild_sand_approx;
+  }
+  .text {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    > p {
+      &:first-of-type {
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: auto;
+        line-height: 13px;
+        font-size: 12px;
+      }
+      &:last-of-type {
+        width: 100%;
+        text-align: right;
+        color: $silver;
+        margin-bottom: -7px;
+        margin-top: auto;
+      }
+    }
+  }
+  .text-l {
+    float: left;
+    padding-right: 10px;
+  }
+  .text-r {
+    float: right;
+    padding-left: 10px;
+  }
+  .avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    float: left;
+    padding-right: 10px;
+  }
+  .macro {
+    margin-top: 5px;
+    width: 85%;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+  }
+  .msj-receiver {
+    float: right;
+    background: $color_wild_sand_approx;
+    &:after {
+      width: 0;
+      height: 0;
+      content: "";
+      top: -5px;
+      left: 14px;
+      position: relative;
+      border-style: solid;
+      border-width: 13px 13px 0 0;
+      border-color: $color_wild_sand_approx transparent transparent transparent;
+    }
+  }
+  .msj-sender {
+    float: left;
+    background: $white;
+    &:before {
+      width: 0;
+      height: 0;
+      content: "";
+      top: -5px;
+      left: -14px;
+      position: relative;
+      border-style: solid;
+      border-width: 0 13px 13px 0;
+      border-color: transparent $white transparent transparent;
+    }
+  }
+  .frame {
+    background: $color_bon_jour_approx;
+    height: 450px;
+    overflow: hidden;
+    padding: 0;
+    > div:last-of-type {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+    }
+  }
+  ul {
+    width: 100%;
+    list-style-type: none;
+    padding: 18px;
+    position: absolute;
+    bottom: 47px;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    overflow-y: scroll;
+  }
+  ::-webkit-input-placeholder {
+    color: $color_quill_gray_approx;
+  }
+  ::-moz-placeholder {
+    color: $color_quill_gray_approx;
+  }
+  :-ms-input-placeholder {
+    color: $color_quill_gray_approx;
+  }
+  :-moz-placeholder {
+    color: $color_quill_gray_approx;
+  }
+  body > div > div > div {
+    &:nth-child(2) > span {
+      background: $color_wild_sand_approx;
+      padding: 10px;
+      font-size: 21px;
+      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+      border-radius: 50%;
+    }
+    &.msj-receiver.macro {
+      margin: auto;
+      margin-left: 1%;
+    }
+  }
+  input:focus {
+    outline: none;
   }
 }
