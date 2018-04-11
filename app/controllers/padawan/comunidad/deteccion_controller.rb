@@ -18,7 +18,7 @@ module Padawan
       private
 
       def set_objects
-        @objects = model.opens.order(created_at: :desc)
+        @objects = model.actives.order(created_at: :desc)
       end
 
       def set_object
