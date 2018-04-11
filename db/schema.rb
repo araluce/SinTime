@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180409162818) do
+ActiveRecord::Schema.define(version: 20180411204750) do
 
   create_table "activity_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_runtastic_id"
@@ -358,6 +358,7 @@ ActiveRecord::Schema.define(version: 20180409162818) do
     t.datetime "tsb", default: "2017-12-29 00:00:00", null: false
     t.integer "level", default: 0
     t.integer "xp", default: 0
+    t.boolean "have_holidays", default: true
     t.boolean "untouchable", default: false, null: false
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"

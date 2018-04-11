@@ -23,8 +23,8 @@ module Manager
         User.find_each do |user|
           holidays_duration = @object.days.to_i.days + @object.hours.to_i.hours + @object.minutes.to_i.minutes + @object.seconds.to_i.seconds
           tdv = user.tdv + holidays_duration
-          tsc = user.tsc + holidays_duration
-          tsb = user.tsb + holidays_duration
+          tsc = DateTime.now + holidays_duration
+          tsb = DateTime.now + holidays_duration
           tdv_holidays = DateTime.now + holidays_duration
           tdv_holidays_ref = (user.tdv - DateTime.now).to_i
           user.update_columns(tdv: tdv, tsc: tsc, tsb: tsb, tdv_holidays: tdv_holidays, tdv_holidays_ref: tdv_holidays_ref)

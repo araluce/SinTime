@@ -85,6 +85,7 @@ Rails.application.routes.draw do
         get 'pay_all', to: 'capsula_del_tiempo#pay_all'
         get 'pay_share', to: 'capsula_del_tiempo@pay_share'
       end
+      resources :retiro, only: [:index, :create]
     end
   end
 
