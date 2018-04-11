@@ -17,6 +17,6 @@
               - @objects.each do |object|
                 tr
                   td = link_to "#{object.open ? 'Abierta' : 'Cerrada'}", padawan_comunidad_deteccion_path(object)
-                  td = link_to object.bet, padawan_comunidad_deteccion_path(object)
+                  td = link_to object.bet, padawan_comdeunidad_deteccion_path(object)
                   td = link_to object.options.pluck(:option).join('<br>').html_safe, padawan_comunidad_deteccion_path(object)
                   td = link_to seconds_to_s(BetService.total_time(object)), padawan_comunidad_deteccion_path(object)
