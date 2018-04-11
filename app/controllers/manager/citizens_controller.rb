@@ -62,7 +62,7 @@ module Manager
     def destroy
       @object.destroy
       respond_to do |format|
-        format.html {redirect_to manager_districts_path, notice: 'Ciudadano eliminado correctamente'}
+        format.html {redirect_to manager_citizen_path, notice: 'Ciudadano eliminado correctamente'}
         format.json {head :no_content}
       end
     end
