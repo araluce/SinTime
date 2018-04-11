@@ -11,6 +11,7 @@ ol.breadcrumb
         hr
         p = link_to 'Volver', manager_citizens_path, class: 'btn btn-primary btn-block'
         p = link_to 'Editar', edit_manager_citizen_path(@object), class: 'btn btn-primary btn-block'
+        p = link_to 'Entregas', manager_citizen_user_deliveries_path(@object), class: 'btn btn-outline-info btn-block'
       .col-lg-5.col-md-5.col-xs-12
         .card
           .card-header = "Datos del usuario #{@object}"

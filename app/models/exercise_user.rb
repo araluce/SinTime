@@ -9,7 +9,7 @@ class ExerciseUser < ApplicationRecord
   belongs_to :exercise, inverse_of: :exercise_users
   belongs_to :score, optional: true
 
-  enum status: %w[Comprado Entregado Corregido], _prefix: true
+  enum status: %w[Comprado Entregado Corregido]
 
   validates :file, presence: true, on: :send_file
   validates :second_file, presence: true, on: :send_second_file

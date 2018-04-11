@@ -99,6 +99,7 @@ Rails.application.routes.draw do
     end
     resources :citizens do
       resources :banking_movements, only: :create
+      resources :user_deliveries, only: [:index, :edit, :update]
     end
     resources :padawan_registers, only: [:new, :create]
     resources :questionnaires

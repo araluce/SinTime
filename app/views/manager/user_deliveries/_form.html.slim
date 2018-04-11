@@ -1,0 +1,14 @@
+.card
+  .card-header Detalles de la entrega/compra
+  .card-footer
+    = @object.exercise
+    - if @object.file.exists?
+      = link_to @object.file_file_name,  @object.file.url(:original, false)
+    - else
+      | Ningún fichero disponible
+
+= f.input :file, as: :file, label: 'Modificar entrega'
+= f.association :score
+= f.input :status, include_blank: false, collection: ExerciseUser.statuses ,label_method: :first, value_method: :first
+
+= f.button :submit, class: 'btn btn-block btn-primary'
