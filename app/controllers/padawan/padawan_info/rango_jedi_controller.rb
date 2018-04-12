@@ -14,14 +14,22 @@ module Padawan
         @current_districts = []
         @districts = []
 
-        District.all.each do |district|
-          @current_districts << ::Ranking::District.where(district: district).last
+        model_district.all.each do |district|
+          @current_districts << district.ranking_districts.last
         end
 
-        District.all.each do |district|
-          @districts << ::Ranking::District.where(classification: true, district: district).last
+        model_district.all.each do |district|
+          @districts << district.ranking_districts.last
         end
 
+      end
+
+      def model_ranking_district
+        ::Ranking::District
+      end
+
+      def model_district
+        ::District
       end
 
     end

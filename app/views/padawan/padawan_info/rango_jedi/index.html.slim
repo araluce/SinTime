@@ -24,7 +24,7 @@
     .col-lg-6.offset-lg-3.col-12.future-card
       h1 Clasificación Mensual Clanes
       - if !@current_districts.nil? && @current_districts.any?
-        - @current_districts.sort_by {|obj| obj.position}.each_with_index do |district_ranking, index|
+        - @current_districts.sort_by {|obj| - obj.position}.each_with_index do |district_ranking, index|
           .final-score = "#{district_ranking.position}. #{district_ranking.district}"
 
   .row style="margin-bottom: 1%;"
@@ -36,5 +36,5 @@
     .col-lg-6.offset-lg-3.col-12.future-card
       h1 Clasificación Clanes Final
       - if !@districts.nil? && @districts.any?
-        - @districts.sort_by {|obj| obj.position}.each_with_index do |district_ranking, index|
+        - @districts.sort_by {|obj| - obj.position}.each_with_index do |district_ranking, index|
           .final-score = "#{district_ranking.position}. #{district_ranking.district}"

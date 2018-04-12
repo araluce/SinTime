@@ -35,9 +35,9 @@ class RankingService
 
     def districts_ranking(month = false)
       if month
-        results = get_districts_by_position.sort_by {|object| object[:points]}
+        results = get_districts_by_position.sort_by {|object| - object[:points]}
       else
-        results = get_districts_by_position_current.sort_by {|object| object[:points]}
+        results = get_districts_by_position_current.sort_by {|object| - object[:points]}
       end
 
       results.each_with_index do |district_ranking, index|
