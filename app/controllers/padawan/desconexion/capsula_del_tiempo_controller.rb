@@ -24,9 +24,9 @@ module Padawan
           render 'index'
         else
           if @object.save
+            PayService.system_pay_reason(@object.user, @object.time_loan, 'Préstamo solicitado')
             interest = 1 + @object.interest
             @object.update_columns(time_loan: @object.time_loan * interest, time_remaining: @object.time_remaining * interest )
-            PayService.system_pay_reason(@object.user, @object.time_loan, 'Préstamo solicitado')
             flash[:notice] = 'Préstamo concedido'
             redirect_to action: :index
           else
