@@ -101,6 +101,7 @@ Rails.application.routes.draw do
     resources :citizens do
       resources :banking_movements, only: :create
       resources :user_deliveries, only: [:index, :edit, :update]
+      resources :movimientos, only: :index
     end
     resources :padawan_registers, only: [:new, :create]
     resources :questionnaires
