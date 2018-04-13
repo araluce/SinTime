@@ -51,7 +51,7 @@ module Padawan
 
       def pay_share
         if (@object.user.tdv - DateTime.now).to_i - @object.time_per_share >= 0
-          PayService.user_pay_reason(@object.user, @object.time_remaining, 'Cuota pagada')
+          PayService.user_pay_reason(@object.user, @object.time_per_share, 'Cuota pagada')
           @object.update_columns(share_remaining: @object.share_remaining - 1, time_remaining: @object.time_remaining - @object.time_per_share)
           flash[:notice] = 'Cuota pagada'
           redirect_to action: :index

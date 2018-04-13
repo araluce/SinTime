@@ -66,4 +66,13 @@ namespace :cron do
     puts "#{Time.now} - Success!"
   end
 
+  task pay_share: :environment do
+    p "=================Shareds (#{DateTime.now})===================="
+    Loan.open.find_each do |loan|
+      LoanService.pay_share(loan)
+      p "@#{loan.user.alias.downcase} ha pagado una cuota de #{seconds_to_s(loan.time_per_share)}"
+    end
+    puts "#{Time.now} - Success!"
+  end
+
 end
