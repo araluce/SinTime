@@ -1,6 +1,5 @@
 namespace :cron do
   desc 'Cron tasks'
-  include TimeHelper
 
   task twitter: :environment do
     benefit = Constant.find_by_key('recompensa tweets').value.to_i
@@ -71,7 +70,7 @@ namespace :cron do
     p "=================Shareds (#{DateTime.now})===================="
     Loan.open.find_each do |loan|
       LoanService.pay_share(loan)
-      p "@#{loan.user.alias.downcase} ha pagado una cuota de #{seconds_to_s(loan.time_per_share)}"
+      p "@#{loan.user.alias.downcase} ha pagado una cuota de #{loan.time_per_share}"
     end
     puts "#{Time.now} - Success!"
   end
