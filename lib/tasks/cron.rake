@@ -1,5 +1,6 @@
 namespace :cron do
   desc 'Cron tasks'
+  include TimeHelper
 
   task twitter: :environment do
     benefit = Constant.find_by_key('recompensa tweets').value.to_i
