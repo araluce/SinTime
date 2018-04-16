@@ -8,33 +8,33 @@
         - if user == current_user
           .profile-header-container
             .profile-header-img
-              - if current_user.ranking_users.where(classification: true).any?
-                - range_icon = UserRange.where('min_score < ?', current_user.ranking_users.where(classification: true).last.position ).order(min_score: :asc).last
-                = image_tag range_icon.icon.url(:medium), class: 'img-circle'
+              - range_icon = UserRange.where('min_score < ?', index + 1 ).order(min_score: :asc).last || UserRange.find_by(min_score: UserRange.minimum(:min_score))
+              = image_tag range_icon.icon.url(:medium), class: 'img-circle'
               .rank-label-container
                 p.label.label-default.rank-label = range_icon.range_text
-                p.label.label-default.rank-label = "(#{user.banking_movements.where('created_at >= ?', 1.week.ago).sum(:time_before) / 1000} midicronianos)"
+                p.label.label-default.rank-label = "(#{user.tdv.to_i / 100000} midicronianos)"
 
   .row style="margin-bottom: 1%;"
     .col-lg-6.offset-lg-3.col-12.future-card
       h1 Clasificación Mensual Individual
-      - if current_user.ranking_users.any?
-        .final-score = current_user.ranking_users.last.to_s
+      - @monthly_user.each_with_index do |ranking_user, index|
+        - if ranking_user[:user] == current_user
+          .final-score = index + 1
   .row style="margin-bottom: 1%;"
     .col-lg-6.offset-lg-3.col-12.future-card
       h1 Clasificación Mensual Clanes
-      - if !@current_districts.nil? && @current_districts.any?
-        - @current_districts.sort_by {|obj| obj.position}.each_with_index do |district_ranking, index|
-          .final-score = "#{district_ranking.position}. #{district_ranking.district}"
+      - @monthly_district.each_with_index do |ranking_district, index|
+        .final-score = "#{index + 1}. #{ranking_district[:district]}"
 
   .row style="margin-bottom: 1%;"
     .col-lg-6.offset-lg-3.col-12.future-card
       h1 Clasificación Individual Final
-      - if current_user.ranking_users.where(classification: true).any?
-        .final-score = current_user.ranking_users.where(classification: true).last.to_s
+      - @objects.each_with_index do |user, index|
+        - if user == current_user
+          .final-score = index + 1
   .row style="margin-bottom: 1%;"
     .col-lg-6.offset-lg-3.col-12.future-card
       h1 Clasificación Clanes Final
-      - if !@districts.nil? && @districts.any?
-        - @districts.sort_by {|obj| obj.position}.each_with_index do |district_ranking, index|
-          .final-score = "#{district_ranking.position}. #{district_ranking.district}"
+      - if @districts.any?
+        - @districts.each_with_index do |district_ranking, index|
+          .final-score = "#{index + 1}. #{district_ranking[:district]}"

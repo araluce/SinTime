@@ -10,26 +10,11 @@ module Padawan
       private
 
       def get_objects
-        @objects = User.normal_users.joins(:banking_movements).where('banking_movements.created_at >= ?', 1.week.ago).group(:user_id).order('sum(banking_movements.time_before) DESC')
-        @current_districts = []
-        @districts = []
+        @objects = User.all.order(tdv: :desc)
+        @districts = District.all.map { |district| { district: district, score: district.users.map{ |user| user.tdv.to_i}.sum/district.users.count }}.sort_by{|obj| -obj[:score]}
+        @monthly_user = User.all.map{|user| {user: user, score: user.banking_movements.where(created_at: DateTime.now.beginning_of_month..DateTime.now.end_of_month).map {|banking_movement| banking_movement.seconds_difference }.sum}}.sort_by{|obj| -obj[:score]}
+        @monthly_district = District.all.map{|district| {district: district, score: district.users.map{|user| user.banking_movements.where(created_at: DateTime.now.beginning_of_month..DateTime.now.end_of_month).map {|banking_movement| banking_movement.seconds_difference }}.flatten.sum}}.sort_by{|obj| -obj[:score]}
 
-        model_district.all.each do |district|
-          @current_districts << district.ranking_districts.last
-        end
-
-        model_district.all.each do |district|
-          @districts << district.ranking_districts.last
-        end
-
-      end
-
-      def model_ranking_district
-        ::Ranking::District
-      end
-
-      def model_district
-        ::District
       end
 
     end
