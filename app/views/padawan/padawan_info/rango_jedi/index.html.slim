@@ -9,7 +9,7 @@
           .profile-header-container
             .profile-header-img
               - if current_user.ranking_users.where(classification: true).any?
-                - range_icon = UserRange.where('min_score >= ?', current_user.ranking_users.where(classification: true).last.position ).order(min_score: :asc).first
+                - range_icon = UserRange.where('min_score < ?', current_user.ranking_users.where(classification: true).last.position ).order(min_score: :asc).last
                 = image_tag range_icon.icon.url(:medium), class: 'img-circle'
               .rank-label-container
                 p.label.label-default.rank-label = range_icon.range_text
