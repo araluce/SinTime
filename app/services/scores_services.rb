@@ -13,5 +13,9 @@ class ScoresServices
       ExerciseUser.where(updated_at: (Date.today.beginning_of_week - 1.week)..(Date.today.end_of_week - 1.week), user: user, score: max_score).any?
     end
 
+    def has_max_score_week?(user, week)
+      ExerciseUser.where(updated_at: (Date.today.beginning_of_week - week.week)..(Date.today.end_of_week - week.week), user: user, score: max_score).any?
+    end
+
   end
 end
