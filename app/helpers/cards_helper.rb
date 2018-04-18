@@ -71,7 +71,11 @@ module CardsHelper
   end
 
   def double_benefit
-
+    if current_user.user_privileges_cards.where(privileges_card: @card, active: true).any?
+      @error = 'Ya tienes una carta de doble beneficio sin usar'
+    else
+      pay_xp
+    end
   end
 
   def personal_retirement
