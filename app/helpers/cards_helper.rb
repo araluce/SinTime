@@ -55,7 +55,8 @@ module CardsHelper
   end
 
   def full_energy
-
+    pay_xp
+    current_user.update_columns(tsc: DateTime.now, tsb: DateTime.now)
   end
 
   def ti_capsule
@@ -117,7 +118,7 @@ module CardsHelper
   end
 
   def full_energy_is_valid?
-    true
+    false
   end
 
   def ti_capsule_is_valid?
