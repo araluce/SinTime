@@ -63,4 +63,10 @@ namespace :cron do
     puts "#{Time.now} - Success!"
   end
 
+  task night_break: :environment do
+    p "=================Night Break (#{DateTime.now})===================="
+    CardService.night_break_perform
+    puts "#{Time.now} - Success!"
+  end
+
 end

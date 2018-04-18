@@ -47,7 +47,11 @@ module CardsHelper
   end
 
   def night_break
-
+    if current_user.user_privileges_cards.where(privileges_card: @card, created_at: (DateTime.now-1.week)..(DateTime.now)).any?
+      @error = 'Ya tienes una carta de parón nocturno esta semana'
+    else
+      pay_xp
+    end
   end
 
   def full_energy
@@ -83,7 +87,7 @@ module CardsHelper
   end
 
   def night_break_is_valid?
-    true
+    @user_privilege_card.created_at >= DateTime.now-1.week
   end
 
   def full_energy_is_valid?
