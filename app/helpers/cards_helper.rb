@@ -116,7 +116,7 @@ module CardsHelper
   end
 
   def double_benefit_is_valid?
-    true
+    @user_privilege_card.active
   end
 
   def personal_retirement_is_valid?
