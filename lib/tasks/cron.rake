@@ -63,12 +63,10 @@ namespace :cron do
     puts "#{Time.now} - Success!"
   end
 
-  task ti_capsule: :environment do
-    p "=================Ti Capsule Break (#{DateTime.now})===================="
-    CardService.ti_capsule_perform
+  task night_break: :environment do
+    p "=================Night Break (#{DateTime.now})===================="
+    CardService.night_break_perform
     puts "#{Time.now} - Success!"
   end
-
-  task ho
 
 end

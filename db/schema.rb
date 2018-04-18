@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180411204750) do
+ActiveRecord::Schema.define(version: 20180418191400) do
 
   create_table "activity_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_runtastic_id"
@@ -299,7 +299,7 @@ ActiveRecord::Schema.define(version: 20180411204750) do
   create_table "user_privileges_cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "privileges_card_id"
     t.bigint "user_id"
-    t.boolean "active"
+    t.boolean "active", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["privileges_card_id"], name: "index_user_privileges_cards_on_privileges_card_id"
