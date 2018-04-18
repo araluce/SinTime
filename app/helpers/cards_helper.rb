@@ -59,7 +59,7 @@ module CardsHelper
   end
 
   def ti_capsule
-    if current_user.tdv < DateTime.now + 7.days
+    if current_user.tdv > DateTime.now + 7.days
       @error = 'No puedes comprar esta carta, tienes más de 7 días de vida'
     else
       pay_xp
