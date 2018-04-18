@@ -59,7 +59,12 @@ module CardsHelper
   end
 
   def ti_capsule
-
+    if current_user.tdv < DateTime.now + 7.days
+      @error = 'No puedes comprar esta carta, tienes más de 7 días de vida'
+    else
+      pay_xp
+      current_user.update_columns(tdv: current_user.tdv + 3.days)
+    end
   end
 
   def multiply_by_two
@@ -116,7 +121,7 @@ module CardsHelper
   end
 
   def ti_capsule_is_valid?
-    true
+    false
   end
 
   def multiply_by_two_is_valid?
