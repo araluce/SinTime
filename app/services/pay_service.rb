@@ -20,11 +20,13 @@ class PayService
     end
 
     def pay_exercise(user, exercise, reason)
-      PayService.user_pay_reason(user, exercise.time_benefit, 'Compra del reto')
+      result_time = user.tdv - seconds_to_duration(exercise.time_benefit)
+      generate_movement(user, exercise, reason, result_time)
     end
 
     def rewind_exercise(user, exercise, reason)
-      PayService.system_pay_reason(user, exercise.time_benefit, 'Devolución del reto')
+      result_time = user.tdv + seconds_to_duration(exercise.time_benefit)
+      generate_movement(user, exercise, reason, result_time)
     end
 
     def pay_score(exerciseuser)
@@ -39,7 +41,7 @@ class PayService
             multiplier = 2
             have_card.first.update_columns(active: false)
           end
-          PayService.system_pay_reason(user, exerciseuser.exercise.benefit_scores.find_by(score: exerciseuser.score).time_benefit * multiplier, multiplier == 2 ? 'Reto calificado x 2' : 'Reto calificado')
+          system_pay_reason(user, exerciseuser.exercise.benefit_scores.find_by(score: exerciseuser.score).time_benefit * multiplier, multiplier == 2 ? 'Reto calificado x 2' : 'Reto calificado')
         end
       else
         have_card = exerciseuser.user.user_privileges_cards.where(privileges_card: PrivilegesCard.find_by_identifier(8), active: true)
@@ -48,13 +50,18 @@ class PayService
           multiplier = 2
           have_card.first.update_columns(active: false)
         end
-        PayService.system_pay_reason(exerciseuser.user, exerciseuser.exercise.benefit_scores.find_by(score: exerciseuser.score).time_benefit * multiplier, multiplier == 2 ? 'Reto calificado x 2' : 'Reto calificado')
+        system_pay_reason(exerciseuser.user, exerciseuser.exercise.benefit_scores.find_by(score: exerciseuser.score).time_benefit * multiplier, multiplier == 2 ? 'Reto calificado x 2' : 'Reto calificado')
       end
     end
 
     def pay_sport(user, exercise)
-      PayService.system_pay_reason(user, exercise.time_benefit, 'Reto deportivo')
+      system_pay_reason(user, exercise.time_benefit, 'Reto deportivo')
       p "Pagado a #{user.alias} con id: #{user.id} una cantidad de #{exercise.time_benefit} segundos"
+    end
+
+    def generate_movement(user, exercise, reason, time_after)
+      user.banking_movements.create(reason: reason, exercise: exercise, time_before: (user.tdv.to_time - DateTime.now), time_after: (time_after.to_time-DateTime.now))
+      user.update_columns(tdv: time_after)
     end
 
   end

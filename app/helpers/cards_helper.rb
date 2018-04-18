@@ -63,7 +63,11 @@ module CardsHelper
   end
 
   def multiply_by_two
-
+    if current_user.user_privileges_cards.where(privileges_card: @card, created_at: (DateTime.now-1.week)..(DateTime.now)).any?
+      @error = 'Ya tienes una carta multiplica x 2 esta semana'
+    else
+      pay_xp
+    end
   end
 
   def double_benefit
@@ -112,7 +116,7 @@ module CardsHelper
   end
 
   def multiply_by_two_is_valid?
-    true
+    @user_privilege_card.created_at >= DateTime.now-1.week
   end
 
   def double_benefit_is_valid?
@@ -120,7 +124,7 @@ module CardsHelper
   end
 
   def personal_retirement_is_valid?
-    false
+    @user_privilege_card.created_at >= DateTime.now-1.week
   end
 
   def pay_xp
