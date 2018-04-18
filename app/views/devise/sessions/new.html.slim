@@ -14,7 +14,7 @@
   .col-lg-6.col-md-12.col-sm-12.col-12
     .row
       .col-lg-10.col-md-12.oregano
-        h4 style="color: gold;" = fa_icon "lock lg", class: "pull-left", text:'INICIAR SESIÓN'
+        h4 style="color: gold;" = fa_icon 'fw lock lg', class: 'pull-left', text:'INICIAR SESIÓN'
         = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           .row
             .col-12
@@ -22,9 +22,9 @@
               = f.input :password, input_html: {minlength: 6, size: 40, style: 'margin-top: 1%;', placeholder: 'password'}, label: false
               = f.input :remember_me, as: :boolean, label: 'Recuérdame', label_html: {style: 'color: gold;'} if devise_mapping.rememberable?
           .row
-            .col-lg-3.col-md-12
-              = button_tag(type: 'submit', class: 'btn btn-block btn-primary') do
-                = fa_icon('sign-in', text: 'Entrar')
+            .col-lg-6.col-md-12
+              button.btn.btn-primary.btn-block = fa_icon('sign-in', text: 'Entrar')
+
     .row
       .col-md-6
-        = render "devise/shared/links"
+        = render 'devise/shared/links'
