@@ -71,7 +71,20 @@ module CardsHelper
   end
 
   def personal_retirement
-
+    if current_user.is_in_holidays?
+      @error = 'Ya estás de vacaciones'
+    else
+      pay_xp
+      if @error.nil?
+        holidays_duration = 604800
+        tdv = current_user.tdv + holidays_duration
+        tsc = DateTime.now + holidays_duration
+        tsb = DateTime.now + holidays_duration
+        tdv_holidays = DateTime.now + holidays_duration
+        tdv_holidays_ref = (current_user.tdv - DateTime.now).to_i
+        current_user.update_columns(tdv: tdv, tsc: tsc, tsb: tsb, tdv_holidays: tdv_holidays, tdv_holidays_ref: tdv_holidays_ref)
+      end
+    end
   end
 
   def donation_is_valid?
@@ -107,7 +120,7 @@ module CardsHelper
   end
 
   def personal_retirement_is_valid?
-    true
+    false
   end
 
   def pay_xp
