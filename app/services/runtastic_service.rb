@@ -112,6 +112,7 @@ class RuntasticService
       if (running_candidates_pass?(running_candidates) && running_candidates.count > 2) ||
           (cycling_candidates_pass?(cycling_candidates) && cycling_candidates.count > 2)
         PayService.pay_sport(user, current_sport)
+        PayService.pay_sport(user, current_sport) if user.user_privileges_cards.where(privileges_card: PrivilegesCard.find_by_identifier(7), created_at: (DateTime.now-1.week)..(DateTime.now)).any?
       end
 
       RuntasticMailer.resume(user).deliver_now
