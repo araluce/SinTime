@@ -87,7 +87,8 @@ module Manager
     end
 
     def set_objects
-      @objects = model.all.map{|user| {user: user, score: user.banking_movements.where(created_at: DateTime.now.beginning_of_month-1.month ..DateTime.now.end_of_month-1.month).map {|banking_movement| banking_movement.seconds_difference }.sum}}.sort_by{|obj| -obj[:score]}
+
+      @objects = model.all.map{|user| {user: user, score: user.banking_movements.where(created_at: DateTime.now.beginning_of_month..DateTime.now.end_of_month).map {|banking_movement| banking_movement.seconds_difference }.sum}}.sort_by{|obj| -obj[:score]}
     end
 
   end

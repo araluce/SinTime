@@ -11,6 +11,9 @@ class StaticController < ApplicationController
     @sintime_tweets = TwitterService.get_latest_tweet_by_hashtags(['#ProyectoSinTime', '#SinTime_wARs'])
   end
 
+  def compartir
+  end
+
   def register
     @user = user_model.new
   end
