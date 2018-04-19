@@ -2,25 +2,24 @@
   table.table
     thead
       tr
+        th Puesto
         th Avatar
         th Alias
         th TDV
-        th Puesto
         th Rango
         th Distrito
         th Acciones
     tbody
-      - @objects.each do |citizen|
+      - @objects.each_with_index do |citizen_ranking, index|
+        - citizen = citizen_ranking[:user]
         tr
+          td = index + 1
           td = render 'partials/avatar', user: citizen, avatar_style: :thumb, custom_class: 'img-circle'
           td = "@#{citizen.alias}"
           td = "#{seconds_to_s((citizen.tdv - DateTime.now).to_i)}"
           td
-            - if citizen.ranking_users.any?
-              = citizen.ranking_users.last.to_s
-          td
-            - if citizen.ranking_users.where(classification: true).any?
-              = UserRange.where('min_score >= ?', citizen.ranking_users.where(classification: true).last.position ).order(min_score: :asc).first.range_text
+            - range_icon = UserRange.where('min_score < ?', index + 1).order(min_score: :asc).last || UserRange.find_by(min_score: UserRange.minimum(:min_score))
+            = range_icon.range_text
           td = citizen.district
           td
             .action-buttons
