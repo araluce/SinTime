@@ -7,7 +7,7 @@ module Padawan
 
       def create
         if current_user.have_holidays
-          holidays_duration = 604800
+          holidays_duration = 604800.seconds
           tdv = current_user.tdv + holidays_duration
           tsc = DateTime.now + holidays_duration
           tsb = DateTime.now + holidays_duration

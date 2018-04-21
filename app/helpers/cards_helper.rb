@@ -90,7 +90,7 @@ module CardsHelper
     else
       pay_xp
       if @error.nil?
-        holidays_duration = 604800
+        holidays_duration = 604800.seconds
         tdv = current_user.tdv + holidays_duration
         tsc = DateTime.now + holidays_duration
         tsb = DateTime.now + holidays_duration
