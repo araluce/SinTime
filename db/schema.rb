@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180418191400) do
+ActiveRecord::Schema.define(version: 20180423160841) do
 
   create_table "activity_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_runtastic_id"
@@ -197,6 +197,7 @@ ActiveRecord::Schema.define(version: 20180418191400) do
     t.integer "icon_file_size"
     t.string "icon_content_type"
     t.string "icon_file_name"
+    t.integer "max_applicants"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "feeding_type", default: 0

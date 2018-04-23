@@ -105,11 +105,11 @@ class User < ApplicationRecord
   end
 
   def tweets_count
-    backpacks.where('created_at BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).count
+    backpacks.where(created_at: (DateTime.now.beginning_of_day)..(DateTime.now.end_of_day)).count
   end
 
   def yesterday_tweets_count
-    backpacks.where('created_at BETWEEN ? AND ?', DateTime.yesterday.beginning_of_day, DateTime.yesterday.end_of_day).count
+    backpacks.where(created_at: (DateTime.now.beginning_of_day - 1.day)..(DateTime.now.end_of_day - 1.day)).count
   end
 
   def to_s

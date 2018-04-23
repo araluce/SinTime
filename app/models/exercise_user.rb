@@ -31,6 +31,7 @@ class ExerciseUser < ApplicationRecord
   scope :clan, -> {joins(:exercise).where('exercises.district = 1')}
   scope :questionnaires, -> {joins(:exercise).where("exercises.type = 'Exercise::Questionnaire'")}
   scope :happiness, -> {joins(:exercise).where("exercises.type = 'Exercise::Happiness'")}
+  scope :updated_last_week, -> {where(updated_at: (DateTime.now.beginning_of_week - 1.week)..(DateTime.now.end_of_week - 1.week))}
 
   def save_file!
     self.save if valid?(:send_file)
