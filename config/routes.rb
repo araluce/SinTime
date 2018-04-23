@@ -55,6 +55,10 @@ Rails.application.routes.draw do
       get 'follow_user', to: 'seguimiento#seguimiento'
       post 'follow_user', to: 'seguimiento#follow_user'
       patch 'load_tweeter_tweets', to: 'seguimiento#load_tweeter_tweets'
+
+      resources :level_tests, only: [:index, :edit, :update] do
+        get 'purchase', to: 'level_tests#purchase'
+      end
     end
 
     namespace :comunidad do

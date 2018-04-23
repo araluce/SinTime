@@ -11,6 +11,10 @@ class Exercise::LevelTest < Exercise
     exercise_users.count < max_applicants ? false : true
   end
 
+  def type_to_s
+    'Prueba de nivel'
+  end
+
   class << self
     def completed
       all_completed = []
