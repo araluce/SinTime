@@ -108,6 +108,7 @@ Rails.application.routes.draw do
     resources :questionnaires
     resources :food
     resources :water
+    resources :level_tests
     resources :sports
     resources :happiness
     resources :privileges_cards, except: :new
