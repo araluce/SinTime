@@ -6,7 +6,11 @@
     = render 'partials/button', custom_path: padawan_formacion_seguimiento_path, custom_image: 'padawan/formacion/seguimiento.png', custom_label: 'seguimiento'
 
   .col-lg-3.col-md-6
-    = render 'partials/button', custom_path: '#', custom_image: 'padawan/formacion/pruebas_nivel.png', custom_label: 'pruebas'
+    = render 'partials/button',
+            custom_path: '#',
+            custom_image: 'padawan/formacion/pruebas_nivel.png',
+            custom_label: 'pruebas',
+            badge: Exercise::LevelTest.uncompleted.count
 
   .col-lg-3.col-md-6
     = render 'partials/button', custom_path: '#', custom_image: 'padawan/formacion/dominio_fuerza.png', custom_label: 'dominio'
