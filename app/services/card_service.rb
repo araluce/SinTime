@@ -7,12 +7,13 @@ class CardService
     end
 
     def night_break_perform_user(user)
-      user.update_columns(tdv: user.tdv + 8.hours)
+      PayService.system_pay_reason(user, 8.hours.to_i, 'Parón nocturno')
     end
 
     def night_break_perform
       UserPrivilegesCard.where(privileges_card: night_break_card).each do |user_privileges_card|
         night_break_perform_user(user_privileges_card.user) if card_is_valid?(user_privileges_card)
+
       end
     end
 

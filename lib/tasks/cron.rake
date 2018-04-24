@@ -24,7 +24,6 @@ namespace :cron do
       RuntasticService.evalue_user_sport(user)
     end
 
-
     puts "#{Time.now} - Success!"
   end
 
