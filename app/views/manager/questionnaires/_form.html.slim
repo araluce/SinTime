@@ -13,6 +13,9 @@ fieldset
         .links
           = link_to_add_association 'añadir opción', f, :options, partial: 'manager/partials/option_fields'
 
-= render 'manager/partials/time_beneficts', f: f, custom_label: 'Tiempo de beneficio', suffix: 'benefit'
+= f.input :days_benefit, as: :hidden, input_html: {value: 1}
+= f.input :hours_benefit, as: :hidden, input_html: {value: 0}
+= f.input :minutes_benefit, as: :hidden, input_html: {value: 0}
+= f.input :seconds_benefit, as: :hidden, input_html: {value: 0}
 
-= f.button :submit, class: 'btn btn-block btn-primary'
+= f.button :submit, class: 'btn btn-block btn-primary', data: { disable_with: 'Enviando...' }

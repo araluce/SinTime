@@ -37,7 +37,8 @@ module Manager
       @object = model.new(object_params)
 
       if @object.save
-        redirect_to manager_questionnaire_path(@object), notice: 'Cuestionario creado correctamente'
+        User.all.each {|user| PayService.user_pay_reason(user, 1.days.to_i, 'Dominio de la fuerza')}
+        redirect_to manager_questionnaire_path(@object), notice: "Cuestionario creado correctamente. Se ha restado 1 día a cada pádawan"
       else
         object_initialization
         render :index
