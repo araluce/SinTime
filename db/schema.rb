@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180423160841) do
+ActiveRecord::Schema.define(version: 20180424190428) do
 
   create_table "activity_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_runtastic_id"
@@ -305,6 +305,24 @@ ActiveRecord::Schema.define(version: 20180423160841) do
     t.datetime "updated_at", null: false
     t.index ["privileges_card_id"], name: "index_user_privileges_cards_on_privileges_card_id"
     t.index ["user_id"], name: "index_user_privileges_cards_on_user_id"
+  end
+
+  create_table "user_questionnaire_options", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_questionnaire_id"
+    t.bigint "option_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["option_id"], name: "index_user_questionnaire_options_on_option_id"
+    t.index ["user_questionnaire_id"], name: "index_user_questionnaire_options_on_user_questionnaire_id"
+  end
+
+  create_table "user_questionnaires", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.bigint "questionnaire_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["questionnaire_id"], name: "index_user_questionnaires_on_questionnaire_id"
+    t.index ["user_id"], name: "index_user_questionnaires_on_user_id"
   end
 
   create_table "user_ranges", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
