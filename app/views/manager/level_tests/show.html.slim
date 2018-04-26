@@ -9,7 +9,7 @@ ol.breadcrumb
       .col-lg-2.col-md-2.col-xs-12
         p = link_to 'Volver', manager_level_tests_path, class: 'btn btn-primary btn-block'
         p = link_to 'Editar', edit_manager_level_test_path(@object), class: 'btn btn-primary btn-block'
-      .col-lg-5.col-md-5.col-xs-12
+      .col-lg-10.col-md-10.col-xs-12
         .card
           .card-header Datos de la prueba de nivel
           .card-body
@@ -30,3 +30,22 @@ ol.breadcrumb
               - @object.benefit_scores.each do |benefit_score|
                 dt.col-sm-6 ="*#{ benefit_score.score}"
                 dd.col-sm-6 = seconds_to_s(benefit_score.time_benefit)
+      .col-lg-10.offset-lg-2.col-md-10.offset-md-2.col-xs-12
+        .card
+          .card-header Entregas
+          .card-body
+            .table-responsive
+              table.table
+                thead
+                  tr
+                    th Padawan
+                    th Estado
+                    th Entrega
+                tbody
+                  - @exercise_users.each do |exercise_user|
+                    tr
+                      td = "@#{exercise_user.user.alias}"
+                      td = exercise_user.status
+                      td
+                        - unless exercise_user.status == 'Comprado'
+                          = link_to exercise_user.file_file_name,  exercise_user.file.url(:original, false)

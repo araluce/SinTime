@@ -25,6 +25,7 @@ module Manager
     end
 
     def show
+      @exercise_users = @object.exercise_users
     end
 
     def new
