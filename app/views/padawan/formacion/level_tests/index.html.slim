@@ -24,7 +24,7 @@
                   td
                     - if current_user.exercise_users.where(exercise: object).empty?
                       - unless object.is_complete?
-                        = link_to 'Comprar!', padawan_formacion_level_test_purchase_path(object), class: 'btn btn-block btn-primary'
+                        = link_to 'Aceptar', padawan_formacion_level_test_purchase_path(object), class: 'btn btn-block btn-primary'
                     - else
                       = link_to fa_icon('fw cog'), edit_padawan_formacion_level_test_path(object), class: 'btn btn-block btn-primary'
                 tr class="#{object.is_complete? ? 'table-danger' : 'table-success'}"
