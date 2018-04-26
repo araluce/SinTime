@@ -38,13 +38,13 @@ ol.breadcrumb
               table.table
                 thead
                   tr
-                    th Padawan
+                    th.text-left Padawan
                     th Estado
                     th Entrega
                 tbody
                   - @exercise_users.each do |exercise_user|
                     tr
-                      td = "@#{exercise_user.user.alias}"
+                      td.text-left = "@#{exercise_user.user.alias}"
                       td = exercise_user.status
                       td
                         - unless exercise_user.status == 'Comprado'
