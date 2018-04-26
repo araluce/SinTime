@@ -17,10 +17,10 @@
             tbody
               - @objects.each do |object|
                 tr class="#{object.is_complete? ? 'table-danger' : 'table-success'}"
-                  td = link_to "#{object.is_complete? ? 'Cerrada' : 'Abierta'}", edit_padawan_formacion_level_test_path(object)
-                  td = link_to object.title.titleize, edit_padawan_formacion_level_test_path(object)
-                  td = link_to "#{object.exercise_users.count}/#{object.max_applicants}", edit_padawan_formacion_level_test_path(object)
-                  td = link_to seconds_to_s(object.time_benefit), edit_padawan_formacion_level_test_path(object)
+                  td = object.is_complete? ? 'Cerrada' : 'Abierta'
+                  td = object.title.titleize
+                  td = "#{object.exercise_users.count}/#{object.max_applicants}"
+                  td = seconds_to_s(object.time_benefit)
                   td
                     - if current_user.exercise_users.where(exercise: object).empty?
                       - unless object.is_complete?
