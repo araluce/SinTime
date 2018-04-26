@@ -7,10 +7,9 @@
       .col-12
         .card-header Dominio de la fuerza
         .card-body
-          = simple_form_for(@object, url: padawan_formacion_force_domains_path(@object), as: :object, html: {class: 'form-vertical', remote: false}) do |f|
+          = simple_form_for(@user_questionnaire, url: padawan_formacion_force_domains_path(@object), as: :object, html: {class: 'form-vertical', remote: false}) do |f|
             p = @object.statement
-            = f.simple_fields_for :user_questionnaires do |uqf|
-              = uqf.association :user, input_html: {value: current_user.id}, as: :hidden
-              = uqf.association :questionnaire, input_html: {value: @object.id}, as: :hidden
-              = uqf.association :options, collection: @object.options, multiple: true, as: :check_boxes, selected: [], wrapper_class: 'row', item_wrapper_class: 'col-12'
+            = f.association :user, input_html: {value: current_user.id}, as: :hidden
+            = f.association :questionnaire, input_html: {value: @object.id}, as: :hidden
+            = f.association :options, collection: @object.options, multiple: true, as: :check_boxes, selected: [], wrapper_class: 'row', item_wrapper_class: 'col-12'
             = f.submit 'Corregir', class: 'btn btn-primary'

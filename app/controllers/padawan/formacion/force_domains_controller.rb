@@ -12,17 +12,19 @@ module Padawan
       end
 
       def edit
+        redirect_to action: :show if @object.user_questionnaires.where(user: current_user).any?
+        @user_questionnaire = UserQuestionnaire.new(questionnaire: @object, user: current_user)
         @object.user_questionnaires.build(user: current_user)
       end
 
-      def update
-        @object = model.new(object_params)
-        if @object.save
-          render 'create.js.coffee.erb'
+      def create
+        @user_questionnaire = UserQuestionnaire.new(object_params)
+        if @user_questionnaire.save
+          PayService.system_pay_reason(current_user, 1.day.to_i, 'Dominio de la fuerza superado') if @user_questionnaire.all_right?
         else
-          flash[:alert] = @object.errors.full_messages
-          render :edit
+          flash[:alert] = @user_questionnaire.errors.full_messages
         end
+        redirect_to action: :show
       end
 
       private
@@ -37,7 +39,9 @@ module Padawan
 
       def object_params
         params.require(:object).permit(
-            user_questionnaires_attributes: {}
+          :user_id,
+          :questionnaire_id,
+          option_ids: []
         )
       end
     end

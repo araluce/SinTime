@@ -9,11 +9,12 @@
         th Acciones
     tbody
       - @objects.all.each do |questionnaire|
+        - user_questionnaires = questionnaire.user_questionnaires
         tr
           td = questionnaire.statement
           td = questionnaire.options.count
-          td
-          td
+          td = user_questionnaires.count - user_questionnaires.map {|user_questionnaire| user_questionnaire.all_right? ? 0 : 1}.sum
+          td = user_questionnaires.count - user_questionnaires.map {|user_questionnaire| user_questionnaire.all_right? ? 1 : 0}.sum
           td
             .action-buttons
               = link_to fa_icon('eye 2x'), manager_questionnaire_path(questionnaire)

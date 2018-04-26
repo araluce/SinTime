@@ -29,3 +29,23 @@ ol.breadcrumb
                 .bubble.font-95.bold.has-bubble.row
                   dd.col-sm-9 = option.option
                   dd = render 'partials/boolean', object: option.right
+
+      .col-lg-10.offset-lg-2.col-md-5.offset-md-2.col-xs-12
+        .card
+          .card-header Entregas
+          .card-body
+            dl.row
+              dt.col-sm-6 Realizado correctamente
+              dd.col-sm-6
+                - questionnaire_users = questionnaire_user_questionnaires_pass(@object)
+                - questionnaire_users.each do |user_questionnaire|
+                  p
+                    b = "@#{user_questionnaire.user.alias}"
+                  = user_questionnaire.options.map{|option| option}.join('<br>').html_safe
+              dt.col-sm-6 Con fallos
+              dd.col-sm-6
+                - questionnaire_users = questionnaire_user_questionnaires_not_pass(@object)
+                - questionnaire_users.each do |user_questionnaire|
+                  p
+                    b = "@#{user_questionnaire.user.alias}"
+                  = user_questionnaire.options.map {|option| option}.join('<br>').html_safe
