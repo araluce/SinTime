@@ -120,7 +120,7 @@ class RuntasticService
     end
 
     def user_pass_sport(user)
-      return nil if user.user_runtastic.nil?
+      return false if user.user_runtastic.nil?
 
       begin
         user.user_runtastic.perform
@@ -147,7 +147,7 @@ class RuntasticService
     end
 
     def user_pass_sport_week(user, week)
-      return nil if user.user_runtastic.nil?
+      return false if user.user_runtastic.nil?
 
       begin
         user.user_runtastic.perform

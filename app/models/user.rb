@@ -45,7 +45,6 @@ class User < ApplicationRecord
   has_many :user_questionnaires, class_name: 'UserQuestionnaire', inverse_of: :user, dependent: :destroy
   has_many :questionnaires, class_name: 'Exercise::Questionnaire', through: :user_questionnaires, inverse_of: :users
 
-
   has_attached_file :avatar, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: ActionController::Base.helpers.asset_path('avatar.png')
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
@@ -152,6 +151,10 @@ class User < ApplicationRecord
 
   def chat_admins
     Chat.Admin.where(user_1: self)
+  end
+
+  def pending_questionnaires
+    Exercise::Questionnaire.all.count - questionnaires.count
   end
 
 end

@@ -59,6 +59,8 @@ Rails.application.routes.draw do
       resources :level_tests, only: [:index, :edit, :update] do
         get 'purchase', to: 'level_tests#purchase'
       end
+
+      resource :force_domains
     end
 
     namespace :comunidad do

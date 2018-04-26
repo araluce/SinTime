@@ -5,6 +5,7 @@ class Exercise::Questionnaire < Exercise
 
   has_many :user_questionnaires, class_name: 'UserQuestionnaire', inverse_of: :questionnaire, dependent: :destroy
   has_many :users, class_name: 'User', through: :user_questionnaires, inverse_of: :questionnaires
+  accepts_nested_attributes_for :user_questionnaires, reject_if: :all_blank, allow_destroy: true
 
   def type_to_s
     'Questionnaire'
