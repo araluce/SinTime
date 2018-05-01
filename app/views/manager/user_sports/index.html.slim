@@ -1,0 +1,15 @@
+ol.breadcrumb
+  li.breadcrumb-item = link_to 'Dashboard', manager_home_path
+  li.breadcrumb-item = link_to 'Padawans', manager_citizens_path
+  li.breadcrumb-item = link_to "@#{ @user.alias}", manager_citizen_path(@user)
+  li.breadcrumb-item.active = 'Datos deportivos del usuario'
+
+.row
+  .col-12
+    .card
+      .card-header = 'Datos deportivos por semanas'
+      .card-body
+        dl.row
+          - @dates.each do |date|
+            dt.col-sm-6 = date.to_formatted_s(:short)
+            dd.col-sm-6 = RuntasticService.user_pass_sport_date(@user, date) ? 'Pasa' : 'No pasa'

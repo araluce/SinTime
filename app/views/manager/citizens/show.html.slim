@@ -1,6 +1,6 @@
 ol.breadcrumb
   li.breadcrumb-item = link_to 'Dashboard', manager_home_path
-  li.breadcrumb-item = link_to "#{@resource_name.pluralize}", manager_districts_path
+  li.breadcrumb-item = link_to "#{@resource_name.pluralize}", manager_citizens_path
   li.breadcrumb-item.active = "Datos del padawan #{@object.name.titleize}"
 
 .row
@@ -14,6 +14,7 @@ ol.breadcrumb
         p = link_to 'Entregas', manager_citizen_user_deliveries_path(@object), class: 'btn btn-outline-info btn-block'
         p = link_to 'Movimientos', manager_citizen_movimientos_path(@object), class: 'btn btn-outline-info btn-block'
         p = link_to 'Subir nivel', manager_citizen_level_up_path(@object), class: 'btn btn-outline-info btn-block', data: {confirm: '¿Estás seguro?', disable_with: 'Enviando...'}
+        p = link_to 'Datos deportivos', manager_citizen_user_sports_path(@object), class: 'btn btn-outline-info btn-block', data: {disable_with: 'Enviando...'}
       .col-lg-5.col-md-5.col-xs-12
         .card
           .card-header = "Datos del usuario #{@object}"

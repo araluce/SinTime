@@ -177,12 +177,12 @@ class RuntasticService
       return false if user.user_runtastic.nil?
 
       running_candidates = []
-      user.user_runtastic.activity_logs.where(date: (date.beginning_of_week- week.week)..(date.end_of_week- week.week)).running.each do |session|
+      user.user_runtastic.activity_logs.where(date: date.beginning_of_week..date.end_of_week).running.each do |session|
         running_candidates << session if pace_pass?(session)
       end
 
       cycling_candidates = []
-      user.user_runtastic.activity_logs.where(date: (date.beginning_of_week- week.week)..(date.end_of_week- week.week)).not_running.each do |session|
+      user.user_runtastic.activity_logs.where(date: date.beginning_of_week..date.end_of_week).not_running.each do |session|
         cycling_candidates << session if speed_pass?(session)
       end
 
