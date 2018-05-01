@@ -4,5 +4,7 @@
 = f.input :dni, label: 'DNI'
 = f.input :alias, label: 'Alias'
 = f.input :email, label: 'Correo'
+= f.input :level, label: 'Nivel', input_html: {type: :number, min: 0}
+= f.input :xp, label: 'XP', input_html: {type: :number, min: 0}
 = f.association :district, label: 'Distritos', input_html: {style: 'width: 100%'}
 = f.button :submit, class: 'btn btn-block btn-primary'

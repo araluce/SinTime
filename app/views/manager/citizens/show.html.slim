@@ -13,11 +13,14 @@ ol.breadcrumb
         p = link_to 'Editar', edit_manager_citizen_path(@object), class: 'btn btn-primary btn-block'
         p = link_to 'Entregas', manager_citizen_user_deliveries_path(@object), class: 'btn btn-outline-info btn-block'
         p = link_to 'Movimientos', manager_citizen_movimientos_path(@object), class: 'btn btn-outline-info btn-block'
+        p = link_to 'Subir nivel', manager_citizen_level_up_path(@object), class: 'btn btn-outline-info btn-block', data: {confirm: '¿Estás seguro?', disable_with: 'Enviando...'}
       .col-lg-5.col-md-5.col-xs-12
         .card
           .card-header = "Datos del usuario #{@object}"
           .card-body
             dl.row
+              dt.col-sm-6.text-center = "Nivel #{@object.level}"
+              dt.col-sm-6.text-center = "#{@object.xp} XP"
               .col-12
                 .countdown style="color: black!important"
               hr

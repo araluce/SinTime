@@ -109,6 +109,7 @@ Rails.application.routes.draw do
       resources :banking_movements, only: :create
       resources :user_deliveries, only: [:index, :edit, :update]
       resources :movimientos, only: :index
+      get 'level_up', to: 'citizens#level_up'
     end
     resources :padawan_registers, only: [:new, :create]
     resources :questionnaires

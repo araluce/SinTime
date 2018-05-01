@@ -1,7 +1,5 @@
 module Manager
   class CitizensController < Manager::ManagersController
-    layout 'manager'
-
     before_action :set_object, except: [:new, :create]
     before_action :set_objects, only: [:index]
     before_action :load_resource_name
@@ -67,6 +65,12 @@ module Manager
       end
     end
 
+    def level_up
+      LevelService.level_up @object
+      flash[:notice] = 'Operación realizada correctamente'
+      redirect_to manager_citizen_path(@object)
+    end
+
     private
 
     def object_params
@@ -78,12 +82,14 @@ module Manager
           :email,
           :alias,
           :password,
+          :level,
+          :xp,
           :district_id
       )
     end
 
     def set_object
-      @object = model.find_by_id(params[:id])
+      @object = model.find_by_id(params[:id] || params[:citizen_id])
     end
 
     def set_objects
