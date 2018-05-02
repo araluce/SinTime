@@ -35,7 +35,7 @@ module CardsHelper
   end
 
   def free_clue
-
+    pay_xp
   end
 
   def bounty_hunter
@@ -106,7 +106,7 @@ module CardsHelper
   end
 
   def free_clue_is_valid?
-    true
+    @user_privilege_card.active
   end
 
   def bounty_hunter_is_valid?
