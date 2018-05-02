@@ -8,6 +8,7 @@ class Mine < ApplicationRecord
   has_many :users, through: :user_mines, inverse_of: :mines
 
   scope :mines_to_check, -> { where(created_at: DateTime.yesterday.beginning_of_day..DateTime.yesterday.end_of_day) }
+  scope :avaliables, -> { where('valid_until > ?', DateTime.now) }
 
   attr_accessor :days_benefit,
                 :hours_benefit,
@@ -31,6 +32,10 @@ class Mine < ApplicationRecord
 
   def to_s
     statement
+  end
+
+  def available?
+    valid_until > DateTime.now
   end
 
   private

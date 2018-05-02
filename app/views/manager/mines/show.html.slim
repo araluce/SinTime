@@ -39,6 +39,6 @@ ol.breadcrumb
             dl.row
               - if @object.user_mines.any?
                 - @object.user_mines.each do |user_mine|
-                  dt.col-sm-12 = "@#{user_mine.user.alias} desactivó la mina - #{user_mine.created_at.to_formatted_s(:long)}"
+                  dt.col-sm-12 = user_mine
               - else
                 dt.col-sm-12.text-center Ningún padawan ha conseguido desactivar aún la mina
