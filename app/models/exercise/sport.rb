@@ -39,6 +39,10 @@ class Exercise::Sport < Exercise
     'Sport'
   end
 
+  def to_s
+    statement
+  end
+
   private
 
   def set_running_duration

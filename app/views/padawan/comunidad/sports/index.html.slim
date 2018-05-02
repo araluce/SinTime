@@ -1,4 +1,5 @@
-- object = @objects.last
+- sport_date = Exercise::Sport.where('created_at < ?', Date.today.beginning_of_day).order(:created_at).last.created_at rescue Exercise::Sport.minimum(:created_at)
+- object = Exercise::Sport.find_by(created_at: sport_date)
 .row.future-card
   .col-12
     .row style="margin-bottom: 1%; margin-top: 1%;"
