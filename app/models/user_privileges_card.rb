@@ -7,10 +7,10 @@ class UserPrivilegesCard < ApplicationRecord
   attr_accessor :user_to_id
 
   def to_s
-    "@#{user.alias} tiene una carta #{privileges_card} #{valid? ? 'válida' : 'no válida'}"
+    "@#{user.alias} tiene una carta #{privileges_card} #{is_valid? ? 'válida' : 'no válida'}"
   end
 
-  def valid?
+  def is_valid?
     card_is_valid?(self)
   end
 end

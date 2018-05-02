@@ -80,6 +80,10 @@ Rails.application.routes.draw do
 
       namespace :altruismo do
         resources :donations
+        resources :mines do
+          post 'detach', to: 'mines#detach'
+          get 'purchase_clue', to: 'mines#purchase_clue'
+        end
       end
     end
 

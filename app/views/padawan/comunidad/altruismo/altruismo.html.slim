@@ -9,4 +9,8 @@
             custom_label: 'donación'
 
   .col-lg-3.col-md-6
-    = render 'partials/button', custom_path: '#', custom_image: 'padawan/comunidad/altruismo/minas.png', custom_label: 'minas'
+    = render 'partials/button',
+            custom_path: padawan_comunidad_altruismo_mines_path,
+            custom_image: 'padawan/comunidad/altruismo/minas.png',
+            custom_label: 'minas',
+            badge: Mine.avaliables.count
