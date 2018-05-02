@@ -4,6 +4,9 @@ class Mine < ApplicationRecord
   has_many :clues, class_name: 'MineClue', inverse_of: :mine, dependent: :destroy
   accepts_nested_attributes_for :clues
 
+  has_many :user_mines, class_name: 'UserMine', inverse_of: :mine, dependent: :destroy
+  has_many :users, through: :user_mines, inverse_of: :mines
+
   attr_accessor :days_benefit,
                 :hours_benefit,
                 :minutes_benefit,

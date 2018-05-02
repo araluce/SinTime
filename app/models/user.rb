@@ -48,6 +48,9 @@ class User < ApplicationRecord
   has_many :user_clues, class_name: 'UserClue', inverse_of: :user, dependent: :destroy
   has_many :clues, class_name: 'MineClue', through: :user_clues, inverse_of: :users
 
+  has_many :user_mines, class_name: 'UserMine', inverse_of: :user, dependent: :destroy
+  has_many :mines, through: :user_mines, inverse_of: :users
+
   has_attached_file :avatar, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: ActionController::Base.helpers.asset_path('avatar.png')
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
