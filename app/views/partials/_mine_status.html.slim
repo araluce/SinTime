@@ -1,0 +1,7 @@
+- if object.valid_until > DateTime.now
+  .badge.badge-warning Activa
+- else
+  - if object.user_mines.any?
+    span.badge.badge-success
+  - else
+    span.badge.badge-danger Detonada

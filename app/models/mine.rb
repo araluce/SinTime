@@ -7,6 +7,8 @@ class Mine < ApplicationRecord
   has_many :user_mines, class_name: 'UserMine', inverse_of: :mine, dependent: :destroy
   has_many :users, through: :user_mines, inverse_of: :mines
 
+
+
   attr_accessor :days_benefit,
                 :hours_benefit,
                 :minutes_benefit,

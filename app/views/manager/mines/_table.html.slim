@@ -2,6 +2,7 @@
   table.table
     thead
       tr
+        th Estado
         th Detalle
         th Código secreto
         th Fecha de explosión
@@ -11,6 +12,7 @@
     tbody
       - @objects.each do |object|
         tr
+          td = render 'partials/mine_status', object: object
           td = object.statement
           td = object.code
           td = object.valid_until.to_formatted_s(:long)

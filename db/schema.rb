@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180502204419) do
+ActiveRecord::Schema.define(version: 20180502210352) do
 
   create_table "activity_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_runtastic_id"
@@ -312,6 +312,24 @@ ActiveRecord::Schema.define(version: 20180502204419) do
     t.index ["tweet_id"], name: "index_twitter_backpacks_on_tweet_id"
     t.index ["user_id"], name: "index_twitter_backpacks_on_user_id"
     t.index ["user_share_id"], name: "index_twitter_backpacks_on_user_share_id"
+  end
+
+  create_table "user_clues", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.bigint "clue_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["clue_id"], name: "index_user_clues_on_clue_id"
+    t.index ["user_id"], name: "index_user_clues_on_user_id"
+  end
+
+  create_table "user_mines", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.bigint "mine_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mine_id"], name: "index_user_mines_on_mine_id"
+    t.index ["user_id"], name: "index_user_mines_on_user_id"
   end
 
   create_table "user_privileges_cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

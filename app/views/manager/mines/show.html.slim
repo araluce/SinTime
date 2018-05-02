@@ -29,8 +29,16 @@ ol.breadcrumb
               dt.col-sm-6 Pistas
               dd.col-sm-6 = @object.clues.map(&:clue).join('<br>').html_safe
 
+              dt.col-sm-6 Estado
+              dd.col-sm-6 = render 'partials/mine_status', object: @object
+
       .col-lg-5.col-md-5.col-xs-12
         .card
           .card-header Padawans
           .card-body
             dl.row
+              - if @object.user_mines.any?
+                - @object.user_mines.each do |user_mine|
+                  dt.col-sm-12 = "@#{user_mine.user.alias} desactivó la mina - #{user_mine.created_at.to_formatted_s(:long)}"
+              - else
+                dt.col-sm-12.text-center Ningún padawan ha conseguido desactivar aún la mina
