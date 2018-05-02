@@ -1,6 +1,9 @@
 class Mine < ApplicationRecord
   include TimeHelper
 
+  has_many :clues, class_name: 'MineClue', inverse_of: :mine, dependent: :destroy
+  accepts_nested_attributes_for :clues
+
   attr_accessor :days_benefit,
                 :hours_benefit,
                 :minutes_benefit,

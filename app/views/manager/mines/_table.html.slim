@@ -6,14 +6,16 @@
         th Código secreto
         th Fecha de explosión
         th Tiempo de beneficio
+        th Número de pistas
         th Acciones
     tbody
       - @objects.each do |object|
         tr
           td = object.statement
           td = object.code
-          td = object.valid_until
+          td = object.valid_until.to_formatted_s(:long)
           td = seconds_to_s object.time_benefit
+          td = object.clues.count
           td
             .action-buttons
               = link_to fa_icon('fw eye 2x'), manager_mine_path(object)

@@ -65,7 +65,8 @@ module Manager
           :days_benefit,
           :hours_benefit,
           :minutes_benefit,
-          :seconds_benefit
+          :seconds_benefit,
+          clues_attributes: {}
       )
     end
 

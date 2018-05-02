@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180502190344) do
+ActiveRecord::Schema.define(version: 20180502204419) do
 
   create_table "activity_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_runtastic_id"
@@ -226,6 +226,14 @@ ActiveRecord::Schema.define(version: 20180502190344) do
     t.index ["admin_id"], name: "index_messages_on_admin_id"
     t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "mine_clues", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "mine_id"
+    t.string "clue"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mine_id"], name: "index_mine_clues_on_mine_id"
   end
 
   create_table "mines", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
