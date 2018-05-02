@@ -127,6 +127,7 @@ Rails.application.routes.draw do
     resources :sala, only: :index
     resources :chat_admin, only: :show
     resources :holidays, only: [:index, :create]
+    resources :mines
     resources :bets, except: :new do
       get 'pay_and_close', to: 'bets#pay_and_close'
       get 'close', to: 'bets#close'

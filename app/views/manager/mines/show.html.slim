@@ -1,0 +1,33 @@
+ol.breadcrumb
+  li.breadcrumb-item = link_to 'Dashboard', manager_home_path
+  li.breadcrumb-item = link_to 'Apuestas', manager_mines_path
+  li.breadcrumb-item.active Datos de la mina
+
+.row
+  .col-12
+    .row
+      .col-lg-2.col-md-2.col-xs-12
+        p = link_to 'Volver', manager_mines_path, class: 'btn btn-primary btn-block'
+        p = link_to 'Editar', edit_manager_mine_path(@object), class: 'btn btn-primary btn-block'
+      .col-lg-5.col-md-5.col-xs-12
+        .card
+          .card-header Datos de la mina
+          .card-body
+            dl.row
+              dt.col-sm-6 Detalle
+              dd.col-sm-6 = @object.statement
+
+              dt.col-sm-6 Código secreto
+              dd.col-sm-6 = @object.code
+
+              dt.col-sm-6 Fecha de explosión
+              dd.col-sm-6 = @object.valid_until
+
+              dt.col-sm-6 Tiempo de beneficio
+              dd.col-sm-6 = seconds_to_s @object.time_benefit
+
+      .col-lg-5.col-md-5.col-xs-12
+        .card
+          .card-header Padawans
+          .card-body
+            dl.row

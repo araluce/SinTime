@@ -1,0 +1,21 @@
+.table-responsive
+  table.table
+    thead
+      tr
+        th Detalle
+        th Código secreto
+        th Fecha de explosión
+        th Tiempo de beneficio
+        th Acciones
+    tbody
+      - @objects.each do |object|
+        tr
+          td = object.statement
+          td = object.code
+          td = object.valid_until
+          td = seconds_to_s object.time_benefit
+          td
+            .action-buttons
+              = link_to fa_icon('fw eye 2x'), manager_mine_path(object)
+              = link_to fa_icon('fw cog 2x'), edit_manager_mine_path(object)
+              = link_to fa_icon('fw times 2x'), manager_mine_path(object), data: {confirm: '¿Estás seguro?'}, method: :delete
