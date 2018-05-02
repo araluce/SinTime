@@ -6,7 +6,7 @@ class RuntasticService
     end
 
     def current_sport(date)
-      sport_date = model.where('created_at < ?', date).order(:created_at).last rescue model.minimum(:created_at)
+      sport_date = model.where('created_at < ?', date).order(:created_at).last.created_at rescue model.minimum(:created_at)
       model.find_by(created_at: sport_date)
     end
 
