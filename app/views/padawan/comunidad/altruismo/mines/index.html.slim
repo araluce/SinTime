@@ -15,7 +15,6 @@
               tr
                 th Estado
                 th Mina
-                th Veces desactivada
                 th Bote
                 th #Pistas
             tbody
@@ -23,6 +22,5 @@
                 tr
                   td = render 'partials/mine_status', object: object
                   td = link_to object, padawan_comunidad_altruismo_mine_path(object)
-                  td = link_to object.user_mines.count, padawan_comunidad_altruismo_mine_path(object)
                   td = link_to seconds_to_s(object.time_benefit), padawan_comunidad_altruismo_mine_path(object)
                   td = link_to object.clues.count, padawan_comunidad_altruismo_mine_path(object)
