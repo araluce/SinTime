@@ -1,9 +1,8 @@
 class LevelMailer < ApplicationMailer
   layout 'no_reply_mail'
 
-  def resume(user, date)
+  def resume(user)
     @user = user
-    @date = date
     mail(to: user.email, subject: "SinTime - Tu nivel y XP") if user.email
   end
 end
