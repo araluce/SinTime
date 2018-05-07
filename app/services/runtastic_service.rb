@@ -75,7 +75,7 @@ class RuntasticService
         puts "Fallo al descargar los datos del usuario #{user.alias} con id #{user.id}"
       end
 
-      min_created_at = Date.today.beginning_of_week - 1.week
+      min_created_at = DateTime.now.beginning_of_week - 1.week
 
       running_candidates = []
       user.user_runtastic.activity_logs.last_week.running.each do |session|
@@ -106,7 +106,7 @@ class RuntasticService
         puts "Fallo al descargar los datos del usuario #{user.alias} con id #{user.id}"
       end
 
-      min_created_at = Date.today.beginning_of_week - 2.week
+      min_created_at = DateTime.now.beginning_of_week - 2.week
 
       running_candidates = []
       user.user_runtastic.activity_logs.last_last_week.running.each do |session|
