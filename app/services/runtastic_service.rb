@@ -93,7 +93,7 @@ class RuntasticService
           PayService.pay_sport(user, current_sport(min_created_at)) if user.user_privileges_cards.where(privileges_card: PrivilegesCard.find_by_identifier(7), created_at: (DateTime.now-1.week)..(DateTime.now)).any?
       end
 
-      RuntasticMailer.resume(user).deliver_now
+      RuntasticMailer.resume(user, min_created_at).deliver_now
 
     end
 
