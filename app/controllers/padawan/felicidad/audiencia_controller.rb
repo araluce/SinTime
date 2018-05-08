@@ -9,6 +9,8 @@ module Padawan
       end
 
       def index
+        flash[:notice] = 'Esta sección ya no está activa'
+        redirect_to padawan_home_path
       end
 
       def create
