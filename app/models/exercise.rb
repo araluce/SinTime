@@ -27,7 +27,7 @@ class Exercise < ApplicationRecord
             :hours_benefit,
             :minutes_benefit,
             :seconds_benefit,
-            numericality: {allow_nil: false, allow_blank: false}
+            numericality: {allow_nil: false, allow_blank: false}, :unless => Proc.new {|exercise| exercise.type == 'Exercise::Audience'}
 
   validates :time_benefit, numericality: {greater_than_or_equal_to: 0, only_integer: true}
   validate :check_time

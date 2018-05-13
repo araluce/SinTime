@@ -3,12 +3,6 @@ class Exercise::Audience < Exercise
   scope :clan, -> { where(district: true) }
   scope :individual, -> { where(district: false) }
 
-  validates :days_benefit,
-            :hours_benefit,
-            :minutes_benefit,
-            :seconds_benefit,
-            numericality: {allow_nil: true, allow_blank: true}
-
   validates :title,
             :icon,
             presence: true
@@ -31,5 +25,9 @@ class Exercise::Audience < Exercise
 
   def set_time_benefit
     self.time_benefit = 0
+  end
+
+  def check_time
+
   end
 end

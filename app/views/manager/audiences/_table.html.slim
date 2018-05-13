@@ -1,0 +1,19 @@
+.table-responsive
+  table.table
+    thead
+      tr
+        th Icon
+        th Título
+        th Enunciado
+        th Acciones
+    tbody
+      - @objects.each do |object|
+        tr
+          td = image_tag object.icon.url(:thumb), class: 'img-thumbnail'
+          td = object.title.titleize
+          td = object.statement
+          td
+            .action-buttons
+              = link_to fa_icon('eye 2x'), manager_audience_path(object)
+              = link_to fa_icon('cog 2x'), edit_manager_audience_path(object)
+              = link_to fa_icon('times 2x'), manager_audience_path(object), data: {confirm: '¿Estás seguro?'}, method: :delete

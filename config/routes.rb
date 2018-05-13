@@ -124,6 +124,7 @@ Rails.application.routes.draw do
     resources :level_tests
     resources :sports
     resources :happiness
+    resources :audiences
     resources :privileges_cards, except: :new
     resources :scores
     resources :deliveries

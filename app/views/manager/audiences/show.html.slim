@@ -1,0 +1,28 @@
+ol.breadcrumb
+  li.breadcrumb-item = link_to 'Dashboard', manager_home_path
+  li.breadcrumb-item = link_to 'Audiencias', manager_audiences_path
+  li.breadcrumb-item.active Datos del reto de audiencia
+
+.row
+  .col-12
+    .row
+      .col-lg-2.col-md-2.col-xs-12
+        p = image_tag @object.icon.url(:thumb), class: 'img-thumbnail'
+        hr
+        p = link_to 'Volver', manager_audiences_path, class: 'btn btn-primary btn-block'
+        p = link_to 'Editar', edit_manager_audience_path(@object), class: 'btn btn-primary btn-block'
+      .col-lg-5.col-md-5.col-xs-12
+        .card
+          .card-header Datos del reto de audiencia
+          .card-body
+            dl.row
+              dt.col-sm-6 Título
+              dd.col-sm-6 = @object.title.titleize
+
+              dt.col-sm-6 Enunciado
+              dd.col-sm-6 = @object.statement
+
+              dt.col-sm-12 Beneficio por calificación
+              - @object.benefit_scores.each do |benefit_score|
+                dt.col-sm-6 ="*#{ benefit_score.score}"
+                dd.col-sm-6 = seconds_to_s(benefit_score.time_benefit)
