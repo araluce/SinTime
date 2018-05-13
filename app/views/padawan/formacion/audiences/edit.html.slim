@@ -7,10 +7,18 @@
       .col-12
         .card-header Audiencia ante el senado galáctico
         .card-body
-          - unless @delivery.is_corregido?
-            = simple_form_for(@delivery, url: padawan_formacion_audiences_path(@object), as: :object, html: {class: 'form-vertical', multipart: true}) do |f|
+          - unless @delivery.file.exists?
+            = simple_form_for(@delivery, url: padawan_formacion_audiences_path(@object), as: :object, method: 'PATCH', html: {class: 'form-vertical', multipart: true}) do |f|
               p = @object.statement
               = f.association :user, as: :hidden
               = f.association :exercise, as: :hidden
               = f.input :file, label: 'Proyecto de innovación'
-              = f.submit 'Enviar', class: 'btn btn-primary'
+              = f.submit 'Enviar', class: 'btn btn-primary', data: { disable_with: 'Enviando...' }
+
+          - else
+            .row
+              .col-12
+                h6 Tu entrega
+            .row
+              .col-12
+                = link_to "#{@delivery.file_file_name} #{@delivery.score.nil? ? '' : "<div class=\"pull-right\">#{image_tag @delivery.score.icon.url(:thumb), style: 'max-height: 30px'}</div>" } <small class=\"pull-right\">#{@delivery.file_updated_at.to_formatted_s(:long)}</small>".html_safe, @delivery.file.url(:original, false)

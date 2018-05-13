@@ -15,12 +15,19 @@ module Padawan
           redirect_to padawan_formacion_path
         else
           set_delivery
-          render :index
+          render :edit
         end
       end
 
       def update
         @delivery = ExerciseUser.new(delivery_params)
+        if @delivery.save
+          flash[:notice] = 'Entrega realizada correctamente'
+          redirect_to action: :edit
+        else
+          @errors = @delivery.errors.full_messages
+          render :edit
+        end
       end
 
       private
@@ -30,7 +37,7 @@ module Padawan
       end
 
       def set_delivery
-        @delivery = current_user.group_delivery_by_exercise(@object).first
+        @delivery = current_user.exercise_users.group_delivery_by_exercise(@object).first
         @delivery = current_user.exercise_users.build(exercise: @object) if @delivery.nil?
       end
 
