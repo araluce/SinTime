@@ -37,7 +37,7 @@ module Padawan
         def user_permitted?(user)
           if (user.tdv - DateTime.now).to_i >= 7.days.to_i
             flash[:alert] = 'El padawan al que intentas donar tiene más de 7 días'
-          elsif @object.receiver == @object.receiver
+          elsif @object.receiver == @object.sender
             flash[:alert] = 'No puedes donarte a tí mismo'
           else
             return true
