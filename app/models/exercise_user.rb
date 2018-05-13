@@ -42,6 +42,22 @@ class ExerciseUser < ApplicationRecord
     self.save if valid?(:send_second_file)
   end
 
+  class << self
+    def group_delivery_by_user(user)
+      user_ids = user.district.users.pluck(:id)
+      joins(:exercise).where(user: user_ids, exercises: {district: true})
+    end
+
+    def group_delivery_by_user_exercise(user, exercise)
+      group_delivery_by_user(user).where(exercise: exercise)
+    end
+
+    def group_delivery_by_exercise(exercise)
+      joins(:exercise).where(exercises: {district: true}, exercise: exercise)
+    end
+
+  end
+
   private
 
   def check_files

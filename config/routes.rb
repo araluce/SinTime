@@ -61,6 +61,7 @@ Rails.application.routes.draw do
       end
 
       resource :force_domains
+      resource :audiences, only: [:edit, :update]
     end
 
     namespace :comunidad do

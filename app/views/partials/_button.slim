@@ -1,12 +1,22 @@
 - unless defined?(custom_method).nil?
-  = link_to custom_path, method: custom_method.to_sym, class: 'btn future-card btn-sintime', data: {confirm: 'Si aceptas saldrás de la aplicación'} do
-    .row
-      .col-12
-        = image_tag custom_image, alt: custom_label
-    .row
-      .col-12.btn-sintime-label = custom_label
-    - if defined?(badge) && badge > 0
-      .badge.badge-success = badge
+  - if custom_method == 'delete'
+    = link_to custom_path, method: custom_method.to_sym, class: 'btn future-card btn-sintime', data: {confirm: 'Si aceptas saldrás de la aplicación'} do
+      .row
+        .col-12
+          = image_tag custom_image, alt: custom_label
+      .row
+        .col-12.btn-sintime-label = custom_label
+      - if defined?(badge) && badge > 0
+        .badge.badge-success = badge
+  - else
+    = link_to custom_path, method: custom_method.to_sym, class: 'btn future-card btn-sintime' do
+      .row
+        .col-12
+          = image_tag custom_image, alt: custom_label
+      .row
+        .col-12.btn-sintime-label = custom_label
+      - if defined?(badge) && badge > 0
+        .badge.badge-success = badge
 - else
   = link_to custom_path, class: 'btn btn-sintime future-card' do
     .row

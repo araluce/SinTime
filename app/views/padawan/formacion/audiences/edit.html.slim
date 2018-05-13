@@ -1,0 +1,16 @@
+.row
+  .col-12.future-card
+    .row style="margin-bottom: 1%;"
+      .col-12
+        = link_to fa_icon('fw chevron-circle-left', text: 'Volver'), padawan_formacion_path, class: 'btn btn-border-black pull-right'
+    .row
+      .col-12
+        .card-header Audiencia ante el senado galáctico
+        .card-body
+          - unless @delivery.is_corregido?
+            = simple_form_for(@delivery, url: padawan_formacion_audiences_path(@object), as: :object, html: {class: 'form-vertical', multipart: true}) do |f|
+              p = @object.statement
+              = f.association :user, as: :hidden
+              = f.association :exercise, as: :hidden
+              = f.input :file, label: 'Proyecto de innovación'
+              = f.submit 'Enviar', class: 'btn btn-primary'
