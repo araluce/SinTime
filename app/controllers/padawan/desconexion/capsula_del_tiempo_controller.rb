@@ -9,6 +9,8 @@ module Padawan
       end
 
       def index
+        flash[:notice] = 'Esta sección no está disponible'
+        redirect_to padawan_comunidad_altruismo_path
         @object = model.new
       end
 
