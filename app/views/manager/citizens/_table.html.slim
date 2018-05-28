@@ -2,18 +2,18 @@
   table.table
     thead
       tr
-        th Puesto
+        th Puesto final
         th Avatar
         th Alias
         th TDV
-        th Puesto final
+        th Puesto este mes
         th Rango
         th Distrito
         th Acciones
     tbody
-      - @objects.each_with_index do |citizen_ranking, index|
+      - @user_final_ranking.each_with_index do |citizen_ranking, index|
         - citizen = citizen_ranking[:user]
-        - final_range = @user_final_ranking.find_index({user: citizen, score: citizen.banking_movements.map {|banking_movement| banking_movement.seconds_difference }.sum}) + 1
+        - final_range = @objects.find_index({user: citizen, score: citizen.banking_movements.where(created_at: DateTime.now.beginning_of_month..DateTime.now.end_of_month).map {|banking_movement| banking_movement.seconds_difference }.sum}) + 1
         tr
           td = index + 1
           td = render 'partials/avatar', user: citizen, avatar_style: :thumb, custom_class: 'img-circle'
@@ -26,6 +26,6 @@
           td = citizen.district
           td
             .action-buttons
-              = link_to fa_icon('eye 2x'), manager_citizen_path(citizen)
-              = link_to fa_icon('cog 2x'), edit_manager_citizen_path(citizen)
-              = link_to fa_icon('times 2x'), manager_citizen_path(citizen), data: {confirm: '¿Estás seguro?'}, method: :delete
+              = link_to fa_icon('fw eye 2x'), manager_citizen_path(citizen)
+              = link_to fa_icon('fw cog 2x'), edit_manager_citizen_path(citizen)
+              = link_to fa_icon('fw times 2x'), manager_citizen_path(citizen), data: {confirm: '¿Estás seguro?'}, method: :delete
