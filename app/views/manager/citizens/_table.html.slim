@@ -21,7 +21,7 @@
           td = "#{seconds_to_s((citizen.tdv - DateTime.now).to_i)}"
           td = final_range
           td
-            - range_icon = UserRange.where('min_score >= ?', final_range).order(min_score: :desc).last
+            - range_icon = UserRange.where('min_score >= ?', @user_final_ranking).order(min_score: :desc).last
             = range_icon.range_text
           td = citizen.district
           td
