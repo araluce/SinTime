@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/tweets', to: 'static#tweets'
   get '/compartir', to: 'static#compartir'
   get '/register', to: 'static#register'
+  get '/contact', to: 'static#contact'
   post '/check_register', to: 'static#check_register', as: :check_register
   patch '/register_user', to: 'static#register_user', as: :register_user
   post 'get_messages', to: 'messages#get_messages'

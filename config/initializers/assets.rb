@@ -26,5 +26,7 @@ Rails.application.config.assets.precompile += %w( application.js )
 Rails.application.config.assets.precompile += %w( chat.css )
 Rails.application.config.assets.precompile += %w( chat.js )
 
+Rails.application.config.assets.precompile += %w( contact.css )
+
 # Mailers files
 Rails.application.config.assets.precompile += %w( mailers/no_reply.css )

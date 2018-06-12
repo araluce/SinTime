@@ -1,4 +1,6 @@
 class StaticController < ApplicationController
+  layout :resolve_layout
+
   def home
   end
 
@@ -44,6 +46,9 @@ class StaticController < ApplicationController
     end
   end
 
+  def contact
+  end
+
   private
 
   def user_model
@@ -62,6 +67,15 @@ class StaticController < ApplicationController
         :password_confirmation,
         :email
     )
+  end
+
+  def resolve_layout
+    case action_name
+      when 'contact'
+        'contact'
+      else
+        'application'
+    end
   end
 
 end

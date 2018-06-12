@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    title SinTime
+    = csrf_meta_tags
+
+    = stylesheet_link_tag    'contact', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer
+    = render 'application/favicon'
+
+    - if Rails.env.production?
+      script type="text/javascript"
+        = render 'partials/analytics/script.js'
+
+  .page.home-background
+    .container-fluid
+      = render 'static/navbar'
+
+      .alert-content
+        - if notice
+          script
+            = render 'application/alert.js.erb', alert_class: 'success', text: notice
+        - if alert
+          script
+            = render 'application/alert.js.erb', alert_class: 'danger', text: alert
+        - if defined? @errors
+          script
+            = render 'application/alert.js.erb', alert_class: 'danger', text: @errors.full_messages
+
+      .home
+        = yield
+
+      = render 'padawan/footer'
