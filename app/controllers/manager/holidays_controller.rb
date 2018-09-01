@@ -13,7 +13,7 @@ module Manager
 
     def index
       @object = model.new
-      @objects = User.in_holidays
+      set_objects
     end
 
     def create
@@ -40,6 +40,11 @@ module Manager
 
     def model
       BankingMovement
+    end
+
+    def set_objects
+      @objects = model.in_holidays.all.map{|user| {user: user, score: user.banking_movements.where(created_at: DateTime.now.beginning_of_month..DateTime.now.end_of_month).map {|banking_movement| banking_movement.seconds_difference }.sum}}.sort_by{|obj| -obj[:score]}
+      @user_final_ranking = model.in_holidays.all.map{|user| {user: user, score: user.banking_movements.map {|banking_movement| banking_movement.seconds_difference }.sum}}.sort_by{|obj| -obj[:score]}
     end
 
     def object_params
