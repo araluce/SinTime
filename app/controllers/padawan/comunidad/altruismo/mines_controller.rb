@@ -13,12 +13,16 @@ module Padawan
         end
 
         def detach
-          if params[:object][:code].parameterize == @object.code.parameterize
-            result = UserMine.create(user: current_user, mine: @object)
-            if result.valid?
-              flash[:notice] = 'Enhorabuena! Mina desactivada'
+          if @object.valid_until < DateTime.now
+            if params[:object][:code].parameterize == @object.code.parameterize
+              result = UserMine.create(user: current_user, mine: @object)
+              if result.valid?
+                flash[:notice] = 'Enhorabuena! Mina desactivada'
+              else
+                flash[:alert] = result.errors.full_messages.sum
+              end
             else
-              flash[:alert] = result.errors.full_messages.sum
+              flash[:alert] = 'Código incorrecto'
             end
           else
             flash[:alert] = 'Código incorrecto'
