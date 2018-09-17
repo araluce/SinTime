@@ -20,4 +20,4 @@
             .col-lg-12
               = f.date_select(:dob, order: [:day, :month, :year], class: 'form-control',  start_year: Date.current.year-18, end_year: Date.current.year- 35)
         = f.button :submit, 'Actualizar mis datos', class: 'btn btn-lg btn-primary'
-        = link_to 'Volver', padawan_padawan_info_path, class: 'pull-right btn btn-lg btn-secondary'
+        = link_to 'Volver', padawan_padawan_info_path, class: 'pull-right btn btn-lg btn-primary'

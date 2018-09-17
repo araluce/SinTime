@@ -5,8 +5,8 @@
     .row style="margin-bottom: 1%; margin-top: 1%;"
       .col-12
         .btn-pref.btn-group.btn-group-justified.btn-group-lg role="group" style="width: 100%"
-          = link_to fa_icon('fw lock', text: 'Cambiar de usuario'), edit_padawan_comunidad_login_path(object), class: 'btn btn-border-black', style: 'width: 50%'
-          = link_to fa_icon('fw chevron-circle-left', text: 'Volver'), padawan_comunidad_path, class: 'btn btn-border-black', style: 'width: 50%'
+          = link_to fa_icon('fw lock', text: 'Cambiar de usuario'), edit_padawan_comunidad_login_path(object), class: 'btn btn-primary', style: 'width: 50%'
+          = link_to fa_icon('fw chevron-circle-left', text: 'Volver'), padawan_comunidad_path, class: 'btn btn-primary', style: 'width: 50%'
     - if object
       .box
         h4 = object.statement
