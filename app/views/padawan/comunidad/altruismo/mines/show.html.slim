@@ -8,7 +8,7 @@
         .card
           .card-header Datos de la mina
           .card-body
-            dl.row
+            dl.row class="#{'mb-5' unless @object.available?}"
               dt.col-sm-12.text-center = @object
 
               dt.col-sm-12 Pistas
@@ -18,14 +18,15 @@
               - else
                 dd.col-sm-12 No tines pistas para esta mina
 
-            .row
+            .row class="#{'mb-5' unless @object.available?}"
               .col-lg-6.col-12
-                - klass = @object.available? ? 'circle-danger' : 'circle-success'
+                - klass = @object.disarmed? ? 'circle-success' : 'circle-danger'
                 .view
                   .plane.main
                     - for x in (0..6)
                       div class=klass
               .col-lg-6.col-12
-                = simple_form_for(UserMine.new, url: padawan_comunidad_altruismo_mine_detach_path(@object), as: :object, html: {class: 'form-vertical'}) do |f|
-                  = f.input :code, label: 'Código'
-                  = f.button :submit, 'Desactivar', class: 'btn btn-primary btn-block'
+                - if @object.available?
+                  = simple_form_for(UserMine.new, url: padawan_comunidad_altruismo_mine_detach_path(@object), as: :object, html: {class: 'form-vertical'}) do |f|
+                    = f.input :code, label: 'Código'
+                    = f.button :submit, 'Desactivar', class: 'btn btn-primary btn-block'

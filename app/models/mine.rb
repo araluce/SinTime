@@ -38,6 +38,10 @@ class Mine < ApplicationRecord
     valid_until > DateTime.now
   end
 
+  def disarmed?
+    user_mines.any?
+  end
+
   private
 
   def set_time_benefit
