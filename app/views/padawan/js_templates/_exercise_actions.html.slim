@@ -1,0 +1,11 @@
+- if (exercise.district && deliveries.district_exercises_purchased.empty? ) || (!exercise.district && deliveries.individual_exercises_purchased.empty?)
+  - if (previous_history_whit_exercise.any? && previous_history_whit_exercise.last.is_corregido?) || previous_history_whit_exercise.empty?
+    - unless exercise.is_water? && exercise.is_individual?
+      = link_to 'Buy', padawan_viveres_purchase_exercise_path(exercise_id: exercise), class: 'add-to-cart btn btn-default', remote: true
+- elsif previous_history_whit_exercise.comprado.any?
+  = render 'padawan/viveres/delivery_form', object: previous_history_whit_exercise.comprado.first
+  - if exercise.is_clan?
+    = link_to 'Cancelar Compra', padawan_viveres_rewind_exercise_path(exercise_id: exercise), class: 'add-to-cart btn btn-default pull-right', remote: true
+- else
+  .alert.alert-warning
+    strong Ya has comprado un ejercicio

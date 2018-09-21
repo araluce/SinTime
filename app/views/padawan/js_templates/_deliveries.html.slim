@@ -1,0 +1,7 @@
+.deliveries
+  - if previous_history_whit_exercise.any?
+    h5 Entregas:
+    .row
+  - previous_history_whit_exercise.deliveries.each do |delivery|
+    .col-12.mb-2
+      = render 'padawan/js_templates/exercise_link', exercise: delivery

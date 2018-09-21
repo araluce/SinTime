@@ -25,13 +25,15 @@ class ExerciseUser < ApplicationRecord
   end
 
   scope :deliveries, -> {where.not(file_file_name: nil)}
-  scope :water, -> {joins(:exercise).where('exercises.feeding_type = 1')}
-  scope :food, -> {joins(:exercise).where('exercises.feeding_type = 0')}
-  scope :individual, -> {joins(:exercise).where('exercises.district = 0')}
-  scope :clan, -> {joins(:exercise).where('exercises.district = 1')}
-  scope :questionnaires, -> {joins(:exercise).where("exercises.type = 'Exercise::Questionnaire'")}
-  scope :happiness, -> {joins(:exercise).where("exercises.type = 'Exercise::Happiness'")}
+  scope :water, -> { joins(:exercise).where(exercises: {feeding_type: true}) }
+  scope :food, -> { joins(:exercise).where(exercises: {feeding_type: false}) }
+  scope :individual, -> { joins(:exercise).where(exercises: { district: false }) }
+  scope :clan, -> { joins(:exercise).where(exercises: {district: true}) }
+  scope :questionnaires, -> {joins(:exercise).where(exercises: {type: 'Exercise::Questionnaire'})}
+  scope :happiness, -> {joins(:exercise).where(exercises: {type: 'Exercise::Happiness'})}
   scope :updated_last_week, -> {where(updated_at: (DateTime.now.beginning_of_week - 1.week)..(DateTime.now.end_of_week - 1.week))}
+  scope :district_exercises_purchased, -> { comprado.joins(:exercise).where(exercises: {district: true}) }
+  scope :individual_exercises_purchased, -> { comprado.joins(:exercise).where(exercises: {district: false}) }
 
   def save_file!
     self.save if valid?(:send_file)

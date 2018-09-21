@@ -1,0 +1,5 @@
+.row
+  - if exercise.score
+    .col-1 = image_tag(exercise.score.icon.url(:thumb), style: 'max-height: 30px')
+  div class="col#{'-7' if exercise.score}" = exercise.file_file_name
+  .col-4 = exercise.score ? exercise.file_updated_at.to_formatted_s(:long) : 'Enviado a corrección'

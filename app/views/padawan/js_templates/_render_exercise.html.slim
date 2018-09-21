@@ -1,43 +1,34 @@
-
 - if @response
   - previous_history_whit_exercise = @my_deliveries.where(exercise: @object)
-  - district_exercises_purchased = @my_deliveries.comprado.joins(:exercise).where('exercises.district = 1')
-  - individual_exercises_purchased = @my_deliveries.comprado.joins(:exercise).where('exercises.district = 0')
 
   .exercise-preview data-exercise-id="#{@object.id}"
     .card
       .container-fluid
         .row.wrapper
-          .col-lg-6.col-md-12.preview
-            .preview-pic.tab-content
-              .pic.tab-pane.active = image_tag @object.icon.url(:medium), class: 'img-thumbnail'
+          .col-lg-3.col-md-12
+            .row
+              .col.preview
+                .preview-pic.tab-content
+                  .preview-pic-badge.text-center
+                    - if previous_history_whit_exercise.any?
+                      h3
+                        span.badge.badge-success = previous_history_whit_exercise.last.status
+                  .pic.tab-pane.active = image_tag @object.icon.url(:medium), class: 'img-thumbnail'
+            .row
+              .col
+                = render 'padawan/js_templates/exercise_price', exercise: @object
 
-          .col-lg-6.col-md-12.details
+
+          .col-lg-9.col-md-12.details
             h3.product-title
               = @object.title.titleize
-              - if previous_history_whit_exercise.any?
-                span.badge.badge-success.pull-right = previous_history_whit_exercise.last.status
 
             .rating
-              span.review-no
-                b = "#{@object.users.count} veces comprado"
-                = @object.statement
+              = render 'padawan/js_templates/exercise_review', exercise: @object
+              = render 'padawan/js_templates/exercise_description', exercise: @object
+              = render 'padawan/js_templates/deliveries', previous_history_whit_exercise: previous_history_whit_exercise
 
-              p.product-description
-                b = "Reto #{@object.is_clan? ? 'de distrito' : 'individual'}"
 
-              .deliveries
-                - if previous_history_whit_exercise.any?
-                  h5 Entregas:
-                  .row
-                - previous_history_whit_exercise.deliveries.each do |delivery|
-                  .col-12
-                    .box
-                      = link_to "#{delivery.file_file_name} #{delivery.score.nil? ? '' : "<div class=\"pull-right\">#{image_tag delivery.score.icon.url(:thumb), style: 'max-height: 30px'}</div>" } <small class=\"pull-right\">#{delivery.file_updated_at.to_formatted_s(:long)}</small>".html_safe, delivery.file.url(:original, false)
-
-              h4.price
-                | Precio
-                p = seconds_to_s(@object.time_benefit)
 
               - if previous_history_whit_exercise.comprado.any?
                 .class-exercises-alerts
@@ -45,14 +36,4 @@
                     strong Ejercicio comprado
 
               .action
-                - if (@object.district && district_exercises_purchased.empty? ) || (!@object.district && individual_exercises_purchased.empty?)
-                  - if (previous_history_whit_exercise.any? && previous_history_whit_exercise.last.is_corregido?) || previous_history_whit_exercise.empty?
-                    - unless @object.is_water? && @object.is_individual?
-                      = link_to 'Buy', padawan_viveres_purchase_exercise_path(exercise_id: @object), class: 'add-to-cart btn btn-default', remote: true
-                - elsif previous_history_whit_exercise.comprado.any?
-                  = render 'padawan/viveres/delivery_form', object: previous_history_whit_exercise.comprado.first
-                  - if @object.is_clan?
-                    = link_to 'Cancelar Compra', padawan_viveres_rewind_exercise_path(exercise_id: @object), class: 'add-to-cart btn btn-default pull-right', remote: true
-                - else
-                  .alert.alert-warning
-                    strong Ya has comprado un ejercicio
+                = render 'padawan/js_templates/exercise_actions', exercise: @object, deliveries: @my_deliveries, previous_history_whit_exercise: previous_history_whit_exercise

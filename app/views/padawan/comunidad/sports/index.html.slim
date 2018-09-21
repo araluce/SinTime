@@ -12,12 +12,20 @@
         h4 = object.statement
         fieldset
           legend Reto Ciclismo
-          p = "Velocidad: #{object.speed} kms/h"
-          p = "Duración: #{seconds_to_s(object.time_cycling)} kms/h"
+          .row
+            .col-4
+              = render 'svg/cycling', fill: '#fff'
+            .col-8
+              p = "Velocidad: #{object.speed} kms/h"
+              p = "Duración: #{seconds_to_s(object.time_cycling)}"
         fieldset
           legend Reto Running
-          p = "Ritmo: #{object.pace} min/km"
-          p = "Duración: #{seconds_to_s(object.time_running)} kms/h"
+          .row
+            .col-4
+              = render 'svg/running', stroke: '#000', fill: '#fff'
+            .col-8
+              p = "Ritmo: #{object.pace} min/km"
+              p = "Duración: #{seconds_to_s(object.time_running)}"
 
   - if object && @sessions.any?
     .col-12 style="margin-top: 1%"
