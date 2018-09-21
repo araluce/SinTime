@@ -8,7 +8,7 @@
         .card
           .card-header Datos de la mina
           .card-body
-            dl.row class="#{'mb-5' unless @object.available?}"
+            dl.row.mb-5
               dt.col-sm-12.text-center = @object
 
               dt.col-sm-12 Pistas
@@ -18,8 +18,8 @@
               - else
                 dd.col-sm-12 No tines pistas para esta mina
 
-            .row class="#{'mb-5' unless @object.available?}"
-              .col-lg-6.col-12
+            .row
+              .col-lg-6.col-12.mb-5
                 - klass = @object.disarmed? ? 'circle-success' : 'circle-danger'
                 .view
                   .plane.main
