@@ -4,12 +4,7 @@
       .col-12
         .row
           .col-12
-            .home-title-edition
-              = image_tag 'titulo_low.png'
+            .home-title-edition = image_tag 'titulo_low.png'
         .row
-          .col-6.home-button
-            = link_to padawan_home_path, class: 'burbank padawan' do
-              | Acceso padawan
-          .col-6.home-button
-            = link_to manager_home_path, class: 'burbank admin' do
-              | Acceso Guidoogway
+          .col-6.home-button = link_to 'Acceso padawan', padawan_home_path, class: 'burbank padawan'
+          .col-6.home-button = link_to 'Acceso Guidoogway', manager_home_path, class: 'burbank admin'

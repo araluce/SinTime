@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get '/404', to: 'errors#not_found'
+  get '/500', to: 'errors#internal_server_error'
+
   mount RailsAdmin::Engine => '/super_admin', as: 'rails_admin'
   devise_for :admins
   devise_for :users, controllers: {sessions: 'devise/citizen/sessions'}

@@ -20,6 +20,8 @@ Rails.application.config.assets.precompile += %w( padawan.js )
 Rails.application.config.assets.precompile += %w( manager.css )
 Rails.application.config.assets.precompile += %w( manager.js )
 
+Rails.application.config.assets.precompile += %w( error.css )
+
 Rails.application.config.assets.precompile += %w( application.css )
 Rails.application.config.assets.precompile += %w( application.js )
 
