@@ -11,5 +11,5 @@
             p = @object.statement
             = f.association :user, input_html: {value: current_user.id}, as: :hidden
             = f.association :questionnaire, input_html: {value: @object.id}, as: :hidden
-            = f.association :options, collection: @object.options, multiple: true, as: :check_boxes, selected: [], wrapper_class: 'row', item_wrapper_class: 'col-12'
+            = f.association :options, collection: @object.options, multiple: true, as: :check_boxes, selected: [], wrapper_class: '', item_wrapper_class: 'radio-check'
             = f.submit 'Corregir', class: 'btn btn-primary'

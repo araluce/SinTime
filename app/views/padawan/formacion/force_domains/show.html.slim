@@ -16,7 +16,7 @@
               tbody
                 - @objects.each do |object|
                   - is_evaluate = current_user.questionnaires.include? object
-                  tr class="#{is_evaluate ? 'table-notice' : 'table-warning'}"
+                  tr class="#{is_evaluate ? 'table-notice' : 'table-warning'}" style="#{'color: black;' unless is_evaluate}"
                     td
                       - if is_evaluate
                         = current_user.user_questionnaires.where(questionnaire: object).first.all_right? ? fa_icon('fw check lg') : fa_icon('fw times lg')
@@ -25,5 +25,5 @@
                     td = object.statement
                     td
                       - unless is_evaluate
-                        = link_to '¡Hacer!', edit_padawan_formacion_force_domains_path(id: object), class: 'btn btn-block btn-primary'
+                        = link_to '¡Hacer!', edit_padawan_formacion_force_domains_path(id: object), class: 'btn btn-block btn-primary', style: 'border-color: black; color: black;'
 
