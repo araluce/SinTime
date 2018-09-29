@@ -19,10 +19,9 @@ module Padawan
 
       def set_objects
         @objects_clan = model.clan.water.order(created_at: :desc)
-        @objects_individual = []
-        current_user.water_deliveries.each do |delivery|
-          @objects_individual << delivery.exercise
-        end
+
+        @objects_individual = current_user.water_deliveries_individual.map(&:exercise)
+
         if @objects_individual.empty?
           set_random_exercise
         end

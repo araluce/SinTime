@@ -1,0 +1,28 @@
+- if collection.any?
+  - real_size = collection.count
+  - ideal_size = 5
+  - less_than_ideal = real_size < ideal_size
+  - multiply = less_than_ideal ? real_size : ideal_size
+  - initial_index = multiply
+
+  - style_box_margin = 6
+  - style_box_width = 155
+  - style_total_margins_to_apply = multiply + 1
+  - style_margin_sum = style_box_margin * style_total_margins_to_apply
+  - style_final_width_per_box = style_box_width + style_margin_sum
+  - style_final_container_width = multiply * style_final_width_per_box
+
+  - style_final_container_width_to_s = "width: #{style_final_container_width}px;"
+
+  - collection.each_with_index do |object, index|
+    - rest_index = initial_index - (index % initial_index)
+    - multiply_success = rest_index.zero? ? true : (multiply % rest_index).zero?
+    - multiply_success = false if rest_index == 1 && real_size != 1
+
+    - next unless multiply_success
+    .feed-container style="#{style_final_container_width_to_s}"
+      - top = initial_index * ((index.to_f / initial_index) + 1)
+
+      - (index...top).each do |mini_index|
+        - next unless collection[mini_index]
+        .feed-box = link_to image_tag(collection[mini_index].icon.url(:thumb), class: 'img-responsive'), padawan_viveres_print_exercise_path(collection[mini_index]), remote: true

@@ -70,18 +70,49 @@ body {
 
 }
 
+
 .future-card-button{
+  --borderWidth: 3px;
+  position: relative;
+  border-radius: var(--borderWidth);
+  background: transparent!important;
   //background-color: white;
-  border-radius: 15px;
-  border: 3px rgba(255, 255, 255, 0.8) solid;
+  //border-radius: 15px;
+  //border: 3px rgba(255, 255, 255, 0.8) solid;
   padding: 55px;
-  -moz-box-shadow:    inset 0 0 10px 10px rgba(255, 255, 255, .7);
-  -webkit-box-shadow: inset 0 0 10px 10px rgba(255, 255, 255, .7);
-  box-shadow:         inset 0 0 10px 10px rgba(255, 255, 255, .7);
+  //-moz-box-shadow:    inset 0 0 10px 10px rgba(255, 255, 255, .7);
+  //-webkit-box-shadow: inset 0 0 10px 10px rgba(255, 255, 255, .7);
+  //box-shadow:         inset 0 0 10px 10px rgba(255, 255, 255, .7);
   min-height: 100px;
 
   label{
     text-transform: uppercase;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, rgba(247, 149, 51, 0.2), rgba(243, 112, 85, 0.2), rgba(239, 78, 123, 0.2), rgba(161, 102, 171, 0.2), rgba(80, 115, 184, 0.2), rgba(16, 152, 173, 0.2), rgba(7, 179, 155, 0.2), rgba(111, 186, 130, 0.2));
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+  }
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 

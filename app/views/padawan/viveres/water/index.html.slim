@@ -9,13 +9,11 @@
         .btn-pref.btn-group.btn-group-justified.btn-group-lg role="group" style="width: 100%"
           = link_to fa_icon('fw chevron-circle-left', text: 'Volver'), padawan_viveres_path, class: 'btn btn-primary', style: 'width: 100%'
 
-    .row
-      - @objects_clan.each do |object|
-        .col = link_to image_tag(object.icon.url(:thumb), class: 'img-responsive'), padawan_viveres_print_exercise_path(object), remote: true, class: 'btn', style: 'width: 100%'
-    .row
-      - if @objects_individual.any?
-        .col = link_to image_tag(@objects_individual.first.icon.url(:thumb), class: 'img-responsive'), padawan_viveres_print_exercise_path(@objects_individual.first), remote: true, class: 'btn', style: 'width: 100%'
-      -else
+    = render 'partials/feed_grill', collection: @objects_clan
+    - if @objects_individual.any?
+      = render 'partials/feed_grill', collection: @objects_individual
+    - else
+      .row
         .col = link_to image_tag('padawan/viveres/gota.png', class: 'img-responsive'), padawan_viveres_purchase_exercise_path(exercise_id: @random_exercise.id), remote: true, class: 'btn', id: 'btn-random-js', style: 'width: 100%'
 
     .row

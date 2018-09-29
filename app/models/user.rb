@@ -129,11 +129,15 @@ class User < ApplicationRecord
   end
 
   def food_deliveries
-    exercise_users.joins(:exercise).where('exercises.feeding_type = 0')
+    exercise_users.comprado.joins(:exercise).where(exercises: {type: 'Exercise::Feeding', feeding_type: 0})
   end
 
   def water_deliveries
-    exercise_users.comprado.joins(:exercise).where('exercises.feeding_type = 1')
+    exercise_users.comprado.joins(:exercise).where(exercises: {type: 'Exercise::Feeding', feeding_type: 1})
+  end
+
+  def water_deliveries_individual
+    exercise_users.comprado.joins(:exercise).where(exercises: {type: 'Exercise::Feeding', feeding_type: 1, district: false})
   end
 
   def individual_chats
