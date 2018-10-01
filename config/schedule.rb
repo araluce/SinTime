@@ -21,9 +21,9 @@
 set :environment, ENV['RAILS_ENV']
 
 every :weekday, at: '01:00' do
-  rake 'cron:twitter', :output => {:error => 'log/twitter_cron_error.log', :standard => 'log/twitter_cron.log'}
+  # rake 'cron:twitter', :output => {:error => 'log/twitter_cron_error.log', :standard => 'log/twitter_cron.log'}
 end
 
 every :monday, at: '01:00' do
-  rake 'cron:runtastic', :output => {:error => 'log/runtastic_cron_error.log', :standard => 'log/runtastic_cron.log'}
+  # rake 'cron:runtastic', :output => {:error => 'log/runtastic_cron_error.log', :standard => 'log/runtastic_cron.log'}
 end
