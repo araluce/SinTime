@@ -7,8 +7,9 @@ class UserRuntastic < ApplicationRecord
   def perform
     code = 1 # Logged and updated
     begin
-      crypt = ActiveSupport::MessageEncryptor.new(Rails.application.secrets.salt)
-      loginInformation = Runtastic::LoginService.login(email, crypt.decrypt_and_verify(self.password))
+      # crypt = ActiveSupport::MessageEncryptor.new(Rails.application.secrets.salt)
+      # loginInformation = Runtastic::LoginService.login(email, crypt.decrypt_and_verify(self.password))
+      loginInformation = Runtastic::LoginService.login(email, self.password)
       code = 2 if process_activities(loginInformation).empty? # code = 2 Already up to date
     rescue RestClient::Unauthorized
       code = 0 # Unauthorized
@@ -44,8 +45,8 @@ class UserRuntastic < ApplicationRecord
   end
 
   def encrypted_consumer_key
-    crypt = ActiveSupport::MessageEncryptor.new(Rails.application.secrets.salt)
-    encrypted_password = crypt.encrypt_and_sign(self.password)
-    self.password = encrypted_password
+    # crypt = ActiveSupport::MessageEncryptor.new(Rails.application.secrets.salt)
+    # encrypted_password = crypt.encrypt_and_sign(self.password)
+    # self.password = encrypted_password
   end
 end
