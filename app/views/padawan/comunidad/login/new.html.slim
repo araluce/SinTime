@@ -1,4 +1,14 @@
+.row.mb-1.mt-1
+  .col-12
+    ul.game-nav
+      li.one = link_to fa_icon('fw chevron-circle-left', text: 'Volver'), padawan_comunidad_sports_path
+
+
 .row
-  .col-12.future-card
-    = simple_form_for(@object, url: padawan_comunidad_login_index_path) do |f|
-      = render 'form', f: f
+  .col-12
+    .card
+      .card-header
+        h3 Conecta con tu cuenta de Runtastic
+      .card-body
+        = simple_form_for(@object, url: padawan_comunidad_login_index_path) do |f|
+          = render 'form', f: f

@@ -1,0 +1,35 @@
+.game-tab{
+  background: #21212d;
+
+  ul{
+    border-bottom: 1px solid #313131;
+
+    li{
+      text-align: center;
+      border-right: 1px solid #313131;
+
+      a{
+        text-transform: uppercase;
+        color: #e9e9e9;
+        font-size: 0.8rem;
+        line-height: 25px;
+        font-weight: 600;
+        padding: 15px 13px;
+        display: block;
+        text-decoration: none;
+
+        &:hover, &:focus, &.active{
+          color: #f68b1f;
+        }
+      }
+
+      &.one{ width: 100%; }
+      &.two{ width: 50%; }
+      &.three{ width: 33.33%; }
+      &.four{ width: 25%; }
+      &.five{ width: 20%; }
+      &.six{ width: 16.66%; }
+      &.seven{ width: 14.285%; }
+    }
+  }
+}

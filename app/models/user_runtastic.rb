@@ -1,11 +1,14 @@
 class UserRuntastic < ApplicationRecord
+  before_save :encrypted_consumer_key
+
   belongs_to :user, inverse_of: :user_runtastic
   has_many :activity_logs, inverse_of: :user_runtastic
 
   def perform
     code = 1 # Logged and updated
     begin
-      loginInformation = Runtastic::LoginService.login(email, password)
+      crypt = ActiveSupport::MessageEncryptor.new(Rails.application.secrets.salt)
+      loginInformation = Runtastic::LoginService.login(email, crypt.decrypt_and_verify(self.password))
       code = 2 if process_activities(loginInformation).empty? # code = 2 Already up to date
     rescue RestClient::Unauthorized
       code = 0 # Unauthorized
@@ -38,5 +41,11 @@ class UserRuntastic < ApplicationRecord
           data: activity[:data]
       ) rescue nil
     end
+  end
+
+  def encrypted_consumer_key
+    crypt = ActiveSupport::MessageEncryptor.new(Rails.application.secrets.salt)
+    encrypted_password = crypt.encrypt_and_sign(self.password)
+    self.password = encrypted_password
   end
 end

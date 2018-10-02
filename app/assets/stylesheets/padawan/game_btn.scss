@@ -1,0 +1,24 @@
+.btn.btn-primary{
+  font-weight: 500;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #dedede;
+  background: transparent;
+  border: 2px solid #dedede;
+  text-transform: uppercase;
+  line-height: 18px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &:hover, &:focus{
+    background: #f68b1f;
+    border-color: #f68b1f;
+    color: #fff;
+    outline: 1px dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+  }
+}

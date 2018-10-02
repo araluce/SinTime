@@ -7,8 +7,9 @@
       span.align-middle = user.alias.first rescue '~'
 
 - else
-  - if defined? avatar_style
-    = image_tag user.avatar.url(avatar_style), class: "#{defined?(custom_class) ? custom_class : ''}", style: "#{defined?(custom_style) ? custom_style : ''}"
-  - else
-    = image_tag user.avatar.url, class: "#{defined?(custom_class) ? custom_class : ''}", style: "#{defined?(custom_style) ? custom_style : ''}"
+  .game-avatar
+    - if defined? avatar_style
+      = image_tag user.avatar.url(avatar_style), class: "#{defined?(custom_class) ? custom_class : ''}", style: "#{defined?(custom_style) ? custom_style : ''}"
+    - else
+      = image_tag user.avatar.url, class: "#{defined?(custom_class) ? custom_class : ''}", style: "#{defined?(custom_style) ? custom_style : ''}"
 

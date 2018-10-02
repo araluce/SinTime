@@ -9,7 +9,7 @@
       - if user && (user != message.user)
         .row
           .col-4
-            = render 'partials/avatar', user: message.user, avatar_style: :thumb, custom_style: 'max-width: 100%'
+            = render 'partials/avatar', user: message.user, custom_style: 'max-width: 83px'
           .col-8
             span.message-time = "@#{message.user.alias}"
       .col-12
