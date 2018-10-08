@@ -8,4 +8,4 @@
           = link_to 'Herramientas', padawan_home_path, class: 'btn btn-primary', style: 'width: 25%', remote: true
           = link_to 'Compartidos', padawan_home_path, class: 'btn btn-primary', style: 'width: 25%', remote: true
     .row
-      = render 'padawan/partials/tweet'
+      = render 'padawan/partials/tweet', collection: @tweets, as: :tweet

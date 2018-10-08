@@ -18,15 +18,33 @@ module Padawan
 
         unless _tweeter.nil?
           if _tweeter
-            @tweets = TwitterService.get_latest_tweet_by_user(_tweeter.to_s)
+            @tweets = TwitterService.get_all_tweets(_tweeter.to_s)
             check_private_profile
           else
-            @tweets = TwitterService.get_latest_tweet_by_user(current_user.tweeters.first&.to_s)
+            @tweets = TwitterService.get_all_tweets(current_user.tweeters.first&.to_s)
             check_private_profile
           end
         end
 
         render 'load_tweeter_tweets.coffee.js.erb'
+      end
+
+      def load_tweets
+        object_initialization
+        tweeter = Tweeter.find( params[:user][:tweeter_ids]) rescue nil
+
+        if tweeter
+          @tweet_ids = TwitterService.get_latest_tweet_by_user(_tweeter.to_s)
+          check_private_profile
+        else
+          @tweet_ids = TwitterService.get_latest_tweet_by_user(current_user.tweeters.first&.to_s)
+          check_private_profile
+        end
+      end
+
+      def print_tweet
+        tweet_id = params[:tweet_id]
+        @tweet = TwitterService.get_tweet_by_id tweet_id
       end
 
       def mochila

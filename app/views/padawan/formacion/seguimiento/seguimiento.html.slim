@@ -25,4 +25,4 @@
         = f.button :submit, 'Cargar tweets', class: 'btn btn-block btn-primary', data: { disable_with: 'Cargando...' }
 
     .row.tweet-loader
-      = render 'padawan/partials/tweet'
+      = render 'padawan/partials/tweet', collection: @tweets, as: :tweet

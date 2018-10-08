@@ -1,0 +1,15 @@
+$('.tweet-loader').append('<div class="col-lg-6 col-sm-12" id="load-tweet-<%= tweet_id %>"></div>');
+
+$.ajax(Routes.padawan_formacion_print_tweet_path({
+    format: "js"
+}), {
+    type: 'GET',
+    dataType: 'script',
+    data: {
+        tweet_id: '<%= tweet_id %>'
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+        console.log("AJAX Error: " + textStatus);
+        return console.log("Error: " + errorThrown);
+    }
+});

@@ -1,5 +1,5 @@
 <%- if @tweets && @tweets.any? %>
-  $('.tweet-loader').html('<%= j(render 'padawan/partials/tweet') %>')
+  $('.tweet-loader').html('<%= j(render 'padawan/partials/tweet', collection: @tweets, as: :tweet) %>')
 <%- end %>
 <%- if @tweets_count %>
   $('.tweets_count').html('<%= "#{@tweets_count}/#{@max_tweets_per_day}" %>')

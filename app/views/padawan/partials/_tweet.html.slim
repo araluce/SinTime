@@ -1,21 +1,19 @@
-- if @tweets
-  - @tweets.each do |tweet|
-    .col-lg-6.col-sm-12
-      .tweetEntry-tweetHolder
-        .tweetEntry data-id="#{tweet.id}"
-          - if tweet.media.any?
-            .optionalMedia
-              img.optionalMedia-img src="#{tweet.media.first.media_url_https}"
-          - if tweet.urls.any?
-            = render 'partials/url_preview', object: preview_url(tweet.urls.first.expanded_url.to_s)
-          .tweetEntry-content
-            img.tweetEntry-avatar.img-circle src="#{tweet.user.profile_image_url_https}"
-            strong.tweetEntry-fullname = tweet.user.name
-            span.tweetEntry-username = "@#{tweet.user.screen_name}"
-            span.tweetEntry-timestamp = tweet.created_at.to_formatted_s(:twitter)
-            .tweetEntry-text-container = tweet.full_text
+.col-lg-6.col-sm-12
+  .tweetEntry-tweetHolder
+    .tweetEntry data-id="#{tweet.id}"
+      - if tweet.media.any?
+        .optionalMedia
+          img.optionalMedia-img src="#{tweet.media.first.media_url_https}"
+      /- if tweet.urls.any?
+      /  = render 'partials/url_preview', object: preview_url(tweet.urls.first.expanded_url.to_s)
+      .tweetEntry-content
+        img.tweetEntry-avatar.img-circle src="#{tweet.user.profile_image_url_https}"
+        strong.tweetEntry-fullname = tweet.user.name
+        span.tweetEntry-username = "@#{tweet.user.screen_name}"
+        span.tweetEntry-timestamp = tweet.created_at.to_formatted_s(:twitter)
+        .tweetEntry-text-container = tweet.full_text
 
-        .btn-pref.btn-group.btn-group-justified.btn-group-sm.tweet_buttons role="group" style="width: 100%"
-          = link_to fa_icon('font', text: 'Texto'),        padawan_formacion_guardar_texto_path(tweet_id: tweet.id), remote: true,       class: 'btn', style: 'width: 33.33%'
-          = link_to fa_icon('play', text: 'Audiovisual'),  padawan_formacion_guardar_audiovisual_path(tweet_id: tweet.id), remote: true, class: 'btn', style: 'width: 33.33%'
-          = link_to fa_icon('cog', text: 'Herramientas'),  padawan_formacion_guardar_herramienta_path(tweet_id: tweet.id), remote: true, class: 'btn', style: 'width: 33.33%'
+    .btn-pref.btn-group.btn-group-justified.btn-group-sm.tweet_buttons role="group" style="width: 100%"
+      = link_to fa_icon('font', text: 'Texto'),        padawan_formacion_guardar_texto_path(tweet_id: tweet.id), remote: true,       class: 'btn', style: 'width: 33.33%'
+      = link_to fa_icon('play', text: 'Audiovisual'),  padawan_formacion_guardar_audiovisual_path(tweet_id: tweet.id), remote: true, class: 'btn', style: 'width: 33.33%'
+      = link_to fa_icon('cog', text: 'Herramientas'),  padawan_formacion_guardar_herramienta_path(tweet_id: tweet.id), remote: true, class: 'btn', style: 'width: 33.33%'
