@@ -62,7 +62,7 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Authentication
-gem 'devise'
+gem 'devise', git: 'https://github.com/plataformatec/devise'
 
 # Rendering
 gem 'slim-rails'
