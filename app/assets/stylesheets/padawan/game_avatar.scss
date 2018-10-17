@@ -1,4 +1,7 @@
 .game-avatar{
+  position: absolute;
+  z-index: 999;
+
   background-image: asset-data-url('rounded_bg.png');
   width: 138px;
   height: 176px;

@@ -6,8 +6,7 @@
           - if tweet.media.any?
             .optionalMedia
               img.optionalMedia-img src="#{tweet.media.first.media_url_https}"
-          - if tweet.urls.any?
-            = render 'partials/url_preview', object: preview_url(tweet.urls.first.expanded_url.to_s)
+          = render 'partials/url_preview', object: preview_url(tweet.urls.first.expanded_url.to_s) if tweet.urls.any? && false
           .tweetEntry-content
             img.tweetEntry-avatar.img-circle src="#{tweet.user.profile_image_url_https}"
             strong.tweetEntry-fullname = tweet.user.name

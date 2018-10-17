@@ -26,4 +26,5 @@
 //= require analytics/google_analytics
 //= require toastr
 //= require static/toastr
+//= require nprogress
 
