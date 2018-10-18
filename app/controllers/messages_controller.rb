@@ -2,22 +2,14 @@ class MessagesController < ApplicationController
   protect_from_forgery with: :null_session, only: :get_messages
 
   def create
-    @message = Message.new(object_params)
-    @message.user = current_user
-    @message.admin = current_admin
-    @message.message = @message.message.encode('UTF-8')
-    @chat = @message.chatroom
-    @message.viewed = true if @message.chatroom.is_admin? || @message.chatroom.is_general?
+    message = Message.new(object_params)
+    message.viewed = (message.chatroom.is_admin? || message.chatroom.is_general?) ? true : false
+    chat = message.chatroom
+    server_broadcast = chat.is_general? ? 'room_channel' : "room_#{chat.id}"
 
-    if @message.save
-
-    else
+    if message.save
+      ActionCable.server.broadcast 'room_channel', message:  render_message(message)
     end
-
-    respond_to do |format|
-      format.js{ render 'create.coffee.js.erb', locals: { message: @message } }
-    end
-
   end
 
   def get_messages
@@ -42,6 +34,14 @@ class MessagesController < ApplicationController
     end
   end
 
+  def set_chat
+    @chat = @message.chatroom
+  end
+
+  def render_message(message)
+    render(partial: 'new_message', locals: { message: message })
+  end
+
   def user_model
     User
   end
@@ -50,6 +50,9 @@ class MessagesController < ApplicationController
     params.require(:message).permit(
         :chatroom_id,
         :message
+    ).merge(
+        user: current_user,
+        admin: current_admin
     )
   end
 

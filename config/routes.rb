@@ -3,12 +3,13 @@ Rails.application.routes.draw do
   get '/500', to: 'errors#internal_server_error'
 
   mount RailsAdmin::Engine => '/super_admin', as: 'rails_admin'
+  mount ActionCable.server => '/cable'
+
   devise_for :admins
   devise_for :users, controllers: {sessions: 'devise/citizen/sessions'}
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # Serve websocket cable requests in-process
-  mount ActionCable.server => '/cable'
 
   get '/robots.:format' => 'static#robots'
   root 'static#home'

@@ -18,3 +18,4 @@
 //= require_tree ./chat
 //= require toastr
 //= require static/toastr
+//= require cable

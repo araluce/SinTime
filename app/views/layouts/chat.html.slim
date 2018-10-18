@@ -5,8 +5,11 @@ html
     = csrf_meta_tags
 
     = stylesheet_link_tag    'chat', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'chat', 'data-turbolinks': 'true'
+    = javascript_include_tag 'chat', 'data-turbolinks-track': 'reload'
+
     = render 'application/favicon'
+    meta charset='utf-8'
+    = action_cable_meta_tag
 
   body
     .container-fluid.app

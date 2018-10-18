@@ -19,7 +19,7 @@
       #dataadmin data-adminid="#{current_admin ? current_admin.id : 0}"
       .bottom-tag#bottom
 
-    = form_for @message, url: messages_path, remote: true, html: {class:'row reply'} do |f|
+    = form_for @message, url: messages_path, remote: true, html: {class:'row reply', id: 'message_content'} do |f|
       .col-10.reply-main
         = f.text_area :message, id: 'comment', class:'form-control', rows: '1'
         = f.hidden_field :chatroom_id, value: @chat.id
