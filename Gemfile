@@ -58,6 +58,7 @@ group :development do
   gem 'capistrano', '~> 3.6'
   gem 'capistrano-rails', '~> 1.2'
   gem 'capistrano-bundler', '~> 1.3'
+  gem 'capistrano-sidekiq'
 
   gem 'rails_real_favicon'
 end
@@ -132,3 +133,6 @@ gem 'select2-rails'
 gem 'remotipart', '~> 1.0'
 
 gem 'toastr-rails'
+
+#sidekiq
+gem 'sidekiq'

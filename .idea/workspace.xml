@@ -2,504 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5db47f15-0366-4f0f-bd38-1a518b060301" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/assets/fonts/ARDESTINE.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/fonts/ARDESTINE.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/fonts/BurbankBigCondensed-Bold.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/fonts/BurbankBigCondensed-Bold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/fonts/BurbankBigCondensed-Bold.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/fonts/death-star.regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/fonts/death-star.regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/fonts/digital-7-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/fonts/digital-7-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/fonts/isocpeur-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/fonts/isocpeur-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/fonts/isocteur-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/fonts/isocteur-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/alianza_rebelde.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/avatar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/favicon/android-chrome-192x192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/favicon/android-chrome-512x512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/favicon/apple-touch-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/favicon/browserconfig.xml.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/favicon/favicon-16x16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/favicon/favicon-32x32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/favicon/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/favicon/mstile-150x150.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/favicon/safari-pinned-tab.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/favicon/site.webmanifest" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/medium/missing.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/comunidad/altruismo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/comunidad/altruismo/donacion.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/comunidad/altruismo/minas.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/comunidad/deteccion.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/comunidad/rci.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/comunidad/rci/historial.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/comunidad/rci/holograma.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/comunidad/viaje.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/comunidad_de_aprendizaje.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/dagobah.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/desconexion.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/desconexion/capsula.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/desconexion/retiro.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/felicidad.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/formacion.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/formacion/audiencia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/formacion/dominio_fuerza.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/formacion/pruebas_nivel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/formacion/seguimiento.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/logout.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/padawan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/padawan_info/crecimiento.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/padawan_info/historial.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/padawan_info/hoja_personaje.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/padawan_info/rango.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/viveres.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/viveres/agua.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/viveres/comida.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/padawan/viveres/gota.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/reloj_flow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/rounded_bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/sinTime.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/static/background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/static/fondo-principal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/stripe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/thumb/missing.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/titulo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/titulo_low.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/analytics/google_analytics.coffee" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/channels/messages.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/chat/chat.coffee" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/padawan.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/padawan/ajax_upoads.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/padawan/twitter.coffee" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/padawan/water.coffee" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/rails_admin/custom/ui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/static/bootstrap-datetimepicker.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/static/date_time_picker_input.coffee" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/static/home_buttons.coffee" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/static/select2.coffee" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/static/toastr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/badges.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/chat.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/chat/layout.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/common.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/common/fancy-list.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/contact.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/error.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/error/style.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/mailers/no_reply.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/manager/movimientos.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/padawan.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/padawan/countdown.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/padawan/feed.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/padawan/galactic_background.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/padawan/game_avatar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/padawan/game_btn.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/padawan/game_card.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/padawan/game_nav.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/padawan/game_tab.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/padawan/mine.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/padawan/movimientos.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/padawan/profile.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/padawan/range.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/padawan/style.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/profile.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/static/bootstrap-datetimepicker.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/static/exercise_preview.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/static/home.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/static/navbar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/twitter.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/url_preview.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/channels/messages_channel.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/devise/citizen/registrations_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/errors_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/manager/audiences_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/manager/banking_movements_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/manager/bets_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/manager/chat_admin_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/manager/constants_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/manager/deliveries_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/manager/food_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/manager/happiness_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/manager/holidays_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/manager/level_tests_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/manager/mines_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/manager/movimientos_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/manager/padawan_registers_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/manager/privileges_cards_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/manager/questionnaires_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/manager/ranges_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/manager/sala_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/manager/scores_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/manager/sports_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/manager/user_deliveries_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/manager/user_sports_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/manager/water_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/messages_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/comunidad/altruismo/donations_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/comunidad/altruismo/mines_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/comunidad/altruismo_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/comunidad/deteccion_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/comunidad/login_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/comunidad/mis_apuestas_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/comunidad/rci/chat_admin_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/comunidad/rci/chat_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/comunidad/rci/chat_general_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/comunidad/rci/chat_user_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/comunidad/rci/sala_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/comunidad/rci_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/comunidad/sports_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/comunidad_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/desconexion/capsula_del_tiempo_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/desconexion/retiro_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/desconexion_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/felicidad/audiencia_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/formacion/audiences_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/formacion/force_domains_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/formacion/level_tests_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/formacion/seguimiento_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/formacion_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/padawan_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/padawan_info/information_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/padawan_info/movimientos_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/padawan_info/privileges_cards_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/padawan_info/rango_jedi_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/padawan_info/user_privileges_cards_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/padawan_info_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/viveres/food_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/viveres/print_exercise_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/viveres/purchase_exercises_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/viveres/send_exercises_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/viveres/water_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/padawan/viveres_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/helpers/cards_helper.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/helpers/questionnaire_helper.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/helpers/time_helper.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/helpers/twitter_helper.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/helpers/url_preview_helper.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/inputs/date_time_picker_input.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/mailers/cron_mailer.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/mailers/level_mailer.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/mailers/runtastic_mailer.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/activity_log.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/banking_movement.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/bet.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/bet_option.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/bet_option_user.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/chat.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/chat/admin.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/chat/check_point.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/chat/clan.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/chat/general.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/chat/individual.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/chatroom.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/constant.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/donation.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/exercise.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/exercise/audience.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/exercise/benefit_score.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/exercise/feeding.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/exercise/happiness.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/exercise/level_test.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/exercise/option.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/exercise/questionnaire.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/exercise/sport.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/exercise_user.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/loan.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/message.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/mine.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/mine_clue.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/privileges_card.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/ranking.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/ranking/district.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/ranking/user.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/score.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/tweet.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/tweeter.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/twitter.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/twitter/backpack.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/user_clue.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/user_mine.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/user_privileges_card.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/user_questionnaire.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/user_questionnaire_option.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/user_range.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/user_runtastic.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/bet_service.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/card_service.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/level_service.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/loan_service.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/mine_service.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/pay_service.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/ranking_service.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/runtastic/activity_helper.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/runtastic/jason_web_token_module.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/runtastic/login_service.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/runtastic/record_helper.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/runtastic/runtastic_activities_service.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/runtastic/service_module.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/runtastic/user_helper.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/runtastic_service.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/scores_services.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/twitter_service.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/application/_alert.js.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/application/_favicon.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/chat/_message.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/chat/_message_form.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/errors/internal_server_error.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/errors/not_found.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/layouts/chat.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/layouts/contact.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/layouts/error.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/layouts/no_reply_mail.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/layouts/padawan.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/layouts/profile.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/level_mailer/resume.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/audiences/_form.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/audiences/_table.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/audiences/edit.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/audiences/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/audiences/show.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/bets/_form.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/bets/_table.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/bets/edit.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/bets/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/bets/show.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/chat_admin/show.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/constants/_form.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/constants/_table.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/constants/edit.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/constants/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/deliveries/_form.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/deliveries/_table.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/deliveries/edit.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/deliveries/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/food/_form.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/food/_table.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/food/edit.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/food/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/food/show.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/happiness/_form.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/happiness/_table.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/happiness/edit.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/happiness/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/happiness/show.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/holidays/_form.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/holidays/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/level_tests/_form.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/level_tests/_table.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/level_tests/edit.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/level_tests/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/level_tests/show.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/mines/_form.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/mines/_table.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/mines/edit.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/mines/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/mines/show.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/movimientos/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/padawan_registers/new.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/partials/_benefit_score_fields.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/partials/_bet_option_fields.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/partials/_clue_fields.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/partials/_home_card.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/partials/_option_fields.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/partials/_time_beneficts.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/privileges_cards/_form.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/privileges_cards/_table.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/privileges_cards/edit.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/privileges_cards/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/privileges_cards/show.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/questionnaires/_form.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/questionnaires/_table.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/questionnaires/edit.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/questionnaires/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/questionnaires/show.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/ranges/_form.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/ranges/_table.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/ranges/edit.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/ranges/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/sala/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/scores/_form.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/scores/_table.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/scores/edit.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/scores/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/scores/show.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/sports/_form.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/sports/_table.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/sports/edit.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/sports/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/sports/show.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/user_deliveries/_form.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/user_deliveries/_table.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/user_deliveries/edit.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/user_deliveries/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/user_sports/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/water/_form.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/water/_table.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/water/edit.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/water/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/manager/water/show.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/messages/_messages.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/messages/_new_message.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/messages/_new_message_pop.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/messages/create.coffee.js.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/messages/get_messages.coffee.js.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/_countdown.js.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/_countdown_holidays.js.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/_footer.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/comunidad/altruismo/altruismo.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/comunidad/altruismo/donations/new.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/comunidad/altruismo/mines/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/comunidad/altruismo/mines/show.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/comunidad/comunidad.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/comunidad/deteccion/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/comunidad/deteccion/show.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/comunidad/login/_form.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/comunidad/login/edit.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/comunidad/login/new.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/comunidad/rci/chat_admin/show.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/comunidad/rci/chat_general/show.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/comunidad/rci/chat_user/show.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/comunidad/rci/rci.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/comunidad/rci/sala/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/comunidad/sports/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/desconexion/capsula_del_tiempo/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/desconexion/capsula_del_tiempo/show.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/desconexion/desconexion.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/desconexion/retiro/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/felicidad/audiencia/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/formacion/audiences/edit.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/formacion/force_domains/edit.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/formacion/force_domains/show.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/formacion/formacion.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/formacion/level_tests/edit.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/formacion/level_tests/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/formacion/seguimiento/load_tweeter_tweets.coffee.js.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/formacion/seguimiento/mochila_texto.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/formacion/seguimiento/seguimiento.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/js_templates/_deliveries.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/js_templates/_exercise_actions.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/js_templates/_exercise_description.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/js_templates/_exercise_link.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/js_templates/_exercise_price.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/js_templates/_exercise_review.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/js_templates/_exercise_score.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/js_templates/_render_exercise.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/js_templates/exercise_preview.js.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/padawan/home.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/padawan_info/information/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/padawan_info/movimientos/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/padawan_info/padawan_info.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/padawan_info/privileges_cards/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/padawan_info/privileges_cards/show.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/padawan_info/rango_jedi/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/partials/_message.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/partials/_tweet.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/viveres/_delivery_form.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/viveres/food/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/viveres/viveres.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/padawan/viveres/water/index.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/partials/_avatar.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/partials/_boolean.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/partials/_button.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/partials/_feed_grill.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/partials/_mine_status.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/partials/_tweet.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/partials/_url_preview.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/partials/analytics/_script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/runtastic_mailer/resume.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/static/_navbar.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/static/check_register.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/static/compartir.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/static/contact.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/static/register.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/static/tweets.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/svg/_cycling.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/svg/_running.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/workers/hard_worker.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/initializers/jsroutes.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/initializers/kaminary_config.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/initializers/link_thumbnailer.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/initializers/rails_admin.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/initializers/rollbar.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/initializers/simple_form_bootstrap.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/initializers/time_formats.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/capistrano/tasks/touch.rake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/tasks/cron.rake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sintime.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sintime.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Capfile" beforeDir="false" afterPath="$PROJECT_DIR$/Capfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/citizen/home/Alimentacion.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/citizen/home/Ambulatorio.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/citizen/home/Felicidad.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/citizen/home/Jugador.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/citizen/home/Ocio.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/citizen/home/Prestamos.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/citizen/home/Sprite.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/citizen/home/Trabajo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/citizen/home/exit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/fondo-principal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/cable.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/cable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/citizen.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/chat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/manager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/manager/sb-admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/manager/sb-admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/alerts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/alerts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/citizen.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/citizen/_icons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/padawan/formacion/force_domains/update.js.coffee.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/citizen/circle-menu.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/citizen/style.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/manager.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/manager.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/manager/custom.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/manager/custom.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/manager/navbar/_navbar_colors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/manager/navbar/_navbar_colors.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/citizen/citizens_controller.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/manager/citizens_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/manager/citizens_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/manager/districts_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/manager/districts_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/static_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/static_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/mailers/application_mailer.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/mailers/application_mailer.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/admin.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/admin.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/district.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/district.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/application/_alert.html.slim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/citizen/_footer.html.slim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/citizen/citizens/home.html.slim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/confirmations/new.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/confirmations/new.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/mailer/reset_password_instructions.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/mailer/reset_password_instructions.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/passwords/edit.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/passwords/edit.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/passwords/new.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/passwords/new.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/sessions/new.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/sessions/new.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/shared/_links.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/shared/_links.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/citizen.html.slim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/manager.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/manager.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/manager/_header.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/manager/_header.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/manager/_sidebar.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/manager/_sidebar.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/manager/citizens/_form.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/manager/citizens/_form.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/manager/citizens/_table.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/manager/citizens/_table.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/manager/citizens/edit.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/manager/citizens/edit.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/manager/citizens/index.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/manager/citizens/index.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/manager/citizens/show.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/manager/citizens/show.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/manager/districts/_form.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/manager/districts/_form.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/manager/districts/_table.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/manager/districts/_table.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/manager/districts/edit.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/manager/districts/edit.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/manager/districts/index.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/manager/districts/index.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/manager/districts/show.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/manager/districts/show.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/manager/managers/home.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/manager/managers/home.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/static/home.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/static/home.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/deploy.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/deploy.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/deploy/production.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/deploy/production.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/environments/development.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/development.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/environments/production.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/production.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/initializers/assets.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/assets.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/initializers/devise.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/devise.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -516,22 +20,26 @@
     <session id="2074225293">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="rb" value="3" />
           <entry key="slim" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="Ruby" value="3" />
           <entry key="Slim" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Gemfile" value="2" />
+          <entry key="Capfile" value="1" />
+          <entry key="Gemfile" value="5" />
+          <entry key="rb" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Ruby" value="2" />
+          <entry key="Ruby" value="7" />
         </counts>
       </usages-collector>
     </session>
@@ -541,8 +49,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="789">
-              <caret line="117" column="17" lean-forward="true" selection-start-line="117" selection-start-column="17" selection-end-line="117" selection-end-column="17" />
+            <state relative-caret-position="81">
+              <caret line="124" column="10" selection-start-line="124" selection-start-column="5" selection-end-line="124" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -550,8 +58,42 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Capfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="21" column="37" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="37" />
+            <state relative-caret-position="350">
+              <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/initializers/simple_form.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3195" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/devise/sessions/new.html.slim">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/environment.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/workers/hard_worker.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -560,10 +102,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>page_title</find>
-      <find>Oregano</find>
-      <find>Isocteur</find>
-      <find>Kimberley</find>
       <find>orega</find>
       <find>.logo-app</find>
       <find>.index-frase</find>
@@ -587,9 +125,13 @@
       <find>* {</find>
       <find>clinic_params</find>
       <find>district</find>
-      <find>rvm</find>
       <find>roll</find>
       <find>side</find>
+      <find>button_components</find>
+      <find>HardWorker</find>
+      <find>capistra</find>
+      <find>rvm</find>
+      <find>whene</find>
     </findStrings>
     <replaceStrings>
       <replace>citizen/home/</replace>
@@ -608,7 +150,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/db/migrate/20171209212645_add_devise_to_users.rb" />
         <option value="$PROJECT_DIR$/app/controllers/citizen_devise/sessions_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/citizen/citizens_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/devise/citizen/sessions_controller.rb" />
@@ -651,14 +192,15 @@
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/app/views/manager/citizens/show.html.slim" />
         <option value="$PROJECT_DIR$/config/deploy.rb" />
-        <option value="$PROJECT_DIR$/Capfile" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/lib/capistrano/tasks/production.rake" />
         <option value="$PROJECT_DIR$/config/deploy/production.rb" />
         <option value="$PROJECT_DIR$/config/initializers/assets.rb" />
         <option value="$PROJECT_DIR$/app/views/static/home.html.slim" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/style.scss" />
+        <option value="$PROJECT_DIR$/config/initializers/simple_form_bootstrap.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/Capfile" />
       </list>
     </option>
   </component>
@@ -703,12 +245,32 @@
               <item name="SinTime" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="runtastic_mailer" type="462c0819:PsiDirectoryNode" />
+              <item name="devise" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SinTime" type="b2602c69:ProjectViewProjectNode" />
               <item name="SinTime" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="devise" type="462c0819:PsiDirectoryNode" />
+              <item name="sessions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SinTime" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SinTime" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="workers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SinTime" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SinTime" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SinTime" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SinTime" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="initializers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -876,11 +438,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84963000" />
+    <option name="totallyTimeSpent" value="85866000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28183118" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -909,30 +470,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/manager/sb-admin.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/manager/navbar/_navbar_fixed.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="19" lean-forward="true" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/citizen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/manager/_footer.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/manager/_header.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="975">
@@ -970,20 +507,8 @@
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/datatables.scss">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/citizen/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/citizen.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/citizen/style.scss" />
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/citizen.scss" />
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -992,20 +517,8 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.3.4/gems/airbrussh-1.3.0/lib/airbrussh/console_formatter.rb" />
-    <entry file="file://$PROJECT_DIR$/app/views/citizen/_footer.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="150" selection-start-line="3" selection-start-column="150" selection-end-line="3" selection-end-column="150" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/citizen/citizens/home.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/citizen/_footer.html.slim" />
+    <entry file="file://$PROJECT_DIR$/app/views/citizen/citizens/home.html.slim" />
     <entry file="file://$PROJECT_DIR$/app/views/manager/districts/_form.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1125,13 +638,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/application/_alert.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/application/_alert.html.slim" />
     <entry file="file://$PROJECT_DIR$/app/views/layouts/manager.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -1139,13 +646,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/citizen.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/citizen.html.slim" />
     <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
@@ -1226,17 +727,45 @@
     <entry file="file://$PROJECT_DIR$/app/views/runtastic_mailer/resume.html.slim">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/devise/sessions/new.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/initializers/simple_form_bootstrap.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="61" column="23" lean-forward="true" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environment.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/workers/hard_worker.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Capfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="21" column="37" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="37" />
+        <state relative-caret-position="350">
+          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="789">
-          <caret line="117" column="17" lean-forward="true" selection-start-line="117" selection-start-column="17" selection-end-line="117" selection-end-column="17" />
+        <state relative-caret-position="81">
+          <caret line="124" column="10" selection-start-line="124" selection-start-column="5" selection-end-line="124" selection-end-column="10" />
         </state>
       </provider>
     </entry>
