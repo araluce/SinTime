@@ -1,0 +1,12 @@
+.tweetEntry data-id="#{tweet.id}"
+  - if tweet.media.any?
+    .optionalMedia
+      img.optionalMedia-img src="#{tweet.media.first.media_url_https}"
+  - if tweet.urls.any?
+    = render 'partials/url_preview', object: preview_url(tweet.urls.first.expanded_url.to_s)
+  .tweetEntry-content
+    img.tweetEntry-avatar.img-circle src="#{tweet.user.profile_image_url_https}"
+    strong.tweetEntry-fullname = tweet.user.name
+    span.tweetEntry-username = "@#{tweet.user.screen_name}"
+    span.tweetEntry-timestamp = tweet.created_at.to_formatted_s(:twitter)
+    .tweetEntry-text-container = tweet.full_text

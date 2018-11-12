@@ -1,9 +1,8 @@
 module Manager
-  class DistrictsController < ApplicationController
+  class DistrictsController < Manager::ManagersController
     layout 'manager'
 
     before_action :set_object, only: [:show, :update, :destroy, :edit]
-    before_action :authenticate_admin!
     before_action :load_resource_name
     before_action :set_open_section
 
@@ -50,7 +49,7 @@ module Manager
 
     def update
       if @object.update(object_params)
-        redirect_to manager_districts_path, notice: 'Distrito actualizado correctamente'
+        redirect_to manager_district_path(@object), notice: 'Distrito actualizado correctamente'
       else
         object_initialization
         render :edit
@@ -70,6 +69,7 @@ module Manager
     def object_params
       params.require(:district).permit(
           :name,
+          :logo,
           user_ids: []
       )
     end

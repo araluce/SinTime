@@ -1,0 +1,13 @@
+ol.breadcrumb
+  li.breadcrumb-item = link_to 'Dashboard', manager_home_path
+  li.breadcrumb-item = link_to 'Padawans', manager_citizens_path
+  li.breadcrumb-item = link_to  "@#{@user.alias.downcase}", manager_citizen_path(@user)
+  li.breadcrumb-item = link_to 'Entregas', manager_citizen_user_deliveries_path(@user)
+  li.breadcrumb-item.active Entrega
+
+.row
+  .col-sm-12
+    fieldset
+      legend = fa_icon 'plus', text: 'Entrega'
+      = simple_form_for(@object, url: {id: @object.id, action: :update}, html: {class: 'form-vertical', multipart: true}) do |f|
+        = render 'form', f: f

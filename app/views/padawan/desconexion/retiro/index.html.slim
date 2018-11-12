@@ -1,0 +1,25 @@
+.row
+  .col-12.future-card
+    .row style="margin-bottom: 1%;"
+      .col-12
+        = link_to fa_icon('fw chevron-circle-left', text: 'Volver'), padawan_desconexion_path, class: 'btn btn-primary pull-right'
+    .row
+      .col-12
+        h6 Coste de la operación: 2 días 12 horas
+        h4 Atención
+        p Podrás solicitar vacaciones una sola vez. La duración de estas será de 7 días.
+
+    - if current_user.have_holidays
+      - if current_user.is_in_holidays?
+        .row
+          .col-12
+            h2 Ya estás de vacaciones
+      - else
+        .row
+          .offset-md-4.col-md-4.offset-xs-2.col-xs-8
+            = link_to 'Comprar Vacaciones', padawan_desconexion_retiro_index_path, method: :post, class: 'btn btn-block btn-primary'
+    - else
+      .row
+        .col-12
+          h2 Ya has gastado tus vacaciones
+

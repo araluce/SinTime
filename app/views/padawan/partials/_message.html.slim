@@ -1,0 +1,21 @@
+.row.message-body data-id="#{message.id}"
+  - if user
+    - message_class = message.user == current_user ? 'sender' : 'receiver'
+  - elsif admin
+    - message_class = message.admin == current_admin ? 'sender' : 'receiver'
+
+  .col-sm-12 class="message-main-#{message_class}"
+    .row class="#{message_class}"
+      - if user && (user != message.user)
+        .row
+          .col-4
+            = render 'partials/avatar', user: message.user, custom_style: 'max-width: 83px'
+          .col-8
+            span.message-time = "@#{message.user.alias}"
+      .col-12
+        .message-text = message.message
+      .col-12
+        span.message-time.pull-right = message.created_at.to_formatted_s(:short)
+        - unless message.chatroom.is_clan? || message.chatroom.is_general?
+          - if (user && message.user == user) || (admin && message.admin == admin)
+            span.message-time.pull-right class="#{message.viewed ? 'message-checked' : ''}" = "#{fa_icon('fw check')} #{fa_icon('fw check')}".html_safe

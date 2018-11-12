@@ -1,0 +1,136 @@
+@font-face {
+  font-family: 'burbank';
+  src: asset-data-url('BurbankBigCondensed-Bold.woff2') format('woff2'),
+  asset-data-url('BurbankBigCondensed-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.home {
+  min-height: 100vh;
+
+  .title-600, .title-400 {
+    font-family: 'burbank';
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 0;
+    text-align: inherit;
+    line-height: 1.25;
+    color: #fff;
+    text-shadow: 0 2px 20px #000;
+    color: #D7C077;
+  }
+
+  .title-600{ font-size: 1.6em; }
+  .title-400{ font-size: 1.5em; }
+
+  .home-button {
+    margin: 0 auto;
+    a.burbank {
+      font-family: 'burbank';
+      text-transform: uppercase;
+      color: #fff;
+      background-color: transparent;
+      border: 5px #fff solid;
+      padding: 1em;
+      text-decoration: none;
+      border-radius: 10px;
+
+      &:hover, &:focus{
+        color: #000;
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+.btn-outline-secondary{
+  color: #f8f9fa;
+  border-color: #f8f9fa;
+
+  &:not([disabled]):not(.disabled):active,
+  &:hover{
+    color: #000;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+
+    transition: color 2s linear;
+    -webkit-transition: color 2s linear;
+    transition: background-color 2s linear;
+    -webkit-transition: background-color 2s linear;
+    transition: border-color 2s;
+    -webkit-transition: border-color 2s;
+  }
+}
+
+.padding-home{
+  padding-top: 75px;
+}
+
+.titulo-app,
+.logo-app,
+.home-title-edition{
+  margin: 0 auto;
+
+  img{
+    max-width: 100%;
+  }
+}
+
+.login-form {
+  font-family: 'Kimberley';
+}
+
+.index-autor, .index-frase{
+  color: gold;
+  font-family: 'Oregano', cursive;
+  font-size: 1.2em;
+}
+
+.oregano{
+  font-family: 'Oregano', cursive;
+}
+
+.index-frase {
+  text-align: center;
+}
+
+.index-autor {
+  text-align: right;
+}
+
+.login-form .btn{
+  padding: 5px 15px;
+}
+
+@media (min-width: 760px) {
+  .titulo-app,
+  .logo-app {
+    width: 50%;
+  }
+  .home-title-edition{
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .titulo-app,
+  .logo-app {
+    width: 50%;
+  }
+  .home-title-edition{
+    width: 100%;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .titulo-app,
+  .logo-app {
+    width: 20%;
+  }
+
+  .home-title-edition{
+    width: 50%;
+  }
+}

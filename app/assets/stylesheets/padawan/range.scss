@@ -1,0 +1,37 @@
+.rank{
+  font-family: Isocpeur;
+  h1{
+    font-family: burbank;
+    text-align: center;
+  }
+
+  .final-score{
+    text-align: center;
+    font-size: 1.5em;
+  }
+
+  .profile-header-container{
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.3em;
+
+    .profile-header-img {
+      padding: 54px;
+
+      img.img-circle {
+        width: 240px;
+        height: 240px;
+      }
+    }
+
+    .rank-label-container {
+      margin-top: -19px;
+      text-align: center;
+
+      .label.label-default.rank-label {
+        padding: 5px 10px 5px 10px;
+        border-radius: 27px;
+      }
+    }
+  }
+}

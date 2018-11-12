@@ -1,0 +1,17 @@
+= f.input :statement, label: 'Descripción'
+= f.input :code, label: 'Código secreto'
+= f.input :valid_until, label: 'Fecha de explosión'
+= render 'manager/partials/time_beneficts', f: f, custom_label: 'Tiempo de beneficio', suffix: 'benefit'
+small Este tiempo se repartirá entre todos los padawans que desactiven la mina antes de la fecha de explosión
+
+fieldset
+  legend Pistas
+.row
+  .col-11.offset-1
+    .cocoon-items.tab-pane.active role='tabpanel'
+      = f.simple_fields_for :clues, label: 'Pistas' do |clue|
+        = render 'manager/partials/clue_fields', f: clue
+      .links
+        = link_to_add_association 'añadir pista', f, :clues, partial: 'manager/partials/clue_fields'
+
+= f.button :submit, class: 'btn btn-block btn-primary'

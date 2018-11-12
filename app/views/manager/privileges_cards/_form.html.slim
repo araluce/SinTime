@@ -1,0 +1,7 @@
+= f.input :active, label: 'Activo', as: :boolean
+= f.input :title, label: 'Título'
+= f.input :description, label: 'Descripción de la carta'
+= f.input :card, as: :file
+= f.input :xp_cost, input_html: {type: :number, min: 1, value: f.object.xp_cost || 1}, labe: 'Coste en XP'
+= f.input :identifier, label: 'No tocar'
+= f.button :submit, class: 'btn btn-block btn-primary'

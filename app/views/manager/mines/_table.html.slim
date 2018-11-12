@@ -1,0 +1,25 @@
+.table-responsive
+  table.table
+    thead
+      tr
+        th Estado
+        th Detalle
+        th Código secreto
+        th Fecha de explosión
+        th Tiempo de beneficio
+        th Número de pistas
+        th Acciones
+    tbody
+      - @objects.each do |object|
+        tr
+          td = render 'partials/mine_status', object: object
+          td = object.statement
+          td = object.code
+          td = object.valid_until.to_formatted_s(:long)
+          td = seconds_to_s object.time_benefit
+          td = object.clues.count
+          td
+            .action-buttons
+              = link_to fa_icon('fw eye 2x'), manager_mine_path(object)
+              = link_to fa_icon('fw cog 2x'), edit_manager_mine_path(object)
+              = link_to fa_icon('fw times 2x'), manager_mine_path(object), data: {confirm: '¿Estás seguro?'}, method: :delete

@@ -1,0 +1,22 @@
+.row
+  .col-12.future-card
+    .row style="margin-bottom: 1%;"
+      .col-12
+        = link_to fa_icon('fw chevron-circle-left', text: 'Volver'), padawan_comunidad_path, class: 'btn btn-primary pull-right'
+    .row
+      .col-12
+        .table-responsive
+          table.table
+            thead
+              tr
+                th Estado
+                th Apuesta
+                th Opciones
+                th Tiempo total apostado
+            tbody
+              - @objects.each do |object|
+                tr
+                  td = link_to "#{object.open ? 'Abierta' : 'Cerrada'}", padawan_comunidad_deteccion_path(object)
+                  td = link_to object.bet, padawan_comunidad_deteccion_path(object)
+                  td = link_to object.options.pluck(:option).join('<br>').html_safe, padawan_comunidad_deteccion_path(object)
+                  td = link_to seconds_to_s(BetService.total_time(object)), padawan_comunidad_deteccion_path(object)

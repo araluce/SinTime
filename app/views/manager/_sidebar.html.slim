@@ -1,5 +1,35 @@
 ul.navbar-nav.navbar-sidenav#exampleAccordion
-  li.nav-item data-toggle="tooltip" data-placement="right" title="Dashboard"
-    = link_to fa_icon('fw dashboard', text: 'Dashboard'), manager_home_path, class: 'nav-link'
-    = link_to fa_icon('fw shield', text: 'Distritos'), manager_districts_path, class: 'nav-link'
-    = link_to fa_icon('fw users', text: 'Ciudadanos'), manager_citizens_path, class: 'nav-link'
+  li.nav-title = link_to fa_icon('fw dashboard', text: 'Dashboard'), manager_home_path, class: 'nav-link', title: 'Dashboard'
+  li.nav-item data-toggle="tooltip" data-placement="right"
+    = link_to manager_districts_path, class: 'nav-link', title: 'Distritos' do
+      = fa_icon('fw shield')
+      span.nav-link-text Distritos
+  li.nav-item data-toggle="tooltip" data-placement="right"
+    = link_to manager_citizens_path, class: 'nav-link', title: 'Padawans' do
+      = fa_icon('fw users')
+      span.nav-link-text Padawans
+
+  li.nav-item data-toggle="tooltip" data-placement="right"
+    = link_to manager_holidays_path, class: 'nav-link', title: 'Vacaciones' do
+      = fa_icon('fw sun-o')
+      span.nav-link-text Vacaciones
+
+  li.nav-title = fa_icon('fw pencil', text: 'Ejercicios')
+  li.nav-item = link_to fa_icon('fw question', text: 'Entregas'), manager_deliveries_path, class: 'nav-link', title: 'Entregas'
+  li.nav-item = link_to fa_icon('fw question', text: 'Cuestionarios'), manager_questionnaires_path, class: 'nav-link', title: 'Cuestionarios'
+  li.nav-item = link_to fa_icon('fw apple', text: 'Retos de comida'), manager_food_index_path, class: 'nav-link', title: 'Retos de comida'
+  li.nav-item = link_to fa_icon('fw tint', text: 'Retos de agua'), manager_water_index_path, class: 'nav-link', title: 'Retos de agua'
+  li.nav-item = link_to fa_icon('fw futbol-o', text: 'Retos deportivos'), manager_sports_path, class: 'nav-link', title: 'Retos deportivos'
+  li.nav-item = link_to fa_icon('fw user', text: 'Retos de felicidad'), manager_happiness_index_path, class: 'nav-link', title: 'Retos de felicidad'
+  li.nav-item = link_to fa_icon('fw question', text: 'Pruebas de nivel'), manager_level_tests_path, class: 'nav-link', title: 'Prueba de nivel'
+  li.nav-item = link_to fa_icon('fw question', text: 'Pruebas de audiencia'), manager_audiences_path, class: 'nav-link', title: 'Prueba de audiencia'
+
+  li.nav-title General
+  li.nav-item = link_to fa_icon('fw star', text: 'Calificaciones'), manager_scores_path, class: "nav-link #{section_active_class('Calificaciones')}"
+  li.nav-item = link_to fa_icon('fw star', text: 'Constantes'), manager_constants_path, class: "nav-link #{section_active_class('Constantes')}"
+  li.nav-item = link_to fa_icon('fw shield', text: 'Rangos'), manager_ranges_path, class: "nav-link #{section_active_class('Rangos')}"
+  li.nav-item = link_to fa_icon('fw users', text: 'Crear padawans'), new_manager_padawan_register_path, class: "nav-link #{section_active_class('Crear padawans')}"
+  li.nav-item = link_to fa_icon('fw comments-o', text: 'Chat'), manager_sala_index_path, class: "nav-link #{section_active_class('Chat')}"
+  li.nav-item = link_to fa_icon('fw id-card-o', text: 'Cartas de privilegio'), manager_privileges_cards_path, class: "nav-link #{section_active_class('Cartas de privilegio')}"
+  li.nav-item = link_to fa_icon('fw money', text: 'Apuestas'), manager_bets_path, class: "nav-link #{section_active_class('Apuesta')}"
+  li.nav-item = link_to fa_icon('fw qr', text: 'Minas'), manager_mines_path, class: "nav-link #{section_active_class('Mina')}"

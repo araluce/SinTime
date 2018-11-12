@@ -1,0 +1,34 @@
+.container
+  .row.future-card style="margin-bottom: 1%; background-color: transparent"
+    .col-4
+      button.btn.btn-primary.pull-left Nivel #{current_user.level}
+    .col-4
+      .text-center
+        = link_to 'Volver', padawan_padawan_info_privileges_cards_path, class: 'btn btn-primary'
+    .col-4
+      button.btn.btn-primary.pull-right Xp #{current_user.xp}
+
+  .row.future-card style="margin-bottom: 1%"
+    .col-lg-6.col-md-12
+      = image_tag(@object.card.url, style: 'max-width: 100%;')
+      = simple_form_for(UserPrivilegesCard.new, url: padawan_padawan_info_privileges_card_user_privileges_cards_path(@object), as: :object, html: {class: 'form-vertical', multipart: true}) do |f|
+        - if @object.identifier == '1'
+          = f.input :user_to_id, collection: User.normal_users, :label_method => lambda { |user| "@#{user.alias&.downcase}" }, label: 'Receptor'
+        = f.submit 'Comprar', class: 'btn btn-primary btn-block', style: 'border-top-left-radius: 0px; border-top-right-radius: 0px;'
+    .col-lg-6.col-md-12
+      h3 = @object.title
+      h5 Descripción
+      p = @object.description
+
+      small Coste: #{@object.xp_cost}XP
+      br
+      small Veces comprada por todos: #{UserPrivilegesCard.where(privileges_card: @object).count}
+      br
+      small Veces comprada por ti: #{UserPrivilegesCard.where(privileges_card: @object, user: current_user).count}
+
+      - UserPrivilegesCard.where(privileges_card: @object, user: current_user).each do |user_privilege_card|
+        .bubble.font-95.bold.has-bubble.row
+          dd.col-sm-9 = user_privilege_card.privileges_card
+          dd
+            .bubble.text-center class="#{card_is_valid?(user_privilege_card) ? 'bubble-success' : 'bubble-warning'}"
+              = fa_icon "fw 2x #{card_is_valid?(user_privilege_card) ? 'check' : 'times'}"

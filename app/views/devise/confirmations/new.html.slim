@@ -1,15 +1,16 @@
 =page_title 'Resend confirmation instructions'
 
-.row
-  .col
-    p= legal_warning_text
-.row
-  .col-md-6
-    .card
-      .card-block
-        = simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
-          = f.full_error :confirmation_token
-          = f.input :email, required: true, autofocus: true
-          = f.button :submit, "Resend confirmation instructions", class: 'btn-primary'
-  .col-md-6
-    = render "devise/shared/links"
+.future-card
+  .row
+    .col
+      p= legal_warning_text
+  .row
+    .col-md-6
+      .card
+        .card-block
+          = simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+            = f.full_error :confirmation_token
+            = f.input :email, required: true, autofocus: true
+            = f.button :submit, "Resend confirmation instructions", class: 'btn-primary'
+    .col-md-6
+      = render "devise/shared/links"

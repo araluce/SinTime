@@ -1,18 +1,36 @@
 doctype html
 html
   head
-    title $intime
+    title SinTime
     = csrf_meta_tags
 
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = stylesheet_link_tag    'style', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = render 'application/favicon'
 
-  .page
+    - if Rails.env.production?
+      script type="text/javascript"
+        = render 'partials/analytics/script.js'
+
+  .page.home-background
+    #stars
+    #stars2
+    #stars3
     .container-fluid
+      = render 'static/navbar'
+
       .alert-content
         - if notice
-          = render 'application/alert', alert_class: 'success', text: notice
+          script
+            = render 'application/alert.js.erb', alert_class: 'success', text: notice
         - if alert
-          = render 'application/alert', alert_class: 'danger', text: alert
-      = yield
+          script
+            = render 'application/alert.js.erb', alert_class: 'danger', text: alert
+        - if defined? @errors
+          script
+            = render 'application/alert.js.erb', alert_class: 'danger', text: @errors.full_messages
+
+      .home
+        = yield
+
+      = render 'padawan/footer'

@@ -11,7 +11,7 @@ gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 # Use Puma as the app server
-gem 'puma', '~> 3.7'
+gem 'puma', git: 'https://github.com/grosser/puma.git', branch: 'grosser/fix'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -33,12 +33,16 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'rails_admin_rollincode', '~> 1.0'
+gem 'rails_admin', '~> 1.3'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'letter_opener'
 end
 
 group :development do
@@ -53,7 +57,9 @@ group :development do
   gem 'rubocop', require: false
   gem 'capistrano', '~> 3.6'
   gem 'capistrano-rails', '~> 1.2'
-  gem 'capistrano-passenger'
+  gem 'capistrano-bundler', '~> 1.3'
+
+  gem 'rails_real_favicon'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -72,7 +78,10 @@ gem 'jquery-rails'
 # source 'https://rails-assets.org' do
 #  gem 'rails-assets-tether', '>= 1.3.3'
 # end
- gem 'simple_form'
+gem 'simple_form'
+
+gem 'rollbar'
+
 #
 # # Loggin
 # gem 'colorize'
@@ -82,3 +91,44 @@ gem 'font-awesome-rails'
 
 gem 'animate-rails'
 gem 'jquery-datatables'
+
+
+gem 'cocoon'
+
+#Pagination
+gem 'kaminari'
+
+gem 'paperclip', '~> 5.2.1'
+
+
+gem 'twitter'
+
+gem 'link_thumbnailer'
+
+#countdown
+gem 'jquery-countdown-rails'
+
+#jroutes
+gem 'js-routes'
+
+gem 'chart-js-rails'
+
+gem 'rubycritic'
+
+gem 'bootstrap_progressbar'
+
+gem 'jwt'
+
+gem 'rest-client'
+
+gem 'whenever', require: false
+
+# Chat
+gem 'pusher'
+
+# Select
+gem 'select2-rails'
+
+gem 'remotipart', '~> 1.0'
+
+gem 'toastr-rails'

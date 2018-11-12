@@ -1,0 +1,4 @@
+.nested-fields
+  = f.input :clue, label: 'Pista'
+  = link_to_remove_association f, data: {:confirm => '¿realmente quieres hacer esto?'}, class: 'btn btn-primary btn-xs' do
+    = fa_icon 'times'

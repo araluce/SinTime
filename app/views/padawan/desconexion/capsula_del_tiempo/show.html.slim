@@ -1,0 +1,31 @@
+.row
+  .col-12.future-card
+    .row style="margin-bottom: 1%;"
+      .col-lg-2.col-md-2.col-xs-12
+        p = link_to 'Volver', padawan_desconexion_capsula_del_tiempo_index_path, class: 'btn btn-primary btn-block'
+        - if @object.is_open?
+          p = link_to 'Pagar todo', padawan_desconexion_capsula_del_tiempo_pay_all_path(@object), class: 'btn btn-warning btn-block'
+          p = link_to 'Pagar una cuota', padawan_desconexion_capsula_del_tiempo_pay_share_path(@object), class: 'btn btn-warning btn-block'
+      .col-lg-10.col-md-10.col-xs-12
+        .card
+          .card-header Datos del préstamo
+          .card-body
+            dl.row
+              dt.col-sm-6 Estado
+              dd.col-sm-6
+                - if @object.is_open?
+                  p Este préstamo está aún pendiente de ser cobrado en su totalidad. Se cobrará durante #{@object.share_remaining} viernes un total de #{seconds_to_s(@object.time_per_share)} hasta haber cobrado las #{@object.share} cuotas que solicitó
+                - else
+                  p Este préstamo se da por finalizado.
+
+              dt.col-sm-6 Inteŕes
+              dd.col-sm-6 = @object.interest
+
+              dt.col-sm-6 Préstamo total
+              dd.col-sm-6 = seconds_to_s(@object.time_loan)
+
+              dt.col-sm-6 Restante
+              dd.col-sm-6 = seconds_to_s(@object.time_remaining)
+
+              dt.col-sm-6 Pagado por el momento
+              dd.col-sm-6 = seconds_to_s(@object.time_loan - @object.time_remaining)

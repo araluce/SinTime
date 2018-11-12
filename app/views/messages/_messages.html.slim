@@ -1,0 +1,4 @@
+- if @messages.any?
+  - @messages.each do |message|
+    = render 'padawan/partials/message', message: message, user: @user, admin: @admin
+  .bottom-tag#bottom

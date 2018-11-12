@@ -1,0 +1,18 @@
+.table-responsive
+  table.table
+    thead
+      tr
+        th Icono
+        th Rango
+        th Puntuación mínima
+        th Acciones
+    tbody
+      - @objects.each do |object|
+        tr
+          td = image_tag object.icon.url(:thumb), class: 'img-thumbnail', style: 'width: 50px'
+          td = object.range_text
+          td = object.min_score
+          td
+            .action-buttons
+              = link_to fa_icon('cog 2x'), edit_manager_range_path(object)
+              = link_to fa_icon('times 2x'), manager_range_path(object), data: {confirm: '¿Estás seguro?'}, method: :delete

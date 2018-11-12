@@ -1,0 +1,70 @@
+- sport_date = Exercise::Sport.where('created_at < ?', Date.today.beginning_of_day).order(:created_at).last.created_at rescue Exercise::Sport.minimum(:created_at)
+- object = Exercise::Sport.find_by(created_at: sport_date)
+.row.mb-1.mt-1
+  .col-12
+    ul.game-nav
+      li.two = link_to fa_icon('fw lock', text: 'Cambiar de usuario'), edit_padawan_comunidad_login_path(object)
+      li.two = link_to fa_icon('fw chevron-circle-left', text: 'Volver'), padawan_comunidad_path
+
+.row
+  .col-12
+    .game-tab
+      ul.nav.nav-pills
+        li.two = link_to(object.statement, '#phase', {class: 'active', data: {toggle: 'tab'}}) if object
+        li.two = link_to('Mis sesiones', '#sessions', {data: {toggle: 'tab'}}) if object
+
+.tab-content.clearfix
+  .tab-pane.active#phase
+    - if object
+      .row
+        .col-12
+          .card
+            .card-body
+              .row
+                .col-12.col-md-6
+                  .row
+                    .col-12
+                      h3 Reto Ciclismo
+                    .col-12
+                      = render 'svg/cycling', fill: '#fff'
+                    .col-12
+                      p = "Velocidad: #{object.speed} kms/h"
+                      p = "Duración: #{seconds_to_s(object.time_cycling)}"
+                .col-12.col-md-6
+                  .row
+                    .col-12
+                      h3 Reto Running
+                    .col-12
+                      = render 'svg/running', stroke: '#000', fill: '#fff'
+                    .col-12
+                      p = "Ritmo: #{object.pace} min/km"
+                      p = "Duración: #{seconds_to_s(object.time_running)}"
+  .tab-pane#sessions
+    - if object && @sessions.any?
+      .row
+        - @sessions.each_with_index do |session, index|
+          .col-12.col-md-6
+            .card
+              .card-body
+                .row
+                  .col-12
+                    h3 = "Sesión ##{index+1}"
+                - if session.is_running?
+                  .row
+                    .col-12.col-md-2
+                      = render 'svg/running', stroke: '#000', fill: '#fff'
+                    .col-12.col-md-10.text-right
+                      p = "Tipo de sesión #{session.activity_type}"
+                      p = "Ritmo medio: #{number_with_precision(session.pace, precision: 2)} min/km"
+                      p = "Duración: #{seconds_to_s(session.duration/1000)}"
+                      /.box class="#{object.pace > session.pace ? 'box-success' : 'box-danger'}"
+
+                - else
+                  .row
+                    .col-12.col-md-2
+                      = render 'svg/cycling', fill: '#fff'
+                    .col-12.col-md-10.text-right
+                      p = "Tipo de sesión #{session.activity_type}"
+                      p = "Velocidad media: #{session.average_speed} kms/h"
+                      p = "Duración: #{seconds_to_s(session.duration/1000)}"
+                      /.box class="#{object.speed > session.average_speed ? 'box-danger' : 'box-success'}"

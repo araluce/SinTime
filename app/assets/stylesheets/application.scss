@@ -3,6 +3,14 @@
 @import "font-awesome";
 @import "datatables";
 @import "alerts";
+@import "style";
+@import "static/navbar";
+@import "static/home";
+@import "twitter";
+@import "url_preview";
+@import "static/bootstrap-datetimepicker.min";
+@import "padawan/galactic_background";
+@import "toastr";
 
 .vh-100{
   height: 100vh;
@@ -12,6 +20,30 @@
   -ms-transform: rotate(20deg); /* IE 9 */
   -webkit-transform: rotate(20deg); /* Safari */
   transform: rotate(20deg);
+}
+
+.blur-background{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 8px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+  width: 10px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+  border-radius: 8px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #555;
 }
 
 

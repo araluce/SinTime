@@ -1,0 +1,23 @@
+.row.mb-1.mt-1
+  .col-12
+    ul.game-nav
+      li.one = link_to fa_icon('fw chevron-circle-left', text: 'Volver'), padawan_viveres_path
+
+
+.row
+  .col-12
+    .card
+      .card-body
+        .row
+          .col-12
+            = progress_bar @percentage, label: true, striped: true, active: true, alternative: 'success', style: 'min-width: 20px'
+        .row.mt-3
+          .col-12
+            = render 'partials/feed_grill', collection: @objects_clan + @objects_individual
+            - unless @objects_individual.any?
+              .row
+                .col = link_to image_tag('padawan/viveres/gota.png', class: 'img-responsive'), padawan_viveres_purchase_exercise_path(exercise_id: @random_exercise.id), remote: true, class: 'btn', id: 'btn-random-js', style: 'width: 100%'
+
+.row
+  .col-12
+    .exercise-slot-js

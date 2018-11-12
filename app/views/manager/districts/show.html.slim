@@ -6,18 +6,36 @@ ol.breadcrumb
 .row
   .col-12
     .row
-      .col-2
+      .col-lg-2.col-md-2.col-xs-12
+        = image_tag @object.logo.url(:medium), class: 'img-thumbnail'
+        hr
         p = link_to 'Volver', manager_districts_path, class: 'btn btn-primary btn-block'
         p = link_to 'Editar', edit_manager_district_path(@object), class: 'btn btn-primary btn-block'
-      .col-5
+      .col-lg-5.col-md-5.col-xs-12
         .card
-          .card-block.card-text
-            fieldset
-              legend = "Datos del distrito #{@resource_name}"
-              hr
-              dl.row
-                dt.col-sm-6 Nombre
-                dd.col-sm-6 = @object.name
+          .card-header = "Datos del distrito #{@resource_name}"
+          .card-body
+            dl.row
+              dt.col-sm-6 Nombre
+              dd.col-sm-6 = @object.name
 
-                dt.col-sm-6 Ciudadanos
-                dd.col-sm-6 = @object.users.join(', ')
+              dt.col-sm-6 Ciudadanos
+              dd.col-sm-6 = @object.users.join(', ')
+
+      .col-lg-5.col-md-5.col-xs-12
+        .card
+          .card-header Realizar movimiento
+          .card-body
+            - if @object.users.any?
+              = simple_form_for(BankingMovement.new, url: manager_district_banking_movements_path(@object), as: :object, html: {class: 'form-vertical'}) do |f|
+                = f.input :reason, label: 'A razón', input_html: {required: true}
+                .row
+                  .col-md-3.col-12
+                    = f.input :days, input_html: {type: 'number', max: 7, min: -7, value: 0, required: true}
+                  .col-md-3.col-12
+                    = f.input :hours, input_html: {type: 'number', max: 24, min: -24, value: 0, required: true}
+                  .col-md-3.col-12
+                    = f.input :minutes, input_html: {type: 'number', max: 60, min: -60, value: 0, required: true}
+                  .col-md-3.col-12
+                    = f.input :seconds, input_html: {type: 'number', max: 60, min: -60, value: 0, required: true}
+                button.btn.btn-primary = fa_icon('fw paper-plane-o')

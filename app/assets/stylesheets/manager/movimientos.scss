@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Isocpeur';
+  src: asset-data-url('isocpeur-webfont.woff') format('woff'), asset-data-url('isocpeur-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.table-bank{
+  font-family: Isocpeur;
+
+  $red-bank-color: #F4137B;
+  $green-bank-color: #0083A1;
+  $gray-bank-color: #BBBCC4;
+
+  .green{
+    color: $green-bank-color;
+  }
+
+  .red{
+    color: $red-bank-color;
+  }
+
+  .gray{
+    color: $gray-bank-color;
+    font-weight: bold;
+  }
+
+  .green, .red {
+    font-weight: bold;
+  }
+}

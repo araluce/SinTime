@@ -1,0 +1,22 @@
+.table-responsive
+  table.table
+    thead
+      tr
+        th Usuario/Clan
+        th Ejercicio
+        th Tipo
+        th Acciones
+    tbody
+      - @objects.each do |object|
+        tr
+          td
+            - if object.exercise.is_clan?
+              = object.user.district
+            - else
+              = object.user.alias
+          td = object.exercise
+          td = object.exercise.type_to_s
+          td
+            .action-buttons
+              = link_to fa_icon('cog 2x'), edit_manager_delivery_path(object)
+              = link_to fa_icon('times 2x'), manager_delivery_path(object), data: {confirm: '¿Estás seguro?'}, method: :delete

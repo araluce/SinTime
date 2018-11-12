@@ -1,10 +1,7 @@
 module Manager
-  class CitizensController < ApplicationController
-    layout 'manager'
-
+  class CitizensController < Manager::ManagersController
     before_action :set_object, except: [:new, :create]
     before_action :set_objects, only: [:index]
-    before_action :authenticate_admin!
     before_action :load_resource_name
     before_action :set_open_section
 
@@ -39,7 +36,7 @@ module Manager
       @object.password = @object.password || @object.dni
 
       if @object.save
-        redirect_to manager_citizens_path, notice: 'Ciudadano creado correctamente'
+        redirect_to manager_citizen_path(@object), notice: 'Ciudadano creado correctamente'
       else
         object_initialization
         set_objects
@@ -52,7 +49,7 @@ module Manager
 
     def update
       if @object.update(object_params)
-        redirect_to manager_citizens_path, notice: 'Ciudadano actualizado correctamente'
+        redirect_to manager_citizen_path(@object), notice: 'Ciudadano actualizado correctamente'
       else
         object_initialization
         set_objects
@@ -63,31 +60,41 @@ module Manager
     def destroy
       @object.destroy
       respond_to do |format|
-        format.html {redirect_to manager_districts_path, notice: 'Ciudadano eliminado correctamente'}
+        format.html {redirect_to manager_citizen_path, notice: 'Ciudadano eliminado correctamente'}
         format.json {head :no_content}
       end
+    end
+
+    def level_up
+      LevelService.level_up @object
+      flash[:notice] = 'Operación realizada correctamente'
+      redirect_to manager_citizen_path(@object)
     end
 
     private
 
     def object_params
       params.require(:user).permit(
+          :avatar,
           :name,
           :lastname,
           :dni,
           :email,
           :alias,
           :password,
+          :level,
+          :xp,
           :district_id
       )
     end
 
     def set_object
-      @object = model.find_by_id(params[:id])
+      @object = model.find_by_id(params[:id] || params[:citizen_id])
     end
 
     def set_objects
-      @objects = model.order(email: :desc)
+      @objects = model.all.map{|user| {user: user, score: user.banking_movements.where(created_at: DateTime.now.beginning_of_month..DateTime.now.end_of_month).map {|banking_movement| banking_movement.seconds_difference }.sum}}.sort_by{|obj| -obj[:score]}
+      @user_final_ranking = model.all.map{|user| {user: user, score: user.banking_movements.map {|banking_movement| banking_movement.seconds_difference }.sum}}.sort_by{|obj| -obj[:score]}
     end
 
   end

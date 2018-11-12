@@ -1,33 +1,86 @@
 ol.breadcrumb
   li.breadcrumb-item = link_to 'Dashboard', manager_home_path
-  li.breadcrumb-item = link_to "#{@resource_name.pluralize}", manager_districts_path
-  li.breadcrumb-item.active = "Datos del distrito #{@object.name.titleize}"
+  li.breadcrumb-item = link_to "#{@resource_name.pluralize}", manager_citizens_path
+  li.breadcrumb-item.active = "Datos del padawan #{@object.name.titleize}"
 
 .row
   .col-12
     .row
-      .col-2
-        p = link_to 'Volver', manager_districts_path, class: 'btn btn-primary btn-block'
-        p = link_to 'Editar', edit_manager_district_path(@object), class: 'btn btn-primary btn-block'
-      .col-5
+      .col-lg-2.col-md-2.col-xs-12
+        td = render 'partials/avatar', user: @object, avatar_style: :medium, custom_class: 'img-circle', custom_style: 'max-width: 100%'
+        hr
+        p = link_to 'Volver', manager_citizens_path, class: 'btn btn-primary btn-block'
+        p = link_to 'Editar', edit_manager_citizen_path(@object), class: 'btn btn-primary btn-block'
+        p = link_to 'Entregas', manager_citizen_user_deliveries_path(@object), class: 'btn btn-outline-info btn-block'
+        p = link_to 'Movimientos', manager_citizen_movimientos_path(@object), class: 'btn btn-outline-info btn-block'
+        p = link_to 'Subir nivel', manager_citizen_level_up_path(@object), class: 'btn btn-outline-info btn-block', data: {confirm: '¿Estás seguro?', disable_with: 'Enviando...'}
+        p = link_to 'Datos deportivos', manager_citizen_user_sports_path(@object), class: 'btn btn-outline-info btn-block', data: {disable_with: 'Enviando...'}
+      .col-lg-5.col-md-5.col-xs-12
         .card
-          .card-block.card-text
-            fieldset
-              legend = "Datos del usuario #{@object}"
+          .card-header = "Datos del usuario #{@object}"
+          .card-body
+            dl.row
+              dt.col-sm-6.text-center = "Nivel #{@object.level}"
+              dt.col-sm-6.text-center = "#{@object.xp} XP"
+              .col-12
+                .countdown style="color: black!important"
               hr
-              dl.row
-                dt.col-sm-6 Nombre
-                dd.col-sm-6 = @object.full_name
+              dt.col-sm-6 Nombre
+              dd.col-sm-6 = @object.full_name
 
-                dt.col-sm-6 Email
-                dd.col-sm-6 = @object.email
+              dt.col-sm-6 Email
+              dd.col-sm-6 = @object.email
 
-                dt.col-sm-6 DNI
-                dd.col-sm-6 = @object.dni
+              dt.col-sm-6 DNI
+              dd.col-sm-6 = @object.dni
 
-                dt.col-sm-6 Distrito
-                dd.col-sm-6
-                  - if @object.district
-                    = link_to @object.district, manager_district_path(@object.district)
-                  - else
-                    | Este usuario no está asignado a ningún distrito
+              dt.col-sm-6 Distrito
+              dd.col-sm-6
+                - if @object.district
+                  = link_to @object.district, manager_district_path(@object.district)
+                - else
+                  | Este usuario no está asignado a ningún distrito
+
+              - if @object.loans.open.any?
+                dt.col-sm-6 Préstamos abierto
+                dd.col-sm-6 = @object.loans.open.first
+
+              dt.col-sm-6 Préstamos pagados
+              dd.col-sm-6 = @object.loans.closed.count
+
+      .col-lg-5.col-md-5.col-xs-12
+        .card
+          .card-header Realizar movimiento
+          .card-body
+            = simple_form_for(BankingMovement.new, url: manager_citizen_banking_movements_path(@object), as: :object, html: {class: 'form-vertical'}) do |f|
+              = f.input :reason, label: 'A razón', input_html: {required: true}
+              .row
+                .col-md-3.col-12
+                  = f.input :days, input_html: {type: 'number', max: 7, min: -7, value: 0, required: true}
+                .col-md-3.col-12
+                  = f.input :hours, input_html: {type: 'number', max: 24, min: -24, value: 0, required: true}
+                .col-md-3.col-12
+                  = f.input :minutes, input_html: {type: 'number', max: 60, min: -60, value: 0, required: true}
+                .col-md-3.col-12
+                  = f.input :seconds, input_html: {type: 'number', max: 60, min: -60, value: 0, required: true}
+              button.btn.btn-primary = fa_icon('fw paper-plane-o')
+
+    .row
+      .col-lg-5.offset-lg-2.col-md-5.offset-md-2.col-xs-12
+        .card
+          .card-header Cartas del usuario
+          .card-body
+            - PrivilegesCard.all.each do |card|
+              - UserPrivilegesCard.where(privileges_card: card, user: @object).each do |user_privilege_card|
+                .bubble.font-95.bold.has-bubble.row
+                  dd.col-sm-9 = user_privilege_card.privileges_card
+                  dd
+                    .bubble.text-center class="#{card_is_valid?(user_privilege_card) ? 'bubble-success' : 'bubble-warning'}"
+                      = fa_icon "fw 2x #{card_is_valid?(user_privilege_card) ? 'check' : 'times'}"
+
+
+script
+  - unless @object.is_in_holidays?
+    = render 'padawan/countdown.js.erb', datetime: @object.tdv.to_f * 1000
+  - else
+    = render 'padawan/countdown_holidays.js.erb', datetime: (DateTime.now.to_f + @object.tdv_holidays_ref.to_f) * 1000

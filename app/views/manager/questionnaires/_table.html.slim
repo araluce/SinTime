@@ -1,0 +1,25 @@
+.table-responsive
+  table.table
+    thead
+      tr
+        th Enunciado
+        th #Opciones
+        th #Superado
+        th #No superado
+        th Acciones
+    tbody
+      - @objects.all.each do |questionnaire|
+        - user_questionnaires = questionnaire.user_questionnaires
+        tr
+          td = questionnaire.statement
+          td = questionnaire.options.count
+          td = user_questionnaires.count - user_questionnaires.map {|user_questionnaire| user_questionnaire.all_right? ? 0 : 1}.sum
+          td = user_questionnaires.count - user_questionnaires.map {|user_questionnaire| user_questionnaire.all_right? ? 1 : 0}.sum
+          td
+            .action-buttons
+              = link_to fa_icon('eye 2x'), manager_questionnaire_path(questionnaire)
+              = link_to fa_icon('cog 2x'), edit_manager_questionnaire_path(questionnaire)
+              = link_to fa_icon('times 2x'), manager_questionnaire_path(questionnaire), data: {confirm: '¿Estás seguro?'}, method: :delete
+  .row
+    .col-md-12.pull-right
+      = paginate @objects

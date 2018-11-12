@@ -1,0 +1,4 @@
+.exercise-link
+  = link_to(exercise.file.url(:original, false), class: 'row message') do
+    .col
+      = render('padawan/js_templates/exercise_score', exercise: exercise)

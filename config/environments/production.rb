@@ -88,4 +88,17 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.default_url_options = { host: Rails.application.secrets.host }
+  config.action_mailer.asset_host = "#{Rails.application.secrets.protocol}://#{Rails.application.secrets.host}"
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :address   => 'localhost',
+      :port      => 25, # ports 587 and 2525 are also supported with STARTTLS
+      :enable_starttls_auto => false, # detects and uses STARTTLS
+      :user_name => Rails.application.secrets.mailer_user_name,
+      :password  => Rails.application.secrets.mailer_password, # SMTP password is any valid API key
+      :authentication => 'login', # Mandrill supports 'plain' or 'login'
+      :domain => 'sintime.es', # your domain to identify your server when connecting
+  }
 end

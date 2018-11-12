@@ -1,0 +1,9 @@
+.row.padding-home
+  .col-12.vh-100 style="position: relative"
+
+    = simple_form_for(@user, url: check_register_path, action: :update, html: {class: 'form-vertical box', multipart: true}) do |f|
+      .row
+        .col
+          = f.input :dni, input_html: {placeholder: 'DNI'}, label: false, require: true
+        .col
+          = f.button :submit, 'Ir a registro', class: 'btn btn-primary'

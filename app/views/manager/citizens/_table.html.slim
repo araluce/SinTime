@@ -1,24 +1,31 @@
-table.table
-  thead
-    tr
-      th Nombre
-      th Apellidos
-      th DNI
-      th email
-      th Alias
-      th Distrito
-      th Acciones
-  tbody
-    - @objects.each do |citizen|
+.table-responsive
+  table.table
+    thead
       tr
-        td = citizen.name
-        td = citizen.lastname
-        td = citizen.dni
-        td = citizen.email
-        td = citizen.alias
-        td = citizen.district
-        td
-          .action-buttons
-            = link_to fa_icon('eye'), manager_citizen_path(citizen)
-            = link_to fa_icon('cog'), edit_manager_citizen_path(citizen)
-            = link_to fa_icon('times'), manager_citizen_path(citizen), data: {confirm: '¿Estás seguro?'}, method: :delete
+        th Puesto final
+        th Avatar
+        th Alias
+        th TDV
+        th Puesto este mes
+        th Rango
+        th Distrito
+        th Acciones
+    tbody
+      - @user_final_ranking.each_with_index do |citizen_ranking, index|
+        - citizen = citizen_ranking[:user]
+        - final_range = @objects.find_index({user: citizen, score: citizen.banking_movements.where(created_at: DateTime.now.beginning_of_month..DateTime.now.end_of_month).map {|banking_movement| banking_movement.seconds_difference }.sum}) + 1
+        tr
+          td = index + 1
+          td = render 'partials/avatar', user: citizen, avatar_style: :thumb, custom_class: 'img-circle'
+          td = "@#{citizen.alias}"
+          td = "#{seconds_to_s((citizen.tdv - DateTime.now).to_i)}"
+          td = final_range
+          td
+            - range_icon = UserRange.where('min_score >= ?', final_range).order(min_score: :desc).last
+            = range_icon.range_text
+          td = citizen.district
+          td
+            .action-buttons
+              = link_to fa_icon('fw eye 2x'), manager_citizen_path(citizen)
+              = link_to fa_icon('fw cog 2x'), edit_manager_citizen_path(citizen)
+              = link_to fa_icon('fw times 2x'), manager_citizen_path(citizen), data: {confirm: '¿Estás seguro?'}, method: :delete

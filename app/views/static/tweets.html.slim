@@ -1,0 +1,7 @@
+.row.padding-home
+  .col-12.text-center
+    .title-400 Sobre Sintime
+  .col-lg-6.offset-lg-3.col-12
+    .tweetEntry-tweetHolder
+      - @sintime_tweets.each do |tweet|
+        = render 'partials/tweet', tweet: tweet

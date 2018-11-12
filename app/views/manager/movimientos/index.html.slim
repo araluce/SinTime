@@ -1,0 +1,33 @@
+ol.breadcrumb
+  li.breadcrumb-item = link_to 'Dashboard', manager_home_path
+  li.breadcrumb-item = link_to 'Padawans', manager_citizens_path
+  li.breadcrumb-item = link_to "@#{@user.alias.downcase}", manager_citizen_path(@user)
+  li.breadcrumb-item.active Movimientos
+
+.card.mb-3
+  .card-header = fa_icon 'fw table', text: 'Movimientos'
+  .card-body
+    .row
+      .col-12
+        .table-responsive
+          table.table.table-bank
+            thead
+              tr
+                th Concepto
+                th Fecha
+                th style="text-align: right;" Operación
+            tbody
+              - @objects.each do |object|
+                tr
+                  td
+                    - if object.exercise
+                      = [object.reason, object.exercise].join(' ')
+                    - else
+                      = object.reason
+                  td = object.created_at.to_formatted_s(:short)
+                  td
+                    .row
+                      .col-12
+                        .pull-right class="#{object.is_positive? ? 'green' : 'red'}" = "#{object.is_positive? ? '+' : '-'} #{seconds_to_s(object.seconds_difference.abs)}"
+                      .col-12
+                        .pull-right.gray = seconds_to_s(object.time_after)

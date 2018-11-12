@@ -1,0 +1,14 @@
+- if defined?(custom_label)
+  fieldset
+    .row
+      .col-12
+        legend = custom_label
+.row
+  .col-3
+    = f.input "days_#{suffix}".to_sym, input_html: {type: 'number', value: seconds_to_days(f.object.send("time_#{suffix}")), min: 0}, label: 'Días'
+  .col-3
+    = f.input "hours_#{suffix}".to_sym, input_html: {type: 'number', value: seconds_to_hours(f.object.send("time_#{suffix}")), min: 0}, label: 'Horas'
+  .col-3
+    = f.input "minutes_#{suffix}".to_sym, input_html: {type: 'number', value: seconds_to_minutes(f.object.send("time_#{suffix}")), min: 0}, label: 'Minutos'
+  .col-3
+    = f.input "seconds_#{suffix}".to_sym, input_html: {type: 'number', value: seconds_to_seconds(f.object.send("time_#{suffix}")), min: 0}, label: 'Segundos'

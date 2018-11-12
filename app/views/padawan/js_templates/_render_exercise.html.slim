@@ -1,0 +1,39 @@
+- if @response
+  - previous_history_whit_exercise = @my_deliveries.where(exercise: @object)
+
+  .exercise-preview data-exercise-id="#{@object.id}"
+    .card
+      .card-body.text-left
+        .row.wrapper
+          .col-lg-3.col-md-12
+            .row
+              .col.preview
+                .preview-pic.tab-content
+                  .preview-pic-badge.text-center
+                    - if previous_history_whit_exercise.any?
+                      h3
+                        span.badge.badge-success = previous_history_whit_exercise.last.status
+                  .pic.tab-pane.active = image_tag @object.icon.url(:medium), class: 'img-thumbnail'
+            .row
+              .col
+                = render 'padawan/js_templates/exercise_price', exercise: @object
+
+
+          .col-lg-9.col-md-12.details
+            h3.product-title
+              = @object.title.titleize
+
+            .rating
+              = render 'padawan/js_templates/exercise_review', exercise: @object
+              = render 'padawan/js_templates/exercise_description', exercise: @object
+              = render 'padawan/js_templates/deliveries', previous_history_whit_exercise: previous_history_whit_exercise
+
+
+
+              - if previous_history_whit_exercise.comprado.any?
+                .class-exercises-alerts
+                  .alert.alert-info
+                    strong Ejercicio comprado
+
+              .action
+                = render 'padawan/js_templates/exercise_actions', exercise: @object, deliveries: @my_deliveries, previous_history_whit_exercise: previous_history_whit_exercise

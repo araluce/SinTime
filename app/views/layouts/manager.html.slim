@@ -9,6 +9,8 @@ html lang="en"
     = csrf_meta_tags
     = stylesheet_link_tag 'manager', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'manager', 'data-turbolinks-track': 'reload'
+    = action_cable_meta_tag
+    = render 'application/favicon'
 
   body.fixed-nav.sticky-footer.bg-dark
     nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top#mainNav
@@ -24,12 +26,15 @@ html lang="en"
       .container-fluid
         .alert-content
           - if notice
-            = render 'application/alert', alert_class: 'success', text: notice
+            script
+              = render 'application/alert.js.erb', alert_class: 'success', text: notice
           - if alert
-            = render 'application/alert', alert_class: 'danger', text: alert
+            script
+              = render 'application/alert.js.erb', alert_class: 'danger', text: alert
           - unless @object.nil?
             - if @object.errors.any?
-              = render 'application/alert', alert_class: 'danger', text: 'Se han producido algunos errores'
+              script
+                = render 'application/alert.js.erb', alert_class: 'danger', text: 'Se han producido algunos errores'
         = yield
 
     = render 'manager/footer'

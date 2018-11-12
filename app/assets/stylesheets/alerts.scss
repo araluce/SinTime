@@ -11,8 +11,8 @@
 }
 
 .alert-info, .alert-notice, .alert-success {
-  color: #0c5460;
-  background-color: #d1ecf1;
+  color: white;
+  background-color: #0069D9;
 }
 
 .alert-dismissible {
@@ -30,7 +30,7 @@
     display: -ms-flexbox;
     display: flex;
     position: relative;
-    width: 25%;
+    width: 90%;
     margin: 0 auto;
     box-sizing: border-box;
     -webkit-animation: appear .3s ease-in-out;
@@ -38,6 +38,7 @@
     border-radius: 0;
     border-width: 0;
     line-height: 1.5;
+    font-size: 0.6rem;
 
     .message {
       margin-left: 60px;
@@ -63,6 +64,15 @@
     .icon-success, .icon-info, .icon-notice{
       background-color: #0c5460;
       color: #d1ecf1;
+    }
+  }
+}
+
+@media (max-width: 990px) {
+  .alert-content {
+    .alert {
+      width: 90%;
+      font-size: 2rem;
     }
   }
 }

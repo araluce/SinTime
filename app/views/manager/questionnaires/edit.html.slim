@@ -1,0 +1,13 @@
+ol.breadcrumb
+  li.breadcrumb-item = link_to 'Dashboard', manager_home_path
+  li.breadcrumb-item = link_to "#{@resource_name.pluralize}", manager_questionnaires_path
+  li.breadcrumb-item = link_to 'Cuestionario', manager_questionnaire_path(@object)
+  li.breadcrumb-item.active Editar
+
+.card.mb-3
+  .card-header = fa_icon 'question', text: "Editar #{@resource_name.downcase}"
+  .card-body
+    .row
+      .col-sm-12
+        = simple_form_for(@object, url: manager_questionnaire_path(@object), html: {class: 'form-vertical', multipart: true}) do |f|
+          = render 'form', f: f

@@ -1,0 +1,41 @@
+#header {
+  font-size: 1.2rem;
+  border: 4px white solid;
+  border-radius: 4px;
+  .logo{
+    width: 190px;
+    height: 60px;
+
+    background-image: asset-data-url('sinTime.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 190px 60px;
+  }
+  a {
+    font-family: 'burbank';
+    color: #f8f9fa;
+    display: block;
+    text-decoration: none;
+    line-height: 65px;
+    text-align: center;
+  }
+  a.active, a:hover, a:active {
+    //border-bottom: 3px #f8f9fa solid;
+  }
+
+  .navbar-toggler {
+    font-family: FontAwesome;
+    color: #fff;
+    border: none;
+    &:before{
+      content:"\f039";
+    }
+    &:focus{
+      outline: none!important;
+    }
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
+

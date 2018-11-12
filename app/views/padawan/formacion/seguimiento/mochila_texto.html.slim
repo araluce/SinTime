@@ -1,0 +1,11 @@
+.row
+  .col-12.future-card
+    .row style="margin-bottom: 1%;"
+      .col-sm-12
+        .btn-pref.btn-group.btn-group-justified.btn-group-lg role="group" style="width: 100%"
+          = link_to 'Texto', padawan_home_path, class: 'btn btn-primary', style: 'width: 25%', remote: true
+          = link_to 'Audiovisual', padawan_home_path, class: 'btn btn-primary', style: 'width: 25%', remote: true
+          = link_to 'Herramientas', padawan_home_path, class: 'btn btn-primary', style: 'width: 25%', remote: true
+          = link_to 'Compartidos', padawan_home_path, class: 'btn btn-primary', style: 'width: 25%', remote: true
+    .row
+      = render 'padawan/partials/tweet'

@@ -1,0 +1,11 @@
+.card
+  .card-header Detalles del ejercicio
+  .card-footer
+    = @object.exercise
+    - if @object.file.exists?
+      = link_to @object.file_file_name,  @object.file.url(:original, false)
+
+= f.input :file, as: :file, label: 'Modificar entrega'
+= f.association :score
+
+= f.button :submit, class: 'btn btn-block btn-primary'

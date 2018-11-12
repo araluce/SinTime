@@ -16,8 +16,25 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require datatables
-//= require_tree .
+//= require cocoon
+//= require static/home_buttons
+//= require static/bootstrap-datetimepicker.min
+//= require static/date_time_picker_input
+//= require analytics/google_analytics
+//= require toastr
+//= require static/toastr
 
 $(document).ready(function() {
     $(".datatable").dataTable();
+});
+
+$(window).scroll(function() {
+    if($(this).scrollTop() > 50)
+    {
+        $('.navbar-trans').addClass('afterscroll');
+    } else
+    {
+        $('.navbar-trans').removeClass('afterscroll');
+    }
+
 });

@@ -1,0 +1,24 @@
+.chat
+  .col-sm-12.conversation
+    .row.heading
+      .col-md-1.col-1.heading-avatar
+        .heading-avatar-icon = image_tag 'alianza_rebelde.png'
+      .col-sm-8.col-xs-7.heading-name
+        a.heading-name-meta Alianza Rebelde
+      .col-sm-1.col-xs-1.heading-dot.pull-right
+        = link_to fa_icon('chevron-left 2x', class:'pull-right'), padawan_comunidad_rci_sala_index_path
+
+    #conversation.row.message data-id="#{@chat.id}"
+      - @messages.each do |message|
+        = render 'padawan/partials/message', message: message, user: current_user, admin: current_admin
+      #datauser data-userid="#{current_user ? current_user.id : 0}"
+      #dataadmin data-adminid="#{current_admin ? current_admin.id : 0}"
+      .bottom-tag#bottom
+
+    = form_for @message, url: messages_path, remote: true, html: {class:'row reply'} do |f|
+      .col-1.badge-new-message
+      .col-10.reply-main
+        = f.text_area :message, id: 'comment', class:'form-control', rows: '1'
+        = f.hidden_field :chatroom_id, value: @chat.id
+      .col-1.send-message
+        button type="submit" class="btn" = fa_icon('fw paper-plane-o')

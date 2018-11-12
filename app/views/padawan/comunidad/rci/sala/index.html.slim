@@ -1,0 +1,37 @@
+.clearfix
+#fancy-list-group
+  .row
+    .list-group.col-12
+      li.list-group-item
+        .list-group-item-addon
+          = link_to fa_icon('chevron-left 3x'), padawan_comunidad_rci_path
+        .list-group-item-content
+          h1.list-group-item-heading.text-center Chat
+          p.list-group-item-text = "@#{current_user.alias.downcase}"
+
+      li.list-group-item
+        .list-group-item-addon.with-img
+          .avatar-icon = image_tag 'alianza_rebelde.png'
+        .list-group-item-content
+          h4.list-group-item-heading Alianza Rebelde
+          p.list-group-item-text
+            - messages = Chat::General.first_or_create.messages
+            - if messages.any?
+              = messages.last.message
+        .list-group-item-addon
+          a data-placement="top" data-toggle="tooltip" href="#" title="Add"
+            = link_to fa_icon('comments-o 3x', class:'pull-right'), padawan_comunidad_rci_chat_general_path(1)
+
+      - @users.each do |user|
+        li.list-group-item class="#{Chat::Individual.messages_not_read(current_user.id, user.id).any? ? 'list-group-item-info' : ''}"
+          .list-group-item-addon.with-img
+            .avatar-icon = render 'partials/avatar', user: user, avatar_style: :thumb
+          .list-group-item-content
+            h4.list-group-item-heading = "@#{user.alias}".downcase
+            p.list-group-item-text
+              - messages = Chat::Individual.get_messages(current_user.id, user.id)
+              - if messages && messages.any?
+                = messages.last.message
+          .list-group-item-addon
+            a data-placement="top" data-toggle="tooltip" href="#" title="Add"
+              = link_to fa_icon('comments-o 3x', class: 'pull-right'), padawan_comunidad_rci_chat_user_path(user)

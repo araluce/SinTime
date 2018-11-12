@@ -1,0 +1,43 @@
+.row
+  .col-12.future-card
+
+    .row style="margin-bottom: 1%; margin-top: 1%;"
+      .col-12
+        = link_to fa_icon('fw chevron-circle-left', text: 'Volver'), padawan_home_path, class: 'btn btn-primary pull-right'
+
+    .row
+      - @objects.each do |object|
+
+        - if current_user.exercise_users.where(exercise: object).any?
+          - exercise_user = current_user.exercise_users.where(exercise: object).first
+        - else
+          - exercise_user = current_user.exercise_users.build(exercise: object)
+
+        - if exercise_user.persisted?
+          - url = padawan_felicidad_audiencium_path(exercise_user)
+        - else
+          - url = padawan_felicidad_audiencia_path
+
+        = simple_form_for(exercise_user, url: url, as: :object, html: {class: 'box', multipart: true}) do |f|
+          .row
+            .col-12.text-center
+              .h3 = object
+              = f.association :exercise, as: :hidden, selected: object
+            .col-12
+              = f.label 'Propuesta'
+            - unless exercise_user.file.exists?
+              .col-12
+                = f.input :file, as: :file, label: false
+            - else
+              .col-12
+                = link_to exercise_user.file_file_name,  exercise_user.file.url(:original, false)
+            .col-12
+              /= f.label 'Evidencia'
+            .col-12
+              - unless exercise_user.second_file.exists?
+                /= f.input :second_file, as: :file, label: false
+              - else
+                /= link_to exercise_user.second_file_file_name,  exercise_user.second_file.url(:original, false)
+            - unless exercise_user.file.exists? && exercise_user.second_file.exists?
+              .col-12
+                = f.button :submit, 'Entregar', class: 'btn btn-primary'

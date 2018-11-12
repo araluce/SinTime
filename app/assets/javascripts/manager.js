@@ -15,6 +15,31 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require jquery.countdown
+//= require jquery.countdown-es
+//= require datatables
+//= require cocoon
 //= require manager/sb-admin
-//= require manager/sb-admin-charts
-//= require manager/sb-admin-datatables
+//= require static/bootstrap-datetimepicker.min
+//= require static/date_time_picker_input
+//= require select2
+//= require static/select2
+//= require_tree ./channels
+//= require toastr
+//= require static/toastr
+
+
+$(document).ready(function() {
+    $(".datatable").dataTable();
+});
+
+$(window).scroll(function() {
+    if($(this).scrollTop() > 50)
+    {
+        $('.navbar-trans').addClass('afterscroll');
+    } else
+    {
+        $('.navbar-trans').removeClass('afterscroll');
+    }
+
+});

@@ -1,0 +1,31 @@
+.row
+  .col-lg-3.col-md-6
+    = render 'partials/button', custom_path: padawan_padawan_info_path, custom_image: 'padawan/padawan.png', custom_label: 'padawan'
+
+  .col-lg-3.col-md-6
+    = render 'partials/button',
+            custom_path: padawan_formacion_path,
+            custom_image: 'padawan/formacion.png',
+            custom_label: 'formación',
+            badge: Exercise::LevelTest.uncompleted.count + current_user.pending_questionnaires
+
+  .col-lg-3.col-md-6
+    = render 'partials/button', custom_path: padawan_viveres_path, custom_image: 'padawan/viveres.png', custom_label: 'víveres'
+
+  .col-lg-3.col-md-6
+    = render 'partials/button', custom_path: padawan_comunidad_path,
+            custom_image: 'padawan/comunidad_de_aprendizaje.png',
+            custom_label: 'comunidad',
+            badge: current_user.messages_not_reads.count + current_user.group_messages_not_read + Mine.avaliables.count
+
+  .col-lg-3.col-md-6
+    = render 'partials/button', custom_path: padawan_desconexion_path, custom_image: 'padawan/desconexion.png', custom_label: 'desconexión'
+
+  .col-lg-3.col-md-6
+    = render 'partials/button', custom_path: '#', custom_image: 'padawan/dagobah.png', custom_label: 'dagobah'
+
+  .col-lg-3.col-md-6
+    = render 'partials/button', custom_path: padawan_felicidad_audiencia_path, custom_image: 'padawan/felicidad.png', custom_label: 'felicidad'
+
+  .col-lg-3.col-md-6
+    = render 'partials/button', custom_path: destroy_user_session_path, custom_image: 'padawan/logout.png', custom_label: 'salir', custom_method: 'delete'

@@ -2,7 +2,12 @@
 lock "~> 3.10.0"
 
 set :application, 'sintime'
-set :repo_url, 'https://github.com/araluce/SinTime.git'
+set :repo_url, 'git@github.com:araluce/SinTime.git'
+set :deploy_to, 'home/sintimee/ruby/'
+
+set :rollbar_token, 'e1fb9500f127437e950e0a751742ee44'
+set :rollbar_env, Proc.new { fetch :stage }
+set :rollbar_role, Proc.new { :app }
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -21,11 +26,12 @@ set :repo_url, 'https://github.com/araluce/SinTime.git'
 # set :pty, true
 
 # Default value for :linked_files is []
-append :linked_files, 'config/database.yml', 'config/secrets.yml'
+append :linked_files, "config/database.yml", "config/secrets.yml"
+append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
 
-# Default value for linked_dirs is []
-append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system', 'public/uploads'
+set :whenever_roles, ->{ [:web, :app]}
 
+after 'deploy:publishing', 'deploy:restart'
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
@@ -37,3 +43,4 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/syst
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
+

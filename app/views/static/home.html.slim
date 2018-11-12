@@ -1,4 +1,10 @@
-.row.vh-100.home-background
-  .col-lg-2.offset-lg-5.col-md-2.offset-md-5.col-12.align-self-center
-    = link_to citizen_home_path, class: 'btn btn-block btn-outline-primary' do
-      | Entrar
+.row
+  .col-12
+    .text-center.row
+      .col-12
+        .row
+          .col-12
+            .home-title-edition = image_tag 'titulo_low.png'
+        .row
+          .col-6.home-button = link_to 'Acceso padawan', padawan_home_path, class: 'burbank padawan'
+          .col-6.home-button = link_to 'Acceso Guidoogway', manager_home_path, class: 'burbank admin'

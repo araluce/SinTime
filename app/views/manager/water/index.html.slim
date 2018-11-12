@@ -1,0 +1,18 @@
+ol.breadcrumb
+  li.breadcrumb-item = link_to 'Dashboard', manager_home_path
+  li.breadcrumb-item.active = "#{@resource_name.pluralize}"
+
+.card.mb-3
+  .card-header = fa_icon 'table', text: "#{@resource_name.pluralize}"
+  .card-body
+    .row
+      .col-sm-12
+        fieldset
+          legend = fa_icon 'plus', text: 'Tabla de retos de agua'
+          = render 'table'
+    .row
+      .col-sm-12
+        fieldset
+          legend = fa_icon 'plus', text: 'Crea tu reto de agua'
+          = simple_form_for(@object, url: manager_water_index_path, html: {class: 'form-vertical', multipart: true}) do |f|
+            = render 'form', f: f

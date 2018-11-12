@@ -1,0 +1,47 @@
+doctype html
+html
+  head
+    title Padawan | SinTime
+    = csrf_meta_tags
+
+    = stylesheet_link_tag    'padawan', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'padawan', 'data-turbolinks-track': 'reload'
+    = action_cable_meta_tag
+    = render 'application/favicon'
+
+    - if Rails.env.production?
+      script type="text/javascript"
+        = render 'partials/analytics/script.js'
+
+  .page
+    #stars
+    #stars2
+    #stars3
+
+    .container-fluid
+      h1 = yield(:clock)
+      .row
+        .col-11.countdown
+        .col-1
+          = render 'partials/avatar', user: current_user, custom_style: 'max-width: 83px;'
+
+      .alert-content
+        - if notice
+          script
+            = render 'application/alert.js.erb', alert_class: 'notice', text: notice
+        - if alert
+          script
+            = render 'application/alert.js.erb', alert_class: 'danger', text: alert
+        - if defined? @errors
+          script
+            = render 'application/alert.js.erb', alert_class: 'danger', text: @errors.full_messages
+
+      = yield
+
+      = render 'padawan/footer'
+
+      script
+        - unless current_user.is_in_holidays?
+          = render 'padawan/countdown.js.erb', datetime: @tdv.to_f * 1000
+        - else
+          = render 'padawan/countdown_holidays.js.erb', datetime: (DateTime.now.to_f + current_user.tdv_holidays_ref.to_f) * 1000

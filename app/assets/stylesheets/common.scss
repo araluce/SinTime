@@ -1,0 +1,75 @@
+@import "variables.scss";
+
+.help-block{
+  color: #843534 !important;
+  font-weight: 600;
+}
+
+fieldset{
+  legend{
+    font-size: 1rem;
+    padding: 0.55rem 0;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px $gray-400 solid;
+
+    &:before{
+      font-family: 'FontAwesome';
+      content: '\f1ce';
+      margin-right: 1%;
+    }
+  }
+}
+
+.bubble{
+  position: relative;
+  padding: 15px;
+  border: 1px $gray-400 solid;
+  color: $gray-700;
+  border-radius: 4px;
+  margin-top: 1%;
+
+  &.font-75{
+    font-size: 75%;
+  }
+
+  &.font-95{
+    font-size: 95%;
+  }
+
+  &.bold{
+    font-weight: bold;
+  }
+
+  &:first-child{
+    margin-top: 0;
+  }
+
+  &.bubble-warning{
+    border-color: $red;
+    color: $red;
+    background-color: $red-light;
+  }
+
+  &.bubble-success{
+    border-color: $green;
+    color: $green;
+    background-color: $green-light;
+  }
+
+
+  .bubble.bubble-success,
+  .bubble.bubble-warning{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+abbr[title="required"]{
+  text-decoration: none;
+  font-family: FontAwesome;
+  content: '\f069';
+}

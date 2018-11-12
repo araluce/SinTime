@@ -1,0 +1,6 @@
+= simple_form_for(object, url: padawan_viveres_send_exercise_path(object), action: :update, html: {class: 'form-vertical box'}) do |f|
+  .row
+    .col
+      = f.file_field :file, as: :file, label: 'Entrega'
+    .col
+      = f.button :submit, 'Enviar', id: 'exerciseUpload', data: { disable_with: 'Enviando...' }

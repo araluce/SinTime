@@ -1,0 +1,14 @@
+ol.breadcrumb
+  li.breadcrumb-item = link_to 'Dashboard', manager_home_path
+  li.breadcrumb-item = link_to 'Padawans', manager_citizens_path
+  li.breadcrumb-item = link_to "@#{@user.alias.downcase}", manager_citizen_path(@user)
+  li.breadcrumb-item.active Entregas
+
+.card.mb-3
+  .card-header = fa_icon 'table', text: 'Entregas'
+  .card-body
+    .row
+      .col-sm-12
+        fieldset
+          legend = fa_icon 'plus', text: 'Tabla de entregas'
+          = render 'table'

@@ -1,0 +1,53 @@
+.game-nav{
+  padding: 0;
+  list-style: none;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  &ul, &ol{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+
+  li.two{
+    width: 50%;
+  }
+
+  li{
+    display: inline-block;
+    text-align: center;
+    width: 50%;
+    float: left;
+
+    a{
+      padding: 21px 0;
+      color: #fff;
+      display: inline-block;
+      width: 100%;
+      background: #272737;
+      font-size: 1rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      text-decoration: none;
+
+      &:focus, &:hover{
+        background: #f68b1f;
+        color: #272737;
+      }
+    }
+
+    &.one{ width: 100%; }
+    &.two{ width: 50%; }
+    &.three{ width: 33.33%; }
+    &.four{ width: 25%; }
+    &.five{ width: 20%; }
+    &.six{ width: 16.66%; }
+    &.seven{ width: 14.285%; }
+  }
+}

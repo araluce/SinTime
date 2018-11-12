@@ -1,0 +1,15 @@
+- if user.avatar.url == '/avatar.png'
+  - if defined? avatar_style
+    .no-avatar style="#{avatar_style.to_s == 'medium' ? 'height: 300px, width: 300px' : 'height: 100px, width: 100px'}"
+      span.align-middle = user.alias.first rescue '~'
+  - else
+    .no-avatar
+      span.align-middle = user.alias.first rescue '~'
+
+- else
+  .game-avatar
+    - if defined? avatar_style
+      = image_tag user.avatar.url(avatar_style), class: "#{defined?(custom_class) ? custom_class : ''}", style: "#{defined?(custom_style) ? custom_style : ''}"
+    - else
+      = image_tag user.avatar.url, class: "#{defined?(custom_class) ? custom_class : ''}", style: "#{defined?(custom_style) ? custom_style : ''}"
+

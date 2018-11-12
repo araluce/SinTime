@@ -1,0 +1,32 @@
+.row
+  .col-12.future-card
+    .row style="margin-bottom: 1%;"
+      .col-lg-2.col-md-12
+        p = link_to 'Volver', padawan_comunidad_altruismo_mines_path, class: 'btn btn-primary btn-block'
+        p = link_to "Comprar pista (#{@num_cards_availables})", padawan_comunidad_altruismo_mine_purchase_clue_path(@object), class: 'btn btn-primary btn-block'
+      .col-lg-10.col-md-12
+        .card
+          .card-header Datos de la mina
+          .card-body
+            dl.row.mb-5
+              dt.col-sm-12.text-center = @object
+
+              dt.col-sm-12 Pistas
+              - if current_user.clues.where(mine: @object).any?
+                - current_user.clues.where(mine: @object).each do |clue|
+                  dd.col-sm-12 = clue
+              - else
+                dd.col-sm-12 No tines pistas para esta mina
+
+            .row
+              .col-lg-6.col-12.mb-5
+                - klass = @object.disarmed? ? 'circle-success' : 'circle-danger'
+                .view
+                  .plane.main
+                    - for x in (0..6)
+                      div class=klass
+              .col-lg-6.col-12
+                - if @object.available?
+                  = simple_form_for(UserMine.new, url: padawan_comunidad_altruismo_mine_detach_path(@object), as: :object, html: {class: 'form-vertical'}) do |f|
+                    = f.input :code, label: 'Código'
+                    = f.button :submit, 'Desactivar', class: 'btn btn-primary btn-block'

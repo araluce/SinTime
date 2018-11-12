@@ -1,0 +1,21 @@
+= f.input :statement, label: 'Enunciado'
+
+fieldset
+  .row
+    .col-12
+      legend Opciones del cuestionatio
+
+  .row
+    .col-11.offset-1
+      .cocoon-items.tab-pane.active role='tabpanel'
+        = f.simple_fields_for :options, label: 'Opciones' do |option|
+          = render 'manager/partials/option_fields', f: option
+        .links
+          = link_to_add_association 'añadir opción', f, :options, partial: 'manager/partials/option_fields'
+
+= f.input :days_benefit, as: :hidden, input_html: {value: 1}
+= f.input :hours_benefit, as: :hidden, input_html: {value: 0}
+= f.input :minutes_benefit, as: :hidden, input_html: {value: 0}
+= f.input :seconds_benefit, as: :hidden, input_html: {value: 0}
+
+= f.button :submit, class: 'btn btn-block btn-primary', data: { disable_with: 'Enviando...' }

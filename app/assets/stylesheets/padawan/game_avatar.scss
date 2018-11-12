@@ -1,0 +1,15 @@
+.game-avatar{
+  background-image: asset-data-url('rounded_bg.png');
+  width: 138px;
+  height: 176px;
+  margin: 0 auto 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-align: center;
+
+  img{
+    margin-top: 34px;
+    margin-right: 7px;
+    border-radius: 50%;
+  }
+}

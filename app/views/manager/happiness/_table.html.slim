@@ -1,0 +1,15 @@
+.table-responsive
+  table.table
+    thead
+      tr
+        th Título
+        th Acciones
+    tbody
+      - @objects.each do |object|
+        tr
+          td = object.title.titleize
+          td
+            .action-buttons
+              = link_to fa_icon('eye 2x'), manager_happiness_path(object)
+              = link_to fa_icon('cog 2x'), edit_manager_happiness_path(object)
+              = link_to fa_icon('times 2x'), manager_happiness_path(object), data: {confirm: '¿Estás seguro?'}, method: :delete

@@ -1,0 +1,24 @@
+ol.breadcrumb
+  li.breadcrumb-item = link_to 'Dashboard', manager_home_path
+  li.breadcrumb-item = link_to "#{@resource_name.pluralize}", manager_happiness_index_path
+  li.breadcrumb-item.active Datos del reto de felicidad
+
+.row
+  .col-12
+    .row
+      .col-lg-2.col-md-2.col-xs-12
+        p.text-center = fa_icon 'user 5x'
+        p = link_to 'Volver', manager_happiness_index_path, class: 'btn btn-primary btn-block'
+        p = link_to 'Editar', edit_manager_happiness_path(@object), class: 'btn btn-primary btn-block'
+      .col-lg-5.col-md-5.col-xs-12
+        .card
+          .card-header Datos del reto de felicidad
+          .card-body
+            dl.row
+              dt.col-sm-6 Título
+              dd.col-sm-6 = @object.title.titleize
+
+              dt.col-sm-12 Beneficio por calificación
+              - @object.benefit_scores.each do |benefit_score|
+                dt.col-sm-6 ="*#{ benefit_score.score}"
+                dd.col-sm-6 = seconds_to_s(benefit_score.time_benefit)

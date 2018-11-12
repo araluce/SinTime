@@ -1,0 +1,43 @@
+ol.breadcrumb
+  li.breadcrumb-item = link_to 'Dashboard', manager_home_path
+  li.breadcrumb-item = link_to "#{@resource_name.pluralize}", manager_privileges_cards_path
+  li.breadcrumb-item.active Datos de la carta de privilegios
+
+.row
+  .col-12
+    .row
+      .col-lg-2.col-md-2.col-xs-12
+        p = image_tag @object.card.url, class: 'img-thumbnail', style: 'max-width: 200px'
+        hr
+        p = link_to 'Volver', manager_privileges_cards_path, class: 'btn btn-primary btn-block'
+        p = link_to 'Editar', edit_manager_privileges_card_path(@object), class: 'btn btn-primary btn-block'
+      .col-lg-5.col-md-5.col-xs-12
+        .card
+          .card-header Datos de la carta de privilegios
+          .card-body
+            dl.row
+              dt.col-sm-6 Título
+              dd.col-sm-6 = @object.title.titleize
+
+              dt.col-sm-6 Descripción
+              dd.col-sm-6 = @object.description
+
+              dt.col-sm-6 Coste en XP
+              dd.col-sm-6 = @object.xp_cost
+
+              dt.col-sm-6 Identificador
+              dd.col-sm-6 = @object.identifier
+      .col-lg-5.col-md-5.col-xs-12
+        .card
+          .card-header Usuarios
+          .card-body
+            dl.row
+              dt.col-sm-6 Veces comprada por todos:
+              dd.col-sm-6 = UserPrivilegesCard.where(privileges_card: @object).count
+
+              - UserPrivilegesCard.where(privileges_card: @object, user: current_user).each do |user_privilege_card|
+                .bubble.font-95.bold.has-bubble.row
+                  dd.col-sm-9 = "@#{user_privilege_card.user}"
+                  dd
+                    .bubble.text-center class="#{card_is_valid?(user_privilege_card) ? 'bubble-success' : 'bubble-warning'}"
+                      = fa_icon "fw 2x #{card_is_valid?(user_privilege_card) ? 'check' : 'times'}"

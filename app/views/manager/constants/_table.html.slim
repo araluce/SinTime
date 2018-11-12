@@ -1,0 +1,16 @@
+.table-responsive
+  table.table
+    thead
+      tr
+        th Clave
+        th Valor
+        th Acciones
+    tbody
+      - @objects.each do |object|
+        tr
+          td = object.key
+          td = object.value
+          td
+            .action-buttons
+              = link_to fa_icon('cog 2x'), edit_manager_constant_path(object)
+              = link_to fa_icon('times 2x'), manager_constant_path(object), data: {confirm: '¿Estás seguro?'}, method: :delete

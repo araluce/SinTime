@@ -1,0 +1,5 @@
+= f.input :title
+= f.input :icon
+= render 'manager/partials/time_beneficts', f: f, custom_label: 'Tiempo de beneficio por defecto', suffix: 'benefit'
+
+= f.button :submit, class: 'btn btn-block btn-primary'

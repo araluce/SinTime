@@ -1,0 +1,21 @@
+.table-responsive
+  table.table
+    thead
+      tr
+        th Estado
+        th Tipo
+        th Ejercicio
+        th Entrega
+        th Calificacion
+        th Acciones
+    tbody
+      - @objects.each do |object|
+        tr
+          td = object.status
+          td = object.exercise.type_to_s
+          td = object.exercise
+          td = link_to(object.file_file_name, object.file.url(:original, false)) rescue 'No hay entrega'
+          td = object.score || 'Reto sin calificacion'
+          td
+            .action-buttons
+              = link_to fa_icon('fw cog 2x'), edit_manager_citizen_user_delivery_path(@user, object)

@@ -1,0 +1,16 @@
+= f.input :title, label: 'Título'
+= f.input :statement, label: 'Enunciado', input_html: {style: 'display: none;', value: 'Reto de felicidad'}, label: false
+
+fieldset
+  .row
+    .col-12
+      legend Beneficio por nota
+.row
+  .col-11.offset-1
+    .cocoon-items.tab-pane.active role='tabpanel'
+      = f.simple_fields_for :benefit_scores, label: 'Beneficio por nota' do |benefit_score|
+        = render 'manager/partials/benefit_score_fields', f: benefit_score
+      .links
+        = link_to_add_association 'añadir beneficio', f, :benefit_scores, partial: 'manager/partials/benefit_score_fields'
+
+= f.button :submit, class: 'btn btn-block btn-primary'
