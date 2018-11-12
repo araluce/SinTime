@@ -145,4 +145,8 @@ Rails.application.routes.draw do
     end
   end
 
+  authenticate :admin do
+    mount Sidekiq::Web => '/jobs'
+  end
+
 end
