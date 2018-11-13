@@ -16,9 +16,8 @@
       .bottom-tag#bottom
 
     = form_for @message, url: messages_path, remote: true, html: {class:'row reply'} do |f|
-      .col-1.badge-new-message
-      .col-10.reply-main
-        = f.text_area :message, id: 'comment', class:'form-control', rows: '1'
+      .reply-main
+        = f.text_area :message, id: 'comment', placeholder:'Escribe tu mensaje', rows: '1'
         = f.hidden_field :chatroom_id, value: @chat.id
-      .col-1.send-message
-        button type="submit" class="btn" = fa_icon('fw paper-plane-o')
+      .send-message
+        button type="submit" class="btn" Enviar

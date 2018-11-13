@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5db47f15-0366-4f0f-bd38-1a518b060301" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/padawan/feed.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/padawan/feed.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/partials/_feed_grill.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/partials/_feed_grill.html.slim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/chat/layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/chat/layout.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/chat.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/chat.html.slim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/padawan/comunidad/rci/chat_general/show.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/padawan/comunidad/rci/chat_general/show.html.slim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/padawan/comunidad/rci/chat_user/show.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/padawan/comunidad/rci/chat_user/show.html.slim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/padawan/comunidad/rci/rci.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/padawan/comunidad/rci/rci.html.slim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/padawan/partials/_message.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/padawan/partials/_message.html.slim" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -24,11 +28,11 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="coffee" value="2" />
-          <entry key="erb" value="2" />
+          <entry key="erb" value="3" />
           <entry key="rake" value="1" />
-          <entry key="rb" value="5" />
-          <entry key="scss" value="2" />
-          <entry key="slim" value="7" />
+          <entry key="rb" value="6" />
+          <entry key="scss" value="4" />
+          <entry key="slim" value="12" />
           <entry key="svg" value="2" />
           <entry key="yml" value="1" />
         </counts>
@@ -36,11 +40,11 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CoffeeScript" value="2" />
-          <entry key="RHTML" value="2" />
-          <entry key="Ruby" value="6" />
-          <entry key="SCSS" value="2" />
+          <entry key="RHTML" value="3" />
+          <entry key="Ruby" value="7" />
+          <entry key="SCSS" value="4" />
           <entry key="SVG" value="2" />
-          <entry key="Slim" value="7" />
+          <entry key="Slim" value="12" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
@@ -50,8 +54,8 @@
           <entry key="Gemfile" value="5" />
           <entry key="erb" value="11" />
           <entry key="rb" value="3" />
-          <entry key="scss" value="4" />
-          <entry key="slim" value="20" />
+          <entry key="scss" value="289" />
+          <entry key="slim" value="88" />
           <entry key="yml" value="4" />
         </counts>
       </usages-collector>
@@ -59,8 +63,8 @@
         <counts>
           <entry key="RHTML" value="11" />
           <entry key="Ruby" value="10" />
-          <entry key="SCSS" value="4" />
-          <entry key="Slim" value="20" />
+          <entry key="SCSS" value="289" />
+          <entry key="Slim" value="88" />
           <entry key="YAML" value="4" />
         </counts>
       </usages-collector>
@@ -76,37 +80,46 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/padawan.html.slim">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+            <state relative-caret-position="222">
+              <caret line="41" column="2" selection-start-line="41" selection-start-column="2" selection-end-line="42" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/padawan/viveres/food/index.html.slim">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/chat/layout.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+            <state relative-caret-position="486">
+              <caret line="400" column="41" selection-start-line="400" selection-start-column="41" selection-end-line="400" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/partials/_feed_grill.html.slim">
+        <entry file="file://$PROJECT_DIR$/app/views/padawan/partials/_message.html.slim">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+            <state relative-caret-position="420">
+              <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/padawan/feed.scss">
+        <entry file="file://$PROJECT_DIR$/app/views/padawan/comunidad/rci/chat_user/show.html.slim">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+            <state relative-caret-position="546">
+              <caret line="26" column="57" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/padawan/comunidad/rci/chat_general/show.html.slim">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="355">
+              <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -115,17 +128,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>url</find>
-      <find>translation_scope</find>
-      <find>&lt;/span&gt;</find>
-      <find>&lt;a href=&quot;#&quot;&gt;</find>
-      <find>| SinT</find>
-      <find>id=&quot;</find>
-      <find>&lt;i</find>
-      <find>&lt;a</find>
-      <find>&quot; id=&quot;</find>
-      <find>&lt;/i&gt;</find>
-      <find>&lt;/ol&gt;</find>
       <find>&lt;div</find>
       <find>View Details</find>
       <find>Gem</find>
@@ -145,6 +147,17 @@
       <find>200</find>
       <find>fill=&quot;#000000&quot;</find>
       <find>.feed-box</find>
+      <find>.feed-container</find>
+      <find>.btn-sintime</find>
+      <find>.chat</find>
+      <find>holocron</find>
+      <find>.reply</find>
+      <find>reply</find>
+      <find>messa</find>
+      <find>.recei</find>
+      <find>message-bod</find>
+      <find>message-tex</find>
+      <find>.message-time</find>
     </findStrings>
     <replaceStrings>
       <replace>citizen/home/</replace>
@@ -164,11 +177,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/assets/javascripts/manager.js" />
-        <option value="$PROJECT_DIR$/app/views/manager/_footer.html.slim" />
-        <option value="$PROJECT_DIR$/app/views/manager/_header.html.slim" />
-        <option value="$PROJECT_DIR$/app/views/manager/managers/home.html.slim" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/citizen/style.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/citizen.scss" />
@@ -213,8 +221,13 @@
         <option value="$PROJECT_DIR$/app/views/svg/_running.html.erb" />
         <option value="$PROJECT_DIR$/app/views/padawan/comunidad/sports/index.html.slim" />
         <option value="$PROJECT_DIR$/app/views/padawan/comunidad/rci/rci.html.slim" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/padawan/feed.scss" />
         <option value="$PROJECT_DIR$/app/views/partials/_feed_grill.html.slim" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/padawan/feed.scss" />
+        <option value="$PROJECT_DIR$/app/views/layouts/chat.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/padawan/comunidad/rci/chat_user/show.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/padawan/comunidad/rci/chat_general/show.html.slim" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/chat/layout.scss" />
+        <option value="$PROJECT_DIR$/app/views/padawan/partials/_message.html.slim" />
       </list>
     </option>
   </component>
@@ -282,6 +295,33 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="padawan" type="462c0819:PsiDirectoryNode" />
+              <item name="comunidad" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SinTime" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SinTime" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="padawan" type="462c0819:PsiDirectoryNode" />
+              <item name="comunidad" type="462c0819:PsiDirectoryNode" />
+              <item name="rci" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SinTime" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SinTime" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="padawan" type="462c0819:PsiDirectoryNode" />
+              <item name="comunidad" type="462c0819:PsiDirectoryNode" />
+              <item name="rci" type="462c0819:PsiDirectoryNode" />
+              <item name="chat_user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SinTime" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SinTime" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="padawan" type="462c0819:PsiDirectoryNode" />
               <item name="viveres" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -312,7 +352,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="Ruby.ViewRefParam.DefaultExtension" value="html.slim" />
-    <property name="SearchEverywhereHistoryKey" value="rci&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/views/padawan/comunidad/rci/rci.html.slim&#10;routes&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/config/routes.rb&#10;sport/&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/views/padawan/comunidad/sports&#10;database&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/config/database.yml&#10;stylesheets/badges.scss&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/assets/stylesheets/badges.scss&#10;water.coffee&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/assets/javascripts/padawan/water.coffee&#10;twitter.coffee&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/assets/javascripts/padawan/twitter.coffee&#10;level_tests/index.html.slim&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/views/padawan/formacion/level_tests/index.html.slim&#10;appl&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/application.html.slim&#10;home&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/static/home.html.slim&#10;ass&#9;FILE&#9;file:///home/araluce/projects/sintime/config/initializers/assets.rb&#10;databa&#9;FILE&#9;file:///home/araluce/projects/sintime/config/database.yml&#10;.gitigno&#9;FILE&#9;file:///home/araluce/projects/sintime/.gitignore&#10;production&#9;FILE&#9;file:///home/araluce/projects/sintime/config/deploy/production.rb&#10;deploy&#9;FILE&#9;file:///home/araluce/projects/sintime/config/deploy.rb&#10;capfile&#9;FILE&#9;file:///home/araluce/projects/sintime/Capfile&#10;gemfile&#9;FILE&#9;file:///home/araluce/projects/sintime/Gemfile&#10;user&#9;FILE&#9;file:///home/araluce/projects/sintime/app/models/user.rb&#10;citi&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/citizen.html.slim&#10;mana&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/manager.html.slim&#10;sideba&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/manager/_sidebar.html.slim&#10;distric&#9;FILE&#9;file:///home/araluce/projects/sintime/app/controllers/manager/districts_controller.rb&#10;app&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/application.html.slim&#10;appli&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/application.html.slim&#10;alert&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/application/_alert.html.slim&#10;.gitig&#9;FILE&#9;file:///home/araluce/projects/sintime/.gitignore&#10;gem&#9;FILE&#9;file:///home/araluce/projects/sintime/Gemfile&#10;data&#9;FILE&#9;file:///home/araluce/projects/sintime/config/database.yml&#10;gemfi&#9;FILE&#9;file:///home/araluce/projects/sintime/Gemfile" />
+    <property name="SearchEverywhereHistoryKey" value="new_message&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/views/messages/_new_message.html.slim&#10;create.coffee.js.erb&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/views/messages/create.coffee.js.erb&#10;message_c&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/controllers/messages_controller.rb&#10;chat.&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/views/layouts/chat.html.slim&#10;rci&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/views/padawan/comunidad/rci/rci.html.slim&#10;routes&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/config/routes.rb&#10;sport/&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/views/padawan/comunidad/sports&#10;database&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/config/database.yml&#10;stylesheets/badges.scss&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/assets/stylesheets/badges.scss&#10;water.coffee&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/assets/javascripts/padawan/water.coffee&#10;twitter.coffee&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/assets/javascripts/padawan/twitter.coffee&#10;level_tests/index.html.slim&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/views/padawan/formacion/level_tests/index.html.slim&#10;appl&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/application.html.slim&#10;home&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/static/home.html.slim&#10;ass&#9;FILE&#9;file:///home/araluce/projects/sintime/config/initializers/assets.rb&#10;databa&#9;FILE&#9;file:///home/araluce/projects/sintime/config/database.yml&#10;.gitigno&#9;FILE&#9;file:///home/araluce/projects/sintime/.gitignore&#10;production&#9;FILE&#9;file:///home/araluce/projects/sintime/config/deploy/production.rb&#10;deploy&#9;FILE&#9;file:///home/araluce/projects/sintime/config/deploy.rb&#10;capfile&#9;FILE&#9;file:///home/araluce/projects/sintime/Capfile&#10;gemfile&#9;FILE&#9;file:///home/araluce/projects/sintime/Gemfile&#10;user&#9;FILE&#9;file:///home/araluce/projects/sintime/app/models/user.rb&#10;citi&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/citizen.html.slim&#10;mana&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/manager.html.slim&#10;sideba&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/manager/_sidebar.html.slim&#10;distric&#9;FILE&#9;file:///home/araluce/projects/sintime/app/controllers/manager/districts_controller.rb&#10;app&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/application.html.slim&#10;appli&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/application.html.slim&#10;alert&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/application/_alert.html.slim&#10;.gitig&#9;FILE&#9;file:///home/araluce/projects/sintime/.gitignore&#10;gem&#9;FILE&#9;file:///home/araluce/projects/sintime/Gemfile&#10;data&#9;FILE&#9;file:///home/araluce/projects/sintime/config/database.yml&#10;gemfi&#9;FILE&#9;file:///home/araluce/projects/sintime/Gemfile" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../generation" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
@@ -466,17 +506,39 @@
       <workItem from="1515713100175" duration="4639000" />
       <workItem from="1515849455725" duration="17113000" />
       <workItem from="1542097706515" duration="285000" />
-      <workItem from="1542130451125" duration="3104000" />
+      <workItem from="1542130451125" duration="6303000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89798000" />
+    <option name="totallyTimeSpent" value="92997000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.28898427" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32928178" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32951653" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3281768" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.51067233" side_tool="true" weight="0.3558011" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.32925585" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.48932764" weight="0.30661577" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+    <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28898427" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -497,7 +559,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -506,62 +568,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/manager/districts/_table.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="71" lean-forward="true" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/manager/districts/show.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/manager/citizens/_form.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="33" lean-forward="true" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/manager/_sidebar.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="71" selection-start-line="4" selection-start-column="71" selection-end-line="4" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/manager/districts_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/district.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/manager/citizens/edit.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="55" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/manager/citizens/index.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/manager/citizens/_table.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -666,13 +672,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="35" column="14" lean-forward="true" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -809,21 +808,84 @@
     <entry file="file://$PROJECT_DIR$/app/views/padawan/viveres/food/index.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/padawan/feed.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+          <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/partials/_feed_grill.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        <state relative-caret-position="249">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/padawan/feed.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="20" column="3" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="41" column="2" selection-start-line="41" selection-start-column="2" selection-end-line="42" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/chat.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/padawan/comunidad/rci/chat_general/show.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/messages_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="45" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/messages/create.coffee.js.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="52" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/messages/_new_message.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="32" selection-start-column="32" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/padawan/comunidad/rci/chat_user/show.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="26" column="57" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/chat/layout.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="400" column="41" selection-start-line="400" selection-start-column="41" selection-end-line="400" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/padawan/partials/_message.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
         </state>
       </provider>
     </entry>

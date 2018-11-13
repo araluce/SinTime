@@ -1,6 +1,7 @@
 .chat{
   height: 100vh;
-  background-color: #DCDBD2;
+  background-image: linear-gradient(120deg, #11383a 7.14%, #262635 7.14%, #262635 21.43%, #27273a 21.43%, #27273a 50%, #11383a 50%, #11383a 57.14%, #262635 57.14%, #262635 71.43%, #27273a 71.43%, #27273a 100%);    background-size: 4.62px 8.00px;
+  background-size: 4.62px 8.00px;
   div,
   span {
     width: 100%;
@@ -70,8 +71,11 @@
     margin: 0 !important;
     height: 60px;
     width: 100%;
-    background-color: #eee;
+    background-color: #1B1B1B;
     z-index: 1000;
+    color: #E88F3D;
+    text-transform: uppercase;
+
   }
 
   .heading-avatar {
@@ -327,6 +331,8 @@
     overflow-y: auto;
     //border: 1px solid #f7f7f7;
     height: calc(100% - 180px);
+    border-bottom: 2px solid #E88F3D;
+    padding-bottom: 1%!important;
   }
   .message-previous {
     margin : 0 !important;
@@ -346,15 +352,6 @@
     font-weight: 700;
   }
 
-  .message-body {
-    margin: 0 !important;
-    padding: 0 !important;
-
-    .message-checked{
-      color: #0646EC;
-    }
-  }
-
   .message-main-receiver {
     /*padding: 10px 20px;*/
     max-width: 60%;
@@ -366,45 +363,60 @@
     max-width: 60%;
   }
 
-  .message-text {
-    margin: 0 !important;
-    padding: 5px !important;
-    word-wrap:break-word;
-    font-weight: 200;
-    font-size: 2em;
-    padding-bottom: 0 !important;
-  }
+  .message-box {
+    .receiver, .sender {
+      width: auto !important;
+      font-size: 12px;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+      word-wrap: break-word;
+      display: inline-block;
+      background-color: #20212C;
+      color: #fff;
 
-  .message-time {
-    margin: 0 !important;
-    margin-left: 50px !important;
-    font-size: 1.7em;
-    text-align: right;
-    color: #9a9a9a;
+      .message-head{
+        background-color: #DC924E;
+        .message-alias {
+          margin: 0 !important;
+          margin-left: 50px !important;
+          font-size: 1.7em;
+          text-align: right;
+          color: #262738;
+        }
+      }
 
-  }
+      .message-body{
+        padding: 4px 10px 7px !important;
 
-  .receiver {
-    width: auto !important;
-    padding: 4px 10px 7px !important;
-    border-radius: 10px 10px 10px 0;
-    background: #ffffff;
-    font-size: 12px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
-    word-wrap: break-word;
-    display: inline-block;
+        .message-text {
+          margin: 0 !important;
+          padding: 5px !important;
+          word-wrap:break-word;
+          font-weight: 200;
+          font-size: 2em;
+          padding-bottom: 0 !important;
+        }
+      }
+
+      .message-time{
+        padding: 4px 10px 7px !important;
+        .span {
+          margin: 0 !important;
+          margin-left: 50px !important;
+          font-size: 1.7em;
+          text-align: right;
+          color: #262738;
+        }
+      }
+
+    }
+
+    .message-checked{
+      color: #0646EC;
+    }
   }
 
   .sender {
     float: right;
-    width: auto !important;
-    background: #dcf8c6;
-    border-radius: 10px 10px 0 10px;
-    padding: 4px 10px 7px !important;
-    font-size: 12px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
-    display: inline-block;
-    word-wrap: break-word;
   }
 
 
@@ -458,41 +470,25 @@
 
     textarea {
       width: 100%;
-      resize: none;
-      overflow: hidden;
-      outline: none;
       border: none;
-      text-indent: 5px;
-      box-shadow: none;
-      height: 100%;
-      font-size: 2em;
-
-      padding-left: 43px;
-      padding-right: 43px;
-      border-radius: 23px;
-      &:focus {
-        outline: none;
-        border: none;
-        text-indent: 5px;
-        box-shadow: none;
-      }
+      padding: 10px 20px;
+      font: 14px/22px "Lato", Arial, sans-serif;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      resize: none;
     }
   }
 
   .send-message{
     button{
-      background-color: #088887!important;
-      color: white;
-      border-radius: 23px;
-      i {font-size: 1.4em!important;}
-      height: 100%;
-      &:hover{
-        cursor: pointer
-      }
-
-      &:focus, &:active{
-        border: 0;
-      }
+      float: right;
+      color: #E88F3D;
+      font-size: 16px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      background: transparent!important;
     }
   }
 
