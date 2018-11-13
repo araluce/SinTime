@@ -8,8 +8,8 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: sintime
-  password: ''
+  username: root
+  password:
 
 development:
   <<: *default
@@ -21,9 +21,3 @@ development:
 test:
   <<: *default
   database: sintime_test
-
-production:
-  <<: *default
-  database: generation_production
-  username: root
-  password:
