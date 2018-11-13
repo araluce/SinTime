@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5db47f15-0366-4f0f-bd38-1a518b060301" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/chat/layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/chat/layout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/chat.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/chat.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/padawan/comunidad/rci/chat_general/show.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/padawan/comunidad/rci/chat_general/show.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/padawan/comunidad/rci/chat_user/show.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/padawan/comunidad/rci/chat_user/show.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/padawan/comunidad/rci/rci.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/padawan/comunidad/rci/rci.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/padawan/partials/_message.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/padawan/partials/_message.html.slim" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -54,7 +49,7 @@
           <entry key="Gemfile" value="5" />
           <entry key="erb" value="11" />
           <entry key="rb" value="3" />
-          <entry key="scss" value="289" />
+          <entry key="scss" value="414" />
           <entry key="slim" value="88" />
           <entry key="yml" value="4" />
         </counts>
@@ -63,7 +58,7 @@
         <counts>
           <entry key="RHTML" value="11" />
           <entry key="Ruby" value="10" />
-          <entry key="SCSS" value="289" />
+          <entry key="SCSS" value="414" />
           <entry key="Slim" value="88" />
           <entry key="YAML" value="4" />
         </counts>
@@ -88,20 +83,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/chat/layout.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="400" column="41" selection-start-line="400" selection-start-column="41" selection-end-line="400" selection-end-column="41" />
+            <state relative-caret-position="174">
+              <caret line="588" column="17" selection-start-line="588" selection-start-column="17" selection-end-line="588" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/padawan/partials/_message.html.slim">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+            <state relative-caret-position="354">
+              <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="70" />
             </state>
           </provider>
         </entry>
@@ -128,9 +123,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&lt;div</find>
-      <find>View Details</find>
-      <find>Gem</find>
       <find>therubyracer</find>
       <find>* {</find>
       <find>clinic_params</find>
@@ -158,6 +150,9 @@
       <find>message-bod</find>
       <find>message-tex</find>
       <find>.message-time</find>
+      <find>24px</find>
+      <find>calc(100% - 180px)</find>
+      <find>textar</find>
     </findStrings>
     <replaceStrings>
       <replace>citizen/home/</replace>
@@ -226,8 +221,8 @@
         <option value="$PROJECT_DIR$/app/views/layouts/chat.html.slim" />
         <option value="$PROJECT_DIR$/app/views/padawan/comunidad/rci/chat_user/show.html.slim" />
         <option value="$PROJECT_DIR$/app/views/padawan/comunidad/rci/chat_general/show.html.slim" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/chat/layout.scss" />
         <option value="$PROJECT_DIR$/app/views/padawan/partials/_message.html.slim" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/chat/layout.scss" />
       </list>
     </option>
   </component>
@@ -506,12 +501,12 @@
       <workItem from="1515713100175" duration="4639000" />
       <workItem from="1515849455725" duration="17113000" />
       <workItem from="1542097706515" duration="285000" />
-      <workItem from="1542130451125" duration="6303000" />
+      <workItem from="1542130451125" duration="8687000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92997000" />
+    <option name="totallyTimeSpent" value="95381000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -532,7 +527,7 @@
       <window_info anchor="bottom" id="Messages" order="9" weight="0.32925585" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.48932764" weight="0.30661577" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.48932764" visible="true" weight="0.30661577" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -875,17 +870,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/chat/layout.scss">
+    <entry file="file://$PROJECT_DIR$/app/views/padawan/partials/_message.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="400" column="41" selection-start-line="400" selection-start-column="41" selection-end-line="400" selection-end-column="41" />
+        <state relative-caret-position="354">
+          <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="70" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/padawan/partials/_message.html.slim">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/chat/layout.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+        <state relative-caret-position="174">
+          <caret line="588" column="17" selection-start-line="588" selection-start-column="17" selection-end-line="588" selection-end-column="17" />
         </state>
       </provider>
     </entry>

@@ -330,10 +330,32 @@
     margin: 0 !important;
     overflow-y: auto;
     //border: 1px solid #f7f7f7;
-    height: calc(100% - 180px);
+    height: calc(100% - 400px);
     border-bottom: 2px solid #E88F3D;
     padding-bottom: 1%!important;
   }
+
+  /* ----------- Laptop Non Retina Screens ----------- */
+  @media screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .message {
+      height: calc(100% - 180px);
+    }
+  }
+
+  /* ----------- Laptop Retina Screens ----------- */
+  @media screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) {
+    .message {
+      height: calc(100% - 180px);
+    }
+  }
+
   .message-previous {
     margin : 0 !important;
     padding: 0 !important;
@@ -392,7 +414,7 @@
           padding: 5px !important;
           word-wrap:break-word;
           font-weight: 200;
-          font-size: 2em;
+          font-size: 2rem;
           padding-bottom: 0 !important;
         }
       }
@@ -415,6 +437,39 @@
     }
   }
 
+  /* ----------- Laptop Non Retina Screens ----------- */
+  @media screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .message-box {
+      .receiver, .sender {
+        .message-body{
+          .message-text {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  /* ----------- Laptop Retina Screens ----------- */
+  @media screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) {
+    .message-box {
+      .receiver, .sender {
+        .message-body{
+          .message-text {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
   .sender {
     float: right;
   }
@@ -423,12 +478,33 @@
   /*Reply*/
 
   .reply {
-    height: 120px;
+    height: 400px;
     width: 100%;
     background-color: transparent;
     padding: 10px 5px 10px 5px !important;
     margin: 0 !important;
     z-index: 1000;
+  }
+
+  /* ----------- Laptop Non Retina Screens ----------- */
+  @media screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .reply {
+      height: 120px;
+    }
+  }
+
+  /* ----------- Laptop Retina Screens ----------- */
+  @media screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) {
+    .reply {
+      height: 120px;
+    }
   }
 
   .reply-emojis {
@@ -470,9 +546,10 @@
 
     textarea {
       width: 100%;
+      height: 200px;
       border: none;
       padding: 10px 20px;
-      font: 14px/22px "Lato", Arial, sans-serif;
+      font: 50px/62px "Lato", Arial, sans-serif;
       margin-bottom: 10px;
       border-radius: 5px;
       resize: none;
@@ -483,12 +560,42 @@
     button{
       float: right;
       color: #E88F3D;
-      font-size: 16px;
+      font-size: 2rem;
       text-transform: uppercase;
       border: none;
       cursor: pointer;
       font-weight: bold;
       background: transparent!important;
+    }
+  }
+
+  /* ----------- Laptop Non Retina Screens ----------- */
+  @media screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .reply-main > textarea {
+      height: 50px;
+      font: 14px/22px "Lato", Arial, sans-serif;
+    }
+
+    .send-message > button{
+      font-size: 1rem;
+    }
+  }
+
+  /* ----------- Laptop Retina Screens ----------- */
+  @media screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) {
+    .reply-main > textarea {
+      height: 50px;
+      font: 14px/22px "Lato", Arial, sans-serif;
+    }
+    .send-message > button{
+      font-size: 1rem;
     }
   }
 
