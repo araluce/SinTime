@@ -49,7 +49,7 @@
           <entry key="Gemfile" value="5" />
           <entry key="erb" value="11" />
           <entry key="rb" value="3" />
-          <entry key="scss" value="414" />
+          <entry key="scss" value="444" />
           <entry key="slim" value="88" />
           <entry key="yml" value="4" />
         </counts>
@@ -58,7 +58,7 @@
         <counts>
           <entry key="RHTML" value="11" />
           <entry key="Ruby" value="10" />
-          <entry key="SCSS" value="414" />
+          <entry key="SCSS" value="444" />
           <entry key="Slim" value="88" />
           <entry key="YAML" value="4" />
         </counts>
@@ -86,8 +86,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/chat/layout.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="588" column="17" selection-start-line="588" selection-start-column="17" selection-end-line="588" selection-end-column="17" />
+            <state relative-caret-position="181">
+              <caret line="332" column="25" selection-start-line="332" selection-start-column="25" selection-end-line="332" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -123,10 +123,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>therubyracer</find>
-      <find>* {</find>
-      <find>clinic_params</find>
-      <find>district</find>
       <find>roll</find>
       <find>side</find>
       <find>button_components</find>
@@ -153,6 +149,10 @@
       <find>24px</find>
       <find>calc(100% - 180px)</find>
       <find>textar</find>
+      <find>180</find>
+      <find>calc</find>
+      <find>600</find>
+      <find>.heading</find>
     </findStrings>
     <replaceStrings>
       <replace>citizen/home/</replace>
@@ -501,12 +501,12 @@
       <workItem from="1515713100175" duration="4639000" />
       <workItem from="1515849455725" duration="17113000" />
       <workItem from="1542097706515" duration="285000" />
-      <workItem from="1542130451125" duration="8687000" />
+      <workItem from="1542130451125" duration="9801000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95381000" />
+    <option name="totallyTimeSpent" value="96495000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -879,8 +879,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/chat/layout.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="588" column="17" selection-start-line="588" selection-start-column="17" selection-end-line="588" selection-end-column="17" />
+        <state relative-caret-position="181">
+          <caret line="332" column="25" selection-start-line="332" selection-start-column="25" selection-end-line="332" selection-end-column="25" />
         </state>
       </provider>
     </entry>

@@ -69,7 +69,7 @@
   .heading {
     padding: 10px 16px 10px 15px;
     margin: 0 !important;
-    height: 60px;
+    height: 100px;
     width: 100%;
     background-color: #1B1B1B;
     z-index: 1000;
@@ -330,7 +330,7 @@
     margin: 0 !important;
     overflow-y: auto;
     //border: 1px solid #f7f7f7;
-    height: calc(100% - 400px);
+    height: calc(100% - 500px);
     border-bottom: 2px solid #E88F3D;
     padding-bottom: 1%!important;
   }
@@ -343,6 +343,9 @@
     .message {
       height: calc(100% - 180px);
     }
+    .heading {
+      height: 60px;
+    }
   }
 
   /* ----------- Laptop Retina Screens ----------- */
@@ -353,6 +356,9 @@
   and (min-resolution: 192dpi) {
     .message {
       height: calc(100% - 180px);
+    }
+    .heading {
+      height: 60px;
     }
   }
 
@@ -611,7 +617,6 @@
     }
     .heading {
       height: 70px;
-      background-color: #009688;
     }
     .fa-2x {
       font-size: 2.3em !important;
