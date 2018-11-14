@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5db47f15-0366-4f0f-bd38-1a518b060301" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/padawan/game_preview.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/padawan.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/padawan.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/padawan/formacion/level_tests/edit.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/padawan/formacion/level_tests/edit.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/padawan/formacion/level_tests/index.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/padawan/formacion/level_tests/index.html.slim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/padawan/comunidad/altruismo/mines/index.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/padawan/comunidad/altruismo/mines/index.html.slim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/padawan/comunidad/altruismo/mines/show.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/padawan/comunidad/altruismo/mines/show.html.slim" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -28,10 +25,11 @@
         <counts>
           <entry key="coffee" value="2" />
           <entry key="erb" value="3" />
+          <entry key="png" value="1" />
           <entry key="rake" value="1" />
           <entry key="rb" value="6" />
           <entry key="scss" value="7" />
-          <entry key="slim" value="15" />
+          <entry key="slim" value="17" />
           <entry key="svg" value="2" />
           <entry key="yml" value="1" />
         </counts>
@@ -39,11 +37,12 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CoffeeScript" value="2" />
+          <entry key="Image" value="1" />
           <entry key="RHTML" value="3" />
           <entry key="Ruby" value="7" />
           <entry key="SCSS" value="7" />
           <entry key="SVG" value="2" />
-          <entry key="Slim" value="15" />
+          <entry key="Slim" value="17" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
@@ -54,7 +53,7 @@
           <entry key="erb" value="11" />
           <entry key="rb" value="3" />
           <entry key="scss" value="598" />
-          <entry key="slim" value="202" />
+          <entry key="slim" value="283" />
           <entry key="yml" value="4" />
         </counts>
       </usages-collector>
@@ -63,7 +62,7 @@
           <entry key="RHTML" value="11" />
           <entry key="Ruby" value="10" />
           <entry key="SCSS" value="598" />
-          <entry key="Slim" value="202" />
+          <entry key="Slim" value="283" />
           <entry key="YAML" value="4" />
         </counts>
       </usages-collector>
@@ -88,17 +87,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/padawan/game_card.scss">
+        <entry file="file://$PROJECT_DIR$/app/views/padawan/formacion/level_tests/edit.html.slim">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+            <state relative-caret-position="231">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/padawan/formacion/level_tests/edit.html.slim">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -111,10 +105,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/padawan/comunidad/sports/index.html.slim">
+        <entry file="file://$PROJECT_DIR$/app/views/padawan/comunidad/altruismo/mines/index.html.slim">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="31">
-              <caret line="2" selection-start-line="2" selection-end-line="6" selection-end-column="96" />
+            <state relative-caret-position="189">
+              <caret line="9" column="7" selection-start-line="8" selection-start-column="6" selection-end-line="9" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/padawan/comunidad/altruismo/mines/show.html.slim">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="14" column="59" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -123,7 +126,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>side</find>
       <find>button_components</find>
       <find>HardWorker</find>
       <find>capistra</find>
@@ -153,6 +155,7 @@
       <find>600</find>
       <find>.heading</find>
       <find>.two</find>
+      <find>.future-card</find>
     </findStrings>
     <replaceStrings>
       <replace>citizen/home/</replace>
@@ -172,8 +175,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/alerts.scss" />
-        <option value="$PROJECT_DIR$/app/views/citizen/citizens/home.html.slim" />
         <option value="$PROJECT_DIR$/app/views/citizen/_footer.html.slim" />
         <option value="$PROJECT_DIR$/app/views/layouts/citizen.html.slim" />
         <option value="$PROJECT_DIR$/app/views/manager/districts/_form.html.slim" />
@@ -223,6 +224,8 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/padawan/game_preview.scss" />
         <option value="$PROJECT_DIR$/app/views/padawan/formacion/level_tests/index.html.slim" />
         <option value="$PROJECT_DIR$/app/views/padawan/formacion/level_tests/edit.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/padawan/comunidad/altruismo/mines/index.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/padawan/comunidad/altruismo/mines/show.html.slim" />
       </list>
     </option>
   </component>
@@ -280,45 +283,34 @@
               <item name="SinTime" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SinTime" type="b2602c69:ProjectViewProjectNode" />
               <item name="SinTime" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
               <item name="padawan" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SinTime" type="b2602c69:ProjectViewProjectNode" />
               <item name="SinTime" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="padawan" type="462c0819:PsiDirectoryNode" />
+              <item name="comunidad" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SinTime" type="b2602c69:ProjectViewProjectNode" />
               <item name="SinTime" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
               <item name="padawan" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SinTime" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SinTime" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="padawan" type="462c0819:PsiDirectoryNode" />
-              <item name="formacion" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SinTime" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SinTime" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="padawan" type="462c0819:PsiDirectoryNode" />
-              <item name="formacion" type="462c0819:PsiDirectoryNode" />
-              <item name="level_tests" type="462c0819:PsiDirectoryNode" />
+              <item name="comunidad" type="462c0819:PsiDirectoryNode" />
+              <item name="rci" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SinTime" type="b2602c69:ProjectViewProjectNode" />
@@ -341,7 +333,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="Ruby.ViewRefParam.DefaultExtension" value="html.slim" />
-    <property name="SearchEverywhereHistoryKey" value="level_test&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/views/padawan/formacion/level_tests&#10;padawan.s&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/assets/stylesheets/padawan.scss&#10;sport/in&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/views/padawan/comunidad/sports/index.html.slim&#10;new_message&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/views/messages/_new_message.html.slim&#10;create.coffee.js.erb&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/views/messages/create.coffee.js.erb&#10;message_c&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/controllers/messages_controller.rb&#10;chat.&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/views/layouts/chat.html.slim&#10;rci&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/views/padawan/comunidad/rci/rci.html.slim&#10;routes&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/config/routes.rb&#10;sport/&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/views/padawan/comunidad/sports&#10;database&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/config/database.yml&#10;stylesheets/badges.scss&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/assets/stylesheets/badges.scss&#10;water.coffee&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/assets/javascripts/padawan/water.coffee&#10;twitter.coffee&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/assets/javascripts/padawan/twitter.coffee&#10;level_tests/index.html.slim&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/views/padawan/formacion/level_tests/index.html.slim&#10;appl&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/application.html.slim&#10;home&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/static/home.html.slim&#10;ass&#9;FILE&#9;file:///home/araluce/projects/sintime/config/initializers/assets.rb&#10;databa&#9;FILE&#9;file:///home/araluce/projects/sintime/config/database.yml&#10;.gitigno&#9;FILE&#9;file:///home/araluce/projects/sintime/.gitignore&#10;production&#9;FILE&#9;file:///home/araluce/projects/sintime/config/deploy/production.rb&#10;deploy&#9;FILE&#9;file:///home/araluce/projects/sintime/config/deploy.rb&#10;capfile&#9;FILE&#9;file:///home/araluce/projects/sintime/Capfile&#10;gemfile&#9;FILE&#9;file:///home/araluce/projects/sintime/Gemfile&#10;user&#9;FILE&#9;file:///home/araluce/projects/sintime/app/models/user.rb&#10;citi&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/citizen.html.slim&#10;mana&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/manager.html.slim&#10;sideba&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/manager/_sidebar.html.slim&#10;distric&#9;FILE&#9;file:///home/araluce/projects/sintime/app/controllers/manager/districts_controller.rb&#10;app&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/application.html.slim&#10;appli&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/application.html.slim&#10;alert&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/application/_alert.html.slim&#10;.gitig&#9;FILE&#9;file:///home/araluce/projects/sintime/.gitignore&#10;gem&#9;FILE&#9;file:///home/araluce/projects/sintime/Gemfile&#10;data&#9;FILE&#9;file:///home/araluce/projects/sintime/config/database.yml&#10;gemfi&#9;FILE&#9;file:///home/araluce/projects/sintime/Gemfile" />
+    <property name="SearchEverywhereHistoryKey" value="rci&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/views/padawan/comunidad/rci/rci.html.slim&#10;mines/inde&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/views/padawan/comunidad/altruismo/mines/index.html.slim&#10;level_test&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/views/padawan/formacion/level_tests&#10;padawan.s&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/assets/stylesheets/padawan.scss&#10;sport/in&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/views/padawan/comunidad/sports/index.html.slim&#10;new_message&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/views/messages/_new_message.html.slim&#10;create.coffee.js.erb&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/views/messages/create.coffee.js.erb&#10;message_c&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/controllers/messages_controller.rb&#10;chat.&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/views/layouts/chat.html.slim&#10;routes&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/config/routes.rb&#10;sport/&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/views/padawan/comunidad/sports&#10;database&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/config/database.yml&#10;stylesheets/badges.scss&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/assets/stylesheets/badges.scss&#10;water.coffee&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/assets/javascripts/padawan/water.coffee&#10;twitter.coffee&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/assets/javascripts/padawan/twitter.coffee&#10;level_tests/index.html.slim&#9;FILE&#9;file:///Users/afa/own_projects/SinTime/app/views/padawan/formacion/level_tests/index.html.slim&#10;appl&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/application.html.slim&#10;home&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/static/home.html.slim&#10;ass&#9;FILE&#9;file:///home/araluce/projects/sintime/config/initializers/assets.rb&#10;databa&#9;FILE&#9;file:///home/araluce/projects/sintime/config/database.yml&#10;.gitigno&#9;FILE&#9;file:///home/araluce/projects/sintime/.gitignore&#10;production&#9;FILE&#9;file:///home/araluce/projects/sintime/config/deploy/production.rb&#10;deploy&#9;FILE&#9;file:///home/araluce/projects/sintime/config/deploy.rb&#10;capfile&#9;FILE&#9;file:///home/araluce/projects/sintime/Capfile&#10;gemfile&#9;FILE&#9;file:///home/araluce/projects/sintime/Gemfile&#10;user&#9;FILE&#9;file:///home/araluce/projects/sintime/app/models/user.rb&#10;citi&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/citizen.html.slim&#10;mana&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/manager.html.slim&#10;sideba&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/manager/_sidebar.html.slim&#10;distric&#9;FILE&#9;file:///home/araluce/projects/sintime/app/controllers/manager/districts_controller.rb&#10;app&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/application.html.slim&#10;appli&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/layouts/application.html.slim&#10;alert&#9;FILE&#9;file:///home/araluce/projects/sintime/app/views/application/_alert.html.slim&#10;.gitig&#9;FILE&#9;file:///home/araluce/projects/sintime/.gitignore&#10;gem&#9;FILE&#9;file:///home/araluce/projects/sintime/Gemfile&#10;data&#9;FILE&#9;file:///home/araluce/projects/sintime/config/database.yml&#10;gemfi&#9;FILE&#9;file:///home/araluce/projects/sintime/Gemfile" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../generation" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
@@ -496,23 +488,23 @@
       <workItem from="1515849455725" duration="17113000" />
       <workItem from="1542097706515" duration="285000" />
       <workItem from="1542130451125" duration="10950000" />
-      <workItem from="1542216652047" duration="2066000" />
+      <workItem from="1542216652047" duration="2914000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99710000" />
+    <option name="totallyTimeSpent" value="100558000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28898427" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28898427" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32928178" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29262087" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.29262087" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -522,7 +514,7 @@
       <window_info anchor="bottom" id="Messages" order="9" weight="0.32925585" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.48932764" weight="0.30571428" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.48932764" visible="true" weight="0.3053435" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -558,15 +550,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/application/_alert.html.slim" />
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/manager.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="31" column="106" selection-start-line="31" selection-start-column="106" selection-end-line="31" selection-end-column="106" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/citizen.html.slim" />
     <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
@@ -855,6 +838,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/padawan/formacion/level_tests/edit.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/padawan/comunidad/altruismo/mines/index.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="7" selection-start-line="8" selection-start-column="6" selection-end-line="9" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/padawan/formacion/level_tests/index.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -862,8 +859,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/padawan/formacion/level_tests/edit.html.slim">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/app/assets/images/padawan/comunidad/rci/holograma.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/padawan/comunidad/altruismo/mines/show.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="59" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
