@@ -1,34 +1,31 @@
+.row.mb-1.mt-1
+  .col-12
+    ul.game-nav
+      li.one = link_to fa_icon('fw chevron-circle-left', text: 'Volver'), padawan_formacion_level_tests_path
 .row
-  .col-12.future-card
-    .row style="margin-bottom: 1%;"
-      .col-12
-        = link_to fa_icon('fw chevron-circle-left', text: 'Volver'), padawan_formacion_level_tests_path, class: 'btn btn-primary pull-right'
-    .row
-      .col-12
-        .card-header Datos de la prueba de nivel
-        .card-body
-          dl.row
-            .col-12.box
-              .row
-                dt.col-sm-6 Título
-                dd.col-sm-6 = @object.title
+  .col-12.card
+    .card-header Datos de la prueba de nivel
+    .card-body
+      .row
+        dt.col-sm-6 Título
+        dd.col-sm-6 = @object.title
 
-                dt.col-sm-6 Enunciado
-                dd.col-sm-6 = @object.statement
+        dt.col-sm-6 Enunciado
+        dd.col-sm-6 = @object.statement
 
-                dt.col-sm-6 Estado de tu entrega
-                dd.col-sm-6 = @delivery.status
+        dt.col-sm-6 Estado de tu entrega
+        dd.col-sm-6 = @delivery.status
 
-                dt.col-sm-6 Tu entrega
-                dd.col-sm-6
-                  - case @delivery.status
-                    - when 'Comprado'
-                      = simple_form_for(@delivery, url: padawan_formacion_level_test_path(@object), as: :object, html: {class: 'form-vertical', multipart: true}) do |f|
-                        = f.input :file
-                        = f.submit 'Entregar', class: 'btn btn-primary'
-                    - when 'Entregado'
-                      = link_to @delivery.file_file_name,  @delivery.file.url(:original, false)
-                    - when 'Corregido'
-                      = link_to @delivery.file_file_name,  @delivery.file.url(:original, false)
-                      br
-                      = image_tag @delivery.score.icon.url(:thumb), style: 'max-height: 30px'
+        dt.col-sm-6 Tu entrega
+        dd.col-sm-6
+          - case @delivery.status
+            - when 'Comprado'
+              = simple_form_for(@delivery, url: padawan_formacion_level_test_path(@object), as: :object, html: {class: 'form-vertical', multipart: true}) do |f|
+                = f.input :file
+                = f.submit 'Entregar', class: 'btn btn-primary'
+            - when 'Entregado'
+              = link_to @delivery.file_file_name,  @delivery.file.url(:original, false)
+            - when 'Corregido'
+              = link_to @delivery.file_file_name,  @delivery.file.url(:original, false)
+              br
+              = image_tag @delivery.score.icon.url(:thumb), style: 'max-height: 30px'

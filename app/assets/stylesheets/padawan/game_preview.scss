@@ -1,0 +1,16 @@
+.game-preview{
+  color: white;
+  background: #1a1c20;
+  border-bottom: 5px solid #f68b1f;
+  padding-bottom: 20px;
+  .game-preview--header{
+    width: 100%;
+    padding: 6px 15px;
+    background-image: linear-gradient(120deg, #11383a 7.14%, #262635 7.14%, #262635 21.43%, #27273a 21.43%, #27273a 50%, #11383a 50%, #11383a 57.14%, #262635 57.14%, #262635 71.43%, #27273a 71.43%, #27273a 100%);
+    background-size: 4.62px 8.00px;
+  }
+  .game-preview--body{
+    width: 100%;
+    padding: 20px 25px;
+  }
+}
